@@ -136,7 +136,7 @@ To rule out a low-rank-capacity explanation, we repeat the 8B arms with dense/fu
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_decoupling.pdf}
-\caption{\textbf{Accuracy $\perp$ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le\!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx\!0$ band ($F=\text{flip}_{\corrupt}-\text{flip}_{\shuffle}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; error bars are $95\%$ binomial CIs. Regenerated from the result store by \texttt{scripts/build\_faithfulness\_axis.py}.}
+\caption{\textbf{Accuracy $\perp$ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le\!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx\!0$ band ($F=\text{flip}_{\corrupt}-\text{flip}_{\shuffle}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative criterion: \shuffle{} already disrupts format without injecting any target value, so $F\!\leq\!0$ means the falsified intermediate contributes no extra flip beyond pure format noise. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; error bars are $95\%$ binomial CIs. Regenerated from the result store by \texttt{scripts/build\_faithfulness\_axis.py}.}
 \label{fig:decoupling}
 \end{figure}
 
