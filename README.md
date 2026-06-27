@@ -3,7 +3,7 @@
 **A causal faithfulness audit of chain-of-thought in distilled chart-and-table VLMs.**
 
 Paper draft: [`docs/paper/paper.tex`](docs/paper/paper.tex) / [`docs/paper/paper.pdf`](docs/paper/paper.pdf)
-Target: AAAI 2026 (abstract July 21 / full text July 28)
+Target: AAAI 2027 Main Technical Track
 
 ---
 
@@ -62,6 +62,7 @@ A chain is load-bearing only when CORRUPT flips substantially more than controls
 | WU-6 / N4 | Full paper reframe to reading-not-reasoning + regime narrative | ✅ | canonical `paper.tex` |
 
 Detailed execution log: [`todo/0622.md`](todo/0622.md), [`todo/0626.md`](todo/0626.md)
+Current submission TODO: [`todo/0627.md`](todo/0627.md)
 Snapshots: [`docs/snapshots/`](docs/snapshots/)
 
 ---
@@ -160,12 +161,14 @@ Prediction and judge caches live under `data/distill/` per task subdirectory.
 
 ## Current paper status
 
-Draft date: 2026-06-26. All P0 blockers resolved:
+Draft date: 2026-06-26. Current revision work is tracked in [`todo/0627.md`](todo/0627.md).
 
-- Causal conclusions scoped to *emitted written chain* (not internal activations)
-- Dense/full-SFT control blocks LoRA-capacity alternative explanation
-- F measured on same student checkpoint as accuracy
-- Figure 1 / Figure 2 text-figure consistency verified
-- TabMWP full 6-intervention battery (present + masked) complete with `details[].answers`
+Completed foundation:
 
-Remaining before submission: switch to AAAI double-column template, recheck figure widths.
+- P0-1 method transparency is complete in the current draft.
+- Dense/full-SFT control blocks the LoRA-capacity alternative.
+- F is measured on the same student checkpoint as accuracy.
+- Figure 1 / Figure 2 text-figure consistency has been verified.
+- TabMWP full 6-intervention battery (present + masked) is complete with `details[].answers`.
+
+Remaining before submission: P0-2 statistics, P0-3 selection-flow analysis, P0-4 cleaner control or claim downgrade, P0-6 claim-boundary pass, P1 positioning/method-title edits, AAAI template, double-blind audit, and reproducibility checklist.
