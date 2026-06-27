@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{enumitem}
+\usepackage{array}
 \usepackage[round,sort]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
 \usepackage{caption}
@@ -20,6 +21,7 @@
 
 \newcommand{\corrupt}{\textsc{corrupt}}
 \newcommand{\shuffle}{\textsc{shuffle}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{\bf Reading, Not Reasoning: A Causal Faithfulness Audit of\\ Chain-of-Thought in Distilled Chart-and-Table VLMs}
 
@@ -93,14 +95,20 @@ Chart and table QA are useful because the same task mixes visual extraction and 
 \paragraph{Models.}
 Qwen3-VL 8B and 32B (dense) \citep{qwen3vl}. All models are served locally.
 
+\paragraph{SFT pipeline.}
+For ChartQA and TabMWP, a Qwen3-VL-32B teacher generates step-by-step rationales on training images; we keep only traces whose final answer matches the gold answer under the numeric grader below. This yields 150 ChartQA traces and 160 TabMWP traces. The 8B students are LoRA-SFT models with the vision tower frozen, rank 16, $\alpha{=}32$, dropout .05, bf16, learning rate $10^{-4}$, per-device batch size 1, gradient accumulation 8, cosine schedule, and prompt tokens masked to $-100$ so supervision applies only to the assistant rationale and \texttt{ANSWER} line. The ChartQA/TabMWP 8B runs use two epochs, corresponding to 38 and 40 optimizer updates. The 32B students use the same LoRA target modules under NF4 QLoRA and run five epochs with greedy held-out evaluation after each epoch; the selected checkpoints are epoch 1 for ChartQA and epoch 4 for TabMWP. Dense 8B controls use full-SFT checkpoints with the vision tower, embeddings, and first three language layers frozen, leaving about 79.7\% of parameters trainable. The FinQA curriculum arms use the same LoRA recipe for three epochs: 180/180 gold-program strict/vanilla traces, and 173/173 answer-conditioned text-teacher strict/vanilla traces. All answer generation and probe continuations use greedy decoding (\texttt{do\_sample=False}; answer max-new 320--384 tokens, continuation max-new 64 tokens).
+
 \paragraph{Statistics.}
 McNemar exact tests for paired SFT deltas, using only discordant pairs; Holm correction across the four headline ChartQA/TabMWP cells leaves all tests below $.01$. At $n{=}400$, minimum detectable net is about 8--9 points, and the observed paired SFT gains have 66 and 46 discordant pairs at 8B/32B.
 
 \paragraph{Robustness to known confounds.}
 We do not claim the \corrupt{} intervention itself is new; it is useful only as part of a controlled battery. To address the ``contextual faithfulness'' concern \citep{tutek2025}, we compare \corrupt{} against \shuffle{}, paraphrase, filler-token, deletion, truncation, image-mask, and a snap/follow/other readout that asks whether the final answer follows the injected value. To address disguised-accuracy and option-bias concerns \citep{bentham2024}, the main faithfulness substrates are free-response numeric QA rather than multiple choice. To avoid reporting a probe artifact as mechanism, we treat a positive corruption flip as insufficient by itself; the headline evidence is convergence across controls and regimes.
 
-\paragraph{Probe quantities.}
-\corrupt{} replaces one on-path numeric intermediate or operand with a wrong value; \shuffle{} preserves the rationale tokens but disrupts their order as a format/control perturbation. ``Flip'' means the forced final answer changes relative to the unperturbed answer. ``Snap'' means the answer returns to the true chart/table value after \corrupt{}; ``follow'' means it follows the injected wrong value. We call a written chain load-bearing only when \corrupt{} flips substantially more than controls and follow is nontrivial.
+\paragraph{Probe construction.}
+For each task/model cell, we first ask the evaluated model to solve the original visual question with the image/table visible and the prompt \texttt{Solve step by step, end with 'ANSWER: <final>'}. The text before the first \texttt{ANSWER:} is the emitted CoT. A case is probe-eligible only if this CoT is nonempty and the extracted final answer is correct. The generic chart/table battery then edits that model-owned CoT with a fixed edit seed \texttt{Random(0)}: \corrupt{} samples one numeric token from the CoT and replaces value $v$ by $2v+7$ (integers remain integers; decimals are rendered to one decimal), while \shuffle{} shuffles sentence order without injecting a target value. Additional controls paraphrase the CoT with an exact number-multiset guard, replace tokens with length-matched filler, truncate early sentences, or delete the last number-bearing steps. The FinQA targeted probe is stricter: it uses the gold program to choose a table operand that is non-constant, appears in the student's CoT, and whose replacement by $2v+7$ changes the gold-program final answer; it then tests both operand-only corruption and a consistently propagated corrupted chain. Each edited CoT is force-continued with the prompt ``Reasoning so far: ... Given ONLY the reasoning above, state the final answer now as \texttt{ANSWER: <final>}''. The masked condition drops the image/table from this force-continue call while keeping the same edited text.
+
+\paragraph{Grading and readout.}
+Open numeric answers are graded in the task's original answer units. We strip commas and percent signs from the gold answer, extract all numeric strings from the prediction, and mark a match if any predicted number is within $0.05|g|+10^{-6}$ of gold value $g$; nonnumeric gold answers fall back to normalized substring matching. Rounding and redundant units are therefore tolerated only through the numeric value; symbolic equivalents that do not surface a matching number, empty outputs, and parse failures are incorrect. ``Flip'' means the forced final answer no longer matches the unedited model answer. For \corrupt{} and FinQA targeted probes, the three-way readout is applied in priority order: snap if the answer matches the gold answer, follow if it does not snap but matches the injected wrong value (or injected gold-program final), and other otherwise. Boundary examples under 5\% tolerance are: gold 100, injected 207, answer ``about 96'' $\rightarrow$ snap; answer ``207'' $\rightarrow$ follow; answer ``200'' $\rightarrow$ follow; answer containing both 100 and 207 $\rightarrow$ snap by precedence; and a \shuffle{} answer has no injected target, so off-gold responses are counted as other rather than follow.
 
 \begin{figure}[t]
 \centering
@@ -197,6 +205,34 @@ We set out to compress tool-scaffolded visual reasoning into one forward pass an
 \section*{Reproducibility Statement}
 \label{sec:repro}
 All numbers regenerate from a fingerprinted, append-only result store (\texttt{results.jsonl}) via the released scripts; SFT, merge, battery, curriculum, and probe scripts are included. ChartQA/TabMWP builders, power table, faithfulness figures, N3 natural-counting probe, and N1 targeted curriculum probe each correspond to one script with fixed seeds or saved artifacts.
+
+\appendix
+
+\section{Artifact Map}
+\label{app:artifacts}
+
+Table~\ref{tab:artifacts} gives the minimum artifact map needed to reconstruct each headline table or figure without reading source code first. Paths are relative to the repository root. JSON hashes are 12-character SHA-256 prefixes of the files used in this draft.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt{Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version.}
+\label{tab:artifacts}
+\begin{tabular}{@{}L{0.18\textwidth}L{0.31\textwidth}L{0.25\textwidth}L{0.19\textwidth}@{}}
+\toprule
+Result family & Result JSON / store & Script and seed & Checkpoint or input path \\
+\midrule
+Global result store & \nolinkurl{data/distill/results/results.jsonl}, SHA \texttt{31ef62ccb77a} & \nolinkurl{scripts/regen_tables.py}; stored run seed/fingerprint & append-only store used by tables and map figures \\
+ChartQA LoRA SFT accuracy & \nolinkurl{data/distill/poc/lora_8b_chartqa/eval_n400.json}, SHA \texttt{2ce4d9175235}; \nolinkurl{data/distill/poc/lora_32b_chartqa/eval_n400.json}, SHA \texttt{92e59e633a71} & \nolinkurl{scripts/poc_sft.py}; \nolinkurl{scripts/poc_sft_32b_qlora.py}; \nolinkurl{scripts/eval_sft_n400.py} & train \nolinkurl{data/distill/poc/chartqa_cot_train.jsonl}; adapters \nolinkurl{data/distill/poc/lora_8b_chartqa}, \nolinkurl{data/distill/poc/lora_32b_chartqa/epoch_1} \\
+TabMWP LoRA SFT accuracy & \nolinkurl{data/distill/poc/eval_sft_8b_tabmwp_n400.json}, SHA \texttt{95aaba7b47df}; \nolinkurl{data/distill/poc/eval_sft_32b_tabmwp_n400.json}, SHA \texttt{b08953be8f1f} & \nolinkurl{scripts/run_wu3_stage2.sh}; \nolinkurl{scripts/eval_sft_n400.py} & train \nolinkurl{data/distill/poc/tabmwp_cot_train.jsonl}; adapters \nolinkurl{data/distill/poc/lora_8b_tabmwp}, \nolinkurl{data/distill/poc/lora_32b_tabmwp/epoch_4} \\
+ChartQA faithfulness battery & \nolinkurl{data/distill/poc/battery_8b_present.json}, SHA \texttt{0ff0da834fc9}; \nolinkurl{data/distill/poc/battery_32b_present.json}, SHA \texttt{34a57e280224}; masked companions in same directory & \nolinkurl{scripts/battery_n400.py}, edit seed 0 & same ChartQA adapters; test split \nolinkurl{data/distill/chartqa/test_cases_400.jsonl} \\
+TabMWP faithfulness battery & \nolinkurl{data/distill/poc/battery_tabmwp8b_present.json}, SHA \texttt{c27d11005883}; \nolinkurl{data/distill/poc/battery_tabmwp32b_present.json}, SHA \texttt{078a37c4e4c6}; masked companions in same directory & \nolinkurl{scripts/battery_n400.py}, edit seed 0 & same TabMWP adapters; test split \nolinkurl{data/distill/tabmwp/test_cases_400.jsonl} \\
+FinQA targeted curriculum probe & \nolinkurl{data/distill/poc/battery_n1_8b.json}, SHA \texttt{03dfef86ad4e}; \nolinkurl{data/distill/poc/battery_n1_32b.json}, SHA \texttt{c808008b06b9}; text-teacher and dense-control companions in same directory & \nolinkurl{scripts/build_n1_curriculum.py}; \nolinkurl{scripts/run_n1_sft.sh}; \nolinkurl{scripts/battery_n1_targeted.py}, edit seed 0 & train \nolinkurl{data/distill/finqa/curriculum_dev_*}; probe split \nolinkurl{data/distill/finqa/curriculum_test_strict.jsonl}; LoRA and QLoRA adapters under \nolinkurl{data/distill/poc/lora_*_finqa_*} \\
+Dense 8B control & \nolinkurl{data/distill/poc/full_8b_chartqa/full_sft_summary.json}; \nolinkurl{data/distill/poc/full_8b_tabmwp/full_sft_summary.json}; dense battery files under \nolinkurl{data/distill/poc/battery_full8b_*} & \nolinkurl{scripts/audit_full_sft_8b_nonvideo.py}; \nolinkurl{scripts/eval_full_sft_n400.py}; \nolinkurl{scripts/export_full_sft_8b_nonvideo_evidence.py} & full-SFT checkpoints under \nolinkurl{data/distill/poc/full_8b_*}; summaries record trainable fraction and freeze policy \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \bibliographystyle{plainnat}
 \bibliography{references}

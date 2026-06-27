@@ -4,7 +4,8 @@
 # Per-epoch eval points at a 40-case monitoring slice. Serving must be STOPPED.
 set -u
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
-cd /home/gpus/Mr-Big-Eye-internalization || exit 1
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 export NO_PROXY='*' no_proxy='*'
 BASE=/home/gpus/models/Qwen3-VL-32B-Instruct
 SLICE=data/distill/finqa/test_slice40.jsonl

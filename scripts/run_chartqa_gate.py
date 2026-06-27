@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-"""Spec §5 main B — ChartQA variance gate (the regime-crossing dataset). Same protocol
-as run_variance_gate.py but for static charts: a single chart image is fed as a 1-frame
-"video". free_form (greedy) vs self_reflect / orch_reflect_blind (K seeds). Grading is
+"""Spec §5 main B — ChartQA variance gate (the regime-crossing dataset).
+
+A single chart/table image is fed through the multimodal payload path.
+free_form (greedy) vs self_reflect / orch_reflect_blind (K seeds). Grading is
 relaxed-numeric (5% tol) via eval_common.grade_textaware (open-ended path). Writes to the
 shared result store. ChartQA is perception-bound at 4B/8B and (per Exp-8) reasoning-bound
 at 32B — this gate tests whether that crossing survives multi-seed.

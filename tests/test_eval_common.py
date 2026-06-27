@@ -1,4 +1,10 @@
-from app.distill.eval_common import grade_textaware, relaxed_match, config_fingerprint
+from app.distill.eval_common import (
+    config_fingerprint,
+    grade_textaware,
+    parse_candidates,
+    relaxed_match,
+    selected_candidate,
+)
 from app.distill.eval_stats import paired_bootstrap_net, min_detectable_net, mcnemar
 
 
@@ -11,6 +17,16 @@ def test_grade_textaware_flags_letter_luck():
     assert r["letter_luck"] is True
     assert r["correct"] is False
     assert r["letter_ok"] is True
+
+
+def test_parse_candidates_and_selected_candidate_are_local_helpers():
+    cands = parse_candidates(Q)
+    assert cands == [
+        {"label": "A", "text": "red ball"},
+        {"label": "B", "text": "blue box"},
+        {"label": "C", "text": "green hat"},
+    ]
+    assert selected_candidate("答案：B) because it is blue", cands) == cands[1]
 
 
 def test_grade_textaware_accepts_consistent_answer():

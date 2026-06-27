@@ -5,7 +5,8 @@ The headline numbers are at the ±2% scale, while letter-only MCQ grading lets
 describes a different option) score as correct. This module provides a grader that
 demotes those cases — conservatively: a case is flipped to incorrect ONLY when the
 cited letter matches gold yet the answer's content clearly endorses a *different*
-option. It reuses app/mcq.py so it stays consistent with the rest of the pipeline.
+option. The small MCQ parser lives here so the current numeric-eval path no longer
+depends on the removed video-agent harness modules.
 """
 from __future__ import annotations
 
@@ -13,13 +14,10 @@ import hashlib
 import re
 from typing import Any
 
-from app.distill.filter_consistency import _answer_matches
 from app.eval_fingerprint import AGENT_CODE_VERSION, prompt_fingerprint
-from app.mcq import (
-    normalize_text,
-    parse_candidates,
-    selected_candidate,
-    text_contains_option,
+
+MCQ_OPTION_RE = re.compile(
+    r"(?ms)^\s*([A-E])[\).]\s+(.+?)(?=^\s*[A-E][\).]\s+|\Z)"
 )
 
 # Spec §0: the five comparable methods.
@@ -36,6 +34,88 @@ DEFAULT_N_FRAMES = 16
 # ---------------------------------------------------------------------------
 # Grading
 # ---------------------------------------------------------------------------
+def parse_candidates(question: str) -> list[dict[str, str]]:
+    """Parse Candidates blocks formatted as A) option text."""
+    if "Candidates:" not in (question or ""):
+        return []
+    block = (question or "").split("Candidates:", 1)[1]
+    block = re.split(
+        r"\n\s*\n\s*(?:Answer the question|Reference key frames|请回答|回答问题)",
+        block,
+        maxsplit=1,
+    )[0]
+    out: list[dict[str, str]] = []
+    for match in MCQ_OPTION_RE.finditer(block):
+        text = _clean_option_text(match.group(2))
+        if text:
+            out.append({"label": match.group(1).upper(), "text": text})
+    return out
+
+
+def selected_candidate(answer: str, candidates: list[dict[str, str]]) -> dict[str, str] | None:
+    """Return the MCQ candidate selected in an answer, if one is explicit."""
+    if not candidates:
+        return None
+    labels = {item["label"].upper(): item for item in candidates}
+    match = re.search(
+        r"\b(?:answer|correct answer|选项|答案)\s*[:：]?\s*\**([A-E])\**\s*[\).]",
+        answer or "",
+        re.I,
+    )
+    if not match:
+        match = re.search(r"\b([A-E])\s*[\).]\s+", answer or "")
+    if match:
+        return labels.get(match.group(1).upper())
+    normalized_answer = normalize_text(answer)
+    for item in candidates:
+        option = normalize_text(item["text"])
+        if option and option in normalized_answer:
+            return item
+    return None
+
+
+def normalize_text(value: Any) -> str:
+    text = str(value or "").lower()
+    text = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def content_tokens(value: Any) -> list[str]:
+    normalized = normalize_text(value)
+    return [
+        token
+        for token in normalized.split()
+        if len(token) >= 3 and token not in {"the", "and", "for", "with", "from", "that", "this"}
+    ]
+
+
+def text_contains_option(text: str, option_text: str) -> bool:
+    normalized_text = normalize_text(text)
+    tokens = content_tokens(option_text)
+    if not tokens:
+        return False
+    return all(token in normalized_text for token in tokens[:6])
+
+
+def _clean_option_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text or "").strip().rstrip()
+
+
+def _answer_matches(question: str, reference: str, answer: str) -> bool:
+    candidates = parse_candidates(question)
+    if candidates:
+        selected = selected_candidate(answer, candidates)
+        expected = selected_candidate(reference, candidates)
+        if expected is None:
+            expected_text = reference.strip().lower().rstrip(".")
+            for candidate in candidates:
+                if expected_text and expected_text in candidate["text"].lower().rstrip("."):
+                    expected = candidate
+                    break
+        return bool(selected and expected and selected["label"] == expected["label"])
+    return relaxed_match(answer, reference)
+
+
 def _gold_candidate(gold: str, cands: list[dict[str, str]]) -> dict[str, str] | None:
     """Map a gold answer string to its candidate (bare letter → letter → text)."""
     g = str(gold).strip()

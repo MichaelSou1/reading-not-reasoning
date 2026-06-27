@@ -4,7 +4,8 @@
 # CoT-format confound (teacher chains are fluent natural language). Serving must be STOPPED.
 set -u
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
-cd /home/gpus/Mr-Big-Eye-internalization || exit 1
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 export NO_PROXY='*' no_proxy='*'
 BASE=/home/gpus/models/Qwen3-VL-8B-Instruct
 EPOCHS=3

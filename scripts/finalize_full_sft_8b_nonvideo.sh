@@ -3,7 +3,8 @@
 # Run this after the TabMWP resume script finishes.
 set -euo pipefail
 
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 
 PY=${PY:-/home/gpus/anaconda3/envs/mbe-up/bin/python}
 LOG=${LOG:-/home/gpus/logs/full_sft_8b_nonvideo}

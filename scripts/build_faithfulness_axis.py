@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""WU-5 — the faithfulness ⊥ accuracy axis + the two headline figures.
+r"""WU-5 — the faithfulness ⊥ accuracy axis + the two headline figures.
 
 Everything here is *derived from the append-only result store* (no hand-copied numbers):
   - battery runs   data/distill/poc/battery_{8b,32b}_{present,masked}.json  (corrupt/shuffle/re-perception)

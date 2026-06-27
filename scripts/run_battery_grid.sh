@@ -5,7 +5,8 @@
 # cache keyed by CoT md5). Separate cache files per scale avoid concurrent-append races.
 set -u
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
-cd /home/gpus/Mr-Big-Eye-internalization || exit 1
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 mkdir -p data/distill/poc/logs
 
 run_chain() {  # tag base adapter gpus batch

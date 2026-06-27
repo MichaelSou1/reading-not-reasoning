@@ -7,7 +7,8 @@
 # Serving must be STOPPED (these load models in-process). Usage: bash scripts/run_n3.sh
 set -u
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
-cd /home/gpus/Mr-Big-Eye-internalization || exit 1
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 export NO_PROXY='*' no_proxy='*'
 mkdir -p data/distill/poc/logs
 DUMP=data/distill/natcount/test_cases_400.jsonl

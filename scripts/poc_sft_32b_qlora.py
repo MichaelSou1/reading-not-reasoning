@@ -38,7 +38,7 @@ import re as _re
 
 
 def normalize_text(value) -> str:
-    """Copied verbatim from app.mcq to avoid the eval_common->langchain import chain."""
+    """Small local normalizer to keep the 32B QLoRA script self-contained."""
     text = str(value or "").lower()
     text = _re.sub(r"[^a-z0-9一-鿿]+", " ", text)
     return _re.sub(r"\s+", " ", text).strip()

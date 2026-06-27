@@ -16,7 +16,8 @@
 # KEEP_CHECKPOINTS=1 to keep them.
 set -euo pipefail
 
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 
 PY=${PY:-/home/gpus/anaconda3/envs/mbe-up/bin/python}
 BASE=${BASE:-/home/gpus/models/Qwen3-VL-8B-Instruct}

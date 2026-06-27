@@ -1,4 +1,4 @@
-"""Research distillation pipeline for trajectory-to-CoT internalization."""
+"""Utilities for numeric VLM distillation, probing, and result aggregation."""
 
-DISTILL_SCHEMA_VERSION = "distill_v1"
-TRAIN_MODALITY = "frames_only"
+DISTILL_SCHEMA_VERSION = "numeric_distill_v1"
+TRAIN_MODALITY = "images_only"

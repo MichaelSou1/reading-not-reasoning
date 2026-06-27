@@ -2,7 +2,8 @@
 # Wait for the 8B gate to finish (frees GPU 0,1), then serve the dense 32B-AWQ (TP=2) and run the
 # n=400 gate as the "32b" cell. Backgroundable; logs to /home/gpus/logs/wu1.
 set -uo pipefail
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 LOGD=/home/gpus/logs/wu1; mkdir -p "$LOGD"
 AWQ=/home/gpus/models/Qwen3-VL-32B-Instruct-AWQ
 DUMP=data/distill/chartqa/test_cases_400.jsonl

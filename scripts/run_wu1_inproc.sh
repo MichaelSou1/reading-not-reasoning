@@ -3,7 +3,8 @@
 # every vLLM server is stopped (these jobs grab all GPUs via device_map=auto).
 # Uses the env python DIRECTLY (conda run's argparser eats --n). Resumable (skips if output exists).
 set -uo pipefail
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 LOGD=/home/gpus/logs/wu1; mkdir -p "$LOGD"
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
 BF16=/home/gpus/models/Qwen3-VL-32B-Instruct

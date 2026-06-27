@@ -4,7 +4,8 @@
 # 8B net (~-0.092). Consistent -> keep all 8B-orchestrator orch rows. Different -> escalate to full re-run.
 # Run AFTER the core in-process phase finishes (all GPUs free). Aborts cleanly if DeepSeek 402.
 set -uo pipefail
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 LOGD=/home/gpus/logs/wu1; mkdir -p "$LOGD"
 DUMP=data/distill/chartqa/test_cases_400.jsonl
 IMG=/home/gpus/mbe_data/chartqa_test_images

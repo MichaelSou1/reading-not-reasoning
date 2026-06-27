@@ -4,7 +4,8 @@
 # (1.3/1.4/1.5) finishes and all GPUs are free. Requires DeepSeek balance (will abort if 402).
 # Logs under /home/gpus/logs/wu1.
 set -uo pipefail
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 LOGD=/home/gpus/logs/wu1; mkdir -p "$LOGD"
 DUMP=data/distill/chartqa/test_cases_400.jsonl
 IMG=/home/gpus/mbe_data/chartqa_test_images
@@ -78,11 +79,12 @@ env LOCAL_VLM_BASE_URL=http://127.0.0.1:30001/v1 LOCAL_VLM_MODEL_NAME=Qwen3-VL-3
   > "$LOGD/dsorch_32b.log" 2>&1
 say "32B orch done"
 
-# --- stop servers, refresh report ---
+# --- stop servers, refresh derived tables ---
 for pf in /home/gpus/logs/serve-vlm-8b.pid /home/gpus/logs/serve-vlm-32b.pid; do
   [ -f "$pf" ] && { kill "$(cat "$pf")" 2>/dev/null; rm -f "$pf"; }
 done
 pkill -f "vllm.entrypoints.openai.api_server" 2>/dev/null || true
 say "DeepSeek orch re-run COMPLETE"
-python3 scripts/wu1_report.py
+python3 scripts/regen_tables.py
+python3 scripts/power_table.py
 touch "$LOGD/DSORCH_DONE"

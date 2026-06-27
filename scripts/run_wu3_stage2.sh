@@ -6,7 +6,8 @@
 set -uo pipefail
 CELL="${1:?usage: run_wu3_stage2.sh <8b|32b>}"
 PY=/home/gpus/anaconda3/envs/mbe-up/bin/python
-cd /home/gpus/Mr-Big-Eye-internalization
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.." || exit 1
 export NO_PROXY='*' no_proxy='*'
 LOG=/home/gpus/logs/wu3
 mkdir -p "$LOG"

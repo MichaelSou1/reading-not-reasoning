@@ -66,10 +66,11 @@ Snapshots: [`docs/snapshots/`](docs/snapshots/)
 
 ---
 
-## Repo layout
+## Repo Layout
 
 ```
-app/distill/          # Harness: generate, probe, eval, SFT dataset builders
+app/distill/          # Numeric grading, method runners, statistics, result-store helpers
+app/eval_distill/     # Lightweight result diagnostics and control-set builders
 scripts/              # CLI entry points: battery_n400.py, probe_n400.py,
                       #   poc_sft*.py, audit_*.py, regen_tables.py, etc.
 data/distill/         # Append-only result store (results.jsonl + per-run poc/*.json)
