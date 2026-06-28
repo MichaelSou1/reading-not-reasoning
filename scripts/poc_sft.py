@@ -27,24 +27,34 @@ def main() -> int:
     ap.add_argument("--epochs", type=float, default=2.0)
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--max-len", type=int, default=2048)
+    ap.add_argument("--quant", choices=["nf4", "none"], default="none",
+                    help="nf4 = 4-bit QLoRA base (fits 8B on a single 20GB GPU).")
     args = ap.parse_args()
 
-    from transformers import (AutoProcessor, Qwen3VLForConditionalGeneration,
-                              Trainer, TrainingArguments)
-    from peft import LoraConfig, get_peft_model
+    from transformers import (AutoProcessor, BitsAndBytesConfig,
+                              Qwen3VLForConditionalGeneration, Trainer, TrainingArguments)
+    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
     recs = [json.loads(l) for l in open(args.data) if l.strip()]
     print(f"SFT records: {len(recs)}", flush=True)
 
     processor = AutoProcessor.from_pretrained(args.base, trust_remote_code=True)
     tok = processor.tokenizer
+    quant_cfg = None
+    if args.quant == "nf4":
+        quant_cfg = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                                       bnb_4bit_use_double_quant=True,
+                                       bnb_4bit_compute_dtype=torch.bfloat16)
     model = Qwen3VLForConditionalGeneration.from_pretrained(
-        args.base, torch_dtype=torch.bfloat16, device_map="auto", trust_remote_code=True)
+        args.base, quantization_config=quant_cfg, torch_dtype=torch.bfloat16,
+        device_map="auto", trust_remote_code=True)
     model.config.use_cache = False
     # freeze vision tower
     for n, p in model.named_parameters():
         if "visual" in n or "vision" in n:
             p.requires_grad = False
+    if args.quant == "nf4":
+        model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
     lora = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, bias="none",
                       target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                                       "gate_proj", "up_proj", "down_proj"])

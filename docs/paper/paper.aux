@@ -10,6 +10,12 @@
 \citation{chartpali,chartr1}
 \citation{pearl,capimagine2026}
 \citation{zoomingwithoutzooming,locus}
+\citation{wei2022cot}
+\citation{kojima2022zeroshot}
+\citation{wang2023selfconsistency}
+\citation{jacovi2020faithfulness}
+\citation{wiegreffe2021teach}
+\citation{deyoung2020eraser}
 \citation{lyu2023}
 \citation{turpin2023}
 \citation{lanham2023}
@@ -19,58 +25,75 @@
 \citation{visualthinking2025}
 \citation{codev}
 \citation{capimagine2026}
-\citation{chartqa}
+\citation{kafle2018dvqa,kahou2018figureqa,methani2020plotqa}
+\citation{chartqa,charxiv,chartmuseum}
 \citation{tabmwp}
-\citation{charxiv}
-\citation{chartmuseum}
+\citation{zhu2021tatqa,chen2021finqa}
 \citation{chartnoise}
 \citation{perceptionbottleneck}
+\citation{gao2023pal,chen2023pot}
+\citation{schick2023toolformer}
+\citation{vpd,hsieh2023distilling}
 \@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Internalizing visual reasoning.}{2}{section*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{CoT faithfulness and visual-agent faithfulness.}{2}{section*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Why charts and tables.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Chain-of-thought and its faithfulness.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Chart/table QA and tool/program distillation.}{2}{section*.4}\protected@file@percent }
+\citation{lanham2023}
+\citation{lanham2023,turpin2023,tutek2025,bentham2024,pfau2024}
+\citation{jacovi2020faithfulness,wiegreffe2021teach,deyoung2020eraser}
+\citation{visualthinking2025,codev}
+\citation{vpd,gao2023pal,chen2023pot,schick2023toolformer,hsieh2023distilling}
+\citation{pearl,capimagine2026}
+\citation{chartqa,tabmwp,kafle2018dvqa,methani2020plotqa,chen2021finqa}
 \citation{chartqa}
 \citation{tabmwp}
 \citation{qwen3vl}
 \citation{internvl35}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Experimental Setup}{3}{section.3}\protected@file@percent }
-\newlabel{sec:setup}{{3}{3}{Experimental Setup}{section.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Definitions.}{3}{section*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Tasks.}{3}{section*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Models.}{3}{section*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{SFT pipeline.}{3}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Statistics.}{3}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Positioning.}{3}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method: Causal Faithfulness Audit}{3}{section.3}\protected@file@percent }
+\newlabel{sec:setup}{{3}{3}{Method: Causal Faithfulness Audit}{section.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Definitions.}{3}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Tasks.}{3}{section*.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Field positioning.} Where a causal CoT audit of distilled chart/table VLMs sits relative to neighboring lines of work. ``Object audited'' is the representation perturbed; ``conclusion licensed'' is what the design can actually claim.}}{4}{table.caption.6}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:positioning}{{1}{4}{\textbf {Field positioning.} Where a causal CoT audit of distilled chart/table VLMs sits relative to neighboring lines of work. ``Object audited'' is the representation perturbed; ``conclusion licensed'' is what the design can actually claim}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Models.}{4}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SFT pipeline.}{4}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Probe construction.}{5}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Grading and readout.}{5}{section*.12}\protected@file@percent }
 \citation{tutek2025}
 \citation{bentham2024}
-\@writefile{toc}{\contentsline {paragraph}{Robustness to known confounds.}{4}{section*.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Probe construction.}{4}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Grading and readout.}{4}{section*.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Probe schematic.} \textsc  {corrupt}{} tests whether a falsified written intermediate is load-bearing; \textsc  {shuffle}{} is a harsh no-target order control, while \textsc  {local-num}{} is a gentler same-shape local numeric control.}}{5}{figure.caption.13}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:probe_schematic}{{1}{5}{\textbf {Probe schematic.} \corrupt {} tests whether a falsified written intermediate is load-bearing; \shuffle {} is a harsh no-target order control, while \localnum {} is a gentler same-shape local numeric control}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Result I: CoT SFT Improves Accuracy}{5}{section.4}\protected@file@percent }
-\newlabel{sec:sft}{{4}{5}{Result I: CoT SFT Improves Accuracy}{section.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Dense 8B control.}{5}{section*.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Accuracy $\perp $ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le \!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx \!0$ band ($F=\text  {flip}_{\textsc  {corrupt}}-\text  {flip}_{\textsc  {shuffle}}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative harsh-control criterion: \textsc  {shuffle}{} disrupts order without injecting any target value, so $F\!\leq \!0$ means the falsified intermediate contributes no extra flip beyond order/format noise. A targeted ChartQA 8B \textsc  {local-num}{} replication below checks the same claim under a gentler no-target perturbation. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; the tabular intervals and corrected tests in Table~\ref {tab:probe} are regenerated by \texttt  {scripts/faithfulness\_stats.py}.}}{6}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:decoupling}{{2}{6}{\textbf {Accuracy $\perp $ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le \!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx \!0$ band ($F=\text {flip}_{\corrupt }-\text {flip}_{\shuffle }$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative harsh-control criterion: \shuffle {} disrupts order without injecting any target value, so $F\!\leq \!0$ means the falsified intermediate contributes no extra flip beyond order/format noise. A targeted ChartQA 8B \localnum {} replication below checks the same claim under a gentler no-target perturbation. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; the tabular intervals and corrected tests in Table~\ref {tab:probe} are regenerated by \texttt {scripts/faithfulness\_stats.py}}{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Result II: The Causal Probe---the Written Chain Is Not Load-Bearing}{6}{section.5}\protected@file@percent }
-\newlabel{sec:probe}{{5}{6}{Result II: The Causal Probe---the Written Chain Is Not Load-Bearing}{section.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Causal CoT-intermediate probe on chart/table SFT cells. Flow is raw $n{=}400$ to probe-eligible correct+CoT cases, with \textsc  {corrupt}{}/\textsc  {shuffle}{} denominators in parentheses. $F=\text  {flip}_{\textsc  {corrupt}}-\text  {flip}_{\textsc  {shuffle}}$; $p_H$ is Holm-adjusted for the one-sided load-bearing test. Snap/follow are rates after \textsc  {corrupt}{} with Wilson 95\% CIs.}}{7}{table.caption.16}\protected@file@percent }
-\newlabel{tab:probe}{{1}{7}{Causal CoT-intermediate probe on chart/table SFT cells. Flow is raw $n{=}400$ to probe-eligible correct+CoT cases, with \corrupt {}/\shuffle {} denominators in parentheses. $F=\text {flip}_{\corrupt }-\text {flip}_{\shuffle }$; $p_H$ is Holm-adjusted for the one-sided load-bearing test. Snap/follow are rates after \corrupt {} with Wilson 95\% CIs}{table.caption.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {P0-5 cross-family replication.} InternVL3.5-8B is a non-Qwen VLM evaluated on the same ChartQA present-image probe protocol. This row is external-validity evidence and is reported separately from the Qwen-family SFT cells in Table~\ref {tab:probe}.}}{7}{table.caption.17}\protected@file@percent }
-\newlabel{tab:crossfamily}{{2}{7}{\textbf {P0-5 cross-family replication.} InternVL3.5-8B is a non-Qwen VLM evaluated on the same ChartQA present-image probe protocol. This row is external-validity evidence and is reported separately from the Qwen-family SFT cells in Table~\ref {tab:probe}}{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Selection flow and answer-eval strata.} Answer-eval strata are stable-correct / SFT-gain / SFT-loss / both-wrong on the paired $n{=}400$ accuracy run. Probe-kept strata are the same case IDs after the separate CoT-generation eligibility filter. ``No usable corrupt'' is raw cases without a usable \textsc  {corrupt}{} readout, including non-eligible cases and any eligible CoT with no corruptible numeric token. The final columns report present-condition \textsc  {corrupt}{} follow rates in the two strata most relevant to the main claim. Full masked rows, loss/wrong strata, and sensitivity bounds are in \texttt  {faithfulness\_stats.md}.}}{8}{table.caption.18}\protected@file@percent }
-\newlabel{tab:selection}{{3}{8}{\textbf {Selection flow and answer-eval strata.} Answer-eval strata are stable-correct / SFT-gain / SFT-loss / both-wrong on the paired $n{=}400$ accuracy run. Probe-kept strata are the same case IDs after the separate CoT-generation eligibility filter. ``No usable corrupt'' is raw cases without a usable \corrupt {} readout, including non-eligible cases and any eligible CoT with no corruptible numeric token. The final columns report present-condition \corrupt {} follow rates in the two strata most relevant to the main claim. Full masked rows, loss/wrong strata, and sensitivity bounds are in \texttt {faithfulness\_stats.md}}{table.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Result III: Task-Dependent Information Sources and a Constructive Test}{9}{section.6}\protected@file@percent }
-\newlabel{sec:regime}{{6}{9}{Result III: Task-Dependent Information Sources and a Constructive Test}{section.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Natural-image counting.}{9}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Shortcut-removing curriculum.}{9}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion and Limitations}{9}{section.7}\protected@file@percent }
-\newlabel{sec:discussion}{{7}{9}{Discussion and Limitations}{section.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Implications.}{9}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{9}{section*.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Probe schematic.} \textsc  {corrupt}{} tests whether a falsified written intermediate is load-bearing; \textsc  {shuffle}{} is a harsh no-target order control, while \textsc  {local-num}{} is a gentler same-shape local numeric control.}}{6}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:probe_schematic}{{1}{6}{\textbf {Probe schematic.} \corrupt {} tests whether a falsified written intermediate is load-bearing; \shuffle {} is a harsh no-target order control, while \localnum {} is a gentler same-shape local numeric control}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{Statistics.}{6}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Robustness controls.}{6}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Result I: CoT SFT Improves Accuracy}{6}{section.4}\protected@file@percent }
+\newlabel{sec:sft}{{4}{6}{Result I: CoT SFT Improves Accuracy}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Accuracy $\perp $ written-chain faithfulness (chart/table = pixels-source regime).} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le \!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx \!0$ band ($F=\text  {flip}_{\textsc  {corrupt}}-\text  {flip}_{\textsc  {shuffle}}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative harsh-control criterion: \textsc  {shuffle}{} disrupts order without injecting any target value, so $F\!\leq \!0$ means the falsified intermediate contributes no extra flip beyond order/format noise. A targeted ChartQA 8B \textsc  {local-num}{} replication below checks the same claim under a gentler no-target perturbation. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; the tabular intervals and corrected tests in Table~\ref {tab:probe} are regenerated by \texttt  {scripts/faithfulness\_stats.py}.}}{7}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:decoupling}{{2}{7}{\textbf {Accuracy $\perp $ written-chain faithfulness (chart/table = pixels-source regime).} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le \!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx \!0$ band ($F=\text {flip}_{\corrupt }-\text {flip}_{\shuffle }$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative harsh-control criterion: \shuffle {} disrupts order without injecting any target value, so $F\!\leq \!0$ means the falsified intermediate contributes no extra flip beyond order/format noise. A targeted ChartQA 8B \localnum {} replication below checks the same claim under a gentler no-target perturbation. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; the tabular intervals and corrected tests in Table~\ref {tab:probe} are regenerated by \texttt {scripts/faithfulness\_stats.py}}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Dense 8B control.}{7}{section*.16}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Causal CoT-intermediate probe on chart/table SFT cells. Flow is raw $n{=}400$ to probe-eligible correct+CoT cases, with \textsc  {corrupt}{}/\textsc  {shuffle}{} denominators in parentheses. $F=\text  {flip}_{\textsc  {corrupt}}-\text  {flip}_{\textsc  {shuffle}}$; $p_H$ is Holm-adjusted for the one-sided load-bearing test. Snap/follow are rates after \textsc  {corrupt}{} with Wilson 95\% CIs.}}{8}{table.caption.18}\protected@file@percent }
+\newlabel{tab:probe}{{2}{8}{Causal CoT-intermediate probe on chart/table SFT cells. Flow is raw $n{=}400$ to probe-eligible correct+CoT cases, with \corrupt {}/\shuffle {} denominators in parentheses. $F=\text {flip}_{\corrupt }-\text {flip}_{\shuffle }$; $p_H$ is Holm-adjusted for the one-sided load-bearing test. Snap/follow are rates after \corrupt {} with Wilson 95\% CIs}{table.caption.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {P0-5 cross-family replication.} InternVL3.5-8B is a non-Qwen VLM evaluated on the same ChartQA present-image probe protocol. This row is external-validity evidence and is reported separately from the Qwen-family SFT cells in Table~\ref {tab:probe}.}}{8}{table.caption.19}\protected@file@percent }
+\newlabel{tab:crossfamily}{{3}{8}{\textbf {P0-5 cross-family replication.} InternVL3.5-8B is a non-Qwen VLM evaluated on the same ChartQA present-image probe protocol. This row is external-validity evidence and is reported separately from the Qwen-family SFT cells in Table~\ref {tab:probe}}{table.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Result II: The Causal Probe---the Written Chain Is Not Load-Bearing}{8}{section.5}\protected@file@percent }
+\newlabel{sec:probe}{{5}{8}{Result II: The Causal Probe---the Written Chain Is Not Load-Bearing}{section.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Selection flow and answer-eval strata.} Answer-eval strata are stable-correct / SFT-gain / SFT-loss / both-wrong on the paired $n{=}400$ accuracy run. Probe-kept strata are the same case IDs after the separate CoT-generation eligibility filter. ``No usable corrupt'' is raw cases without a usable \textsc  {corrupt}{} readout, including non-eligible cases and any eligible CoT with no corruptible numeric token. The final columns report present-condition \textsc  {corrupt}{} follow rates in the two strata most relevant to the main claim. Full masked rows, loss/wrong strata, and sensitivity bounds are in \texttt  {faithfulness\_stats.md}.}}{9}{table.caption.20}\protected@file@percent }
+\newlabel{tab:selection}{{4}{9}{\textbf {Selection flow and answer-eval strata.} Answer-eval strata are stable-correct / SFT-gain / SFT-loss / both-wrong on the paired $n{=}400$ accuracy run. Probe-kept strata are the same case IDs after the separate CoT-generation eligibility filter. ``No usable corrupt'' is raw cases without a usable \corrupt {} readout, including non-eligible cases and any eligible CoT with no corruptible numeric token. The final columns report present-condition \corrupt {} follow rates in the two strata most relevant to the main claim. Full masked rows, loss/wrong strata, and sensitivity bounds are in \texttt {faithfulness\_stats.md}}{table.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Result III: Task-Dependent Information Sources and a Constructive Test}{10}{section.6}\protected@file@percent }
+\newlabel{sec:regime}{{6}{10}{Result III: Task-Dependent Information Sources and a Constructive Test}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Natural-image counting (external regime check; redundant-text source).}{11}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Shortcut-removing curriculum (SFT; conclusion-line source).}{11}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion and Limitations}{11}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{7}{11}{Discussion and Limitations}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Implications.}{11}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Deployment audit implications.}{11}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{12}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{12}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{8}{12}{Conclusion}{section.8}{}}
+\newlabel{sec:repro}{{8}{12}{Reproducibility Statement}{section*.26}{}}
 \bibstyle{plainnat}
 \bibdata{references}
 \bibcite{pearl}{{1}{2026}{{Adhikari and Lapata}}{{}}}
@@ -78,29 +101,41 @@
 \bibcite{bentham2024}{{3}{2024}{{Bentham et~al.}}{{Bentham, Stringham, and Marasovic}}}
 \bibcite{chartpali}{{4}{2024}{{Carbune et~al.}}{{Carbune, Mansoor, Liu, Aralikatte, Baechler, Chen, and Sharma}}}
 \bibcite{chartr1}{{5}{2025}{{Chen et~al.}}{{Chen, Zhao, Zeng, Huang, Zhong, and Ma}}}
-\bibcite{codev}{{6}{2026}{{Hou et~al.}}{{Hou, Xu, Biyani, Li, Liu, Hollon, and Wang}}}
-\bibcite{vpd}{{7}{2024}{{Hu et~al.}}{{Hu, Stretcu, Lu, Viswanathan, Hata, Luo, Krishna, and Fuxman}}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{10}{section.8}\protected@file@percent }
-\newlabel{sec:conclusion}{{8}{10}{Conclusion}{section.8}{}}
-\newlabel{sec:repro}{{8}{10}{Reproducibility Statement}{section*.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Artifact Map}{10}{appendix.A}\protected@file@percent }
-\newlabel{app:artifacts}{{A}{10}{Artifact Map}{appendix.A}{}}
-\bibcite{lanham2023}{{8}{2023}{{Lanham et~al.}}{{Lanham, Chen, Radhakrishnan, Steiner, Denison, Hernandez, Li, Durmus, Hubinger, Kernion, et~al.}}}
-\bibcite{capimagine2026}{{9}{2026}{{Li et~al.}}{{Li, Chen, Li, Zeng, Huang, Xu, and Sun}}}
-\bibcite{perceptionbottleneck}{{10}{2025{a}}{{Liu et~al.}}{{Liu, Zeng, Zhang, Wang, Shan, and He}}}
-\bibcite{visualthinking2025}{{11}{2025{b}}{{Liu et~al.}}{{Liu, Pan, She, Gao, and Xia}}}
-\bibcite{tabmwp}{{12}{2023}{{Lu et~al.}}{{Lu, Qiu, Chang, Wu, Zhu, Rajpurohit, Clark, and Kalyan}}}
-\bibcite{lyu2023}{{13}{2023}{{Lyu et~al.}}{{Lyu, Havaldar, Stein, Zhang, Rao, Wong, Apidianaki, and Callison-Burch}}}
-\bibcite{chartqa}{{14}{2022}{{Masry et~al.}}{{Masry, Long, Tan, Joty, and Hoque}}}
-\bibcite{pfau2024}{{15}{2024}{{Pfau et~al.}}{{Pfau, Merrill, and Bowman}}}
-\bibcite{chartnoise}{{16}{2025}{{Shin et~al.}}{{Shin, Sampson, Narayanan, Marquez, and Halappanavar}}}
-\bibcite{chartmuseum}{{17}{2025}{{Tang et~al.}}{{Tang, Kim, Zhao, Lake, Ding, Yin, Singhal, Wadhwa, Liu, Sprague, Namuduri, Hu, Rodriguez, Peng, and Durrett}}}
-\bibcite{locus}{{18}{2026}{{Tao et~al.}}{{Tao, Zhang, Ding, Wang, Sun, Hua, Cao, and Xu}}}
-\bibcite{turpin2023}{{19}{2023}{{Turpin et~al.}}{{Turpin, Michael, Perez, and Bowman}}}
-\bibcite{tutek2025}{{20}{2025}{{Tutek et~al.}}{{Tutek, Chaleshtori, Marasovic, and Belinkov}}}
-\bibcite{internvl35}{{21}{2025}{{Wang et~al.}}{{Wang, Gao, Gu, Pu, Cui, Wei, Liu, Jing, Ye, Shao, et~al.}}}
-\bibcite{charxiv}{{22}{2024}{{Wang et~al.}}{{Wang, Xia, He, Chen, Liu, Zhu, Liang, Wu, Liu, Malladi, Chevalier, Arora, and Chen}}}
-\bibcite{zoomingwithoutzooming}{{23}{2026}{{Wei et~al.}}{{Wei, He, Lan, Dong, Cai, Li, Zhu, Wang, Kong, Wang, Zhang, and Huang}}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt  {Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version.}}{13}{table.caption.24}\protected@file@percent }
-\newlabel{tab:artifacts}{{4}{13}{\textbf {Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt {Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version}{table.caption.24}{}}
-\gdef \@abspage@last{13}
+\bibcite{chen2023pot}{{6}{2023}{{Chen et~al.}}{{Chen, Ma, Wang, and Cohen}}}
+\bibcite{chen2021finqa}{{7}{2021}{{Chen et~al.}}{{Chen, Chen, Smiley, Shah, Borova, Langdon, Moussa, Beane, Huang, Routledge, and Wang}}}
+\bibcite{deyoung2020eraser}{{8}{2020}{{DeYoung et~al.}}{{DeYoung, Jain, Rajani, Lehman, Xiong, Socher, and Wallace}}}
+\bibcite{gao2023pal}{{9}{2023}{{Gao et~al.}}{{Gao, Madaan, Zhou, Alon, Liu, Yang, Callan, and Neubig}}}
+\bibcite{codev}{{10}{2026}{{Hou et~al.}}{{Hou, Xu, Biyani, Li, Liu, Hollon, and Wang}}}
+\bibcite{hsieh2023distilling}{{11}{2023}{{Hsieh et~al.}}{{Hsieh, Li, Yeh, Nakhost, Fujii, Ratner, Krishna, Lee, and Pfister}}}
+\bibcite{vpd}{{12}{2024}{{Hu et~al.}}{{Hu, Stretcu, Lu, Viswanathan, Hata, Luo, Krishna, and Fuxman}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Artifact Map}{13}{appendix.A}\protected@file@percent }
+\newlabel{app:artifacts}{{A}{13}{Artifact Map}{appendix.A}{}}
+\bibcite{jacovi2020faithfulness}{{13}{2020}{{Jacovi and Goldberg}}{{}}}
+\bibcite{kafle2018dvqa}{{14}{2018}{{Kafle et~al.}}{{Kafle, Price, Cohen, and Kanan}}}
+\bibcite{kahou2018figureqa}{{15}{2018}{{Kahou et~al.}}{{Kahou, Michalski, Atkinson, K{\'a}d{\'a}r, Trischler, and Bengio}}}
+\bibcite{kojima2022zeroshot}{{16}{2022}{{Kojima et~al.}}{{Kojima, Gu, Reid, Matsuo, and Iwasawa}}}
+\bibcite{lanham2023}{{17}{2023}{{Lanham et~al.}}{{Lanham, Chen, Radhakrishnan, Steiner, Denison, Hernandez, Li, Durmus, Hubinger, Kernion, et~al.}}}
+\bibcite{capimagine2026}{{18}{2026}{{Li et~al.}}{{Li, Chen, Li, Zeng, Huang, Xu, and Sun}}}
+\bibcite{perceptionbottleneck}{{19}{2025{a}}{{Liu et~al.}}{{Liu, Zeng, Zhang, Wang, Shan, and He}}}
+\bibcite{visualthinking2025}{{20}{2025{b}}{{Liu et~al.}}{{Liu, Pan, She, Gao, and Xia}}}
+\bibcite{tabmwp}{{21}{2023}{{Lu et~al.}}{{Lu, Qiu, Chang, Wu, Zhu, Rajpurohit, Clark, and Kalyan}}}
+\bibcite{lyu2023}{{22}{2023}{{Lyu et~al.}}{{Lyu, Havaldar, Stein, Zhang, Rao, Wong, Apidianaki, and Callison-Burch}}}
+\bibcite{chartqa}{{23}{2022}{{Masry et~al.}}{{Masry, Long, Tan, Joty, and Hoque}}}
+\bibcite{methani2020plotqa}{{24}{2020}{{Methani et~al.}}{{Methani, Ganguly, Khapra, and Kumar}}}
+\bibcite{pfau2024}{{25}{2024}{{Pfau et~al.}}{{Pfau, Merrill, and Bowman}}}
+\bibcite{schick2023toolformer}{{26}{2023}{{Schick et~al.}}{{Schick, Dwivedi-Yu, Dess{\`i}, Raileanu, Lomeli, Hambro, Zettlemoyer, Cancedda, and Scialom}}}
+\bibcite{chartnoise}{{27}{2025}{{Shin et~al.}}{{Shin, Sampson, Narayanan, Marquez, and Halappanavar}}}
+\bibcite{chartmuseum}{{28}{2025}{{Tang et~al.}}{{Tang, Kim, Zhao, Lake, Ding, Yin, Singhal, Wadhwa, Liu, Sprague, Namuduri, Hu, Rodriguez, Peng, and Durrett}}}
+\bibcite{locus}{{29}{2026}{{Tao et~al.}}{{Tao, Zhang, Ding, Wang, Sun, Hua, Cao, and Xu}}}
+\bibcite{turpin2023}{{30}{2023}{{Turpin et~al.}}{{Turpin, Michael, Perez, and Bowman}}}
+\bibcite{tutek2025}{{31}{2025}{{Tutek et~al.}}{{Tutek, Chaleshtori, Marasovic, and Belinkov}}}
+\bibcite{internvl35}{{32}{2025}{{Wang et~al.}}{{Wang, Gao, Gu, Pu, Cui, Wei, Liu, Jing, Ye, Shao, et~al.}}}
+\bibcite{wang2023selfconsistency}{{33}{2023}{{Wang et~al.}}{{Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery, and Zhou}}}
+\bibcite{charxiv}{{34}{2024}{{Wang et~al.}}{{Wang, Xia, He, Chen, Liu, Zhu, Liang, Wu, Liu, Malladi, Chevalier, Arora, and Chen}}}
+\bibcite{wei2022cot}{{35}{2022}{{Wei et~al.}}{{Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le, and Zhou}}}
+\bibcite{zoomingwithoutzooming}{{36}{2026}{{Wei et~al.}}{{Wei, He, Lan, Dong, Cai, Li, Zhu, Wang, Kong, Wang, Zhang, and Huang}}}
+\bibcite{wiegreffe2021teach}{{37}{2021}{{Wiegreffe and Marasovi{\'c}}}{{}}}
+\bibcite{zhu2021tatqa}{{38}{2021}{{Zhu et~al.}}{{Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua}}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt  {Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version.}}{16}{table.caption.27}\protected@file@percent }
+\newlabel{tab:artifacts}{{5}{16}{\textbf {Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt {Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version}{table.caption.27}{}}
+\gdef \@abspage@last{16}

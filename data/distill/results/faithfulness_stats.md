@@ -39,6 +39,18 @@ These cells are not part of the Qwen-family confirmatory Holm family above. They
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | ChartQA InternVL3.5-8B | present | 400->302 (302/302) | 302/400 (0.755) | 0.070/0.096 | -0.026 [-0.053,-0.003] | 0.994 | 0.990 [0.971,0.997] | 0.000 [0.000,0.013] | paired exact sign-randomization |
 
+## P3-1 Generation-Time (Single-Stream) Intervention
+
+Cross-paradigm comparison on the same ChartQA 8B SFT student. The two-pass row is the headline force-continue paradigm; the in-place rows intervene inside the model's own autoregressive stream (no re-prompt, no added instruction, the conclusion line is never supplied). Readout is identical across paradigms. Reported alongside, not replacing, the force-continue results. Pre-registration: docs/preregistration_p3_inplace.md.
+
+| paradigm | condition | n_corrupt | base acc | follow 95% CI | snap 95% CI | flip 95% CI | clean-agree |
+|---|---|---:|---:|---:|---:|---:|---:|
+| twopass (force-continue) | present (re-prompt) | 307 | 0.785 | 0.036 [0.020,0.063] | 0.935 [0.902,0.957] | 0.098 [0.069,0.136] | - |
+| inplace (single stream) | present (locked-visual) | 307 | 0.785 | 0.094 [0.067,0.132] | 0.733 [0.681,0.779] | 0.293 [0.245,0.346] | 287/307 (0.935) |
+| inplace (single stream) | masked-B (no-visual) | 23 | 0.070 | 0.000 [0.000,0.143] | 0.478 [0.292,0.670] | 0.609 [0.408,0.778] | 12/23 (0.522) |
+
+_Interpretation rule (pre-registered): CONVERGENCE if present in-place follow Wilson upper bound < 0.10 and in-place corrupt-flip not materially above two-pass corrupt-flip._
+
 ## Selection Flow and Probe Strata
 
 The probe battery regenerates an original CoT and keeps cases with a nonempty emitted CoT and a correct extracted final answer. The answer-eval columns come from the separate n=400 SFT evaluation JSONL; the small ChartQA 8B disagreement between answer-eval and probe-generation passes is retained as loss/wrong probe strata.

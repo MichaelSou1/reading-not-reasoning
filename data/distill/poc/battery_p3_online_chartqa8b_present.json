@@ -1,0 +1,5869 @@
+{
+  "summary": {
+    "scale": "8b",
+    "paradigm": "inplace",
+    "condition": "present",
+    "mask_image": false,
+    "n_cases": 400,
+    "base_correct": 314,
+    "base_acc": 0.785,
+    "n_eval": 314,
+    "adapter": "/home/gpus/reading-not-reasoning/data/distill/poc/lora_8b_chartqa",
+    "online_corrupt": {
+      "n": 307,
+      "snap": 225,
+      "follow": 29,
+      "other": 53,
+      "flips": 90,
+      "snap_rate": 0.7328990228013029,
+      "follow_rate": 0.09446254071661238,
+      "flip_rate": 0.2931596091205212,
+      "acc_after": 0.7328990228013029
+    },
+    "online_clean_control": {
+      "n": 307,
+      "agree_base": 287,
+      "agree_rate": 0.9348534201954397
+    },
+    "skips": {
+      "no_numeric_target": 7
+    }
+  },
+  "details": [
+    {
+      "case_id": "chartqa-0",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10.",
+      "v_inj": "27",
+      "tok_start": 86,
+      "base_ans": "14",
+      "gold": "14",
+      "inj_ans": "13",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-1",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "103.13",
+      "v_inj": "213.3",
+      "tok_start": 75,
+      "base_ans": "0.57",
+      "gold": "0.57",
+      "inj_ans": "0.57",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-2",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 63,
+      "base_ans": "3",
+      "gold": "3",
+      "inj_ans": "3",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-3",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.21",
+      "v_inj": "7.4",
+      "tok_start": 80,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Yes",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-4",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "62",
+      "v_inj": "131",
+      "tok_start": 117,
+      "base_ans": "23",
+      "gold": "23",
+      "inj_ans": "23.0",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-5",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "23",
+      "v_inj": "53",
+      "tok_start": 88,
+      "base_ans": "6%",
+      "gold": "6",
+      "inj_ans": "6%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-6",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "62",
+      "v_inj": "131",
+      "tok_start": 44,
+      "base_ans": "62%",
+      "gold": "62",
+      "inj_ans": "62",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-7",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "26",
+      "v_inj": "59",
+      "tok_start": 56,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-8",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5.",
+      "v_inj": "17",
+      "tok_start": 166,
+      "base_ans": "Inspired",
+      "gold": "Inspired",
+      "inj_ans": "Inspired",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-10",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 98,
+      "base_ans": "1.0",
+      "gold": "1",
+      "inj_ans": "1.0",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-11",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.08",
+      "v_inj": "7.2",
+      "tok_start": 51,
+      "base_ans": "0.08",
+      "gold": "0.08",
+      "inj_ans": "0.08",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-12",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "31",
+      "v_inj": "69",
+      "tok_start": 66,
+      "base_ans": "17",
+      "gold": "17",
+      "inj_ans": "17",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-13",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "65",
+      "v_inj": "137",
+      "tok_start": 95,
+      "base_ans": "21.7",
+      "gold": "21.6",
+      "inj_ans": "21.7",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-14",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 32,
+      "base_ans": "2%",
+      "gold": "2",
+      "inj_ans": "11%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-15",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "65",
+      "v_inj": "137",
+      "tok_start": 77,
+      "base_ans": "2%",
+      "gold": "2",
+      "inj_ans": "2%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-16",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2011",
+      "v_inj": "4029",
+      "tok_start": 68,
+      "base_ans": "2014",
+      "gold": "2014",
+      "inj_ans": "2014",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-17",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1800",
+      "v_inj": "3607",
+      "tok_start": 67,
+      "base_ans": "2010 to 2011",
+      "gold": "2011",
+      "inj_ans": "- 2014 - 2",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-21",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "15.5",
+      "v_inj": "38.0",
+      "tok_start": 153,
+      "base_ans": "The largest gap occurs in 2008, where the difference is approximately 4",
+      "gold": "2008",
+      "inj_ans": "The largest gap occurs in 2008, where the difference is",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-22",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "29",
+      "v_inj": "65",
+      "tok_start": 279,
+      "base_ans": "29",
+      "gold": "29",
+      "inj_ans": "29",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-24",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 74,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-25",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "48",
+      "v_inj": "103",
+      "tok_start": 100,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-26",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "17",
+      "v_inj": "41",
+      "tok_start": 21,
+      "base_ans": "80%",
+      "gold": "80",
+      "inj_ans": "80%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-27",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "3",
+      "v_inj": "13",
+      "tok_start": 62,
+      "base_ans": "77",
+      "gold": "77",
+      "inj_ans": "77%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-30",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2008",
+      "v_inj": "4023",
+      "tok_start": 32,
+      "base_ans": "13",
+      "gold": "13",
+      "inj_ans": "13",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-33",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "51",
+      "v_inj": "109",
+      "tok_start": 38,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-34",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2018.",
+      "v_inj": "4043",
+      "tok_start": 105,
+      "base_ans": "Italy",
+      "gold": "Italy",
+      "inj_ans": "Italy",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-35",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2018",
+      "v_inj": "4043",
+      "tok_start": 233,
+      "base_ans": "Mexico",
+      "gold": "Mexico",
+      "inj_ans": "Mexico",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-36",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10",
+      "v_inj": "27",
+      "tok_start": 76,
+      "base_ans": "33",
+      "gold": "33",
+      "inj_ans": "33",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-37",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10",
+      "v_inj": "27",
+      "tok_start": 105,
+      "base_ans": "Over 30 mins",
+      "gold": "Over 30 mins",
+      "inj_ans": "Over 30 mins",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-39",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 73,
+      "base_ans": "22%",
+      "gold": "22",
+      "inj_ans": "22%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-40",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "92.",
+      "v_inj": "191",
+      "tok_start": 34,
+      "base_ans": "92",
+      "gold": "92",
+      "inj_ans": "191.0",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-41",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "12.",
+      "v_inj": "31",
+      "tok_start": 215,
+      "base_ans": "96",
+      "gold": "96",
+      "inj_ans": "96",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-42",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "21",
+      "v_inj": "49",
+      "tok_start": 45,
+      "base_ans": "21%",
+      "gold": "21",
+      "inj_ans": "49%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-43",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "21",
+      "v_inj": "49",
+      "tok_start": 74,
+      "base_ans": "12",
+      "gold": "12",
+      "inj_ans": "12",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-44",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2011",
+      "v_inj": "4029",
+      "tok_start": 159,
+      "base_ans": "2005",
+      "gold": "2009",
+      "inj_ans": "2005",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-45",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2015",
+      "v_inj": "4037",
+      "tok_start": 56,
+      "base_ans": "28.7",
+      "gold": "28.6",
+      "inj_ans": "28.7",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-46",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 94,
+      "base_ans": "68%",
+      "gold": "68",
+      "inj_ans": "68",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-47",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2019",
+      "v_inj": "4045",
+      "tok_start": 135,
+      "base_ans": "2019",
+      "gold": "2019",
+      "inj_ans": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-48",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "83",
+      "v_inj": "173",
+      "tok_start": 28,
+      "base_ans": "83",
+      "gold": "83",
+      "inj_ans": "Therefore, the answer is",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-49",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "62",
+      "v_inj": "131",
+      "tok_start": 33,
+      "base_ans": "2.14",
+      "gold": "2.13",
+      "inj_ans": "4.52",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-50",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 90,
+      "base_ans": "Simulation",
+      "gold": "Simulation",
+      "inj_ans": "Simulation",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-51",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "62",
+      "v_inj": "131",
+      "tok_start": 24,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "- Simulation:",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-52",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "26",
+      "v_inj": "59",
+      "tok_start": 58,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-53",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "45",
+      "v_inj": "97",
+      "tok_start": 108,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-54",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "7",
+      "v_inj": "21",
+      "tok_start": 73,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-58",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1993",
+      "v_inj": "3993",
+      "tok_start": 13,
+      "base_ans": "Libya",
+      "gold": "Libya",
+      "inj_ans": "Libya",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-59",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.23",
+      "v_inj": "7.5",
+      "tok_start": 102,
+      "base_ans": "0.23",
+      "gold": "0.23",
+      "inj_ans": "0.23",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-62",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 55,
+      "base_ans": "UK",
+      "gold": "UK",
+      "inj_ans": "UK",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-63",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "54",
+      "v_inj": "115",
+      "tok_start": 78,
+      "base_ans": "50.25",
+      "gold": "50.25",
+      "inj_ans": "65.5",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-64",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "-3",
+      "v_inj": "1",
+      "tok_start": 66,
+      "base_ans": "72%",
+      "gold": "72",
+      "inj_ans": "72%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-67",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "12.4",
+      "v_inj": "31.8",
+      "tok_start": 182,
+      "base_ans": "14.5",
+      "gold": "14.5",
+      "inj_ans": "Sorted: [7.5, 8.1, 10.3, 12.4, 14.5, 17.3, 21.3, 25.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-68",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "000",
+      "v_inj": "7",
+      "tok_start": 74,
+      "base_ans": "175",
+      "gold": "175",
+      "inj_ans": "175",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-69",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "348",
+      "v_inj": "703",
+      "tok_start": 123,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-70",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2016",
+      "v_inj": "4039",
+      "tok_start": 21,
+      "base_ans": "93.45%",
+      "gold": "93.45",
+      "inj_ans": "93.45%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-71",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "44",
+      "v_inj": "95",
+      "tok_start": 52,
+      "base_ans": "51.045",
+      "gold": "51.04",
+      "inj_ans": "51.045",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-72",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "35.",
+      "v_inj": "77",
+      "tok_start": 52,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "No",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-73",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "42",
+      "v_inj": "91",
+      "tok_start": 92,
+      "base_ans": "21.5",
+      "gold": "21.5",
+      "inj_ans": "(1 + 37) / 2 = 38 / 2 = 19",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-76",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "52",
+      "v_inj": "111",
+      "tok_start": 70,
+      "base_ans": "52",
+      "gold": "52",
+      "inj_ans": "111",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-77",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5",
+      "v_inj": "17",
+      "tok_start": 139,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-78",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "91.5",
+      "v_inj": "190.0",
+      "tok_start": 89,
+      "base_ans": "U.S.",
+      "gold": "U.S.",
+      "inj_ans": "U.S.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-79",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "92.9",
+      "v_inj": "192.8",
+      "tok_start": 56,
+      "base_ans": "UK",
+      "gold": "UK",
+      "inj_ans": "2",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-80",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "67",
+      "v_inj": "141",
+      "tok_start": 68,
+      "base_ans": "67",
+      "gold": "67",
+      "inj_ans": "In the \"Total\" row, the second bar (right side) corresponds to \"Everything possible should be done to make it easy to vote\" and is labeled 6",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-82",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 91,
+      "base_ans": "55",
+      "gold": "55",
+      "inj_ans": "55",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-84",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "15",
+      "v_inj": "37",
+      "tok_start": 74,
+      "base_ans": "Rep/Lean Rep",
+      "gold": "Rep/Lean Rep",
+      "inj_ans": "Rep/Lean Rep",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-85",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "64",
+      "v_inj": "135",
+      "tok_start": 79,
+      "base_ans": "0.48",
+      "gold": "0.484375",
+      "inj_ans": "0.484",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-86",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2008",
+      "v_inj": "4023",
+      "tok_start": 88,
+      "base_ans": "- In 2007: 77 (upper) and 47 (lower) — different",
+      "gold": "77",
+      "inj_ans": "- 2013: 4",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-87",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2006",
+      "v_inj": "4019",
+      "tok_start": 149,
+      "base_ans": "141",
+      "gold": "141",
+      "inj_ans": "141",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-88",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 83,
+      "base_ans": "41%",
+      "gold": "41",
+      "inj_ans": "41%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-91",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "55.7",
+      "v_inj": "118.4",
+      "tok_start": 53,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-93",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "34",
+      "v_inj": "75",
+      "tok_start": 54,
+      "base_ans": "99",
+      "gold": "99",
+      "inj_ans": "8 + 34 + 57 = 99. Hmm, that’s not 100. But the chart might have rounding or the note says \"Share of respondents who didn’t offer an answer not shown,\" so perhaps the total is",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-94",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "275",
+      "v_inj": "557",
+      "tok_start": 170,
+      "base_ans": "Solomon Islands",
+      "gold": "Solomon Islands",
+      "inj_ans": "Solomon Islands",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-97",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 66,
+      "base_ans": "35",
+      "gold": "35",
+      "inj_ans": "35",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-98",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "977",
+      "v_inj": "1961",
+      "tok_start": 46,
+      "base_ans": "977,633 t",
+      "gold": "977633",
+      "inj_ans": "1961633",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-99",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.60",
+      "v_inj": "10.2",
+      "tok_start": 80,
+      "base_ans": "1.60 million t",
+      "gold": "1.6",
+      "inj_ans": "1.6 million t",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-100",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 72,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "4",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-101",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 175,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Yes",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-103",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "18",
+      "v_inj": "43",
+      "tok_start": 12,
+      "base_ans": "65",
+      "gold": "65",
+      "inj_ans": "65%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-104",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 45,
+      "base_ans": "25",
+      "gold": "25",
+      "inj_ans": "25",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-105",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "12",
+      "v_inj": "31",
+      "tok_start": 82,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-106",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 97,
+      "base_ans": "28%",
+      "gold": "28",
+      "inj_ans": "28%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-108",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "4",
+      "v_inj": "15",
+      "tok_start": 91,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "4",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-109",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "42",
+      "v_inj": "91",
+      "tok_start": 53,
+      "base_ans": "37%",
+      "gold": "37",
+      "inj_ans": "The median is the middle value: 37.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-110",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "11",
+      "v_inj": "29",
+      "tok_start": 49,
+      "base_ans": "light gray",
+      "gold": "Gray",
+      "inj_ans": "No choice",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-111",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "68",
+      "v_inj": "143",
+      "tok_start": 100,
+      "base_ans": "8%",
+      "gold": "8",
+      "inj_ans": "8",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-112",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2100",
+      "v_inj": "4207",
+      "tok_start": 17,
+      "base_ans": "1.4 billion",
+      "gold": "1.4",
+      "inj_ans": "1.4 billion",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-114",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2001",
+      "v_inj": "4009",
+      "tok_start": 10,
+      "base_ans": "2.42 t",
+      "gold": "2.42",
+      "inj_ans": "2.42 t",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-115",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2.42",
+      "v_inj": "11.8",
+      "tok_start": 63,
+      "base_ans": "0.77 t",
+      "gold": "0.77",
+      "inj_ans": "0.77 t",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-118",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "77",
+      "v_inj": "161",
+      "tok_start": 99,
+      "base_ans": "3",
+      "gold": "3",
+      "inj_ans": "3%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-119",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "50",
+      "v_inj": "107",
+      "tok_start": 100,
+      "base_ans": "21",
+      "gold": "21",
+      "inj_ans": "21",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-122",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "68",
+      "v_inj": "143",
+      "tok_start": 38,
+      "base_ans": "PP (Polypropylene)",
+      "gold": "PP",
+      "inj_ans": "- PVC: 3",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-123",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "68",
+      "v_inj": "143",
+      "tok_start": 55,
+      "base_ans": "3",
+      "gold": "3",
+      "inj_ans": "- PP&A fibers: 59 million tonnes",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-124",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "71",
+      "v_inj": "149",
+      "tok_start": 26,
+      "base_ans": "71",
+      "gold": "71",
+      "inj_ans": "149",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-126",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 36,
+      "base_ans": "30%",
+      "gold": "30",
+      "inj_ans": "67.0",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-127",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 12,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Alternatively, perhaps the chart is mislabeled? Let's check the original chart description:",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-128",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 39,
+      "base_ans": "Saudi Arabia",
+      "gold": "Saudi Arabia",
+      "inj_ans": "Saudi Arabia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-130",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 106,
+      "base_ans": "30%",
+      "gold": "30",
+      "inj_ans": "67%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-132",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2020.",
+      "v_inj": "4047",
+      "tok_start": 111,
+      "base_ans": "83",
+      "gold": "83",
+      "inj_ans": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-134",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 56,
+      "base_ans": "57",
+      "gold": "57",
+      "inj_ans": "57",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-135",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "25",
+      "v_inj": "57",
+      "tok_start": 90,
+      "base_ans": "1.0417",
+      "gold": "1.058333333",
+      "inj_ans": "57.5%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-136",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "61",
+      "v_inj": "129",
+      "tok_start": 76,
+      "base_ans": "61",
+      "gold": "61",
+      "inj_ans": "61%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-137",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "28",
+      "v_inj": "63",
+      "tok_start": 142,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Green bar (Upper",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-138",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 49,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-140",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2013.",
+      "v_inj": "4033",
+      "tok_start": 89,
+      "base_ans": "2013",
+      "gold": "2013",
+      "inj_ans": "2013",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-141",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "15",
+      "v_inj": "37",
+      "tok_start": 111,
+      "base_ans": "1",
+      "gold": "1",
+      "inj_ans": "1",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-146",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "16",
+      "v_inj": "39",
+      "tok_start": 208,
+      "base_ans": "92",
+      "gold": "92",
+      "inj_ans": "92",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-148",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "11",
+      "v_inj": "29",
+      "tok_start": 182,
+      "base_ans": "Favorable",
+      "gold": "Favorable",
+      "inj_ans": "Favorable",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-149",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "71",
+      "v_inj": "149",
+      "tok_start": 190,
+      "base_ans": "ANSWER: 0.9375",
+      "gold": "0.9375",
+      "inj_ans": "Ratio = |Unfavorable change|",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-150",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2014",
+      "v_inj": "4035",
+      "tok_start": 58,
+      "base_ans": "54",
+      "gold": "54",
+      "inj_ans": "54",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-151",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "54",
+      "v_inj": "115",
+      "tok_start": 94,
+      "base_ans": "Now compute the product:",
+      "gold": "No",
+      "inj_ans": ", 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-152",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1994",
+      "v_inj": "3995",
+      "tok_start": 100,
+      "base_ans": "2009",
+      "gold": "2014",
+      "inj_ans": "2014",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-153",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "36",
+      "v_inj": "79",
+      "tok_start": 105,
+      "base_ans": "1969",
+      "gold": "1969",
+      "inj_ans": "The **maximum gap** is **79**, occurring in **1974**",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-154",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2014.",
+      "v_inj": "4035",
+      "tok_start": 56,
+      "base_ans": "orange",
+      "gold": "orange",
+      "inj_ans": "orange",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-157",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 319,
+      "base_ans": "| 2012 | 57    | 28   | 57 - 28 = 29 → abs = 2",
+      "gold": "2010",
+      "inj_ans": "In 2012: China=57, U.S.=28 → difference =",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-158",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 68,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "No",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-161",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2008",
+      "v_inj": "4023",
+      "tok_start": 80,
+      "base_ans": "Favor",
+      "gold": "Favor",
+      "inj_ans": "Favor",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-162",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 51,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Therefore, yes, there is a value 3",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-163",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1993",
+      "v_inj": "3993",
+      "tok_start": 83,
+      "base_ans": "2210",
+      "gold": "2210",
+      "inj_ans": "Product",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-165",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "73",
+      "v_inj": "153",
+      "tok_start": 107,
+      "base_ans": "47%",
+      "gold": "47",
+      "inj_ans": "47%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-166",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "58",
+      "v_inj": "123",
+      "tok_start": 11,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-167",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "39",
+      "v_inj": "85",
+      "tok_start": 47,
+      "base_ans": "13",
+      "gold": "13",
+      "inj_ans": "13",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-168",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0",
+      "v_inj": "7",
+      "tok_start": 94,
+      "base_ans": "dark blue",
+      "gold": "Blue",
+      "inj_ans": "dark blue",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-170",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "55",
+      "v_inj": "117",
+      "tok_start": 59,
+      "base_ans": "Don't know",
+      "gold": "Don't Know",
+      "inj_ans": "Don't know",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-171",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "39",
+      "v_inj": "85",
+      "tok_start": 78,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-172",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10",
+      "v_inj": "27",
+      "tok_start": 37,
+      "base_ans": "10%",
+      "gold": "10",
+      "inj_ans": "27%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-173",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 73,
+      "base_ans": "69%",
+      "gold": "69",
+      "inj_ans": "69%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-174",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "41",
+      "v_inj": "89",
+      "tok_start": 30,
+      "base_ans": "41%",
+      "gold": "41",
+      "inj_ans": "89%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-175",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "32",
+      "v_inj": "71",
+      "tok_start": 27,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "ANSWER:",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-176",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "67",
+      "v_inj": "141",
+      "tok_start": 40,
+      "base_ans": "67",
+      "gold": "67",
+      "inj_ans": "141",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-177",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "40",
+      "v_inj": "87",
+      "tok_start": 104,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-178",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 65,
+      "base_ans": "Bad 22%",
+      "gold": "Bad",
+      "inj_ans": "Bad 22%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-179",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "22",
+      "v_inj": "51",
+      "tok_start": 44,
+      "base_ans": "53%",
+      "gold": "53",
+      "inj_ans": "24%",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-180",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5",
+      "v_inj": "17",
+      "tok_start": 22,
+      "base_ans": "Better off",
+      "gold": "Better off",
+      "inj_ans": "Better off",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-181",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5",
+      "v_inj": "17",
+      "tok_start": 37,
+      "base_ans": "Better off",
+      "gold": "Better off",
+      "inj_ans": "Better off",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-182",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "35",
+      "v_inj": "77",
+      "tok_start": 30,
+      "base_ans": "Important, but lower priority",
+      "gold": "Important, but lower priority",
+      "inj_ans": "The largest slice is **\"Important, but lower priority\" at 40%**, which is larger than \"Top priority\" (3",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-183",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "40",
+      "v_inj": "87",
+      "tok_start": 55,
+      "base_ans": "75%",
+      "gold": "75",
+      "inj_ans": "75%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-184",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "20",
+      "v_inj": "47",
+      "tok_start": 34,
+      "base_ans": "Dissatisfied",
+      "gold": "Dissatisfied",
+      "inj_ans": "Dissatisfied",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-185",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "20",
+      "v_inj": "47",
+      "tok_start": 70,
+      "base_ans": "3.9",
+      "gold": "3.9",
+      "inj_ans": "3.9",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-186",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 117,
+      "base_ans": "76%",
+      "gold": "76",
+      "inj_ans": "76%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-187",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "19",
+      "v_inj": "45",
+      "tok_start": 25,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-189",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "30.",
+      "v_inj": "67",
+      "tok_start": 97,
+      "base_ans": "30",
+      "gold": "30",
+      "inj_ans": "67",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-190",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "16",
+      "v_inj": "39",
+      "tok_start": 101,
+      "base_ans": "16",
+      "gold": "16",
+      "inj_ans": "39%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-191",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "8",
+      "v_inj": "23",
+      "tok_start": 61,
+      "base_ans": "65+",
+      "gold": "65+",
+      "inj_ans": "65+",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-192",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "11.",
+      "v_inj": "29",
+      "tok_start": 86,
+      "base_ans": "11",
+      "gold": "11",
+      "inj_ans": "29",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-193",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "60",
+      "v_inj": "127",
+      "tok_start": 39,
+      "base_ans": "60",
+      "gold": "60",
+      "inj_ans": "127.0",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-195",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "15",
+      "v_inj": "37",
+      "tok_start": 114,
+      "base_ans": "15",
+      "gold": "15",
+      "inj_ans": "19.4",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-196",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2016",
+      "v_inj": "4039",
+      "tok_start": 25,
+      "base_ans": "Japan",
+      "gold": "Japan",
+      "inj_ans": "Japan",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-197",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "39",
+      "v_inj": "85",
+      "tok_start": 68,
+      "base_ans": "36",
+      "gold": "36",
+      "inj_ans": "59",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-201",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "79.84",
+      "v_inj": "166.7",
+      "tok_start": 62,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Finland = 175.09 g",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-203",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.01",
+      "v_inj": "7.0",
+      "tok_start": 47,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-204",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "58.1",
+      "v_inj": "123.2",
+      "tok_start": 100,
+      "base_ans": "Heart disease",
+      "gold": "Heart disease",
+      "inj_ans": "ANS",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-205",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "155.3",
+      "v_inj": "317.6",
+      "tok_start": 70,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "### Step 2: Sort the values in",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-206",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2005",
+      "v_inj": "4017",
+      "tok_start": 12,
+      "base_ans": "North America",
+      "gold": "North America",
+      "inj_ans": "North America",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-207",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 180,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-208",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1990",
+      "v_inj": "3987",
+      "tok_start": 18,
+      "base_ans": "Obesity",
+      "gold": "Obesity",
+      "inj_ans": "Obesity",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-209",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "676",
+      "v_inj": "1359",
+      "tok_start": 82,
+      "base_ans": "203",
+      "gold": "203",
+      "inj_ans": "203",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-211",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 82,
+      "base_ans": "51.33",
+      "gold": "51.33",
+      "inj_ans": "51.33",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-212",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.01",
+      "v_inj": "7.0",
+      "tok_start": 61,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-213",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.13",
+      "v_inj": "7.3",
+      "tok_start": 29,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-214",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2005.",
+      "v_inj": "4017",
+      "tok_start": 74,
+      "base_ans": "0.1%",
+      "gold": "0.1",
+      "inj_ans": "0.1%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-215",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.3",
+      "v_inj": "7.6",
+      "tok_start": 30,
+      "base_ans": "5",
+      "gold": "5",
+      "inj_ans": "5",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-217",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.93",
+      "v_inj": "10.9",
+      "tok_start": 39,
+      "base_ans": "2.88",
+      "gold": "2.88",
+      "inj_ans": "16.32",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-218",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "15",
+      "v_inj": "37",
+      "tok_start": 14,
+      "base_ans": "Low bone mineral density",
+      "gold": "Low bone mineral density",
+      "inj_ans": "Low bone mineral density",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-220",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "70",
+      "v_inj": "147",
+      "tok_start": 36,
+      "base_ans": "27.5%",
+      "gold": "27.5",
+      "inj_ans": "27.5%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-221",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "17.3",
+      "v_inj": "41.6",
+      "tok_start": 75,
+      "base_ans": "10.2%",
+      "gold": "10.2",
+      "inj_ans": "10.2%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-222",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "13.",
+      "v_inj": "33",
+      "tok_start": 107,
+      "base_ans": "16",
+      "gold": "16",
+      "inj_ans": "16",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-223",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "39.8",
+      "v_inj": "86.6",
+      "tok_start": 52,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Therefore, the sum is **not** more than",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-224",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2006.",
+      "v_inj": "4019",
+      "tok_start": 28,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-225",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.28",
+      "v_inj": "7.6",
+      "tok_start": 57,
+      "base_ans": "3.24%",
+      "gold": "3.24",
+      "inj_ans": "3.24%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-226",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "75",
+      "v_inj": "157",
+      "tok_start": 54,
+      "base_ans": "Burkina Faso",
+      "gold": "Burkina Faso",
+      "inj_ans": "Burkina Faso",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-227",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2014",
+      "v_inj": "4035",
+      "tok_start": 18,
+      "base_ans": "5%",
+      "gold": "5",
+      "inj_ans": "5%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-228",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "19",
+      "v_inj": "45",
+      "tok_start": 76,
+      "base_ans": "Lithuania",
+      "gold": "Lithuania",
+      "inj_ans": "Lithuania",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-229",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "000",
+      "v_inj": "7",
+      "tok_start": 16,
+      "base_ans": "28.3",
+      "gold": "28.3",
+      "inj_ans": "28.3",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-230",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.29",
+      "v_inj": "7.6",
+      "tok_start": 81,
+      "base_ans": "0.6 t",
+      "gold": "0.6",
+      "inj_ans": "7.6",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-232",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0",
+      "v_inj": "7",
+      "tok_start": 54,
+      "base_ans": "0.01%",
+      "gold": "0.01",
+      "inj_ans": "0.01%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-233",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.01",
+      "v_inj": "7.0",
+      "tok_start": 60,
+      "base_ans": "0.02%",
+      "gold": "0.02",
+      "inj_ans": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-234",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 71,
+      "base_ans": "1.6",
+      "gold": "1.6",
+      "inj_ans": "1.6",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-235",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2.4",
+      "v_inj": "11.8",
+      "tok_start": 151,
+      "base_ans": "3.2",
+      "gold": "3.2",
+      "inj_ans": "3.2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-236",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "20.98",
+      "v_inj": "49.0",
+      "tok_start": 80,
+      "base_ans": "20.98 m²",
+      "gold": "20.98",
+      "inj_ans": "49.00 m²",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-238",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 59,
+      "base_ans": "41%",
+      "gold": "41",
+      "inj_ans": "41%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-239",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "7",
+      "v_inj": "21",
+      "tok_start": 36,
+      "base_ans": "5.4%",
+      "gold": "5.4",
+      "inj_ans": "20.0%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-240",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "163",
+      "v_inj": "333",
+      "tok_start": 55,
+      "base_ans": "Nepal",
+      "gold": "Nepal",
+      "inj_ans": "Nepal",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-241",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "216",
+      "v_inj": "439",
+      "tok_start": 57,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-242",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5.25",
+      "v_inj": "17.5",
+      "tok_start": 51,
+      "base_ans": "5.25 trillion",
+      "gold": "5.25",
+      "inj_ans": "17.5 trillion",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-245",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2015",
+      "v_inj": "4037",
+      "tok_start": 15,
+      "base_ans": "1.6%",
+      "gold": "1.6",
+      "inj_ans": "1.6%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-246",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "96.4",
+      "v_inj": "199.8",
+      "tok_start": 107,
+      "base_ans": "96.4%",
+      "gold": "96.4",
+      "inj_ans": "96.4%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-247",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "96.4",
+      "v_inj": "199.8",
+      "tok_start": 83,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-249",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 68,
+      "base_ans": "38",
+      "gold": "38",
+      "inj_ans": "38",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-250",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.5",
+      "v_inj": "10.0",
+      "tok_start": 39,
+      "base_ans": "Mexico",
+      "gold": "Mexico",
+      "inj_ans": "Mexico",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-251",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.5",
+      "v_inj": "10.0",
+      "tok_start": 72,
+      "base_ans": "1.35 t",
+      "gold": "1.346",
+      "inj_ans": "1.01",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-252",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "40.7",
+      "v_inj": "88.4",
+      "tok_start": 58,
+      "base_ans": "40.7%",
+      "gold": "40.7",
+      "inj_ans": "88.4%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-254",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 31,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-255",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 88,
+      "base_ans": "41.935",
+      "gold": "41.935",
+      "inj_ans": "41.935",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-256",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "13.76",
+      "v_inj": "34.5",
+      "tok_start": 145,
+      "base_ans": "Belarus",
+      "gold": "Belarus",
+      "inj_ans": "Belarus",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-257",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.08",
+      "v_inj": "7.2",
+      "tok_start": 66,
+      "base_ans": "0.08",
+      "gold": "0.08",
+      "inj_ans": "0.08",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-258",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "11.6",
+      "v_inj": "30.2",
+      "tok_start": 73,
+      "base_ans": "Mongolia",
+      "gold": "Mongolia",
+      "inj_ans": "Mongolia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-259",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2004",
+      "v_inj": "4015",
+      "tok_start": 14,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-260",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2002",
+      "v_inj": "4011",
+      "tok_start": 67,
+      "base_ans": "9.29%",
+      "gold": "9.29",
+      "inj_ans": "9.29%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-262",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5",
+      "v_inj": "17",
+      "tok_start": 49,
+      "base_ans": "5",
+      "gold": "5",
+      "inj_ans": "17",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-263",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "80",
+      "v_inj": "167",
+      "tok_start": 154,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-264",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 102,
+      "base_ans": "6.85%",
+      "gold": "6.85",
+      "inj_ans": "6.85%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-265",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "6",
+      "v_inj": "19",
+      "tok_start": 117,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-266",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "99.96",
+      "v_inj": "206.9",
+      "tok_start": 56,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "4",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-267",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "100",
+      "v_inj": "207",
+      "tok_start": 80,
+      "base_ans": "47.6%",
+      "gold": "47.6",
+      "inj_ans": "47.6%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-268",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2016",
+      "v_inj": "4039",
+      "tok_start": 10,
+      "base_ans": "1",
+      "gold": "1",
+      "inj_ans": "1",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-269",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10.4",
+      "v_inj": "27.8",
+      "tok_start": 108,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-270",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "24.87",
+      "v_inj": "56.7",
+      "tok_start": 54,
+      "base_ans": "Greece",
+      "gold": "Greece",
+      "inj_ans": "Costa Rica",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-271",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2012",
+      "v_inj": "4031",
+      "tok_start": 55,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-272",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2008",
+      "v_inj": "4023",
+      "tok_start": 17,
+      "base_ans": "dark grayish-blue",
+      "gold": "gray",
+      "inj_ans": "grayish-blue",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-273",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "60.65",
+      "v_inj": "128.3",
+      "tok_start": 58,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-274",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2014",
+      "v_inj": "4035",
+      "tok_start": 17,
+      "base_ans": "Human capital",
+      "gold": "Human capital",
+      "inj_ans": "Human capital",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-276",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2015",
+      "v_inj": "4037",
+      "tok_start": 31,
+      "base_ans": "2015",
+      "gold": "2015",
+      "inj_ans": "2015",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-277",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "143",
+      "v_inj": "293",
+      "tok_start": 68,
+      "base_ans": "143 million tonnes",
+      "gold": "143",
+      "inj_ans": "293 million tonnes",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-278",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2008",
+      "v_inj": "4023",
+      "tok_start": 14,
+      "base_ans": "48.01",
+      "gold": "48.01",
+      "inj_ans": "48.01",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-279",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "48.01",
+      "v_inj": "103.0",
+      "tok_start": 147,
+      "base_ans": "32.115",
+      "gold": "32.115",
+      "inj_ans": "Average = (16.22",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-280",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 57,
+      "base_ans": "0.04",
+      "gold": "0.04",
+      "inj_ans": "0.04",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-281",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5",
+      "v_inj": "17",
+      "tok_start": 48,
+      "base_ans": "0.11",
+      "gold": "0.11",
+      "inj_ans": "0.11",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-282",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "56.6",
+      "v_inj": "120.2",
+      "tok_start": 43,
+      "base_ans": "56.6%",
+      "gold": "56.6",
+      "inj_ans": "120.2%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-283",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "56.6",
+      "v_inj": "120.2",
+      "tok_start": 53,
+      "base_ans": "13.5%",
+      "gold": "13.5",
+      "inj_ans": "13.5%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-284",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 67,
+      "base_ans": "0.69",
+      "gold": "0.69",
+      "inj_ans": "0.69",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-285",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.11",
+      "v_inj": "7.2",
+      "tok_start": 93,
+      "base_ans": "0.235",
+      "gold": "0.235",
+      "inj_ans": "0.235",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-286",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "24",
+      "v_inj": "55",
+      "tok_start": 89,
+      "base_ans": "24%",
+      "gold": "24",
+      "inj_ans": "55.0%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-287",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "3.8",
+      "v_inj": "14.6",
+      "tok_start": 54,
+      "base_ans": "6.2%",
+      "gold": "6.2",
+      "inj_ans": "6.2%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-288",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "172.55",
+      "v_inj": "352.1",
+      "tok_start": 64,
+      "base_ans": "Switzerland",
+      "gold": "Switzerland",
+      "inj_ans": "Switzerland",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-289",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "247.54",
+      "v_inj": "502.1",
+      "tok_start": 56,
+      "base_ans": "1541.08",
+      "gold": "1541.08",
+      "inj_ans": "1286.48",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-290",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1990.",
+      "v_inj": "3987",
+      "tok_start": 17,
+      "base_ans": "Alcohol",
+      "gold": "Alcohol",
+      "inj_ans": "Alcohol",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-291",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "60",
+      "v_inj": "127",
+      "tok_start": 77,
+      "base_ans": "60",
+      "gold": "60",
+      "inj_ans": "127",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-292",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "5.8",
+      "v_inj": "18.6",
+      "tok_start": 114,
+      "base_ans": "Philippines",
+      "gold": "Philippines",
+      "inj_ans": "Philippines",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-293",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "18.10",
+      "v_inj": "43.2",
+      "tok_start": 141,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-294",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1989",
+      "v_inj": "3985",
+      "tok_start": 13,
+      "base_ans": "Brazil",
+      "gold": "Brazil",
+      "inj_ans": "Brazil",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-295",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1989",
+      "v_inj": "3985",
+      "tok_start": 12,
+      "base_ans": "3.4%",
+      "gold": "3.4",
+      "inj_ans": "3.4%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-296",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "16.26",
+      "v_inj": "39.5",
+      "tok_start": 37,
+      "base_ans": "United States",
+      "gold": "United States",
+      "inj_ans": "United States",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-297",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2.36",
+      "v_inj": "11.7",
+      "tok_start": 128,
+      "base_ans": "4.19 million t",
+      "gold": "4.19",
+      "inj_ans": "5.89 million t",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-298",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2003",
+      "v_inj": "4013",
+      "tok_start": 21,
+      "base_ans": "95%",
+      "gold": "95",
+      "inj_ans": "95%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-299",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "95",
+      "v_inj": "197",
+      "tok_start": 75,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-300",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 73,
+      "base_ans": "Deaths from HIV/AIDS",
+      "gold": "Deaths from HIV/AIDS",
+      "inj_ans": "Deaths from HIV/AIDS",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-302",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 112,
+      "base_ans": "Samoa",
+      "gold": "Samoa",
+      "inj_ans": "Samoa",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-304",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2000",
+      "v_inj": "4007",
+      "tok_start": 80,
+      "base_ans": "$24,688.3",
+      "gold": "24688.3",
+      "inj_ans": "$24,688.3 (4007)",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-305",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "688.3",
+      "v_inj": "1383.6",
+      "tok_start": 147,
+      "base_ans": "82.2",
+      "gold": "82.2",
+      "inj_ans": "$82.2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-306",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "11.",
+      "v_inj": "29",
+      "tok_start": 121,
+      "base_ans": "13",
+      "gold": "13",
+      "inj_ans": "13",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-307",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "-14",
+      "v_inj": "-21",
+      "tok_start": 17,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Is 77,846 > 59,0",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-310",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "191.6",
+      "v_inj": "390.2",
+      "tok_start": 71,
+      "base_ans": "Medium car (petrol)",
+      "gold": "Medium car (petrol)",
+      "inj_ans": "- \"Euro",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-311",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "140",
+      "v_inj": "287",
+      "tok_start": 66,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "No",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-312",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 82,
+      "base_ans": "Malawi",
+      "gold": "Malawi",
+      "inj_ans": "Malawi",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-313",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.91",
+      "v_inj": "10.8",
+      "tok_start": 174,
+      "base_ans": "1.91",
+      "gold": "1.905805459",
+      "inj_ans": "But the chart shows Malawi at 49.57%, Turkey at 26.17%, and Tunisia",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-314",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "22",
+      "v_inj": "51",
+      "tok_start": 16,
+      "base_ans": "Italy, 22%",
+      "gold": "[Italy , 22]",
+      "inj_ans": "Italy, 51%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-315",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "22",
+      "v_inj": "51",
+      "tok_start": 34,
+      "base_ans": "2.55",
+      "gold": "2.54",
+      "inj_ans": "1.10",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-316",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "12.17",
+      "v_inj": "31.3",
+      "tok_start": 53,
+      "base_ans": "27.22",
+      "gold": "27.22",
+      "inj_ans": "46.37%",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-319",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1896",
+      "v_inj": "3799",
+      "tok_start": 21,
+      "base_ans": "0.08%",
+      "gold": "0.08",
+      "inj_ans": "0.08%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-320",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "8.5",
+      "v_inj": "24.0",
+      "tok_start": 48,
+      "base_ans": "8.5",
+      "gold": "8.5",
+      "inj_ans": "24.0",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-321",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "4.9",
+      "v_inj": "16.8",
+      "tok_start": 110,
+      "base_ans": "10.2",
+      "gold": "10.2",
+      "inj_ans": "11.2",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-322",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 34,
+      "base_ans": "3.88",
+      "gold": "3.88",
+      "inj_ans": "3.88",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-323",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2.18",
+      "v_inj": "11.4",
+      "tok_start": 164,
+      "base_ans": "3",
+      "gold": "3",
+      "inj_ans": "- Eggs: 2.",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-324",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2003",
+      "v_inj": "4013",
+      "tok_start": 34,
+      "base_ans": "$9,546.35 (2003)",
+      "gold": "9545.35",
+      "inj_ans": "$9,546.35 (4013)",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-325",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "868.49",
+      "v_inj": "1744.0",
+      "tok_start": 225,
+      "base_ans": "14151.35",
+      "gold": "14153.35",
+      "inj_ans": "$14,151.35",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-326",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 131,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-328",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2013",
+      "v_inj": "4033",
+      "tok_start": 16,
+      "base_ans": "28",
+      "gold": "28",
+      "inj_ans": "28",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-329",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "10",
+      "v_inj": "27",
+      "tok_start": 41,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "- Share of women in top 0.5%",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-330",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "191.7",
+      "v_inj": "390.4",
+      "tok_start": 60,
+      "base_ans": "Argentina",
+      "gold": "Argentina",
+      "inj_ans": "Argentina",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-331",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "713.2",
+      "v_inj": "1433.4",
+      "tok_start": 139,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "Yes",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-332",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.08",
+      "v_inj": "9.2",
+      "tok_start": 53,
+      "base_ans": "Chemistry",
+      "gold": "Chemistry",
+      "inj_ans": "Chemistry",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-333",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.08",
+      "v_inj": "9.2",
+      "tok_start": 162,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "1.08",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-334",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.15",
+      "v_inj": "9.3",
+      "tok_start": 26,
+      "base_ans": "Venezuela",
+      "gold": "Venezuela",
+      "inj_ans": "Venezuela",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-335",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 83,
+      "base_ans": "0.02%",
+      "gold": "0.02",
+      "inj_ans": "0.02%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-336",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2010",
+      "v_inj": "4027",
+      "tok_start": 20,
+      "base_ans": "Reddish-brown",
+      "gold": "brown",
+      "inj_ans": "Reddish-brown",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-337",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "32.8",
+      "v_inj": "72.6",
+      "tok_start": 54,
+      "base_ans": "1.02",
+      "gold": "1.015645372",
+      "inj_ans": "[FRAME:t=0",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-339",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1",
+      "v_inj": "9",
+      "tok_start": 93,
+      "base_ans": "No, the",
+      "gold": "No",
+      "inj_ans": "1/5 of 40.7",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-340",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "-17",
+      "v_inj": "-27",
+      "tok_start": 13,
+      "base_ans": "53.9 hours",
+      "gold": "53.9",
+      "inj_ans": "53.9 hours",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-341",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1970.",
+      "v_inj": "3947",
+      "tok_start": 16,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "- \"Ages 18",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-342",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "8.87",
+      "v_inj": "24.7",
+      "tok_start": 50,
+      "base_ans": "8.87%",
+      "gold": "8.87",
+      "inj_ans": "24.7%",
+      "readout": "follow",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-343",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "3",
+      "v_inj": "13",
+      "tok_start": 176,
+      "base_ans": "32.43",
+      "gold": "32.43",
+      "inj_ans": "32.43",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-344",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2015",
+      "v_inj": "4037",
+      "tok_start": 48,
+      "base_ans": "7.54%",
+      "gold": "7.54",
+      "inj_ans": "7.54%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-345",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "13.4",
+      "v_inj": "33.8",
+      "tok_start": 77,
+      "base_ans": "1.89",
+      "gold": "1.88",
+      "inj_ans": "1.88",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-346",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "100",
+      "v_inj": "207",
+      "tok_start": 14,
+      "base_ans": "Myanmar",
+      "gold": "Myanmar",
+      "inj_ans": "Comparing the values, **Myanmar** consistently has the highest death rate, peaking above 58 in 2005–2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-347",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "28",
+      "v_inj": "63",
+      "tok_start": 82,
+      "base_ans": "Zambia",
+      "gold": "Zambia",
+      "inj_ans": "Zambia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-349",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "45",
+      "v_inj": "97",
+      "tok_start": 11,
+      "base_ans": "2015",
+      "gold": "2015",
+      "inj_ans": "2015",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-350",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1991",
+      "v_inj": "3989",
+      "tok_start": 13,
+      "base_ans": "Georgia",
+      "gold": "Georgia",
+      "inj_ans": "Georgia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-351",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1.5",
+      "v_inj": "10.0",
+      "tok_start": 268,
+      "base_ans": "Spain",
+      "gold": "Spain",
+      "inj_ans": "Spain",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-352",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 84,
+      "base_ans": "Belize's Statistical Capacity Indicator",
+      "gold": "Belize",
+      "inj_ans": "Belize's Statistical Capacity Indicator",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-354",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 90,
+      "base_ans": "Benin",
+      "gold": "Benin",
+      "inj_ans": "Benin",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-355",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2006",
+      "v_inj": "4019",
+      "tok_start": 60,
+      "base_ans": "Sudan",
+      "gold": "Sudan",
+      "inj_ans": "- **Sudan** (dark blue line): In 2006, it is around 6",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-356",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1991",
+      "v_inj": "3989",
+      "tok_start": 15,
+      "base_ans": "Mongolia",
+      "gold": "Mongolia",
+      "inj_ans": "Mongolia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-358",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2004",
+      "v_inj": "4015",
+      "tok_start": 37,
+      "base_ans": "North America",
+      "gold": "North America",
+      "inj_ans": "North America",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-360",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0",
+      "v_inj": "7",
+      "tok_start": 55,
+      "base_ans": "1",
+      "gold": "1",
+      "inj_ans": "1",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-361",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "000",
+      "v_inj": "7",
+      "tok_start": 40,
+      "base_ans": "Neither increases nor decreases",
+      "gold": "No",
+      "inj_ans": "Neither increase nor decrease",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-362",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "3",
+      "v_inj": "13",
+      "tok_start": 129,
+      "base_ans": "Hong Kong",
+      "gold": "Hong Kong",
+      "inj_ans": "Hong Kong",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-366",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2012",
+      "v_inj": "4031",
+      "tok_start": 97,
+      "base_ans": "Estonia",
+      "gold": "Estonia",
+      "inj_ans": "Estonia",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-367",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "000",
+      "v_inj": "7",
+      "tok_start": 219,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-368",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "20",
+      "v_inj": "47",
+      "tok_start": 76,
+      "base_ans": "1960",
+      "gold": "1960",
+      "inj_ans": "1960",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-370",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1990",
+      "v_inj": "3987",
+      "tok_start": 18,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "4",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-372",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 50,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-373",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2.0",
+      "v_inj": "11",
+      "tok_start": 145,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-374",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 143,
+      "base_ans": "purple",
+      "gold": "Purple",
+      "inj_ans": "purple",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-378",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 50,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "2",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-380",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1979",
+      "v_inj": "3965",
+      "tok_start": 14,
+      "base_ans": "1992",
+      "gold": "1992",
+      "inj_ans": "1992",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-381",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1986",
+      "v_inj": "3979",
+      "tok_start": 47,
+      "base_ans": "3.0%",
+      "gold": "3",
+      "inj_ans": "3.0%",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-384",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2005",
+      "v_inj": "4017",
+      "tok_start": 55,
+      "base_ans": "2014",
+      "gold": "2014",
+      "inj_ans": "2014",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-385",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2006",
+      "v_inj": "4019",
+      "tok_start": 36,
+      "base_ans": "6",
+      "gold": "6",
+      "inj_ans": "6",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-386",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "0.0",
+      "v_inj": "7",
+      "tok_start": 57,
+      "base_ans": "4",
+      "gold": "4",
+      "inj_ans": "4",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-387",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2006.",
+      "v_inj": "4019",
+      "tok_start": 48,
+      "base_ans": "2",
+      "gold": "2",
+      "inj_ans": "- **American Samoa**: The line for American Samoa is flat and low throughout the period, with no significant increase",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-388",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2004.",
+      "v_inj": "4015",
+      "tok_start": 91,
+      "base_ans": "Burundi",
+      "gold": "Burundi",
+      "inj_ans": "Burundi",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-390",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1200",
+      "v_inj": "2407",
+      "tok_start": 102,
+      "base_ans": "2004",
+      "gold": "2004",
+      "inj_ans": "2004",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-392",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2000.",
+      "v_inj": "4007",
+      "tok_start": 175,
+      "base_ans": "Gabon",
+      "gold": "Gabon",
+      "inj_ans": "Gabon",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-393",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1989",
+      "v_inj": "3985",
+      "tok_start": 50,
+      "base_ans": "18",
+      "gold": "18",
+      "inj_ans": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-394",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "39",
+      "v_inj": "85",
+      "tok_start": 57,
+      "base_ans": "orange-red",
+      "gold": "orange",
+      "inj_ans": "orange-red",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-395",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "20.0",
+      "v_inj": "47",
+      "tok_start": 128,
+      "base_ans": "- 2010: ~55.0% → decrease from 2009: 55.0 -",
+      "gold": "2005",
+      "inj_ans": "- 2009: ~57.0% → increase from 2008: 57",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-398",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "2014.",
+      "v_inj": "4035",
+      "tok_start": 22,
+      "base_ans": "Belize",
+      "gold": "Belize",
+      "inj_ans": "Belize",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-400",
+      "paradigm": "inplace",
+      "condition": "present",
+      "v_true": "1961",
+      "v_inj": "3929",
+      "tok_start": 11,
+      "base_ans": "Asia",
+      "gold": "Asia",
+      "inj_ans": "Asia",
+      "readout": "snap",
+      "flip": false
+    }
+  ],
+  "clean_details": [
+    {
+      "case_id": "chartqa-0",
+      "clean_ans": "14",
+      "base_ans": "14",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-1",
+      "clean_ans": "0.57",
+      "base_ans": "0.57",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-2",
+      "clean_ans": "3",
+      "base_ans": "3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-3",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-4",
+      "clean_ans": "23",
+      "base_ans": "23",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-5",
+      "clean_ans": "6%",
+      "base_ans": "6%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-6",
+      "clean_ans": "62%",
+      "base_ans": "62%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-7",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-8",
+      "clean_ans": "Inspired",
+      "base_ans": "Inspired",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-10",
+      "clean_ans": "1.0",
+      "base_ans": "1.0",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-11",
+      "clean_ans": "0.08",
+      "base_ans": "0.08",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-12",
+      "clean_ans": "17",
+      "base_ans": "17",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-13",
+      "clean_ans": "21.7",
+      "base_ans": "21.7",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-14",
+      "clean_ans": "2%",
+      "base_ans": "2%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-15",
+      "clean_ans": "2%",
+      "base_ans": "2%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-16",
+      "clean_ans": "2014",
+      "base_ans": "2014",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-17",
+      "clean_ans": "2010 to 2011",
+      "base_ans": "2010 to 2011",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-21",
+      "clean_ans": "The largest gap occurs in 2008, where the difference is",
+      "base_ans": "The largest gap occurs in 2008, where the difference is approximately 4",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-22",
+      "clean_ans": "29",
+      "base_ans": "29",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-24",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-25",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-26",
+      "clean_ans": "80%",
+      "base_ans": "80%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-27",
+      "clean_ans": "77",
+      "base_ans": "77",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-30",
+      "clean_ans": "13",
+      "base_ans": "13",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-33",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-34",
+      "clean_ans": "Italy",
+      "base_ans": "Italy",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-35",
+      "clean_ans": "Mexico",
+      "base_ans": "Mexico",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-36",
+      "clean_ans": "33",
+      "base_ans": "33",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-37",
+      "clean_ans": "Over 30 mins",
+      "base_ans": "Over 30 mins",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-39",
+      "clean_ans": "22%",
+      "base_ans": "22%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-40",
+      "clean_ans": "92",
+      "base_ans": "92",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-41",
+      "clean_ans": "96",
+      "base_ans": "96",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-42",
+      "clean_ans": "21%",
+      "base_ans": "21%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-43",
+      "clean_ans": "12",
+      "base_ans": "12",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-44",
+      "clean_ans": "2005",
+      "base_ans": "2005",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-45",
+      "clean_ans": "28.7",
+      "base_ans": "28.7",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-46",
+      "clean_ans": "68%",
+      "base_ans": "68%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-47",
+      "clean_ans": "2019",
+      "base_ans": "2019",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-48",
+      "clean_ans": "83",
+      "base_ans": "83",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-49",
+      "clean_ans": "2.14",
+      "base_ans": "2.14",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-50",
+      "clean_ans": "Simulation",
+      "base_ans": "Simulation",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-51",
+      "clean_ans": "Total",
+      "base_ans": "4",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-52",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-53",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-54",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-58",
+      "clean_ans": "Libya",
+      "base_ans": "Libya",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-59",
+      "clean_ans": "0.23",
+      "base_ans": "0.23",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-62",
+      "clean_ans": "UK",
+      "base_ans": "UK",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-63",
+      "clean_ans": "50.25",
+      "base_ans": "50.25",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-64",
+      "clean_ans": "72%",
+      "base_ans": "72%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-67",
+      "clean_ans": "14.5",
+      "base_ans": "14.5",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-68",
+      "clean_ans": "175",
+      "base_ans": "175",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-69",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-70",
+      "clean_ans": "93.45%",
+      "base_ans": "93.45%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-71",
+      "clean_ans": "51.045",
+      "base_ans": "51.045",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-72",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-73",
+      "clean_ans": "21.5",
+      "base_ans": "21.5",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-76",
+      "clean_ans": "52",
+      "base_ans": "52",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-77",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-78",
+      "clean_ans": "U.S.",
+      "base_ans": "U.S.",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-79",
+      "clean_ans": "UK",
+      "base_ans": "UK",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-80",
+      "clean_ans": "67",
+      "base_ans": "67",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-82",
+      "clean_ans": "55",
+      "base_ans": "55",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-84",
+      "clean_ans": "Rep/Lean Rep",
+      "base_ans": "Rep/Lean Rep",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-85",
+      "clean_ans": "31/64",
+      "base_ans": "0.48",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-86",
+      "clean_ans": "- 2013: 4",
+      "base_ans": "- In 2007: 77 (upper) and 47 (lower) — different",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-87",
+      "clean_ans": "141",
+      "base_ans": "141",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-88",
+      "clean_ans": "41%",
+      "base_ans": "41%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-91",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-93",
+      "clean_ans": "99",
+      "base_ans": "99",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-94",
+      "clean_ans": "Solomon Islands",
+      "base_ans": "Solomon Islands",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-97",
+      "clean_ans": "35",
+      "base_ans": "35",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-98",
+      "clean_ans": "977,633 t",
+      "base_ans": "977,633 t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-99",
+      "clean_ans": "1.60 million t",
+      "base_ans": "1.60 million t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-100",
+      "clean_ans": "4",
+      "base_ans": "4",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-101",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-103",
+      "clean_ans": "65",
+      "base_ans": "65",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-104",
+      "clean_ans": "25",
+      "base_ans": "25",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-105",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-106",
+      "clean_ans": "28%",
+      "base_ans": "28%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-108",
+      "clean_ans": "4",
+      "base_ans": "4",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-109",
+      "clean_ans": "37%",
+      "base_ans": "37%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-110",
+      "clean_ans": "No choice",
+      "base_ans": "light gray",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-111",
+      "clean_ans": "8%",
+      "base_ans": "8%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-112",
+      "clean_ans": "1.4 billion",
+      "base_ans": "1.4 billion",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-114",
+      "clean_ans": "2.42 t",
+      "base_ans": "2.42 t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-115",
+      "clean_ans": "0.77 t",
+      "base_ans": "0.77 t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-118",
+      "clean_ans": "3",
+      "base_ans": "3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-119",
+      "clean_ans": "21",
+      "base_ans": "21",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-122",
+      "clean_ans": "PP (Polypropylene)",
+      "base_ans": "PP (Polypropylene)",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-123",
+      "clean_ans": "3",
+      "base_ans": "3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-124",
+      "clean_ans": "71",
+      "base_ans": "71",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-126",
+      "clean_ans": "30%",
+      "base_ans": "30%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-127",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-128",
+      "clean_ans": "Saudi Arabia",
+      "base_ans": "Saudi Arabia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-130",
+      "clean_ans": "30%",
+      "base_ans": "30%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-132",
+      "clean_ans": "83",
+      "base_ans": "83",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-134",
+      "clean_ans": "57",
+      "base_ans": "57",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-135",
+      "clean_ans": "1.0417",
+      "base_ans": "1.0417",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-136",
+      "clean_ans": "61",
+      "base_ans": "61",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-137",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-138",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-140",
+      "clean_ans": "2013",
+      "base_ans": "2013",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-141",
+      "clean_ans": "1",
+      "base_ans": "1",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-146",
+      "clean_ans": "92",
+      "base_ans": "92",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-148",
+      "clean_ans": "Favorable",
+      "base_ans": "Favorable",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-149",
+      "clean_ans": "ANSWER: 0.9375",
+      "base_ans": "ANSWER: 0.9375",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-150",
+      "clean_ans": "54",
+      "base_ans": "54",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-151",
+      "clean_ans": "- Oct 2014:",
+      "base_ans": "Now compute the product:",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-152",
+      "clean_ans": "2009",
+      "base_ans": "2009",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-153",
+      "clean_ans": "The **maximum gap** is **72**, which occurs in **1969",
+      "base_ans": "1969",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-154",
+      "clean_ans": "orange",
+      "base_ans": "orange",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-157",
+      "clean_ans": "2010",
+      "base_ans": "| 2012 | 57    | 28   | 57 - 28 = 29 → abs = 2",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-158",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-161",
+      "clean_ans": "Favor",
+      "base_ans": "Favor",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-162",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-163",
+      "clean_ans": "Product",
+      "base_ans": "2210",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-165",
+      "clean_ans": "47%",
+      "base_ans": "47%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-166",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-167",
+      "clean_ans": "13",
+      "base_ans": "13",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-168",
+      "clean_ans": "dark blue",
+      "base_ans": "dark blue",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-170",
+      "clean_ans": "Don't know",
+      "base_ans": "Don't know",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-171",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-172",
+      "clean_ans": "10%",
+      "base_ans": "10%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-173",
+      "clean_ans": "69%",
+      "base_ans": "69%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-174",
+      "clean_ans": "41%",
+      "base_ans": "41%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-175",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-176",
+      "clean_ans": "67",
+      "base_ans": "67",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-177",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-178",
+      "clean_ans": "Bad 22%",
+      "base_ans": "Bad 22%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-179",
+      "clean_ans": "53%",
+      "base_ans": "53%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-180",
+      "clean_ans": "Better off",
+      "base_ans": "Better off",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-181",
+      "clean_ans": "Better off",
+      "base_ans": "Better off",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-182",
+      "clean_ans": "Important, but lower priority",
+      "base_ans": "Important, but lower priority",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-183",
+      "clean_ans": "75%",
+      "base_ans": "75%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-184",
+      "clean_ans": "Dissatisfied",
+      "base_ans": "Dissatisfied",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-185",
+      "clean_ans": "3.9",
+      "base_ans": "3.9",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-186",
+      "clean_ans": "76%",
+      "base_ans": "76%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-187",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-189",
+      "clean_ans": "30",
+      "base_ans": "30",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-190",
+      "clean_ans": "16",
+      "base_ans": "16",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-191",
+      "clean_ans": "65+",
+      "base_ans": "65+",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-192",
+      "clean_ans": "11",
+      "base_ans": "11",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-193",
+      "clean_ans": "60",
+      "base_ans": "60",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-195",
+      "clean_ans": "15",
+      "base_ans": "15",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-196",
+      "clean_ans": "The data is explicitly about Japan, as indicated by the title and",
+      "base_ans": "Japan",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-197",
+      "clean_ans": "36",
+      "base_ans": "36",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-201",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-203",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-204",
+      "clean_ans": "Heart disease",
+      "base_ans": "Heart disease",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-205",
+      "clean_ans": "The median is the 5th value in the sorted list (since",
+      "base_ans": "Yes",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-206",
+      "clean_ans": "North America",
+      "base_ans": "North America",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-207",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-208",
+      "clean_ans": "Obesity",
+      "base_ans": "Obesity",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-209",
+      "clean_ans": "203",
+      "base_ans": "203",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-211",
+      "clean_ans": "51.33",
+      "base_ans": "51.33",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-212",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-213",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-214",
+      "clean_ans": "0.1%",
+      "base_ans": "0.1%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-215",
+      "clean_ans": "5",
+      "base_ans": "5",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-217",
+      "clean_ans": "2.88",
+      "base_ans": "2.88",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-218",
+      "clean_ans": "Low bone mineral density",
+      "base_ans": "Low bone mineral density",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-220",
+      "clean_ans": "27.5%",
+      "base_ans": "27.5%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-221",
+      "clean_ans": "10.2%",
+      "base_ans": "10.2%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-222",
+      "clean_ans": "16",
+      "base_ans": "16",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-223",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-224",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-225",
+      "clean_ans": "3.24%",
+      "base_ans": "3.24%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-226",
+      "clean_ans": "Burkina Faso",
+      "base_ans": "Burkina Faso",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-227",
+      "clean_ans": "5%",
+      "base_ans": "5%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-228",
+      "clean_ans": "Lithuania",
+      "base_ans": "Lithuania",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-229",
+      "clean_ans": "28.3",
+      "base_ans": "28.3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-230",
+      "clean_ans": "0.6 t",
+      "base_ans": "0.6 t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-232",
+      "clean_ans": "0.01%",
+      "base_ans": "0.01%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-233",
+      "clean_ans": "Egypt: 0.0",
+      "base_ans": "0.02%",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-234",
+      "clean_ans": "1.6",
+      "base_ans": "1.6",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-235",
+      "clean_ans": "3.2",
+      "base_ans": "3.2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-236",
+      "clean_ans": "20.98 m²",
+      "base_ans": "20.98 m²",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-238",
+      "clean_ans": "41%",
+      "base_ans": "41%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-239",
+      "clean_ans": "5.4%",
+      "base_ans": "5.4%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-240",
+      "clean_ans": "Nepal",
+      "base_ans": "Nepal",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-241",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-242",
+      "clean_ans": "5.25 trillion",
+      "base_ans": "5.25 trillion",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-245",
+      "clean_ans": "1.6%",
+      "base_ans": "1.6%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-246",
+      "clean_ans": "96.4%",
+      "base_ans": "96.4%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-247",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-249",
+      "clean_ans": "38",
+      "base_ans": "38",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-250",
+      "clean_ans": "Mexico",
+      "base_ans": "Mexico",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-251",
+      "clean_ans": "1.35 t",
+      "base_ans": "1.35 t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-252",
+      "clean_ans": "40.7%",
+      "base_ans": "40.7%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-254",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-255",
+      "clean_ans": "41.935",
+      "base_ans": "41.935",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-256",
+      "clean_ans": "Belarus",
+      "base_ans": "Belarus",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-257",
+      "clean_ans": "0.08",
+      "base_ans": "0.08",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-258",
+      "clean_ans": "Mongolia",
+      "base_ans": "Mongolia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-259",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-260",
+      "clean_ans": "9.29%",
+      "base_ans": "9.29%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-262",
+      "clean_ans": "5",
+      "base_ans": "5",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-263",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-264",
+      "clean_ans": "6.85%",
+      "base_ans": "6.85%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-265",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-266",
+      "clean_ans": "4",
+      "base_ans": "4",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-267",
+      "clean_ans": "47.6%",
+      "base_ans": "47.6%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-268",
+      "clean_ans": "1",
+      "base_ans": "1",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-269",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-270",
+      "clean_ans": "Greece",
+      "base_ans": "Greece",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-271",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-272",
+      "clean_ans": "dark gray",
+      "base_ans": "dark grayish-blue",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-273",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-274",
+      "clean_ans": "Human capital",
+      "base_ans": "Human capital",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-276",
+      "clean_ans": "2015",
+      "base_ans": "2015",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-277",
+      "clean_ans": "143 million tonnes",
+      "base_ans": "143 million tonnes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-278",
+      "clean_ans": "48.01",
+      "base_ans": "48.01",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-279",
+      "clean_ans": "32.115",
+      "base_ans": "32.115",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-280",
+      "clean_ans": "0.04",
+      "base_ans": "0.04",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-281",
+      "clean_ans": "0.11",
+      "base_ans": "0.11",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-282",
+      "clean_ans": "56.6%",
+      "base_ans": "56.6%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-283",
+      "clean_ans": "13.5%",
+      "base_ans": "13.5%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-284",
+      "clean_ans": "0.69",
+      "base_ans": "0.69",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-285",
+      "clean_ans": "0.235",
+      "base_ans": "0.235",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-286",
+      "clean_ans": "24%",
+      "base_ans": "24%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-287",
+      "clean_ans": "6.2%",
+      "base_ans": "6.2%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-288",
+      "clean_ans": "Switzerland",
+      "base_ans": "Switzerland",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-289",
+      "clean_ans": "1541.08",
+      "base_ans": "1541.08",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-290",
+      "clean_ans": "Alcohol",
+      "base_ans": "Alcohol",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-291",
+      "clean_ans": "60",
+      "base_ans": "60",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-292",
+      "clean_ans": "Philippines",
+      "base_ans": "Philippines",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-293",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-294",
+      "clean_ans": "Brazil",
+      "base_ans": "Brazil",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-295",
+      "clean_ans": "3.4%",
+      "base_ans": "3.4%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-296",
+      "clean_ans": "United States",
+      "base_ans": "United States",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-297",
+      "clean_ans": "4.19 million t",
+      "base_ans": "4.19 million t",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-298",
+      "clean_ans": "95%",
+      "base_ans": "95%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-299",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-300",
+      "clean_ans": "Deaths from HIV/AIDS",
+      "base_ans": "Deaths from HIV/AIDS",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-302",
+      "clean_ans": "Samoa",
+      "base_ans": "Samoa",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-304",
+      "clean_ans": "$24,688.3",
+      "base_ans": "$24,688.3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-305",
+      "clean_ans": "82.2",
+      "base_ans": "82.2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-306",
+      "clean_ans": "13",
+      "base_ans": "13",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-307",
+      "clean_ans": "ANS",
+      "base_ans": "Yes",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-310",
+      "clean_ans": "Medium car (petrol)",
+      "base_ans": "Medium car (petrol)",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-311",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-312",
+      "clean_ans": "Malawi",
+      "base_ans": "Malawi",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-313",
+      "clean_ans": "1.91",
+      "base_ans": "1.91",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-314",
+      "clean_ans": "Italy, 22%",
+      "base_ans": "Italy, 22%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-315",
+      "clean_ans": "2.55",
+      "base_ans": "2.55",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-316",
+      "clean_ans": "27.22",
+      "base_ans": "27.22",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-319",
+      "clean_ans": "0.08%",
+      "base_ans": "0.08%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-320",
+      "clean_ans": "8.5",
+      "base_ans": "8.5",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-321",
+      "clean_ans": "10.2",
+      "base_ans": "10.2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-322",
+      "clean_ans": "3.88",
+      "base_ans": "3.88",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-323",
+      "clean_ans": "3",
+      "base_ans": "3",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-324",
+      "clean_ans": "$9,546.35 (2003)",
+      "base_ans": "$9,546.35 (2003)",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-325",
+      "clean_ans": "14151.35",
+      "base_ans": "14151.35",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-326",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-328",
+      "clean_ans": "28",
+      "base_ans": "28",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-329",
+      "clean_ans": "Compare: 24.1 < 2",
+      "base_ans": "No",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-330",
+      "clean_ans": "Argentina",
+      "base_ans": "Argentina",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-331",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-332",
+      "clean_ans": "Chemistry",
+      "base_ans": "Chemistry",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-333",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-334",
+      "clean_ans": "Venezuela",
+      "base_ans": "Venezuela",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-335",
+      "clean_ans": "0.02%",
+      "base_ans": "0.02%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-336",
+      "clean_ans": "Reddish-brown",
+      "base_ans": "Reddish-brown",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-337",
+      "clean_ans": "[FRAME:t=0",
+      "base_ans": "1.02",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-339",
+      "clean_ans": "1/5 of 40",
+      "base_ans": "No, the",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-340",
+      "clean_ans": "53.9 hours",
+      "base_ans": "53.9 hours",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-341",
+      "clean_ans": "- **",
+      "base_ans": "Yes",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-342",
+      "clean_ans": "8.87%",
+      "base_ans": "8.87%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-343",
+      "clean_ans": "32.43",
+      "base_ans": "32.43",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-344",
+      "clean_ans": "7.54%",
+      "base_ans": "7.54%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-345",
+      "clean_ans": "1.89",
+      "base_ans": "1.89",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-346",
+      "clean_ans": "ANS",
+      "base_ans": "Myanmar",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-347",
+      "clean_ans": "Zambia",
+      "base_ans": "Zambia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-349",
+      "clean_ans": "2015",
+      "base_ans": "2015",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-350",
+      "clean_ans": "Georgia",
+      "base_ans": "Georgia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-351",
+      "clean_ans": "Spain",
+      "base_ans": "Spain",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-352",
+      "clean_ans": "Belize's Statistical Capacity Indicator",
+      "base_ans": "Belize's Statistical Capacity Indicator",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-354",
+      "clean_ans": "Benin",
+      "base_ans": "Benin",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-355",
+      "clean_ans": "- **Sudan** (dark blue line): In 2006, it is around 60%. In 2010, it is around 65%. So, it is below",
+      "base_ans": "Sudan",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-356",
+      "clean_ans": "Mongolia",
+      "base_ans": "Mongolia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-358",
+      "clean_ans": "North America",
+      "base_ans": "North America",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-360",
+      "clean_ans": "1",
+      "base_ans": "1",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-361",
+      "clean_ans": "Neither increases nor decreases",
+      "base_ans": "Neither increases nor decreases",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-362",
+      "clean_ans": "Hong Kong",
+      "base_ans": "Hong Kong",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-366",
+      "clean_ans": "Estonia",
+      "base_ans": "Estonia",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-367",
+      "clean_ans": "No",
+      "base_ans": "No",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-368",
+      "clean_ans": "1960",
+      "base_ans": "1960",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-370",
+      "clean_ans": "4",
+      "base_ans": "4",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-372",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-373",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-374",
+      "clean_ans": "purple",
+      "base_ans": "purple",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-378",
+      "clean_ans": "2",
+      "base_ans": "2",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-380",
+      "clean_ans": "1992",
+      "base_ans": "1992",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-381",
+      "clean_ans": "3.0%",
+      "base_ans": "3.0%",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-384",
+      "clean_ans": "2014",
+      "base_ans": "2014",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-385",
+      "clean_ans": "The graph shows data points at 2005, 2006, 200",
+      "base_ans": "6",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-386",
+      "clean_ans": "4",
+      "base_ans": "4",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-387",
+      "clean_ans": "- **Honduras (orange line)**: The line increases steadily until 2006, and the point at 2006 is the highest on the chart for Honduras. So, Honduras peaks in 20",
+      "base_ans": "2",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-388",
+      "clean_ans": "Burundi",
+      "base_ans": "Burundi",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-390",
+      "clean_ans": "2004",
+      "base_ans": "2004",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-392",
+      "clean_ans": "Gabon",
+      "base_ans": "Gabon",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-393",
+      "clean_ans": "18",
+      "base_ans": "18",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-394",
+      "clean_ans": "orange-red",
+      "base_ans": "orange-red",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-395",
+      "clean_ans": "- 2009: ~57.0% → increase from 2008: 57.0 - 44.0 = 13.0",
+      "base_ans": "- 2010: ~55.0% → decrease from 2009: 55.0 -",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-398",
+      "clean_ans": "Belize",
+      "base_ans": "Belize",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-400",
+      "clean_ans": "Asia",
+      "base_ans": "Asia",
+      "agree": true
+    }
+  ]
+}

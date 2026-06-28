@@ -6,7 +6,7 @@
     "base_model_class": "Qwen3VLForConditionalGeneration",
     "parent_library": "transformers.models.qwen3_vl.modeling_qwen3_vl"
   },
-  "base_model_name_or_path": "/home/gpus/Workout-Coach/hf_cache/modelscope/Qwen--Qwen3-VL-8B-Instruct",
+  "base_model_name_or_path": "/home/gpus/models/Qwen3-VL-8B-Instruct",
   "bias": "none",
   "corda_config": null,
   "ensure_weight_tying": false,
@@ -33,12 +33,12 @@
   "rank_pattern": {},
   "revision": null,
   "target_modules": [
-    "o_proj",
-    "down_proj",
-    "v_proj",
     "gate_proj",
-    "q_proj",
+    "o_proj",
     "up_proj",
+    "q_proj",
+    "v_proj",
+    "down_proj",
     "k_proj"
   ],
   "target_parameters": null,

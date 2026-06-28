@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -34,6 +34,34 @@ Lei Chen, Xuanle Zhao, Zhixiong Zeng, Jing Huang, Yufeng Zhong, and Lin Ma.
   advanced chart reasoner.
 \newblock \emph{arXiv preprint arXiv:2507.15509}, 2025.
 
+\bibitem[Chen et~al.(2023)Chen, Ma, Wang, and Cohen]{chen2023pot}
+Wenhu Chen, Xueguang Ma, Xinyi Wang, and William~W. Cohen.
+\newblock Program of thoughts prompting: Disentangling computation from
+  reasoning for numerical reasoning tasks.
+\newblock \emph{Transactions on Machine Learning Research}, 2023.
+
+\bibitem[Chen et~al.(2021)Chen, Chen, Smiley, Shah, Borova, Langdon, Moussa,
+  Beane, Huang, Routledge, and Wang]{chen2021finqa}
+Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan
+  Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan Routledge, and
+  William~Yang Wang.
+\newblock {FinQA}: A dataset of numerical reasoning over financial data.
+\newblock In \emph{EMNLP}, 2021.
+
+\bibitem[DeYoung et~al.(2020)DeYoung, Jain, Rajani, Lehman, Xiong, Socher, and
+  Wallace]{deyoung2020eraser}
+Jay DeYoung, Sarthak Jain, Nazneen~Fatema Rajani, Eric Lehman, Caiming Xiong,
+  Richard Socher, and Byron~C. Wallace.
+\newblock {ERASER}: A benchmark to evaluate rationalized {NLP} models.
+\newblock In \emph{ACL}, 2020.
+
+\bibitem[Gao et~al.(2023)Gao, Madaan, Zhou, Alon, Liu, Yang, Callan, and
+  Neubig]{gao2023pal}
+Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie
+  Callan, and Graham Neubig.
+\newblock {PAL}: Program-aided language models.
+\newblock In \emph{ICML}, 2023.
+
 \bibitem[Hou et~al.(2026)Hou, Xu, Biyani, Li, Liu, Hollon, and Wang]{codev}
 Xinhai Hou, Shaoyuan Xu, Manan Biyani, Moyan Li, Jia Liu, Todd~C. Hollon, and
   Bryan Wang.
@@ -42,6 +70,14 @@ Xinhai Hou, Shaoyuan Xu, Manan Biyani, Moyan Li, Jia Liu, Todd~C. Hollon, and
 \newblock \emph{arXiv preprint arXiv:2511.19661}, 2026.
 \newblock CVPR 2026 Oral.
 
+\bibitem[Hsieh et~al.(2023)Hsieh, Li, Yeh, Nakhost, Fujii, Ratner, Krishna,
+  Lee, and Pfister]{hsieh2023distilling}
+Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii,
+  Alexander Ratner, Ranjay Krishna, Chen-Yu Lee, and Tomas Pfister.
+\newblock Distilling step-by-step! outperforming larger language models with
+  less training data and smaller model sizes.
+\newblock In \emph{Findings of ACL}, 2023.
+
 \bibitem[Hu et~al.(2024)Hu, Stretcu, Lu, Viswanathan, Hata, Luo, Krishna, and
   Fuxman]{vpd}
 Yushi Hu, Otilia Stretcu, Chun-Ta Lu, Krishnamurthy Viswanathan, Kenji Hata,
@@ -49,6 +85,31 @@ Yushi Hu, Otilia Stretcu, Chun-Ta Lu, Krishnamurthy Viswanathan, Kenji Hata,
 \newblock Visual program distillation: Distilling tools and programmatic
   reasoning into vision-language models.
 \newblock In \emph{CVPR}, 2024.
+
+\bibitem[Jacovi and Goldberg(2020)]{jacovi2020faithfulness}
+Alon Jacovi and Yoav Goldberg.
+\newblock Towards faithfully interpretable {NLP} systems: How should we define
+  and evaluate faithfulness?
+\newblock In \emph{ACL}, 2020.
+
+\bibitem[Kafle et~al.(2018)Kafle, Price, Cohen, and Kanan]{kafle2018dvqa}
+Kushal Kafle, Brian Price, Scott Cohen, and Christopher Kanan.
+\newblock {DVQA}: Understanding data visualizations via question answering.
+\newblock In \emph{CVPR}, 2018.
+
+\bibitem[Kahou et~al.(2018)Kahou, Michalski, Atkinson, K{\'a}d{\'a}r,
+  Trischler, and Bengio]{kahou2018figureqa}
+Samira~Ebrahimi Kahou, Vincent Michalski, Adam Atkinson, {\'A}kos
+  K{\'a}d{\'a}r, Adam Trischler, and Yoshua Bengio.
+\newblock {FigureQA}: An annotated figure dataset for visual reasoning.
+\newblock \emph{ICLR Workshop}, 2018.
+
+\bibitem[Kojima et~al.(2022)Kojima, Gu, Reid, Matsuo, and
+  Iwasawa]{kojima2022zeroshot}
+Takeshi Kojima, Shixiang~Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke
+  Iwasawa.
+\newblock Large language models are zero-shot reasoners.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2022.
 
 \bibitem[Lanham et~al.(2023)Lanham, Chen, Radhakrishnan, Steiner, Denison,
   Hernandez, Li, Durmus, Hubinger, Kernion, et~al.]{lanham2023}
@@ -101,11 +162,24 @@ Ahmed Masry, Do~Xuan Long, Jia~Qing Tan, Shafiq Joty, and Enamul Hoque.
   visual and logical reasoning.
 \newblock In \emph{Findings of ACL}, 2022.
 
+\bibitem[Methani et~al.(2020)Methani, Ganguly, Khapra, and
+  Kumar]{methani2020plotqa}
+Nitesh Methani, Pritha Ganguly, Mitesh~M. Khapra, and Pratyush Kumar.
+\newblock {PlotQA}: Reasoning over scientific plots.
+\newblock In \emph{WACV}, 2020.
+
 \bibitem[Pfau et~al.(2024)Pfau, Merrill, and Bowman]{pfau2024}
 Jacob Pfau, William Merrill, and Samuel~R. Bowman.
 \newblock Let's think dot by dot: Hidden computation in transformer language
   models.
 \newblock \emph{arXiv preprint arXiv:2404.15758}, 2024.
+
+\bibitem[Schick et~al.(2023)Schick, Dwivedi-Yu, Dess{\`i}, Raileanu, Lomeli,
+  Hambro, Zettlemoyer, Cancedda, and Scialom]{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`i}, Roberta Raileanu, Maria
+  Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language models can teach themselves to use tools.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2023.
 
 \bibitem[Shin et~al.(2025)Shin, Sampson, Narayanan, Marquez, and
   Halappanavar]{chartnoise}
@@ -151,6 +225,14 @@ Weiyun Wang, Zhangwei Gao, Lixin Gu, Hengjun Pu, Long Cui, Xingguang Wei,
   versatility, reasoning, and efficiency.
 \newblock \emph{arXiv preprint arXiv:2508.18265}, 2025.
 
+\bibitem[Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou]{wang2023selfconsistency}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~Chi, Sharan Narang,
+  Aakanksha Chowdhery, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock In \emph{ICLR}, 2023.
+
 \bibitem[Wang et~al.(2024)Wang, Xia, He, Chen, Liu, Zhu, Liang, Wu, Liu,
   Malladi, Chevalier, Arora, and Chen]{charxiv}
 Zirui Wang, Mengzhou Xia, Luxi He, Howard Chen, Yitao Liu, Richard Zhu, Kaiqu
@@ -160,6 +242,14 @@ Zirui Wang, Mengzhou Xia, Luxi He, Howard Chen, Yitao Liu, Richard Zhu, Kaiqu
   multimodal {LLMs}.
 \newblock \emph{arXiv preprint arXiv:2406.18521}, 2024.
 
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou]{wei2022cot}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~H. Chi, Quoc~V. Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2022.
+
 \bibitem[Wei et~al.(2026)Wei, He, Lan, Dong, Cai, Li, Zhu, Wang, Kong, Wang,
   Zhang, and Huang]{zoomingwithoutzooming}
 Lai Wei, Liangbo He, Jun Lan, Lingzhong Dong, Yutong Cai, Siyuan Li, Huijia
@@ -167,5 +257,19 @@ Lai Wei, Liangbo He, Jun Lan, Lingzhong Dong, Yutong Cai, Siyuan Li, Huijia
 \newblock Zooming without zooming: Region-to-image distillation for
   fine-grained multimodal perception.
 \newblock \emph{arXiv preprint arXiv:2602.11858}, 2026.
+
+\bibitem[Wiegreffe and Marasovi{\'c}(2021)]{wiegreffe2021teach}
+Sarah Wiegreffe and Ana Marasovi{\'c}.
+\newblock Teach me to explain: A review of datasets for explainable natural
+  language processing.
+\newblock In \emph{NeurIPS Datasets and Benchmarks Track}, 2021.
+
+\bibitem[Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and
+  Chua]{zhu2021tatqa}
+Fengbin Zhu, Wenqiang Lei, Youcheng Huang, Chao Wang, Shuo Zhang, Jiancheng Lv,
+  Fuli Feng, and Tat-Seng Chua.
+\newblock {TAT-QA}: A question answering benchmark on a hybrid of tabular and
+  textual content in finance.
+\newblock In \emph{ACL}, 2021.
 
 \end{thebibliography}

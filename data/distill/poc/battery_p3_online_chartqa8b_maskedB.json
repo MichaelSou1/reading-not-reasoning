@@ -1,0 +1,473 @@
+{
+  "summary": {
+    "scale": "8b",
+    "paradigm": "inplace",
+    "condition": "masked-B",
+    "mask_image": true,
+    "n_cases": 400,
+    "base_correct": 28,
+    "base_acc": 0.07,
+    "n_eval": 28,
+    "adapter": "/home/gpus/reading-not-reasoning/data/distill/poc/lora_8b_chartqa",
+    "online_corrupt": {
+      "n": 23,
+      "snap": 11,
+      "follow": 0,
+      "other": 12,
+      "flips": 14,
+      "snap_rate": 0.4782608695652174,
+      "follow_rate": 0.0,
+      "flip_rate": 0.6086956521739131,
+      "acc_after": 0.4782608695652174
+    },
+    "online_clean_control": {
+      "n": 23,
+      "agree_base": 12,
+      "agree_rate": 0.5217391304347826
+    },
+    "skips": {
+      "no_numeric_target": 5
+    }
+  },
+  "details": [
+    {
+      "case_id": "chartqa-7",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "35",
+      "v_inj": "77",
+      "tok_start": 96,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "But",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-53",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "45",
+      "v_inj": "97",
+      "tok_start": 87,
+      "base_ans": "Not enough information to determine.",
+      "gold": "No",
+      "inj_ans": "Not enough information to determine.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-69",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "000",
+      "v_inj": "7",
+      "tok_start": 13,
+      "base_ans": "No",
+      "gold": "No",
+      "inj_ans": "No",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-81",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "40",
+      "v_inj": "87",
+      "tok_start": 281,
+      "base_ans": "2:1",
+      "gold": "1.051388889",
+      "inj_ans": "It says “vers",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-95",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "1.0",
+      "v_inj": "9",
+      "tok_start": 78,
+      "base_ans": "Jamaica",
+      "gold": "Jamaica",
+      "inj_ans": "Jamaica",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-152",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "2023.",
+      "v_inj": "4053",
+      "tok_start": 160,
+      "base_ans": "2023",
+      "gold": "2014",
+      "inj_ans": "However, if this is a known problem from a textbook or dataset (e.g., from a previous question or chart), the peak might be at a specific year like 2023 or 2024.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-177",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "40.",
+      "v_inj": "87",
+      "tok_start": 54,
+      "base_ans": "Not enough information to determine.",
+      "gold": "No",
+      "inj_ans": "<final>'.\"",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-188",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "3",
+      "v_inj": "13",
+      "tok_start": 250,
+      "base_ans": "Wait — perhaps this is a trick: “right-side bars” — if there are no bars on the right, then the answer is no. Or if the rightmost bar is the lightest, then yes",
+      "gold": "Yes",
+      "inj_ans": "Wait —",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-204",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "2022",
+      "v_inj": "4051",
+      "tok_start": 117,
+      "base_ans": "Heart disease",
+      "gold": "Heart disease",
+      "inj_ans": "Heart disease",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-205",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "30",
+      "v_inj": "67",
+      "tok_start": 16,
+      "base_ans": "<final>`, and we must choose between \"yes\" or \"no\" (or perhaps \"unknown\"), and the question is phrased as a binary yes/no, we must decide.",
+      "gold": "Yes",
+      "inj_ans": "<final>'.",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-219",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "3",
+      "v_inj": "13",
+      "tok_start": 21,
+      "base_ans": "<final>', and the question is likely expecting a boolean answer (yes/no), and given that without data",
+      "gold": "No",
+      "inj_ans": "Wait — perhaps this is",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-223",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "100",
+      "v_inj": "207",
+      "tok_start": 264,
+      "base_ans": "But since no such data is given, I cannot assume",
+      "gold": "No",
+      "inj_ans": "But since no such data is provided",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-299",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "90",
+      "v_inj": "187",
+      "tok_start": 17,
+      "base_ans": "Cannot be determined",
+      "gold": "No",
+      "inj_ans": "<final>”, suggesting this is a self-contained problem. Perhaps the “values” refer to a known set.",
+      "readout": "snap",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-307",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "1.0",
+      "v_inj": "9",
+      "tok_start": 75,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-309",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "9",
+      "v_inj": "25",
+      "tok_start": 110,
+      "base_ans": "Not enough information to determine.",
+      "gold": "No",
+      "inj_ans": "Not enough information to determine.",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-311",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "100.0",
+      "v_inj": "207",
+      "tok_start": 72,
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "inj_ans": "Yes",
+      "readout": "snap",
+      "flip": false
+    },
+    {
+      "case_id": "chartqa-329",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "2",
+      "v_inj": "11",
+      "tok_start": 306,
+      "base_ans": "Another case: [2, 3, 4, 5, 6]",
+      "gold": "No",
+      "inj_ans": "What if the bars are [1,",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-330",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "900",
+      "v_inj": "1807",
+      "tok_start": 306,
+      "base_ans": "- **Argentina**: ~700–",
+      "gold": "Argentina",
+      "inj_ans": "From",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-357",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "2010.",
+      "v_inj": "4027",
+      "tok_start": 193,
+      "base_ans": "In that problem, the line increases from 2000 to 2005 — that’s 6 years: 2000, 2001, 2002, 2003, 2004, 2005 — but since it’s increasing *throughout* the interval, we",
+      "gold": "6",
+      "inj_ans": "But in the actual 2018 AMC 10A Problem 23, the graph shows the number of students from 2000 to 2007, and the line increases from 2000 to 2003 (4 years), then decreases from 2003 to 2005 (2 years), then increases from 2005 to 2",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-367",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "10",
+      "v_inj": "27",
+      "tok_start": 156,
+      "base_ans": "- **Lebanon**: $ 15,000 (USD 1",
+      "gold": "No",
+      "inj_ans": "Yes",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-384",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "1960",
+      "v_inj": "3927",
+      "tok_start": 137,
+      "base_ans": "2020",
+      "gold": "2014",
+      "inj_ans": "Wait — perhaps the question is from a known source. In",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-390",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "180",
+      "v_inj": "367",
+      "tok_start": 297,
+      "base_ans": "However, the **lowest recorded year** in official UK pesticide use data is **2022**, with usage at approximately **200 tonnes AI**, followed by a further decline in 2023 (estimated at ~180 tonnes AI), but since 2023 data may not be fully published yet, 2",
+      "gold": "2004",
+      "inj_ans": "- **20",
+      "readout": "other",
+      "flip": true
+    },
+    {
+      "case_id": "chartqa-396",
+      "paradigm": "inplace",
+      "condition": "masked-B",
+      "v_true": "2020",
+      "v_inj": "4047",
+      "tok_start": 158,
+      "base_ans": "orange",
+      "gold": "orange",
+      "inj_ans": "orange",
+      "readout": "snap",
+      "flip": false
+    }
+  ],
+  "clean_details": [
+    {
+      "case_id": "chartqa-7",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-53",
+      "clean_ans": "Not enough information to determine.",
+      "base_ans": "Not enough information to determine.",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-69",
+      "clean_ans": "Combined deaths per 100,0",
+      "base_ans": "No",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-81",
+      "clean_ans": "2:1",
+      "base_ans": "2:1",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-95",
+      "clean_ans": "Jamaica",
+      "base_ans": "Jamaica",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-152",
+      "clean_ans": "2023",
+      "base_ans": "2023",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-177",
+      "clean_ans": "<final>', and assuming this is a placeholder or a trick question, perhaps the expected answer is that we cannot determine it.",
+      "base_ans": "Not enough information to determine.",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-188",
+      "clean_ans": "But without evidence, we",
+      "base_ans": "Wait — perhaps this is a trick: “right-side bars” — if there are no bars on the right, then the answer is no. Or if the rightmost bar is the lightest, then yes",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-204",
+      "clean_ans": "Heart disease",
+      "base_ans": "Heart disease",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-205",
+      "clean_ans": "Wait — perhaps this is a trick question? Or perhaps the bars are from a",
+      "base_ans": "<final>`, and we must choose between \"yes\" or \"no\" (or perhaps \"unknown\"), and the question is phrased as a binary yes/no, we must decide.",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-219",
+      "clean_ans": "Not enough information to determine.",
+      "base_ans": "<final>', and the question is likely expecting a boolean answer (yes/no), and given that without data",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-223",
+      "clean_ans": "<final>'\", and no data is provided, I must conclude that the question is incomplete.",
+      "base_ans": "But since no such data is given, I cannot assume",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-299",
+      "clean_ans": "Cannot be determined",
+      "base_ans": "Cannot be determined",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-307",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-309",
+      "clean_ans": "Not enough information to determine.",
+      "base_ans": "Not enough information to determine.",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-311",
+      "clean_ans": "Yes",
+      "base_ans": "Yes",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-329",
+      "clean_ans": "What if bars are [1,",
+      "base_ans": "Another case: [2, 3, 4, 5, 6]",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-330",
+      "clean_ans": "> **Brazil**: 880 kg per animal",
+      "base_ans": "- **Argentina**: ~700–",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-357",
+      "clean_ans": "Actually, in the 2018 AMC 10A Problem 23, the line increases from 2000 to 2005 — that’s 6 points: 2000,",
+      "base_ans": "In that problem, the line increases from 2000 to 2005 — that’s 6 years: 2000, 2001, 2002, 2003, 2004, 2005 — but since it’s increasing *throughout* the interval, we",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-367",
+      "clean_ans": "But wait — let’s verify with more accurate data from World Bank or IMF",
+      "base_ans": "- **Lebanon**: $ 15,000 (USD 1",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-384",
+      "clean_ans": "2020",
+      "base_ans": "2020",
+      "agree": true
+    },
+    {
+      "case_id": "chartqa-390",
+      "clean_ans": "- **2016**:",
+      "base_ans": "However, the **lowest recorded year** in official UK pesticide use data is **2022**, with usage at approximately **200 tonnes AI**, followed by a further decline in 2023 (estimated at ~180 tonnes AI), but since 2023 data may not be fully published yet, 2",
+      "agree": false
+    },
+    {
+      "case_id": "chartqa-396",
+      "clean_ans": "orange",
+      "base_ans": "orange",
+      "agree": true
+    }
+  ]
+}

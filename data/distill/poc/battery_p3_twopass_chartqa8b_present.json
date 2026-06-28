@@ -1,0 +1,5036 @@
+{
+  "summary": {
+    "scale": "8b_p3match",
+    "mask_image": false,
+    "n_eval": 314,
+    "n_cases": 400,
+    "base_correct": 314,
+    "base_acc": 0.785,
+    "adapter": "/home/gpus/reading-not-reasoning/data/distill/poc/lora_8b_chartqa",
+    "n_para_nums_ok": 0,
+    "n_semantic_cf_ok": 0,
+    "interventions": {
+      "corrupt": {
+        "n": 307,
+        "flips": 30,
+        "flip_rate": 0.09771986970684039,
+        "acc_after": 0.9348534201954397
+      },
+      "local_num": {
+        "n": 290,
+        "flips": 20,
+        "flip_rate": 0.06896551724137931,
+        "acc_after": 0.9689655172413794
+      },
+      "shuffle": {
+        "n": 314,
+        "flips": 41,
+        "flip_rate": 0.1305732484076433,
+        "acc_after": 0.8885350318471338
+      }
+    },
+    "re_perception": {
+      "n_corrupt": 307,
+      "snap_to_true": 287,
+      "follows_injected": 11,
+      "other": 9,
+      "snap_rate": 0.9348534201954397,
+      "follow_rate": 0.035830618892508145
+    }
+  },
+  "details": [
+    {
+      "case_id": "chartqa-0",
+      "base_ans": "14",
+      "gold": "14",
+      "injected": "27",
+      "local_num_replacement": "1.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "14",
+      "answers": {
+        "corrupt": "14",
+        "local_num": "14",
+        "shuffle": "14"
+      }
+    },
+    {
+      "case_id": "chartqa-1",
+      "base_ans": "0.57",
+      "gold": "0.57",
+      "injected": "213.3",
+      "local_num_replacement": "9782",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.57",
+      "answers": {
+        "corrupt": "0.57",
+        "local_num": "0.57",
+        "shuffle": "0.57"
+      }
+    },
+    {
+      "case_id": "chartqa-2",
+      "base_ans": "3",
+      "gold": "3",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3",
+      "answers": {
+        "corrupt": "3",
+        "shuffle": "3"
+      }
+    },
+    {
+      "case_id": "chartqa-3",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "7.8",
+      "local_num_replacement": "3.54",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-4",
+      "base_ans": "23",
+      "gold": "23",
+      "injected": "53",
+      "local_num_replacement": "35",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "23",
+      "answers": {
+        "corrupt": "23",
+        "local_num": "23",
+        "shuffle": "23"
+      }
+    },
+    {
+      "case_id": "chartqa-5",
+      "base_ans": "6%",
+      "gold": "6",
+      "injected": "65",
+      "local_num_replacement": "96",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "6",
+      "answers": {
+        "corrupt": "6",
+        "local_num": "6",
+        "shuffle": "6"
+      }
+    },
+    {
+      "case_id": "chartqa-6",
+      "base_ans": "62%",
+      "gold": "62",
+      "injected": "81",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "62%",
+      "answers": {
+        "corrupt": "62%",
+        "local_num": "62%",
+        "shuffle": "62"
+      }
+    },
+    {
+      "case_id": "chartqa-7",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "59",
+      "local_num_replacement": "32",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "No",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-8",
+      "base_ans": "Inspired",
+      "gold": "Inspired",
+      "injected": "9",
+      "local_num_replacement": "5.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Inspired",
+      "answers": {
+        "corrupt": "Inspired",
+        "local_num": "Inspired",
+        "shuffle": "Inspired"
+      }
+    },
+    {
+      "case_id": "chartqa-10",
+      "base_ans": "1.0",
+      "gold": "1",
+      "injected": "4019",
+      "local_num_replacement": "8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.0",
+      "answers": {
+        "corrupt": "1.0",
+        "local_num": "1.0",
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-11",
+      "base_ans": "0.08",
+      "gold": "0.08",
+      "injected": "8.4",
+      "local_num_replacement": "7.48",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.08",
+      "answers": {
+        "corrupt": "0.08",
+        "local_num": "0.08",
+        "shuffle": "0.08"
+      }
+    },
+    {
+      "case_id": "chartqa-12",
+      "base_ans": "17",
+      "gold": "17",
+      "injected": "69",
+      "local_num_replacement": "27",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "17",
+      "answers": {
+        "corrupt": "17",
+        "local_num": "17",
+        "shuffle": "17"
+      }
+    },
+    {
+      "case_id": "chartqa-13",
+      "base_ans": "21.7",
+      "gold": "21.6",
+      "injected": "13",
+      "local_num_replacement": "84",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "21.7",
+      "answers": {
+        "corrupt": "21.7",
+        "local_num": "21.7",
+        "shuffle": "Sum = 29 +"
+      }
+    },
+    {
+      "case_id": "chartqa-14",
+      "base_ans": "2%",
+      "gold": "2",
+      "injected": "11",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2%",
+      "answers": {
+        "corrupt": "2%",
+        "shuffle": "2%"
+      }
+    },
+    {
+      "case_id": "chartqa-15",
+      "base_ans": "2%",
+      "gold": "2",
+      "injected": "11",
+      "local_num_replacement": "18",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2%",
+      "answers": {
+        "corrupt": "2%",
+        "local_num": "2",
+        "shuffle": "2%"
+      }
+    },
+    {
+      "case_id": "chartqa-16",
+      "base_ans": "2014",
+      "gold": "2014",
+      "injected": "4035",
+      "local_num_replacement": "9377",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2014",
+      "answers": {
+        "corrupt": "2014",
+        "local_num": "2014",
+        "shuffle": "2014"
+      }
+    },
+    {
+      "case_id": "chartqa-17",
+      "base_ans": "2010 to 2011",
+      "gold": "2011",
+      "injected": "4027",
+      "local_num_replacement": "9127",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2011",
+      "answers": {
+        "corrupt": "2011",
+        "local_num": "2011",
+        "shuffle": "2010 to 2011"
+      }
+    },
+    {
+      "case_id": "chartqa-18",
+      "base_ans": "1",
+      "gold": "1",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-21",
+      "base_ans": "The largest gap occurs in 2008, where the difference is approximately 4",
+      "gold": "2008",
+      "injected": "4023",
+      "local_num_replacement": "83.2",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2008",
+      "answers": {
+        "corrupt": "2008",
+        "local_num": "2008",
+        "shuffle": "2004"
+      }
+    },
+    {
+      "case_id": "chartqa-22",
+      "base_ans": "29",
+      "gold": "29",
+      "injected": "73",
+      "local_num_replacement": "1",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "29",
+      "answers": {
+        "corrupt": "29",
+        "local_num": "29",
+        "shuffle": "- Australia: 29%"
+      }
+    },
+    {
+      "case_id": "chartqa-24",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "111",
+      "local_num_replacement": "29",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-25",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "111",
+      "local_num_replacement": "84",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-26",
+      "base_ans": "80%",
+      "gold": "80",
+      "injected": "167",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "80",
+      "answers": {
+        "corrupt": "80",
+        "local_num": "80",
+        "shuffle": "80"
+      }
+    },
+    {
+      "case_id": "chartqa-27",
+      "base_ans": "77",
+      "gold": "77",
+      "injected": "13",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "77",
+      "answers": {
+        "corrupt": "77",
+        "local_num": "77",
+        "shuffle": "77"
+      }
+    },
+    {
+      "case_id": "chartqa-30",
+      "base_ans": "13",
+      "gold": "13",
+      "injected": "4021",
+      "local_num_replacement": "9785",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "13",
+      "answers": {
+        "corrupt": "13",
+        "local_num": "13",
+        "shuffle": "13"
+      }
+    },
+    {
+      "case_id": "chartqa-33",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "109",
+      "local_num_replacement": "21",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-34",
+      "base_ans": "Italy",
+      "gold": "Italy",
+      "injected": "4043",
+      "local_num_replacement": "40",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Italy",
+      "answers": {
+        "corrupt": "Italy",
+        "local_num": "Italy",
+        "shuffle": "Italy"
+      }
+    },
+    {
+      "case_id": "chartqa-35",
+      "base_ans": "Mexico",
+      "gold": "Mexico",
+      "injected": "155",
+      "local_num_replacement": "54",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Mexico",
+      "answers": {
+        "corrupt": "Mexico",
+        "local_num": "Mexico",
+        "shuffle": "Mexico"
+      }
+    },
+    {
+      "case_id": "chartqa-36",
+      "base_ans": "33",
+      "gold": "33",
+      "injected": "73",
+      "local_num_replacement": "87",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "73",
+      "answers": {
+        "corrupt": "73",
+        "local_num": "33",
+        "shuffle": "33"
+      }
+    },
+    {
+      "case_id": "chartqa-37",
+      "base_ans": "Over 30 mins",
+      "gold": "Over 30 mins",
+      "injected": "67",
+      "local_num_replacement": "-17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Over 30 mins",
+      "answers": {
+        "corrupt": "Over 30 mins",
+        "local_num": "Over 30 mins",
+        "shuffle": "Over 30 mins"
+      }
+    },
+    {
+      "case_id": "chartqa-38",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-39",
+      "base_ans": "22%",
+      "gold": "22",
+      "injected": "57",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "22",
+      "answers": {
+        "corrupt": "22",
+        "local_num": "22",
+        "shuffle": "22"
+      }
+    },
+    {
+      "case_id": "chartqa-40",
+      "base_ans": "92",
+      "gold": "92",
+      "injected": "7",
+      "local_num_replacement": "69.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "92",
+      "answers": {
+        "corrupt": "92",
+        "local_num": "69",
+        "shuffle": "92"
+      }
+    },
+    {
+      "case_id": "chartqa-41",
+      "base_ans": "96",
+      "gold": "96",
+      "injected": "199",
+      "local_num_replacement": "5.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "96",
+      "answers": {
+        "corrupt": "96",
+        "local_num": "96",
+        "shuffle": "96"
+      }
+    },
+    {
+      "case_id": "chartqa-42",
+      "base_ans": "21%",
+      "gold": "21",
+      "injected": "4037",
+      "local_num_replacement": "98",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "21",
+      "answers": {
+        "corrupt": "21",
+        "local_num": "21",
+        "shuffle": "21"
+      }
+    },
+    {
+      "case_id": "chartqa-43",
+      "base_ans": "12",
+      "gold": "12",
+      "injected": "4037",
+      "local_num_replacement": "9782.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "12",
+      "answers": {
+        "corrupt": "12",
+        "local_num": "12",
+        "shuffle": "12"
+      }
+    },
+    {
+      "case_id": "chartqa-44",
+      "base_ans": "2005",
+      "gold": "2009",
+      "injected": "67",
+      "local_num_replacement": "83",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2005",
+      "answers": {
+        "corrupt": "2005",
+        "local_num": "2005",
+        "shuffle": "2005"
+      }
+    },
+    {
+      "case_id": "chartqa-45",
+      "base_ans": "28.7",
+      "gold": "28.6",
+      "injected": "4033",
+      "local_num_replacement": "9782",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "28.7",
+      "answers": {
+        "corrupt": "28.7",
+        "local_num": "28.7",
+        "shuffle": "Average = (29 + 30 + 27)"
+      }
+    },
+    {
+      "case_id": "chartqa-46",
+      "base_ans": "68%",
+      "gold": "68",
+      "injected": "4045",
+      "local_num_replacement": "9797.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "68",
+      "answers": {
+        "corrupt": "68",
+        "local_num": "68",
+        "shuffle": "68"
+      }
+    },
+    {
+      "case_id": "chartqa-47",
+      "base_ans": "2019",
+      "gold": "2019",
+      "injected": "4045",
+      "local_num_replacement": "15",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2019",
+      "answers": {
+        "corrupt": "2019",
+        "local_num": "2019",
+        "shuffle": "2019"
+      }
+    },
+    {
+      "case_id": "chartqa-48",
+      "base_ans": "83",
+      "gold": "83",
+      "injected": "173",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "83",
+      "answers": {
+        "corrupt": "83",
+        "shuffle": "83"
+      }
+    },
+    {
+      "case_id": "chartqa-49",
+      "base_ans": "2.14",
+      "gold": "2.13",
+      "injected": "11.3",
+      "local_num_replacement": "39",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2.14",
+      "answers": {
+        "corrupt": "2.14",
+        "local_num": "2.14",
+        "shuffle": "Simplify the ratio by dividing both numbers by their greatest common divisor, which is 1 (since 62 and"
+      }
+    },
+    {
+      "case_id": "chartqa-50",
+      "base_ans": "Simulation",
+      "gold": "Simulation",
+      "injected": "91",
+      "local_num_replacement": "19",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Simulation",
+      "answers": {
+        "corrupt": "Simulation",
+        "local_num": "Simulation",
+        "shuffle": "Simulation"
+      }
+    },
+    {
+      "case_id": "chartqa-51",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "85",
+      "local_num_replacement": "19",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4",
+      "answers": {
+        "corrupt": "4",
+        "local_num": "4",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-52",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "51",
+      "local_num_replacement": "12",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-53",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "87",
+      "local_num_replacement": "28",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-54",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "7",
+      "local_num_replacement": "82",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-58",
+      "base_ans": "Libya",
+      "gold": "Libya",
+      "injected": "3993",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Libya",
+      "answers": {
+        "corrupt": "Libya",
+        "shuffle": "Libya"
+      }
+    },
+    {
+      "case_id": "chartqa-59",
+      "base_ans": "0.23",
+      "gold": "0.23",
+      "injected": "7.5",
+      "local_num_replacement": "3.98",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.23",
+      "answers": {
+        "corrupt": "0.23",
+        "local_num": "0.23",
+        "shuffle": "0.23"
+      }
+    },
+    {
+      "case_id": "chartqa-62",
+      "base_ans": "UK",
+      "gold": "UK",
+      "injected": "7",
+      "local_num_replacement": "14",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "UK",
+      "answers": {
+        "corrupt": "UK",
+        "local_num": "UK",
+        "shuffle": "UK"
+      }
+    },
+    {
+      "case_id": "chartqa-63",
+      "base_ans": "50.25",
+      "gold": "50.25",
+      "injected": "409",
+      "local_num_replacement": "1",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "50.25",
+      "answers": {
+        "corrupt": "50.25",
+        "local_num": "50.25",
+        "shuffle": "50.25"
+      }
+    },
+    {
+      "case_id": "chartqa-64",
+      "base_ans": "72%",
+      "gold": "72",
+      "injected": "9",
+      "local_num_replacement": "881",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "72",
+      "answers": {
+        "corrupt": "72",
+        "local_num": "72",
+        "shuffle": "72"
+      }
+    },
+    {
+      "case_id": "chartqa-67",
+      "base_ans": "14.5",
+      "gold": "14.5",
+      "injected": "65.2",
+      "local_num_replacement": "92.8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "14.5",
+      "answers": {
+        "corrupt": "14.5",
+        "local_num": "14.5",
+        "shuffle": "- 1998: 1"
+      }
+    },
+    {
+      "case_id": "chartqa-68",
+      "base_ans": "175",
+      "gold": "175",
+      "injected": "7",
+      "local_num_replacement": "9779",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "175",
+      "answers": {
+        "corrupt": "175",
+        "local_num": "175",
+        "shuffle": "175"
+      }
+    },
+    {
+      "case_id": "chartqa-69",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "703",
+      "local_num_replacement": "877",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-70",
+      "base_ans": "93.45%",
+      "gold": "93.45",
+      "injected": "4011",
+      "local_num_replacement": "9789",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "93.45%",
+      "answers": {
+        "corrupt": "93.45%",
+        "local_num": "93.45%",
+        "shuffle": "93.45%"
+      }
+    },
+    {
+      "case_id": "chartqa-71",
+      "base_ans": "51.045",
+      "gold": "51.04",
+      "injected": "123.2",
+      "local_num_replacement": "25.76",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "51.045",
+      "answers": {
+        "corrupt": "51.045",
+        "local_num": "51.045",
+        "shuffle": "51.045"
+      }
+    },
+    {
+      "case_id": "chartqa-72",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "3985",
+      "local_num_replacement": "8656",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-73",
+      "base_ans": "21.5",
+      "gold": "21.5",
+      "injected": "11",
+      "local_num_replacement": "8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "21.5",
+      "answers": {
+        "corrupt": "21.5",
+        "local_num": "21.5",
+        "shuffle": "21.5"
+      }
+    },
+    {
+      "case_id": "chartqa-76",
+      "base_ans": "52",
+      "gold": "52",
+      "injected": "111",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "111",
+      "answers": {
+        "corrupt": "111",
+        "shuffle": "52"
+      }
+    },
+    {
+      "case_id": "chartqa-77",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "123",
+      "local_num_replacement": "29",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-78",
+      "base_ans": "U.S.",
+      "gold": "U.S.",
+      "injected": "37",
+      "local_num_replacement": "9782",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "U.S.",
+      "answers": {
+        "corrupt": "U.S.",
+        "local_num": "U.S.",
+        "shuffle": "U.S."
+      }
+    },
+    {
+      "case_id": "chartqa-79",
+      "base_ans": "UK",
+      "gold": "UK",
+      "injected": "9",
+      "local_num_replacement": "69.6",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "UK",
+      "answers": {
+        "corrupt": "UK",
+        "local_num": "UK",
+        "shuffle": "UK"
+      }
+    },
+    {
+      "case_id": "chartqa-80",
+      "base_ans": "67",
+      "gold": "67",
+      "injected": "7",
+      "local_num_replacement": "34",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "67",
+      "answers": {
+        "corrupt": "67",
+        "local_num": "34%",
+        "shuffle": "67"
+      }
+    },
+    {
+      "case_id": "chartqa-82",
+      "base_ans": "55",
+      "gold": "55",
+      "injected": "117",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "117",
+      "answers": {
+        "corrupt": "117",
+        "local_num": "55",
+        "shuffle": "55"
+      }
+    },
+    {
+      "case_id": "chartqa-84",
+      "base_ans": "Rep/Lean Rep",
+      "gold": "Rep/Lean Rep",
+      "injected": "7",
+      "local_num_replacement": "-86",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Rep/Lean Rep",
+      "answers": {
+        "corrupt": "Rep/Lean Rep",
+        "local_num": "Rep/Lean Rep",
+        "shuffle": "Rep/Lean Rep"
+      }
+    },
+    {
+      "case_id": "chartqa-85",
+      "base_ans": "0.48",
+      "gold": "0.484375",
+      "injected": "69",
+      "local_num_replacement": "31",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "\\",
+      "answers": {
+        "corrupt": "\\",
+        "local_num": "0.48",
+        "shuffle": "0.48"
+      }
+    },
+    {
+      "case_id": "chartqa-86",
+      "base_ans": "- In 2007: 77 (upper) and 47 (lower) — different",
+      "gold": "77",
+      "injected": "4033",
+      "local_num_replacement": "14",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "However, the",
+      "answers": {
+        "corrupt": "However, the",
+        "local_num": "However, the question asks for \"two values that are the same\" — meaning two data points with identical numerical",
+        "shuffle": "47"
+      }
+    },
+    {
+      "case_id": "chartqa-87",
+      "base_ans": "141",
+      "gold": "141",
+      "injected": "4023",
+      "local_num_replacement": "19",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "141",
+      "answers": {
+        "corrupt": "141",
+        "local_num": "141",
+        "shuffle": "141"
+      }
+    },
+    {
+      "case_id": "chartqa-88",
+      "base_ans": "41%",
+      "gold": "41",
+      "injected": "7",
+      "local_num_replacement": "18",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "41%",
+      "answers": {
+        "corrupt": "41%",
+        "local_num": "41%",
+        "shuffle": "41%"
+      }
+    },
+    {
+      "case_id": "chartqa-90",
+      "base_ans": "Nicaragua",
+      "gold": "Nicaragua",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "Nicaragua"
+      }
+    },
+    {
+      "case_id": "chartqa-91",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "118.4",
+      "local_num_replacement": "21.82",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "no",
+      "answers": {
+        "corrupt": "no",
+        "local_num": "no",
+        "shuffle": "The average of the two extreme values (Thailand: 73.3% and Lesotho: 35%) is (73.3 + 35) / 2 = 54.15%. The middle bar value (Nicaragua) is 55.7%."
+      }
+    },
+    {
+      "case_id": "chartqa-93",
+      "base_ans": "99",
+      "gold": "99",
+      "injected": "23",
+      "local_num_replacement": "11",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "99",
+      "answers": {
+        "corrupt": "99",
+        "local_num": "99",
+        "shuffle": "99"
+      }
+    },
+    {
+      "case_id": "chartqa-94",
+      "base_ans": "Solomon Islands",
+      "gold": "Solomon Islands",
+      "injected": "367",
+      "local_num_replacement": "9787.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Solomon Islands",
+      "answers": {
+        "corrupt": "Solomon Islands",
+        "local_num": "Solomon Islands",
+        "shuffle": "Solomon Islands"
+      }
+    },
+    {
+      "case_id": "chartqa-97",
+      "base_ans": "35",
+      "gold": "35",
+      "injected": "77",
+      "local_num_replacement": "17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3",
+      "answers": {
+        "corrupt": "3",
+        "local_num": "35",
+        "shuffle": "Arranged in ascending order: 30, 35, 37."
+      }
+    },
+    {
+      "case_id": "chartqa-98",
+      "base_ans": "977,633 t",
+      "gold": "977633",
+      "injected": "1961",
+      "local_num_replacement": "300",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1961,633 t",
+      "answers": {
+        "corrupt": "1961,633 t",
+        "local_num": "977,300 t",
+        "shuffle": "977,633 t"
+      }
+    },
+    {
+      "case_id": "chartqa-99",
+      "base_ans": "1.60 million t",
+      "gold": "1.6",
+      "injected": "46.4",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.60 million t",
+      "answers": {
+        "corrupt": "1.60 million t",
+        "local_num": "1.60 million t",
+        "shuffle": "1.72 million t"
+      }
+    },
+    {
+      "case_id": "chartqa-100",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4",
+      "answers": {
+        "corrupt": "4",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-101",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "9",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "no",
+      "answers": {
+        "corrupt": "no",
+        "local_num": "no",
+        "shuffle": "<final>"
+      }
+    },
+    {
+      "case_id": "chartqa-103",
+      "base_ans": "65",
+      "gold": "65",
+      "injected": "145",
+      "local_num_replacement": "36",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "65",
+      "answers": {
+        "corrupt": "65",
+        "local_num": "65",
+        "shuffle": "65"
+      }
+    },
+    {
+      "case_id": "chartqa-104",
+      "base_ans": "25",
+      "gold": "25",
+      "injected": "57",
+      "local_num_replacement": "79",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "25",
+      "answers": {
+        "corrupt": "25",
+        "local_num": "25",
+        "shuffle": "25"
+      }
+    },
+    {
+      "case_id": "chartqa-105",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "4007",
+      "local_num_replacement": "88",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "- 20"
+      }
+    },
+    {
+      "case_id": "chartqa-106",
+      "base_ans": "28%",
+      "gold": "28",
+      "injected": "63",
+      "local_num_replacement": "47",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "28",
+      "answers": {
+        "corrupt": "28",
+        "local_num": "28%",
+        "shuffle": "28%"
+      }
+    },
+    {
+      "case_id": "chartqa-108",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "15",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Therefore, the number of colors used is 4.",
+      "answers": {
+        "corrupt": "Therefore, the number of colors used is 4.",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-109",
+      "base_ans": "37%",
+      "gold": "37",
+      "injected": "71",
+      "local_num_replacement": "19",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "37",
+      "answers": {
+        "corrupt": "37",
+        "local_num": "37",
+        "shuffle": "The median"
+      }
+    },
+    {
+      "case_id": "chartqa-110",
+      "base_ans": "light gray",
+      "gold": "Gray",
+      "injected": "7",
+      "local_num_replacement": "86",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "light gray",
+      "answers": {
+        "corrupt": "light gray",
+        "local_num": "light gray",
+        "shuffle": "light gray"
+      }
+    },
+    {
+      "case_id": "chartqa-111",
+      "base_ans": "8%",
+      "gold": "8",
+      "injected": "15",
+      "local_num_replacement": "88",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "8",
+      "answers": {
+        "corrupt": "8",
+        "local_num": "8",
+        "shuffle": "8"
+      }
+    },
+    {
+      "case_id": "chartqa-112",
+      "base_ans": "1.4 billion",
+      "gold": "1.4",
+      "injected": "9.8",
+      "local_num_replacement": "9877",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "9.8 billion",
+      "answers": {
+        "corrupt": "9.8 billion",
+        "local_num": "1.4 billion",
+        "shuffle": "1.4 billion"
+      }
+    },
+    {
+      "case_id": "chartqa-114",
+      "base_ans": "2.42 t",
+      "gold": "2.42",
+      "injected": "4009",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2.42 t",
+      "answers": {
+        "corrupt": "2.42 t",
+        "local_num": "2.42 t",
+        "shuffle": "2.42 t"
+      }
+    },
+    {
+      "case_id": "chartqa-115",
+      "base_ans": "0.77 t",
+      "gold": "0.77",
+      "injected": "11.8",
+      "local_num_replacement": "1.86",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.77 t",
+      "answers": {
+        "corrupt": "0.77 t",
+        "local_num": "0.77 t",
+        "shuffle": "0.77"
+      }
+    },
+    {
+      "case_id": "chartqa-118",
+      "base_ans": "3",
+      "gold": "3",
+      "injected": "161",
+      "local_num_replacement": "27",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3",
+      "answers": {
+        "corrupt": "3",
+        "local_num": "3",
+        "shuffle": "3"
+      }
+    },
+    {
+      "case_id": "chartqa-119",
+      "base_ans": "21",
+      "gold": "21",
+      "injected": "175",
+      "local_num_replacement": "5",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "21",
+      "answers": {
+        "corrupt": "21",
+        "local_num": "21",
+        "shuffle": "21"
+      }
+    },
+    {
+      "case_id": "chartqa-122",
+      "base_ans": "PP (Polypropylene)",
+      "gold": "PP",
+      "injected": "7",
+      "local_num_replacement": "26",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "PP",
+      "answers": {
+        "corrupt": "PP",
+        "local_num": "PP",
+        "shuffle": "PP (Polypropylene)"
+      }
+    },
+    {
+      "case_id": "chartqa-123",
+      "base_ans": "3",
+      "gold": "3",
+      "injected": "67",
+      "local_num_replacement": "26",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3",
+      "answers": {
+        "corrupt": "3",
+        "local_num": "3",
+        "shuffle": "3"
+      }
+    },
+    {
+      "case_id": "chartqa-124",
+      "base_ans": "71",
+      "gold": "71",
+      "injected": "7",
+      "local_num_replacement": "48",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "71",
+      "answers": {
+        "corrupt": "71",
+        "local_num": "48",
+        "shuffle": "71"
+      }
+    },
+    {
+      "case_id": "chartqa-126",
+      "base_ans": "30%",
+      "gold": "30",
+      "injected": "67",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "67%",
+      "answers": {
+        "corrupt": "67%",
+        "local_num": "30%",
+        "shuffle": "30"
+      }
+    },
+    {
+      "case_id": "chartqa-127",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "127",
+      "local_num_replacement": "17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-128",
+      "base_ans": "Saudi Arabia",
+      "gold": "Saudi Arabia",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Saudi Arabia",
+      "answers": {
+        "corrupt": "Saudi Arabia",
+        "shuffle": "Saudi Arabia"
+      }
+    },
+    {
+      "case_id": "chartqa-130",
+      "base_ans": "30%",
+      "gold": "30",
+      "injected": "33",
+      "local_num_replacement": "83",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "30%",
+      "answers": {
+        "corrupt": "30%",
+        "local_num": "30%",
+        "shuffle": "30%"
+      }
+    },
+    {
+      "case_id": "chartqa-132",
+      "base_ans": "83",
+      "gold": "83",
+      "injected": "4015",
+      "local_num_replacement": "9777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "83",
+      "answers": {
+        "corrupt": "83",
+        "local_num": "83",
+        "shuffle": "83"
+      }
+    },
+    {
+      "case_id": "chartqa-134",
+      "base_ans": "57",
+      "gold": "57",
+      "injected": "7",
+      "local_num_replacement": "24",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "57",
+      "answers": {
+        "corrupt": "57",
+        "local_num": "57",
+        "shuffle": "57"
+      }
+    },
+    {
+      "case_id": "chartqa-135",
+      "base_ans": "1.0417",
+      "gold": "1.058333333",
+      "injected": "55",
+      "local_num_replacement": "27",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.0417",
+      "answers": {
+        "corrupt": "1.0417",
+        "local_num": "- Second bar (right): 48% → \"This country can't solve many of",
+        "shuffle": "1.0417"
+      }
+    },
+    {
+      "case_id": "chartqa-136",
+      "base_ans": "61",
+      "gold": "61",
+      "injected": "3949",
+      "local_num_replacement": "8648",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "61",
+      "answers": {
+        "corrupt": "61",
+        "local_num": "61",
+        "shuffle": "61"
+      }
+    },
+    {
+      "case_id": "chartqa-137",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "3989",
+      "local_num_replacement": "94",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "The blue bar values (Lower) are: [26, 27, 28, 29, 29"
+      }
+    },
+    {
+      "case_id": "chartqa-138",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-140",
+      "base_ans": "2013",
+      "gold": "2013",
+      "injected": "133",
+      "local_num_replacement": "30",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2013",
+      "answers": {
+        "corrupt": "2013",
+        "local_num": "2013",
+        "shuffle": "2013"
+      }
+    },
+    {
+      "case_id": "chartqa-141",
+      "base_ans": "1",
+      "gold": "1",
+      "injected": "4033",
+      "local_num_replacement": "30",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1",
+      "answers": {
+        "corrupt": "1",
+        "local_num": "1",
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-146",
+      "base_ans": "92",
+      "gold": "92",
+      "injected": "3991",
+      "local_num_replacement": "8669",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "92",
+      "answers": {
+        "corrupt": "92",
+        "local_num": "92",
+        "shuffle": "92"
+      }
+    },
+    {
+      "case_id": "chartqa-148",
+      "base_ans": "Favorable",
+      "gold": "Favorable",
+      "injected": "4039",
+      "local_num_replacement": "9773",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Favorable",
+      "answers": {
+        "corrupt": "Favorable",
+        "local_num": "Favorable",
+        "shuffle": "Favorable"
+      }
+    },
+    {
+      "case_id": "chartqa-149",
+      "base_ans": "ANSWER: 0.9375",
+      "gold": "0.9375",
+      "injected": "29",
+      "local_num_replacement": "48",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.9375",
+      "answers": {
+        "corrupt": "0.9375",
+        "local_num": "0.9375",
+        "shuffle": "0.9375"
+      }
+    },
+    {
+      "case_id": "chartqa-150",
+      "base_ans": "54",
+      "gold": "54",
+      "injected": "4035",
+      "local_num_replacement": "9782.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "54",
+      "answers": {
+        "corrupt": "54",
+        "local_num": "54",
+        "shuffle": "54"
+      }
+    },
+    {
+      "case_id": "chartqa-151",
+      "base_ans": "Now compute the product:",
+      "gold": "No",
+      "injected": "121",
+      "local_num_replacement": "9782",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1",
+      "answers": {
+        "corrupt": "1",
+        "local_num": "1",
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-152",
+      "base_ans": "2009",
+      "gold": "2014",
+      "injected": "4025",
+      "local_num_replacement": "18",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2009",
+      "answers": {
+        "corrupt": "2009",
+        "local_num": "2009",
+        "shuffle": "2009"
+      }
+    },
+    {
+      "case_id": "chartqa-153",
+      "base_ans": "1969",
+      "gold": "1969",
+      "injected": "133",
+      "local_num_replacement": "29",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1969",
+      "answers": {
+        "corrupt": "1969",
+        "local_num": "1969",
+        "shuffle": "1969"
+      }
+    },
+    {
+      "case_id": "chartqa-154",
+      "base_ans": "orange",
+      "gold": "orange",
+      "injected": "7",
+      "local_num_replacement": "9776",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "orange",
+      "answers": {
+        "corrupt": "orange",
+        "local_num": "orange",
+        "shuffle": "orange"
+      }
+    },
+    {
+      "case_id": "chartqa-157",
+      "base_ans": "| 2012 | 57    | 28   | 57 - 28 = 29 → abs = 2",
+      "gold": "2010",
+      "injected": "63",
+      "local_num_replacement": "95",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2010",
+      "answers": {
+        "corrupt": "2010",
+        "local_num": "2010",
+        "shuffle": "|------|"
+      }
+    },
+    {
+      "case_id": "chartqa-158",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "111",
+      "local_num_replacement": "13",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-161",
+      "base_ans": "Favor",
+      "gold": "Favor",
+      "injected": "63",
+      "local_num_replacement": "9775",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Favor",
+      "answers": {
+        "corrupt": "Favor",
+        "local_num": "Favor",
+        "shuffle": "Favor"
+      }
+    },
+    {
+      "case_id": "chartqa-162",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "81",
+      "local_num_replacement": "17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-163",
+      "base_ans": "2210",
+      "gold": "2210",
+      "injected": "121",
+      "local_num_replacement": "8666",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2210",
+      "answers": {
+        "corrupt": "2210",
+        "local_num": "2210",
+        "shuffle": "Product = 65 ×"
+      }
+    },
+    {
+      "case_id": "chartqa-165",
+      "base_ans": "47%",
+      "gold": "47",
+      "injected": "59",
+      "local_num_replacement": "40",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "47",
+      "answers": {
+        "corrupt": "47",
+        "local_num": "47",
+        "shuffle": "47"
+      }
+    },
+    {
+      "case_id": "chartqa-166",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "85",
+      "local_num_replacement": "25",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-167",
+      "base_ans": "13",
+      "gold": "13",
+      "injected": "13",
+      "local_num_replacement": "16",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "13",
+      "answers": {
+        "corrupt": "13",
+        "local_num": "13",
+        "shuffle": "13"
+      }
+    },
+    {
+      "case_id": "chartqa-168",
+      "base_ans": "dark blue",
+      "gold": "Blue",
+      "injected": "7",
+      "local_num_replacement": "80",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "dark blue",
+      "answers": {
+        "corrupt": "dark blue",
+        "local_num": "dark blue",
+        "shuffle": "dark blue"
+      }
+    },
+    {
+      "case_id": "chartqa-170",
+      "base_ans": "Don't know",
+      "gold": "Don't Know",
+      "injected": "117",
+      "local_num_replacement": "3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Don't know",
+      "answers": {
+        "corrupt": "Don't know",
+        "local_num": "Don't know",
+        "shuffle": "Don't know"
+      }
+    },
+    {
+      "case_id": "chartqa-171",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "97",
+      "local_num_replacement": "12",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-172",
+      "base_ans": "10%",
+      "gold": "10",
+      "injected": "27",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "27%",
+      "answers": {
+        "corrupt": "27%",
+        "shuffle": "10%"
+      }
+    },
+    {
+      "case_id": "chartqa-173",
+      "base_ans": "69%",
+      "gold": "69",
+      "injected": "4035",
+      "local_num_replacement": "46",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "69",
+      "answers": {
+        "corrupt": "69",
+        "local_num": "69",
+        "shuffle": "69"
+      }
+    },
+    {
+      "case_id": "chartqa-174",
+      "base_ans": "41%",
+      "gold": "41",
+      "injected": "89",
+      "local_num_replacement": "18",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "41%",
+      "answers": {
+        "corrupt": "41%",
+        "local_num": "41%",
+        "shuffle": "41%"
+      }
+    },
+    {
+      "case_id": "chartqa-175",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "89",
+      "local_num_replacement": "94",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "The median is"
+      }
+    },
+    {
+      "case_id": "chartqa-176",
+      "base_ans": "67",
+      "gold": "67",
+      "injected": "141",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "141",
+      "answers": {
+        "corrupt": "141",
+        "shuffle": "67"
+      }
+    },
+    {
+      "case_id": "chartqa-177",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "13",
+      "local_num_replacement": "17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-178",
+      "base_ans": "Bad 22%",
+      "gold": "Bad",
+      "injected": "51",
+      "local_num_replacement": "99",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Bad 22%",
+      "answers": {
+        "corrupt": "Bad 22%",
+        "local_num": "Bad 22%",
+        "shuffle": "Bad 22%"
+      }
+    },
+    {
+      "case_id": "chartqa-179",
+      "base_ans": "53%",
+      "gold": "53",
+      "injected": "51",
+      "local_num_replacement": "42",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "53",
+      "answers": {
+        "corrupt": "53",
+        "local_num": "53",
+        "shuffle": "53%"
+      }
+    },
+    {
+      "case_id": "chartqa-180",
+      "base_ans": "Better off",
+      "gold": "Better off",
+      "injected": "17",
+      "local_num_replacement": "49",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Better off",
+      "answers": {
+        "corrupt": "Better off",
+        "local_num": "Better off",
+        "shuffle": "Better off"
+      }
+    },
+    {
+      "case_id": "chartqa-181",
+      "base_ans": "Better off",
+      "gold": "Better off",
+      "injected": "17",
+      "local_num_replacement": "83",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Better off",
+      "answers": {
+        "corrupt": "Better off",
+        "local_num": "Better off",
+        "shuffle": "Better off"
+      }
+    },
+    {
+      "case_id": "chartqa-182",
+      "base_ans": "Important, but lower priority",
+      "gold": "Important, but lower priority",
+      "injected": "87",
+      "local_num_replacement": "44",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Important, but lower priority",
+      "answers": {
+        "corrupt": "Important, but lower priority",
+        "local_num": "Important, but lower priority",
+        "shuffle": "Important, but lower priority"
+      }
+    },
+    {
+      "case_id": "chartqa-183",
+      "base_ans": "75%",
+      "gold": "75",
+      "injected": "87",
+      "local_num_replacement": "44",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "75%",
+      "answers": {
+        "corrupt": "75%",
+        "local_num": "75",
+        "shuffle": "75%"
+      }
+    },
+    {
+      "case_id": "chartqa-184",
+      "base_ans": "Dissatisfied",
+      "gold": "Dissatisfied",
+      "injected": "47",
+      "local_num_replacement": "11",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Dissatisfied",
+      "answers": {
+        "corrupt": "Dissatisfied",
+        "local_num": "Dissatisfied",
+        "shuffle": "Dissatisfied"
+      }
+    },
+    {
+      "case_id": "chartqa-185",
+      "base_ans": "3.9",
+      "gold": "3.9",
+      "injected": "11",
+      "local_num_replacement": "97",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.9",
+      "answers": {
+        "corrupt": "3.9",
+        "local_num": "3.9",
+        "shuffle": "3.9"
+      }
+    },
+    {
+      "case_id": "chartqa-186",
+      "base_ans": "76%",
+      "gold": "76",
+      "injected": "159",
+      "local_num_replacement": "86",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "76",
+      "answers": {
+        "corrupt": "76",
+        "local_num": "76",
+        "shuffle": "76"
+      }
+    },
+    {
+      "case_id": "chartqa-187",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "45",
+      "local_num_replacement": "19",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-188",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-189",
+      "base_ans": "30",
+      "gold": "30",
+      "injected": "7",
+      "local_num_replacement": "9783",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "30",
+      "answers": {
+        "corrupt": "30",
+        "local_num": "30",
+        "shuffle": "30"
+      }
+    },
+    {
+      "case_id": "chartqa-190",
+      "base_ans": "16",
+      "gold": "16",
+      "injected": "39",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "39",
+      "answers": {
+        "corrupt": "39",
+        "local_num": "16",
+        "shuffle": "16"
+      }
+    },
+    {
+      "case_id": "chartqa-191",
+      "base_ans": "65+",
+      "gold": "65+",
+      "injected": "55",
+      "local_num_replacement": "32",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "65+",
+      "answers": {
+        "corrupt": "65+",
+        "local_num": "65+",
+        "shuffle": "65+"
+      }
+    },
+    {
+      "case_id": "chartqa-192",
+      "base_ans": "11",
+      "gold": "11",
+      "injected": "29",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "29",
+      "answers": {
+        "corrupt": "29",
+        "local_num": "11",
+        "shuffle": "11"
+      }
+    },
+    {
+      "case_id": "chartqa-193",
+      "base_ans": "60",
+      "gold": "60",
+      "injected": "127",
+      "local_num_replacement": "91",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "60",
+      "answers": {
+        "corrupt": "60",
+        "local_num": "60",
+        "shuffle": "Scientists"
+      }
+    },
+    {
+      "case_id": "chartqa-194",
+      "base_ans": "No role",
+      "gold": "No role",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "No role"
+      }
+    },
+    {
+      "case_id": "chartqa-195",
+      "base_ans": "15",
+      "gold": "15",
+      "injected": "37",
+      "local_num_replacement": "88",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "15",
+      "answers": {
+        "corrupt": "15",
+        "local_num": "15",
+        "shuffle": "15"
+      }
+    },
+    {
+      "case_id": "chartqa-196",
+      "base_ans": "Japan",
+      "gold": "Japan",
+      "injected": "125",
+      "local_num_replacement": "29",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Japan",
+      "answers": {
+        "corrupt": "Japan",
+        "local_num": "Japan",
+        "shuffle": "Japan"
+      }
+    },
+    {
+      "case_id": "chartqa-197",
+      "base_ans": "36",
+      "gold": "36",
+      "injected": "79",
+      "local_num_replacement": "16",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "36",
+      "answers": {
+        "corrupt": "36",
+        "local_num": "36",
+        "shuffle": "36"
+      }
+    },
+    {
+      "case_id": "chartqa-201",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "166.7",
+      "local_num_replacement": "816.13",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-203",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "7.0",
+      "local_num_replacement": "3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-204",
+      "base_ans": "Heart disease",
+      "gold": "Heart disease",
+      "injected": "61.2",
+      "local_num_replacement": "19.2",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Heart disease",
+      "answers": {
+        "corrupt": "Heart disease",
+        "local_num": "Heart disease",
+        "shuffle": "Heart disease"
+      }
+    },
+    {
+      "case_id": "chartqa-205",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "42.4",
+      "local_num_replacement": "148.4",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "58.1 ("
+      }
+    },
+    {
+      "case_id": "chartqa-206",
+      "base_ans": "North America",
+      "gold": "North America",
+      "injected": "9",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "North America",
+      "answers": {
+        "corrupt": "North America",
+        "local_num": "North America",
+        "shuffle": "North America"
+      }
+    },
+    {
+      "case_id": "chartqa-207",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "190.0",
+      "local_num_replacement": "912",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-208",
+      "base_ans": "Obesity",
+      "gold": "Obesity",
+      "injected": "7",
+      "local_num_replacement": "8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Obesity",
+      "answers": {
+        "corrupt": "Obesity",
+        "local_num": "Obesity",
+        "shuffle": "Obesity"
+      }
+    },
+    {
+      "case_id": "chartqa-209",
+      "base_ans": "203",
+      "gold": "203",
+      "injected": "7",
+      "local_num_replacement": "343",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "203",
+      "answers": {
+        "corrupt": "203",
+        "local_num": "203",
+        "shuffle": "203"
+      }
+    },
+    {
+      "case_id": "chartqa-210",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-211",
+      "base_ans": "51.33",
+      "gold": "51.33",
+      "injected": "212.3",
+      "local_num_replacement": "9",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "51.33",
+      "answers": {
+        "corrupt": "51.33",
+        "local_num": "51.33",
+        "shuffle": "51.28%"
+      }
+    },
+    {
+      "case_id": "chartqa-212",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "11",
+      "local_num_replacement": "9788",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-213",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "7.0",
+      "local_num_replacement": "7.74",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-214",
+      "base_ans": "0.1%",
+      "gold": "0.1",
+      "injected": "7.2",
+      "local_num_replacement": "9772.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.1%",
+      "answers": {
+        "corrupt": "0.1%",
+        "local_num": "0.1%",
+        "shuffle": "0.1%"
+      }
+    },
+    {
+      "case_id": "chartqa-215",
+      "base_ans": "5",
+      "gold": "5",
+      "injected": "7.1",
+      "local_num_replacement": "7.73",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "5",
+      "answers": {
+        "corrupt": "5",
+        "local_num": "5",
+        "shuffle": "5"
+      }
+    },
+    {
+      "case_id": "chartqa-217",
+      "base_ans": "2.88",
+      "gold": "2.88",
+      "injected": "3959",
+      "local_num_replacement": "7.34",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2.88",
+      "answers": {
+        "corrupt": "2.88",
+        "local_num": "2.88",
+        "shuffle": "2.88"
+      }
+    },
+    {
+      "case_id": "chartqa-218",
+      "base_ans": "Low bone mineral density",
+      "gold": "Low bone mineral density",
+      "injected": "37",
+      "local_num_replacement": "16",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Low bone mineral density",
+      "answers": {
+        "corrupt": "Low bone mineral density",
+        "local_num": "Low bone mineral density",
+        "shuffle": "Low bone mineral density"
+      }
+    },
+    {
+      "case_id": "chartqa-220",
+      "base_ans": "27.5%",
+      "gold": "27.5",
+      "injected": "67",
+      "local_num_replacement": "9777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "27.5%",
+      "answers": {
+        "corrupt": "27.5%",
+        "local_num": "27.5%",
+        "shuffle": "27.5%"
+      }
+    },
+    {
+      "case_id": "chartqa-221",
+      "base_ans": "10.2%",
+      "gold": "10.2",
+      "injected": "41.6",
+      "local_num_replacement": "84.0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "10.2%",
+      "answers": {
+        "corrupt": "10.2%",
+        "local_num": "10.2%",
+        "shuffle": "10.2%"
+      }
+    },
+    {
+      "case_id": "chartqa-222",
+      "base_ans": "16",
+      "gold": "16",
+      "injected": "15",
+      "local_num_replacement": "2.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "16",
+      "answers": {
+        "corrupt": "16",
+        "local_num": "16",
+        "shuffle": "16"
+      }
+    },
+    {
+      "case_id": "chartqa-223",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "140.8",
+      "local_num_replacement": "33.6",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-224",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "7",
+      "local_num_replacement": "9773.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-225",
+      "base_ans": "3.24%",
+      "gold": "3.24",
+      "injected": "7.6",
+      "local_num_replacement": "1.29",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.24%",
+      "answers": {
+        "corrupt": "3.24%",
+        "local_num": "3.24%",
+        "shuffle": "3.24%"
+      }
+    },
+    {
+      "case_id": "chartqa-226",
+      "base_ans": "Burkina Faso",
+      "gold": "Burkina Faso",
+      "injected": "147",
+      "local_num_replacement": "42",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Burkina Faso",
+      "answers": {
+        "corrupt": "Burkina Faso",
+        "local_num": "Burkina Faso",
+        "shuffle": "Burkina Faso"
+      }
+    },
+    {
+      "case_id": "chartqa-227",
+      "base_ans": "5%",
+      "gold": "5",
+      "injected": "4035",
+      "local_num_replacement": "47",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "5%",
+      "answers": {
+        "corrupt": "5%",
+        "local_num": "5%",
+        "shuffle": "5%"
+      }
+    },
+    {
+      "case_id": "chartqa-228",
+      "base_ans": "Lithuania",
+      "gold": "Lithuania",
+      "injected": "207",
+      "local_num_replacement": "86",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Lithuania",
+      "answers": {
+        "corrupt": "Lithuania",
+        "local_num": "Lithuania",
+        "shuffle": "Lithuania"
+      }
+    },
+    {
+      "case_id": "chartqa-229",
+      "base_ans": "28.3",
+      "gold": "28.3",
+      "injected": "45",
+      "local_num_replacement": "6.0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "28.3",
+      "answers": {
+        "corrupt": "28.3",
+        "local_num": "28.3",
+        "shuffle": "28.3"
+      }
+    },
+    {
+      "case_id": "chartqa-230",
+      "base_ans": "0.6 t",
+      "gold": "0.6",
+      "injected": "7.9",
+      "local_num_replacement": "8668",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.6 t",
+      "answers": {
+        "corrupt": "0.6 t",
+        "local_num": "0.6 t",
+        "shuffle": "0.6 t"
+      }
+    },
+    {
+      "case_id": "chartqa-232",
+      "base_ans": "0.01%",
+      "gold": "0.01",
+      "injected": "7.0",
+      "local_num_replacement": "3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.01%",
+      "answers": {
+        "corrupt": "0.01%",
+        "local_num": "0.01%",
+        "shuffle": "0.01%"
+      }
+    },
+    {
+      "case_id": "chartqa-233",
+      "base_ans": "0.02%",
+      "gold": "0.02",
+      "injected": "7",
+      "local_num_replacement": "7.78",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "- Namibia: <0.01% → This is less than 0.01%, but visually the bar is nearly identical in length to Egypt’s, suggesting",
+      "answers": {
+        "corrupt": "- Namibia: <0.01% → This is less than 0.01%, but visually the bar is nearly identical in length to Egypt’s, suggesting",
+        "local_num": "0.02%",
+        "shuffle": "- **Luxembourg**: 0%"
+      }
+    },
+    {
+      "case_id": "chartqa-234",
+      "base_ans": "1.6",
+      "gold": "1.6",
+      "injected": "7",
+      "local_num_replacement": "8.3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.6",
+      "answers": {
+        "corrupt": "1.6",
+        "local_num": "1.6",
+        "shuffle": "1.6"
+      }
+    },
+    {
+      "case_id": "chartqa-235",
+      "base_ans": "3.2",
+      "gold": "3.2",
+      "injected": "11.6",
+      "local_num_replacement": "8.3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.2",
+      "answers": {
+        "corrupt": "3.2",
+        "local_num": "3.2",
+        "shuffle": "3.2"
+      }
+    },
+    {
+      "case_id": "chartqa-236",
+      "base_ans": "20.98 m²",
+      "gold": "20.98",
+      "injected": "207",
+      "local_num_replacement": "877",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "20.98 m²",
+      "answers": {
+        "corrupt": "20.98 m²",
+        "local_num": "20.98 m²",
+        "shuffle": "20.98 m²"
+      }
+    },
+    {
+      "case_id": "chartqa-238",
+      "base_ans": "41%",
+      "gold": "41",
+      "injected": "89",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "89%",
+      "answers": {
+        "corrupt": "89%",
+        "local_num": "41%",
+        "shuffle": "41%"
+      }
+    },
+    {
+      "case_id": "chartqa-239",
+      "base_ans": "5.4%",
+      "gold": "5.4",
+      "injected": "7",
+      "local_num_replacement": "8.3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "5.4%",
+      "answers": {
+        "corrupt": "5.4%",
+        "local_num": "5.4%",
+        "shuffle": "5.4%"
+      }
+    },
+    {
+      "case_id": "chartqa-240",
+      "base_ans": "Nepal",
+      "gold": "Nepal",
+      "injected": "7",
+      "local_num_replacement": "877",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Nepal",
+      "answers": {
+        "corrupt": "Nepal",
+        "local_num": "Nepal",
+        "shuffle": "Nepal"
+      }
+    },
+    {
+      "case_id": "chartqa-241",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "4007",
+      "local_num_replacement": "864.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-242",
+      "base_ans": "5.25 trillion",
+      "gold": "5.25",
+      "injected": "4033",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "5.25 trillion",
+      "answers": {
+        "corrupt": "5.25 trillion",
+        "local_num": "5.25 trillion",
+        "shuffle": "5.25 trillion"
+      }
+    },
+    {
+      "case_id": "chartqa-244",
+      "base_ans": "1",
+      "gold": "1",
+      "injected": null,
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": null,
+      "answers": {
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-245",
+      "base_ans": "1.6%",
+      "gold": "1.6",
+      "injected": "8.6",
+      "local_num_replacement": "89.4",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.6%",
+      "answers": {
+        "corrupt": "1.6%",
+        "local_num": "1.6%",
+        "shuffle": "1.6"
+      }
+    },
+    {
+      "case_id": "chartqa-246",
+      "base_ans": "96.4%",
+      "gold": "96.4",
+      "injected": "199.8",
+      "local_num_replacement": "8660",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "96.4%",
+      "answers": {
+        "corrupt": "96.4%",
+        "local_num": "96.4%",
+        "shuffle": "96.4%"
+      }
+    },
+    {
+      "case_id": "chartqa-247",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "13",
+      "local_num_replacement": "54.30",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Sum = 99.67 + 96.4 + 87.63 = 283.7"
+      }
+    },
+    {
+      "case_id": "chartqa-249",
+      "base_ans": "38",
+      "gold": "38",
+      "injected": "4031",
+      "local_num_replacement": "17",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "38",
+      "answers": {
+        "corrupt": "38",
+        "local_num": "38",
+        "shuffle": "38"
+      }
+    },
+    {
+      "case_id": "chartqa-250",
+      "base_ans": "Mexico",
+      "gold": "Mexico",
+      "injected": "9.7",
+      "local_num_replacement": "9778",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Mexico",
+      "answers": {
+        "corrupt": "Mexico",
+        "local_num": "Mexico",
+        "shuffle": "Mexico"
+      }
+    },
+    {
+      "case_id": "chartqa-251",
+      "base_ans": "1.35 t",
+      "gold": "1.346",
+      "injected": "9.7",
+      "local_num_replacement": "1.71",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Sum = 1.5 + 1.34 + 1.2 =",
+      "answers": {
+        "corrupt": "Sum = 1.5 + 1.34 + 1.2 =",
+        "local_num": "1.35",
+        "shuffle": "Average ="
+      }
+    },
+    {
+      "case_id": "chartqa-252",
+      "base_ans": "40.7%",
+      "gold": "40.7",
+      "injected": "88.4",
+      "local_num_replacement": "9781.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "40.7%",
+      "answers": {
+        "corrupt": "40.7%",
+        "local_num": "40.7%",
+        "shuffle": "40.7%"
+      }
+    },
+    {
+      "case_id": "chartqa-254",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "9",
+      "local_num_replacement": "8690.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-255",
+      "base_ans": "41.935",
+      "gold": "41.935",
+      "injected": "104.1",
+      "local_num_replacement": "9",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "41.935",
+      "answers": {
+        "corrupt": "41.935",
+        "local_num": "41.935",
+        "shuffle": "41.935%"
+      }
+    },
+    {
+      "case_id": "chartqa-256",
+      "base_ans": "Belarus",
+      "gold": "Belarus",
+      "injected": "8.0",
+      "local_num_replacement": "9785",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Belarus",
+      "answers": {
+        "corrupt": "Belarus",
+        "local_num": "Belarus",
+        "shuffle": "Belarus"
+      }
+    },
+    {
+      "case_id": "chartqa-257",
+      "base_ans": "0.08",
+      "gold": "0.08",
+      "injected": "8.2",
+      "local_num_replacement": "7.26",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.08",
+      "answers": {
+        "corrupt": "0.08",
+        "local_num": "0.08",
+        "shuffle": "0.08"
+      }
+    },
+    {
+      "case_id": "chartqa-258",
+      "base_ans": "Mongolia",
+      "gold": "Mongolia",
+      "injected": "4015",
+      "local_num_replacement": "2.3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Mongolia",
+      "answers": {
+        "corrupt": "Mongolia",
+        "local_num": "Mongolia",
+        "shuffle": "Mongolia"
+      }
+    },
+    {
+      "case_id": "chartqa-259",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "4015",
+      "local_num_replacement": "88.5",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "- **Mongolia**: 11.8 years"
+      }
+    },
+    {
+      "case_id": "chartqa-260",
+      "base_ans": "9.29%",
+      "gold": "9.29",
+      "injected": "25.6",
+      "local_num_replacement": "98.04",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "9.29%",
+      "answers": {
+        "corrupt": "9.29%",
+        "local_num": "9.29%",
+        "shuffle": "9.29%"
+      }
+    },
+    {
+      "case_id": "chartqa-262",
+      "base_ans": "5",
+      "gold": "5",
+      "injected": "17",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "5",
+      "answers": {
+        "corrupt": "5",
+        "shuffle": "5"
+      }
+    },
+    {
+      "case_id": "chartqa-263",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "4025",
+      "local_num_replacement": "57",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-264",
+      "base_ans": "6.85%",
+      "gold": "6.85",
+      "injected": "19.4",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "6.85%",
+      "answers": {
+        "corrupt": "6.85%",
+        "local_num": "6.85%",
+        "shuffle": "6.85%"
+      }
+    },
+    {
+      "case_id": "chartqa-265",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "13",
+      "local_num_replacement": "3.52",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-266",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "206.9",
+      "local_num_replacement": "9777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4",
+      "answers": {
+        "corrupt": "4",
+        "local_num": "4",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-267",
+      "base_ans": "47.6%",
+      "gold": "47.6",
+      "injected": "4007",
+      "local_num_replacement": "877",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "47.6%",
+      "answers": {
+        "corrupt": "47.6%",
+        "local_num": "47.6%",
+        "shuffle": "47.6%"
+      }
+    },
+    {
+      "case_id": "chartqa-268",
+      "base_ans": "1",
+      "gold": "1",
+      "injected": "4039",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1",
+      "answers": {
+        "corrupt": "1",
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-269",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "19",
+      "local_num_replacement": "87.1",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "no",
+      "answers": {
+        "corrupt": "no",
+        "local_num": "no",
+        "shuffle": "The smallest two values are 4.4 liters (Ecuador) and 6.0 liters (Nauru). Their sum is 4.4 + 6.0 = 10.4 liters. The largest value is 12.6 liters (Slovenia). Since 1"
+      }
+    },
+    {
+      "case_id": "chartqa-270",
+      "base_ans": "Greece",
+      "gold": "Greece",
+      "injected": "49.1",
+      "local_num_replacement": "12.51",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Greece",
+      "answers": {
+        "corrupt": "Greece",
+        "local_num": "Greece",
+        "shuffle": "Greece"
+      }
+    },
+    {
+      "case_id": "chartqa-271",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "56.7",
+      "local_num_replacement": "98.72",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "True"
+      }
+    },
+    {
+      "case_id": "chartqa-272",
+      "base_ans": "dark grayish-blue",
+      "gold": "gray",
+      "injected": "7",
+      "local_num_replacement": "9775",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "dark grayish-blue",
+      "answers": {
+        "corrupt": "dark grayish-blue",
+        "local_num": "dark grayish-blue",
+        "shuffle": "dark grayish-blue"
+      }
+    },
+    {
+      "case_id": "chartqa-273",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "4023",
+      "local_num_replacement": "37.32",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-274",
+      "base_ans": "Human capital",
+      "gold": "Human capital",
+      "injected": "16.2",
+      "local_num_replacement": "8662",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Human capital",
+      "answers": {
+        "corrupt": "Human capital",
+        "local_num": "Human capital",
+        "shuffle": "Human capital"
+      }
+    },
+    {
+      "case_id": "chartqa-276",
+      "base_ans": "2015",
+      "gold": "2015",
+      "injected": "4037",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2015",
+      "answers": {
+        "corrupt": "2015",
+        "local_num": "2015",
+        "shuffle": "2015"
+      }
+    },
+    {
+      "case_id": "chartqa-277",
+      "base_ans": "143 million tonnes",
+      "gold": "143",
+      "injected": "4037",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "143 million tonnes",
+      "answers": {
+        "corrupt": "143 million tonnes",
+        "local_num": "143 million tonnes",
+        "shuffle": "143 million tonnes"
+      }
+    },
+    {
+      "case_id": "chartqa-278",
+      "base_ans": "48.01",
+      "gold": "48.01",
+      "injected": "7",
+      "local_num_replacement": "9775",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "48.01",
+      "answers": {
+        "corrupt": "48.01",
+        "local_num": "48.01",
+        "shuffle": "48.01"
+      }
+    },
+    {
+      "case_id": "chartqa-279",
+      "base_ans": "32.115",
+      "gold": "32.115",
+      "injected": "110.1",
+      "local_num_replacement": "8667",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "32.115",
+      "answers": {
+        "corrupt": "32.115",
+        "local_num": "32.115",
+        "shuffle": "Average = (16.22 + 48.01) / 2 = 64"
+      }
+    },
+    {
+      "case_id": "chartqa-280",
+      "base_ans": "0.04",
+      "gold": "0.04",
+      "injected": "245.5",
+      "local_num_replacement": "777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.04",
+      "answers": {
+        "corrupt": "0.04",
+        "local_num": "0.04",
+        "shuffle": "0.04"
+      }
+    },
+    {
+      "case_id": "chartqa-281",
+      "base_ans": "0.11",
+      "gold": "0.11",
+      "injected": "7.1",
+      "local_num_replacement": "7.71",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.11",
+      "answers": {
+        "corrupt": "0.11",
+        "local_num": "0.11",
+        "shuffle": "0.11"
+      }
+    },
+    {
+      "case_id": "chartqa-282",
+      "base_ans": "56.6%",
+      "gold": "56.6",
+      "injected": "120.2",
+      "local_num_replacement": "87",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "56.6%",
+      "answers": {
+        "corrupt": "56.6%",
+        "local_num": "56.6%",
+        "shuffle": "56.6%"
+      }
+    },
+    {
+      "case_id": "chartqa-283",
+      "base_ans": "13.5%",
+      "gold": "13.5",
+      "injected": "3809",
+      "local_num_replacement": "10.8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "13.5%",
+      "answers": {
+        "corrupt": "13.5%",
+        "local_num": "13.5%",
+        "shuffle": "13.1%"
+      }
+    },
+    {
+      "case_id": "chartqa-284",
+      "base_ans": "0.69",
+      "gold": "0.69",
+      "injected": "7",
+      "local_num_replacement": "9777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.69",
+      "answers": {
+        "corrupt": "0.69",
+        "local_num": "0.69",
+        "shuffle": "0.69"
+      }
+    },
+    {
+      "case_id": "chartqa-285",
+      "base_ans": "0.235",
+      "gold": "0.235",
+      "injected": "7.9",
+      "local_num_replacement": "4.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.235",
+      "answers": {
+        "corrupt": "0.235",
+        "local_num": "0.235",
+        "shuffle": "0.235"
+      }
+    },
+    {
+      "case_id": "chartqa-286",
+      "base_ans": "24%",
+      "gold": "24",
+      "injected": "55",
+      "local_num_replacement": "91",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "24%",
+      "answers": {
+        "corrupt": "24%",
+        "local_num": "24%",
+        "shuffle": "24%"
+      }
+    },
+    {
+      "case_id": "chartqa-287",
+      "base_ans": "6.2%",
+      "gold": "6.2",
+      "injected": "44.2",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "6.2",
+      "answers": {
+        "corrupt": "6.2",
+        "local_num": "6.2",
+        "shuffle": "Average = (8.5 + 6.3 + 3.8) / 3 = 18.6 /"
+      }
+    },
+    {
+      "case_id": "chartqa-288",
+      "base_ans": "Switzerland",
+      "gold": "Switzerland",
+      "injected": "11",
+      "local_num_replacement": "140.63",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Switzerland",
+      "answers": {
+        "corrupt": "Switzerland",
+        "local_num": "Switzerland",
+        "shuffle": "Switzerland"
+      }
+    },
+    {
+      "case_id": "chartqa-289",
+      "base_ans": "1541.08",
+      "gold": "1541.08",
+      "injected": "1584.2",
+      "local_num_replacement": "914.21",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1,541.08 m³",
+      "answers": {
+        "corrupt": "1,541.08 m³",
+        "local_num": "1,541.08 m³",
+        "shuffle": "1541.54"
+      }
+    },
+    {
+      "case_id": "chartqa-290",
+      "base_ans": "Alcohol",
+      "gold": "Alcohol",
+      "injected": "3987",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Alcohol",
+      "answers": {
+        "corrupt": "Alcohol",
+        "shuffle": "Alcohol"
+      }
+    },
+    {
+      "case_id": "chartqa-291",
+      "base_ans": "60",
+      "gold": "60",
+      "injected": "79",
+      "local_num_replacement": "8667",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "60",
+      "answers": {
+        "corrupt": "60",
+        "local_num": "60",
+        "shuffle": "60"
+      }
+    },
+    {
+      "case_id": "chartqa-292",
+      "base_ans": "Philippines",
+      "gold": "Philippines",
+      "injected": "18.6",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Philippines",
+      "answers": {
+        "corrupt": "Philippines",
+        "local_num": "Philippines",
+        "shuffle": "Philippines"
+      }
+    },
+    {
+      "case_id": "chartqa-293",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "18.6",
+      "local_num_replacement": "8638",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "no",
+        "shuffle": "- Gabon: 5"
+      }
+    },
+    {
+      "case_id": "chartqa-294",
+      "base_ans": "Brazil",
+      "gold": "Brazil",
+      "injected": "3985",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Brazil",
+      "answers": {
+        "corrupt": "Brazil",
+        "local_num": "Brazil",
+        "shuffle": "Brazil"
+      }
+    },
+    {
+      "case_id": "chartqa-295",
+      "base_ans": "3.4%",
+      "gold": "3.4",
+      "injected": "8.6",
+      "local_num_replacement": "7.5",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.4%",
+      "answers": {
+        "corrupt": "3.4%",
+        "local_num": "3.4%",
+        "shuffle": "3.4%"
+      }
+    },
+    {
+      "case_id": "chartqa-296",
+      "base_ans": "United States",
+      "gold": "United States",
+      "injected": "39.5",
+      "local_num_replacement": "8638",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "United States",
+      "answers": {
+        "corrupt": "United States",
+        "local_num": "United States",
+        "shuffle": "United States"
+      }
+    },
+    {
+      "case_id": "chartqa-297",
+      "base_ans": "4.19 million t",
+      "gold": "4.19",
+      "injected": "7",
+      "local_num_replacement": "190",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4.19 million t",
+      "answers": {
+        "corrupt": "4.19 million t",
+        "local_num": "4.19 million t",
+        "shuffle": "- South America: 423,081"
+      }
+    },
+    {
+      "case_id": "chartqa-298",
+      "base_ans": "95%",
+      "gold": "95",
+      "injected": "4013",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "95%",
+      "answers": {
+        "corrupt": "95%",
+        "local_num": "95%",
+        "shuffle": "95%"
+      }
+    },
+    {
+      "case_id": "chartqa-299",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "761",
+      "local_num_replacement": "0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-300",
+      "base_ans": "Deaths from HIV/AIDS",
+      "gold": "Deaths from HIV/AIDS",
+      "injected": "595",
+      "local_num_replacement": "177",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Deaths from HIV/AIDS",
+      "answers": {
+        "corrupt": "Deaths from HIV/AIDS",
+        "local_num": "Deaths from HIV/AIDS",
+        "shuffle": "Deaths from HIV/AIDS"
+      }
+    },
+    {
+      "case_id": "chartqa-302",
+      "base_ans": "Samoa",
+      "gold": "Samoa",
+      "injected": "53",
+      "local_num_replacement": "9787",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Samoa",
+      "answers": {
+        "corrupt": "Samoa",
+        "local_num": "Samoa",
+        "shuffle": "Samoa"
+      }
+    },
+    {
+      "case_id": "chartqa-304",
+      "base_ans": "$24,688.3",
+      "gold": "24688.3",
+      "injected": "1383.6",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "$24,138.3",
+      "answers": {
+        "corrupt": "$24,138.3",
+        "local_num": "$24,688.3",
+        "shuffle": "$24,688.3"
+      }
+    },
+    {
+      "case_id": "chartqa-305",
+      "base_ans": "82.2",
+      "gold": "82.2",
+      "injected": "55",
+      "local_num_replacement": "355.0",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "82.2",
+      "answers": {
+        "corrupt": "82.2",
+        "local_num": "82.2",
+        "shuffle": "82.2"
+      }
+    },
+    {
+      "case_id": "chartqa-306",
+      "base_ans": "13",
+      "gold": "13",
+      "injected": "4007",
+      "local_num_replacement": "87.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "13",
+      "answers": {
+        "corrupt": "13",
+        "local_num": "13",
+        "shuffle": "13"
+      }
+    },
+    {
+      "case_id": "chartqa-307",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "127",
+      "local_num_replacement": "737",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-310",
+      "base_ans": "Medium car (petrol)",
+      "gold": "Medium car (petrol)",
+      "injected": "4043",
+      "local_num_replacement": "9",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Medium car (petrol)",
+      "answers": {
+        "corrupt": "Medium car (petrol)",
+        "local_num": "Medium car (petrol)",
+        "shuffle": "Medium car (petrol)"
+      }
+    },
+    {
+      "case_id": "chartqa-311",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "214.8",
+      "local_num_replacement": "817",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "True",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-312",
+      "base_ans": "Malawi",
+      "gold": "Malawi",
+      "injected": "59.3",
+      "local_num_replacement": "16.24",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Malawi",
+      "answers": {
+        "corrupt": "Malawi",
+        "local_num": "Malawi",
+        "shuffle": "Malawi"
+      }
+    },
+    {
+      "case_id": "chartqa-313",
+      "base_ans": "1.91",
+      "gold": "1.905805459",
+      "injected": "59.0",
+      "local_num_replacement": "93.84",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.91",
+      "answers": {
+        "corrupt": "1.91",
+        "local_num": "1.91",
+        "shuffle": "1.89"
+      }
+    },
+    {
+      "case_id": "chartqa-314",
+      "base_ans": "Italy, 22%",
+      "gold": "[Italy , 22]",
+      "injected": "51",
+      "local_num_replacement": "99",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Italy, 22%",
+      "answers": {
+        "corrupt": "Italy, 22%",
+        "local_num": "Italy, 22%",
+        "shuffle": "Italy, 22%"
+      }
+    },
+    {
+      "case_id": "chartqa-315",
+      "base_ans": "2.55",
+      "gold": "2.54",
+      "injected": "119",
+      "local_num_replacement": "99",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2.55",
+      "answers": {
+        "corrupt": "2.55",
+        "local_num": "2.55",
+        "shuffle": "2.55"
+      }
+    },
+    {
+      "case_id": "chartqa-316",
+      "base_ans": "27.22",
+      "gold": "27.22",
+      "injected": "31.3",
+      "local_num_replacement": "82.72",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "27.22",
+      "answers": {
+        "corrupt": "27.22",
+        "local_num": "27.22",
+        "shuffle": "27.17%"
+      }
+    },
+    {
+      "case_id": "chartqa-319",
+      "base_ans": "0.08%",
+      "gold": "0.08",
+      "injected": "7.2",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.08%",
+      "answers": {
+        "corrupt": "0.08%",
+        "local_num": "0.08%",
+        "shuffle": "0.04"
+      }
+    },
+    {
+      "case_id": "chartqa-320",
+      "base_ans": "8.5",
+      "gold": "8.5",
+      "injected": "24.0",
+      "local_num_replacement": "9789",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "8.5",
+      "answers": {
+        "corrupt": "8.5",
+        "local_num": "8.5",
+        "shuffle": "8.5"
+      }
+    },
+    {
+      "case_id": "chartqa-321",
+      "base_ans": "10.2",
+      "gold": "10.2",
+      "injected": "17.6",
+      "local_num_replacement": "9789",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "10.2",
+      "answers": {
+        "corrupt": "10.2",
+        "local_num": "10.2",
+        "shuffle": "10.2"
+      }
+    },
+    {
+      "case_id": "chartqa-322",
+      "base_ans": "3.88",
+      "gold": "3.88",
+      "injected": "9",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.88",
+      "answers": {
+        "corrupt": "3.88",
+        "local_num": "3.88",
+        "shuffle": "3.88"
+      }
+    },
+    {
+      "case_id": "chartqa-323",
+      "base_ans": "3",
+      "gold": "3",
+      "injected": "12.0",
+      "local_num_replacement": "9.85",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3",
+      "answers": {
+        "corrupt": "3",
+        "local_num": "3",
+        "shuffle": "3"
+      }
+    },
+    {
+      "case_id": "chartqa-324",
+      "base_ans": "$9,546.35 (2003)",
+      "gold": "9545.35",
+      "injected": "1099.7",
+      "local_num_replacement": "5336",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "$9,546.35 (2003)",
+      "answers": {
+        "corrupt": "$9,546.35 (2003)",
+        "local_num": "9546.35",
+        "shuffle": "$9,546.35"
+      }
+    },
+    {
+      "case_id": "chartqa-325",
+      "base_ans": "14151.35",
+      "gold": "14153.35",
+      "injected": "17",
+      "local_num_replacement": "8.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "14151.35",
+      "answers": {
+        "corrupt": "14151.35",
+        "local_num": "14151.35",
+        "shuffle": "Sum = $5,666.67 + $8,484."
+      }
+    },
+    {
+      "case_id": "chartqa-326",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "107",
+      "local_num_replacement": "-81",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-328",
+      "base_ans": "28",
+      "gold": "28",
+      "injected": "4033",
+      "local_num_replacement": "87",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "28",
+      "answers": {
+        "corrupt": "28",
+        "local_num": "28",
+        "shuffle": "28"
+      }
+    },
+    {
+      "case_id": "chartqa-329",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "33.6",
+      "local_num_replacement": "87",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "The largest bar is Top 10%"
+      }
+    },
+    {
+      "case_id": "chartqa-330",
+      "base_ans": "Argentina",
+      "gold": "Argentina",
+      "injected": "436.8",
+      "local_num_replacement": "63.3",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Argentina",
+      "answers": {
+        "corrupt": "Argentina",
+        "local_num": "Argentina",
+        "shuffle": "Argentina"
+      }
+    },
+    {
+      "case_id": "chartqa-331",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "436.8",
+      "local_num_replacement": "480.9",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-332",
+      "base_ans": "Chemistry",
+      "gold": "Chemistry",
+      "injected": "3971",
+      "local_num_replacement": "8.8",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Chemistry",
+      "answers": {
+        "corrupt": "Chemistry",
+        "local_num": "Chemistry",
+        "shuffle": "Chemistry"
+      }
+    },
+    {
+      "case_id": "chartqa-333",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "3971",
+      "local_num_replacement": "8.75",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Yes",
+      "answers": {
+        "corrupt": "Yes",
+        "local_num": "yes",
+        "shuffle": "(1.06 + 1.08 + 1.10) / 3 = 3"
+      }
+    },
+    {
+      "case_id": "chartqa-334",
+      "base_ans": "Venezuela",
+      "gold": "Venezuela",
+      "injected": "4031",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Venezuela",
+      "answers": {
+        "corrupt": "Venezuela",
+        "local_num": "Venezuela",
+        "shuffle": "Venezuela"
+      }
+    },
+    {
+      "case_id": "chartqa-335",
+      "base_ans": "0.02%",
+      "gold": "0.02",
+      "injected": "9.3",
+      "local_num_replacement": "8.82",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "0.02%",
+      "answers": {
+        "corrupt": "0.02%",
+        "local_num": "0.02%",
+        "shuffle": "0.02%"
+      }
+    },
+    {
+      "case_id": "chartqa-336",
+      "base_ans": "Reddish-brown",
+      "gold": "brown",
+      "injected": "37",
+      "local_num_replacement": "9787",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Reddish-brown",
+      "answers": {
+        "corrupt": "Reddish-brown",
+        "local_num": "Reddish-brown",
+        "shuffle": "Reddish-brown"
+      }
+    },
+    {
+      "case_id": "chartqa-337",
+      "base_ans": "1.02",
+      "gold": "1.015645372",
+      "injected": "69.3",
+      "local_num_replacement": "17.35",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.02",
+      "answers": {
+        "corrupt": "1.02",
+        "local_num": "1.02",
+        "shuffle": "1.02"
+      }
+    },
+    {
+      "case_id": "chartqa-339",
+      "base_ans": "No, the",
+      "gold": "No",
+      "injected": "18.6",
+      "local_num_replacement": "8.69",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "0.14"
+      }
+    },
+    {
+      "case_id": "chartqa-340",
+      "base_ans": "53.9 hours",
+      "gold": "53.9",
+      "injected": "35",
+      "local_num_replacement": "-84",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "53.9 hours",
+      "answers": {
+        "corrupt": "53.9 hours",
+        "local_num": "53.9 hours",
+        "shuffle": "53.9 hours"
+      }
+    },
+    {
+      "case_id": "chartqa-341",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "76.6",
+      "local_num_replacement": "20.6",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "True",
+      "answers": {
+        "corrupt": "True",
+        "local_num": "Yes",
+        "shuffle": "The"
+      }
+    },
+    {
+      "case_id": "chartqa-342",
+      "base_ans": "8.87%",
+      "gold": "8.87",
+      "injected": "3907",
+      "local_num_replacement": "8627",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "8.87%",
+      "answers": {
+        "corrupt": "8.87%",
+        "local_num": "8.87%",
+        "shuffle": "8.87%"
+      }
+    },
+    {
+      "case_id": "chartqa-343",
+      "base_ans": "32.43",
+      "gold": "32.43",
+      "injected": "13",
+      "local_num_replacement": "69.84",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "32.43",
+      "answers": {
+        "corrupt": "32.43",
+        "local_num": "32.43",
+        "shuffle": "Sum = 37.3 + 36.51 + 23."
+      }
+    },
+    {
+      "case_id": "chartqa-344",
+      "base_ans": "7.54%",
+      "gold": "7.54",
+      "injected": "7",
+      "local_num_replacement": "9782",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "7.54%",
+      "answers": {
+        "corrupt": "7.54%",
+        "local_num": "7.54%",
+        "shuffle": "7.54%"
+      }
+    },
+    {
+      "case_id": "chartqa-345",
+      "base_ans": "1.89",
+      "gold": "1.88",
+      "injected": "33.8",
+      "local_num_replacement": "80.1",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1.89",
+      "answers": {
+        "corrupt": "1.89",
+        "local_num": "1.89",
+        "shuffle": "1.72"
+      }
+    },
+    {
+      "case_id": "chartqa-346",
+      "base_ans": "Myanmar",
+      "gold": "Myanmar",
+      "injected": "33",
+      "local_num_replacement": "777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Myanmar",
+      "answers": {
+        "corrupt": "Myanmar",
+        "local_num": "Myanmar",
+        "shuffle": "Myanmar"
+      }
+    },
+    {
+      "case_id": "chartqa-347",
+      "base_ans": "Zambia",
+      "gold": "Zambia",
+      "injected": "4017",
+      "local_num_replacement": "88",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Zambia",
+      "answers": {
+        "corrupt": "Zambia",
+        "local_num": "Zambia",
+        "shuffle": "Zambia"
+      }
+    },
+    {
+      "case_id": "chartqa-349",
+      "base_ans": "2015",
+      "gold": "2015",
+      "injected": "135",
+      "local_num_replacement": "92",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2015",
+      "answers": {
+        "corrupt": "2015",
+        "local_num": "2015",
+        "shuffle": "2015"
+      }
+    },
+    {
+      "case_id": "chartqa-350",
+      "base_ans": "Georgia",
+      "gold": "Georgia",
+      "injected": "4029",
+      "local_num_replacement": "8668",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Georgia",
+      "answers": {
+        "corrupt": "Georgia",
+        "local_num": "Georgia",
+        "shuffle": "Georgia"
+      }
+    },
+    {
+      "case_id": "chartqa-351",
+      "base_ans": "Spain",
+      "gold": "Spain",
+      "injected": "10.0",
+      "local_num_replacement": "8.2",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Spain",
+      "answers": {
+        "corrupt": "Spain",
+        "local_num": "Spain",
+        "shuffle": "Spain"
+      }
+    },
+    {
+      "case_id": "chartqa-352",
+      "base_ans": "Belize's Statistical Capacity Indicator",
+      "gold": "Belize",
+      "injected": "4015",
+      "local_num_replacement": "9784.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Belize",
+      "answers": {
+        "corrupt": "Belize",
+        "local_num": "Belize",
+        "shuffle": "Belize"
+      }
+    },
+    {
+      "case_id": "chartqa-354",
+      "base_ans": "Benin",
+      "gold": "Benin",
+      "injected": "4027",
+      "local_num_replacement": "8667",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Benin",
+      "answers": {
+        "corrupt": "Benin",
+        "local_num": "Benin",
+        "shuffle": "Benin"
+      }
+    },
+    {
+      "case_id": "chartqa-355",
+      "base_ans": "Sudan",
+      "gold": "Sudan",
+      "injected": "167",
+      "local_num_replacement": "9787",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Sudan",
+      "answers": {
+        "corrupt": "Sudan",
+        "local_num": "Sudan",
+        "shuffle": "Sudan"
+      }
+    },
+    {
+      "case_id": "chartqa-356",
+      "base_ans": "Mongolia",
+      "gold": "Mongolia",
+      "injected": "7",
+      "local_num_replacement": "8668",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Mongolia",
+      "answers": {
+        "corrupt": "Mongolia",
+        "local_num": "Mongolia",
+        "shuffle": "Mongolia"
+      }
+    },
+    {
+      "case_id": "chartqa-358",
+      "base_ans": "North America",
+      "gold": "North America",
+      "injected": "4035",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "North America",
+      "answers": {
+        "corrupt": "North America",
+        "local_num": "North America",
+        "shuffle": "North America"
+      }
+    },
+    {
+      "case_id": "chartqa-360",
+      "base_ans": "1",
+      "gold": "1",
+      "injected": "4007",
+      "local_num_replacement": "7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1",
+      "answers": {
+        "corrupt": "1",
+        "local_num": "1",
+        "shuffle": "1"
+      }
+    },
+    {
+      "case_id": "chartqa-361",
+      "base_ans": "Neither increases nor decreases",
+      "gold": "No",
+      "injected": "207",
+      "local_num_replacement": "9777",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Neither increase nor decrease",
+      "answers": {
+        "corrupt": "Neither increase nor decrease",
+        "local_num": "Neither increase nor decrease",
+        "shuffle": "Neither increase nor decrease"
+      }
+    },
+    {
+      "case_id": "chartqa-362",
+      "base_ans": "Hong Kong",
+      "gold": "Hong Kong",
+      "injected": "7",
+      "local_num_replacement": "9770",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Hong Kong",
+      "answers": {
+        "corrupt": "Hong Kong",
+        "local_num": "Hong Kong",
+        "shuffle": "Hong Kong"
+      }
+    },
+    {
+      "case_id": "chartqa-366",
+      "base_ans": "Estonia",
+      "gold": "Estonia",
+      "injected": "7",
+      "local_num_replacement": "777.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Estonia",
+      "answers": {
+        "corrupt": "Estonia",
+        "local_num": "Estonia",
+        "shuffle": "Estonia"
+      }
+    },
+    {
+      "case_id": "chartqa-367",
+      "base_ans": "No",
+      "gold": "No",
+      "injected": "7",
+      "local_num_replacement": "9789",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "No",
+      "answers": {
+        "corrupt": "No",
+        "local_num": "No",
+        "shuffle": "No"
+      }
+    },
+    {
+      "case_id": "chartqa-368",
+      "base_ans": "1960",
+      "gold": "1960",
+      "injected": "3967",
+      "local_num_replacement": "92",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1960",
+      "answers": {
+        "corrupt": "1960",
+        "local_num": "1960",
+        "shuffle": "1960"
+      }
+    },
+    {
+      "case_id": "chartqa-370",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "9",
+      "local_num_replacement": "5.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4",
+      "answers": {
+        "corrupt": "4",
+        "local_num": "4",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-372",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-373",
+      "base_ans": "Yes",
+      "gold": "Yes",
+      "injected": "3867",
+      "local_num_replacement": "8557",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3867",
+      "answers": {
+        "corrupt": "3867",
+        "local_num": "Yes",
+        "shuffle": "Yes"
+      }
+    },
+    {
+      "case_id": "chartqa-374",
+      "base_ans": "purple",
+      "gold": "Purple",
+      "injected": "4017",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "purple",
+      "answers": {
+        "corrupt": "purple",
+        "local_num": "purple",
+        "shuffle": "purple"
+      }
+    },
+    {
+      "case_id": "chartqa-378",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-380",
+      "base_ans": "1992",
+      "gold": "1992",
+      "injected": "3995",
+      "local_num_replacement": "8.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "1992",
+      "answers": {
+        "corrupt": "1992",
+        "local_num": "1992",
+        "shuffle": "1992"
+      }
+    },
+    {
+      "case_id": "chartqa-381",
+      "base_ans": "3.0%",
+      "gold": "3",
+      "injected": "11",
+      "local_num_replacement": "8646",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "3.0%",
+      "answers": {
+        "corrupt": "3.0%",
+        "local_num": "3.0%",
+        "shuffle": "2.5"
+      }
+    },
+    {
+      "case_id": "chartqa-384",
+      "base_ans": "2014",
+      "gold": "2014",
+      "injected": "4035",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2014",
+      "answers": {
+        "corrupt": "2014",
+        "local_num": "2014",
+        "shuffle": "2014"
+      }
+    },
+    {
+      "case_id": "chartqa-385",
+      "base_ans": "6",
+      "gold": "6",
+      "injected": "4035",
+      "local_num_replacement": "9781.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "6",
+      "answers": {
+        "corrupt": "6",
+        "local_num": "6",
+        "shuffle": "6"
+      }
+    },
+    {
+      "case_id": "chartqa-386",
+      "base_ans": "4",
+      "gold": "4",
+      "injected": "7",
+      "local_num_replacement": null,
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "4",
+      "answers": {
+        "corrupt": "4",
+        "shuffle": "4"
+      }
+    },
+    {
+      "case_id": "chartqa-387",
+      "base_ans": "2",
+      "gold": "2",
+      "injected": "4019",
+      "local_num_replacement": "9773.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2",
+      "answers": {
+        "corrupt": "2",
+        "local_num": "2",
+        "shuffle": "2"
+      }
+    },
+    {
+      "case_id": "chartqa-388",
+      "base_ans": "Burundi",
+      "gold": "Burundi",
+      "injected": "3987",
+      "local_num_replacement": "8.2",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Burundi",
+      "answers": {
+        "corrupt": "Burundi",
+        "local_num": "Burundi",
+        "shuffle": "Burundi"
+      }
+    },
+    {
+      "case_id": "chartqa-390",
+      "base_ans": "2004",
+      "gold": "2004",
+      "injected": "3607",
+      "local_num_replacement": "7.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "2004",
+      "answers": {
+        "corrupt": "2004",
+        "local_num": "2004",
+        "shuffle": "2004"
+      }
+    },
+    {
+      "case_id": "chartqa-392",
+      "base_ans": "Gabon",
+      "gold": "Gabon",
+      "injected": "-3973",
+      "local_num_replacement": "9777.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Gabon",
+      "answers": {
+        "corrupt": "Gabon",
+        "local_num": "Gabon",
+        "shuffle": "Gabon"
+      }
+    },
+    {
+      "case_id": "chartqa-393",
+      "base_ans": "18",
+      "gold": "18",
+      "injected": "4021",
+      "local_num_replacement": "8656",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "18",
+      "answers": {
+        "corrupt": "18",
+        "local_num": "18",
+        "shuffle": "18"
+      }
+    },
+    {
+      "case_id": "chartqa-394",
+      "base_ans": "orange-red",
+      "gold": "orange",
+      "injected": "4017",
+      "local_num_replacement": "9771",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "orange-red",
+      "answers": {
+        "corrupt": "orange-red",
+        "local_num": "orange-red",
+        "shuffle": "orange-red"
+      }
+    },
+    {
+      "case_id": "chartqa-395",
+      "base_ans": "- 2010: ~55.0% → decrease from 2009: 55.0 -",
+      "gold": "2005",
+      "injected": "4019",
+      "local_num_replacement": "29.7",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "ANS",
+      "answers": {
+        "corrupt": "ANS",
+        "local_num": "ANS",
+        "shuffle": "ANSWER"
+      }
+    },
+    {
+      "case_id": "chartqa-398",
+      "base_ans": "Belize",
+      "gold": "Belize",
+      "injected": "4019",
+      "local_num_replacement": "9781.",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Belize",
+      "answers": {
+        "corrupt": "Belize",
+        "local_num": "Belize",
+        "shuffle": "Belize"
+      }
+    },
+    {
+      "case_id": "chartqa-400",
+      "base_ans": "Asia",
+      "gold": "Asia",
+      "injected": "3969",
+      "local_num_replacement": "8638",
+      "semantic_cf_ok": false,
+      "semantic_cf_reason": null,
+      "semantic_cf_meta": {},
+      "corrupt_ans": "Asia",
+      "answers": {
+        "corrupt": "Asia",
+        "local_num": "Asia",
+        "shuffle": "Asia"
+      }
+    }
+  ]
+}

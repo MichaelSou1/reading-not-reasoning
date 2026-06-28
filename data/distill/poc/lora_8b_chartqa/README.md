@@ -1,8 +1,8 @@
 ---
-base_model: /home/gpus/Workout-Coach/hf_cache/modelscope/Qwen--Qwen3-VL-8B-Instruct
+base_model: /home/gpus/models/Qwen3-VL-8B-Instruct
 library_name: peft
 tags:
-- base_model:adapter:/home/gpus/Workout-Coach/hf_cache/modelscope/Qwen--Qwen3-VL-8B-Instruct
+- base_model:adapter:/home/gpus/models/Qwen3-VL-8B-Instruct
 - lora
 - transformers
 ---

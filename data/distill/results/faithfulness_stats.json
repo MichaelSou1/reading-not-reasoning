@@ -59,7 +59,7 @@
       "F_ci_method": "independent binomial bootstrap",
       "load_bearing_test": {
         "alternative": "flip_corrupt > flip_shuffle",
-        "p_raw": 0.9966815070167335,
+        "p_raw": 0.996681507016734,
         "method": "aggregate exact hypergeometric randomization",
         "paired_n": 0,
         "discordant": null,
@@ -1111,7 +1111,7 @@
       "F_ci_method": "independent binomial bootstrap",
       "load_bearing_test": {
         "alternative": "flip_corrupt > flip_shuffle",
-        "p_raw": 0.9999999955058312,
+        "p_raw": 0.9999999955058311,
         "method": "aggregate exact hypergeometric randomization",
         "paired_n": 0,
         "discordant": null,
@@ -1783,7 +1783,7 @@
       "F_ci_method": "independent binomial bootstrap",
       "load_bearing_test": {
         "alternative": "flip_corrupt > flip_shuffle",
-        "p_raw": 0.9351447630950793,
+        "p_raw": 0.9351447630950792,
         "method": "aggregate exact hypergeometric randomization",
         "paired_n": 0,
         "discordant": null,
@@ -2292,6 +2292,137 @@
       }
     }
   ],
+  "online_p3": {
+    "definition": "P3-1 generation-time intervention. inplace = the model's own greedy token stream is re-fed up to the boundary before a selected numeric token, the corrupted value v_inj is substituted, and the model continues generating its own chain and answer (single autoregressive stream, no added instruction, conclusion line never supplied). twopass = the headline force-continue paradigm. Both run on the same SFT student; the in-place readout (snap/follow/other) is identical to the two-pass readout. online_clean re-feeds v_true and continues; its high base-answer agreement certifies the re-encode continuation reproduces the original stream.",
+    "preregistration": "docs/preregistration_p3_inplace.md",
+    "interpretation": "CONVERGENCE if present in-place follow Wilson upper bound < 0.10 and in-place corrupt-flip not materially above two-pass corrupt-flip.",
+    "twopass": {
+      "paradigm": "twopass (force-continue)",
+      "condition": "present (re-prompt)",
+      "n_eval": 314,
+      "base_acc": 0.785,
+      "n_corrupt": 307,
+      "follow": {
+        "k": 11,
+        "n": 307,
+        "rate": 0.035830618892508145,
+        "ci95": [
+          0.020122981861902218,
+          0.06301090548611889
+        ]
+      },
+      "snap": {
+        "k": 287,
+        "n": 307,
+        "rate": 0.9348534201954397,
+        "ci95": [
+          0.9015235489943773,
+          0.9574352302269502
+        ]
+      },
+      "flip": {
+        "k": 30,
+        "n": 307,
+        "rate": 0.09771986970684039,
+        "ci95": [
+          0.06930944273807145,
+          0.1360732596302135
+        ]
+      }
+    },
+    "inplace": [
+      {
+        "paradigm": "inplace (single stream)",
+        "condition": "present (locked-visual)",
+        "n_eval": 314,
+        "base_acc": 0.785,
+        "base_correct": 314,
+        "n_corrupt": 307,
+        "follow": {
+          "k": 29,
+          "n": 307,
+          "rate": 0.09446254071661238,
+          "ci95": [
+            0.06657693587353138,
+            0.1323716183357923
+          ]
+        },
+        "snap": {
+          "k": 225,
+          "n": 307,
+          "rate": 0.7328990228013029,
+          "ci95": [
+            0.6807510033499792,
+            0.7792905900157505
+          ]
+        },
+        "flip": {
+          "k": 90,
+          "n": 307,
+          "rate": 0.2931596091205212,
+          "ci95": [
+            0.24504651721923978,
+            0.3463850746867205
+          ]
+        },
+        "other": 53,
+        "clean_agree": {
+          "k": 287,
+          "n": 307,
+          "rate": 0.9348534201954397,
+          "ci95": [
+            0.9015235489943773,
+            0.9574352302269502
+          ]
+        }
+      },
+      {
+        "paradigm": "inplace (single stream)",
+        "condition": "masked-B (no-visual)",
+        "n_eval": 28,
+        "base_acc": 0.07,
+        "base_correct": 28,
+        "n_corrupt": 23,
+        "follow": {
+          "k": 0,
+          "n": 23,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.14311661845042686
+          ]
+        },
+        "snap": {
+          "k": 11,
+          "n": 23,
+          "rate": 0.4782608695652174,
+          "ci95": [
+            0.29237157416646653,
+            0.6703726266357259
+          ]
+        },
+        "flip": {
+          "k": 14,
+          "n": 23,
+          "rate": 0.6086956521739131,
+          "ci95": [
+            0.4078552239138171,
+            0.7784237720752206
+          ]
+        },
+        "other": 12,
+        "clean_agree": {
+          "k": 12,
+          "n": 23,
+          "rate": 0.5217391304347826,
+          "ci95": [
+            0.32962737336427406,
+            0.7076284258335335
+          ]
+        }
+      }
+    ]
+  },
   "gain_subsets": [
     {
       "label": "ChartQA 8B",

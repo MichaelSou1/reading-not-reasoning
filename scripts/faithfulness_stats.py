@@ -197,6 +197,15 @@ CROSS_FAMILY_SPECS = [
     ),
 ]
 
+# P3-1 generation-time (single-stream) intervention: cross-paradigm comparison on the
+# ChartQA 8B SFT student. Both paradigms run on the SAME retrained student so the only
+# thing that changes is prompt-level (two-pass force-continue) vs stream-level (in-place).
+ONLINE_P3_PATHS = {
+    "present": POC / "battery_p3_online_chartqa8b_present.json",
+    "maskedB": POC / "battery_p3_online_chartqa8b_maskedB.json",
+    "twopass": POC / "battery_p3_twopass_chartqa8b_present.json",
+}
+
 
 def stable_seed(text: str) -> int:
     return int(hashlib.md5(text.encode("utf-8")).hexdigest()[:8], 16)
@@ -875,6 +884,78 @@ def summarize_finqa_targeted(spec: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def summarize_online_p3() -> dict[str, Any] | None:
+    """P3-1 cross-paradigm comparison: prompt-level two-pass force-continue vs stream-level
+    in-place continuation, both on the same ChartQA 8B SFT student. Reports follow/snap/flip
+    with Wilson 95% CIs so the in-place numbers stand alongside (never replace) the headline
+    force-continue numbers."""
+    present_p = ONLINE_P3_PATHS["present"]
+    if not present_p.exists():
+        return None
+
+    def inplace_block(path: Path, condition: str) -> dict[str, Any]:
+        s = load_json(path).get("summary") or {}
+        oc = s.get("online_corrupt") or {}
+        clean = s.get("online_clean_control") or {}
+        n = int(oc.get("n", 0))
+        return {
+            "paradigm": "inplace (single stream)",
+            "condition": condition,
+            "n_eval": s.get("n_eval"),
+            "base_acc": s.get("base_acc"),
+            "base_correct": s.get("base_correct"),
+            "n_corrupt": n,
+            "follow": rate_block(int(oc.get("follow", 0)), n),
+            "snap": rate_block(int(oc.get("snap", 0)), n),
+            "flip": rate_block(int(oc.get("flips", 0)), n),
+            "other": int(oc.get("other", 0)),
+            "clean_agree": rate_block(int(clean.get("agree_base", 0)), int(clean.get("n", 0))),
+        }
+
+    rows = [inplace_block(present_p, "present (locked-visual)")]
+    if ONLINE_P3_PATHS["maskedB"].exists():
+        rows.append(inplace_block(ONLINE_P3_PATHS["maskedB"], "masked-B (no-visual)"))
+
+    twopass = None
+    tp_p = ONLINE_P3_PATHS["twopass"]
+    if tp_p.exists():
+        ts = load_json(tp_p).get("summary") or {}
+        intr = ts.get("interventions") or {}
+        corr = intr.get("corrupt") or {}
+        rp = ts.get("re_perception") or {}
+        ncorr = int(rp.get("n_corrupt", corr.get("n", 0)) or 0)
+        twopass = {
+            "paradigm": "twopass (force-continue)",
+            "condition": "present (re-prompt)",
+            "n_eval": ts.get("n_eval"),
+            "base_acc": ts.get("base_acc"),
+            "n_corrupt": ncorr,
+            "follow": rate_block(int(rp.get("follows_injected", 0)), ncorr),
+            "snap": rate_block(int(rp.get("snap_to_true", 0)), ncorr),
+            "flip": rate_block(int(corr.get("flips", 0)), int(corr.get("n", 0) or 0)),
+        }
+
+    return {
+        "definition": (
+            "P3-1 generation-time intervention. inplace = the model's own greedy token stream "
+            "is re-fed up to the boundary before a selected numeric token, the corrupted value "
+            "v_inj is substituted, and the model continues generating its own chain and answer "
+            "(single autoregressive stream, no added instruction, conclusion line never supplied). "
+            "twopass = the headline force-continue paradigm. Both run on the same SFT student; the "
+            "in-place readout (snap/follow/other) is identical to the two-pass readout. "
+            "online_clean re-feeds v_true and continues; its high base-answer agreement certifies "
+            "the re-encode continuation reproduces the original stream."
+        ),
+        "preregistration": "docs/preregistration_p3_inplace.md",
+        "interpretation": (
+            "CONVERGENCE if present in-place follow Wilson upper bound < 0.10 and in-place "
+            "corrupt-flip not materially above two-pass corrupt-flip."
+        ),
+        "twopass": twopass,
+        "inplace": rows,
+    }
+
+
 def fmt_rate(block: dict[str, Any]) -> str:
     return f"{block['rate']:.3f} [{block['ci95'][0]:.3f},{block['ci95'][1]:.3f}]"
 
@@ -996,6 +1077,37 @@ def render_md(result: dict[str, Any]) -> str:
                 f"{fmt_p(test['p_raw'])} | {fmt_rate(c['snap'])} | "
                 f"{fmt_rate(c['follow'])} | {test['method']} |"
             )
+
+    online = result.get("online_p3")
+    if online:
+        lines += [
+            "",
+            "## P3-1 Generation-Time (Single-Stream) Intervention",
+            "",
+            "Cross-paradigm comparison on the same ChartQA 8B SFT student. The two-pass row is the "
+            "headline force-continue paradigm; the in-place rows intervene inside the model's own "
+            "autoregressive stream (no re-prompt, no added instruction, the conclusion line is never "
+            "supplied). Readout is identical across paradigms. Reported alongside, not replacing, the "
+            "force-continue results. Pre-registration: " + str(online.get("preregistration")) + ".",
+            "",
+            "| paradigm | condition | n_corrupt | base acc | follow 95% CI | snap 95% CI | flip 95% CI | clean-agree |",
+            "|---|---|---:|---:|---:|---:|---:|---:|",
+        ]
+        if online.get("twopass"):
+            t = online["twopass"]
+            ba = f"{t['base_acc']:.3f}" if isinstance(t.get("base_acc"), float) else "NA"
+            lines.append(
+                f"| {t['paradigm']} | {t['condition']} | {t['n_corrupt']} | {ba} | "
+                f"{fmt_rate(t['follow'])} | {fmt_rate(t['snap'])} | {fmt_rate(t['flip'])} | - |"
+            )
+        for r in online["inplace"]:
+            ba = f"{r['base_acc']:.3f}" if isinstance(r.get("base_acc"), float) else "NA"
+            lines.append(
+                f"| {r['paradigm']} | {r['condition']} | {r['n_corrupt']} | {ba} | "
+                f"{fmt_rate(r['follow'])} | {fmt_rate(r['snap'])} | {fmt_rate(r['flip'])} | "
+                f"{fmt_simple_rate(r['clean_agree'])} |"
+            )
+        lines += ["", f"_Interpretation rule (pre-registered): {online.get('interpretation')}_"]
 
     lines += [
         "",
@@ -1180,6 +1292,7 @@ def main() -> int:
         "local_controls": local_controls,
         "semantic_controls": semantic_controls,
         "cross_family": cross_family,
+        "online_p3": summarize_online_p3(),
         "gain_subsets": [summarize_gain_subset(spec) for spec in GAIN_SPECS],
         "finqa_targeted": [summarize_finqa_targeted(spec) for spec in FINQA_TARGETED],
     }
