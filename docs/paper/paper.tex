@@ -40,7 +40,9 @@
 \begin{abstract}
 Many multimodal systems compress agentic visual reasoning into a single
 tool-free VLM forward pass via chain-of-thought supervised fine-tuning.
-We ask what such distillation actually transfers.
+We ask what such distillation actually transfers.  Our causal claims
+concern the \emph{emitted written chain}, not hidden-state or latent
+computation that never surfaces as text.
 %
 Across chart, table, natural-image counting, and rendered financial QA,
 CoT SFT reliably improves accuracy---often strongly---yet a causal
@@ -91,6 +93,22 @@ Chart and table QA are useful because the same task mixes visual extraction and 
 
 \section{Experimental Setup}
 \label{sec:setup}
+
+\paragraph{Definitions.}
+We fix three terms used throughout. A \emph{load-bearing written chain} is
+an emitted numeric intermediate whose value causally determines the final
+answer: under a counterfactual edit to that token, a load-bearing chain
+forces the answer to track the edited value. \emph{Reading} is the
+complementary case in which the final answer is recovered from a source
+still available at answer time---visible pixels, a redundant enumeration
+elsewhere in the rationale, or the chain's own conclusion line---so that
+editing an upstream intermediate leaves the answer unchanged. \emph{Latent
+reasoning} is any computation that does not surface as an edited written
+token, including arithmetic that the model may perform while re-reading the
+image. Our probes intervene only on emitted written tokens; they can show
+that a written intermediate is not load-bearing, but they cannot certify
+the absence of latent reasoning. ``Reading, not reasoning'' is therefore a
+claim about the emitted chain, not about the model's internal state.
 
 \paragraph{Tasks.}
 \emph{ChartQA} \citep{chartqa} (400 held-out open numeric questions, image-disjoint from SFT train images), \emph{TabMWP} \citep{tabmwp} (400 rendered-table, free-response numeric cases), TallyQA-complex natural-image counting (400 open integer questions), and FinQA rendered tables for the pre-specified curriculum probe. All four tasks fix the visual evidence in the input, making the causal question well-posed: does the written chain carry the computation that produces any SFT accuracy gain?
@@ -233,7 +251,7 @@ Six findings follow.
 To test whether the chart/table result is a chart artifact, we run a pre-specified TallyQA-complex counting probe on base Qwen3-VL-8B/32B, with no chart adapter. This is a genuinely perception-bottlenecked natural-image regime (free-form accuracy .415/.448). Yet the emitted CoT's numeric content is again not load-bearing: across scales, follow is 0/345 with the image present and 1/345 when masked. Even when \corrupt{} hits the count token itself, follow is 0/103 present and 1/103 masked. The model reconstructs the answer from redundant enumeration in the text, so masking the image is almost inert. This is the same reading-not-reasoning pattern with a different readable source: not the image, but the redundant chain.
 
 \paragraph{Shortcut-removing curriculum.}
-As a constructive counter-test, we train on rendered FinQA tables filtered to require multi-step, multi-cell arithmetic with a gold-program-verified flippable operand. The curriculum uses a deterministic gold-program teacher and a matched vanilla control; a text-teacher arm repeats the test with fluent answer-conditioned rationales. Accuracy rises substantially (8B: .080 base $\to$ .582 vanilla $\to$ .674 curriculum; 32B: .123 $\to$ .659 $\to$ .682). But the targeted probe still finds no load-bearing operand use: changing a verified on-path \emph{input} operand yields follow 0/172 for the 8B curriculum and 0/175 for the 32B curriculum. When the chain's final conclusion is consistently rewritten to the recomputed value, the model follows it in 96--97\% of cases. The mechanism is conclusion copying, not recomputation from operands. Thus even a shortcut-removing curriculum can improve accuracy without installing a load-bearing written chain.
+As a constructive counter-test, we train on rendered FinQA tables filtered to require multi-step, multi-cell arithmetic with a gold-program-verified flippable operand. The curriculum uses a deterministic gold-program teacher and a matched vanilla control; a text-teacher arm repeats the test with fluent answer-conditioned rationales. Accuracy rises substantially (8B: .080 base $\to$ .582 vanilla $\to$ .674 curriculum; 32B: .123 $\to$ .659 $\to$ .682). But the targeted probe still finds no load-bearing operand use: changing a verified on-path \emph{input} operand yields follow 0/172 for the 8B curriculum and 0/175 for the 32B curriculum. When the chain's final conclusion is consistently rewritten to the recomputed value, the model follows it in 96--97\% of cases. The observable mechanism is conclusion copying, not recomputation from the emitted operands under this probe; we do not claim the model performs no arithmetic latently, only that the written operands are not the load-bearing source of the answer. Thus even a shortcut-removing curriculum can improve accuracy without installing a load-bearing written chain.
 
 \section{Discussion and Limitations}
 \label{sec:discussion}
@@ -242,7 +260,7 @@ As a constructive counter-test, we train on rendered FinQA tables filtered to re
 (i) Claims of ``internalizing agentic reasoning'' need causal audits. Significant accuracy gains are compatible with re-reading visual evidence, reconstructing from redundant rationale text, or copying the rationale's conclusion. (ii) The load-bearing locus is task-dependent: answer-time evidence can live in pixels, in redundant text, or in a conclusion line. A single CoT faithfulness score without information-source controls is under-specified.
 
 \paragraph{Limitations.}
-All causal claims are about emitted rationales, not a proof that the model lacks latent internal computation. The chart/table and FinQA operands are input-readable by design, which is exactly why these substrates can distinguish re-reading from written-chain use; the scope does not include tasks whose required operands are unavailable in the input. The 32B students use QLoRA/NF4 rather than full bf16 fine-tuning. The main teacher family is Qwen3-VL, although the FinQA text-teacher arm reduces a format-specific teacher concern. Corrupting one numeric token is a sensitivity lower bound; we therefore report it only with shuffle/paraphrase/filler/truncation, targeted local numeric and semantic-counterfactual controls, image masking, snap/follow/other classification, and targeted gold-program operand tests. The \localnum{} and \semanticcf{} controls are currently ChartQA 8B replications rather than full eight-cell reruns; \semanticcf{} uses a protected-final rewrite cache and is best read as a semantic diagnostic rather than a format-matched local control. Legacy batteries did not persist raw generated CoTs for non-eligible cases, so we cannot retrospectively split no-CoT, wrong-answer, and parse-failure reasons inside the nonprobe mass; instead, Table~\ref{tab:selection} reports the exact answer-eval and probe-kept strata and \texttt{faithfulness\_stats.md} gives lower/upper follow bounds that assign the whole unobserved mass adversarially.
+All causal claims are about emitted rationales, not a proof that the model lacks latent internal computation. In particular, the re-reading step we infer from the snap behavior may itself involve latent arithmetic over the visible evidence; our probes do not exclude that. What they do establish is narrower and specific: the final answer is not read off the corrupted written intermediate, since editing that token does not move the answer beyond no-target controls. The chart/table and FinQA operands are input-readable by design, which is exactly why these substrates can distinguish re-reading from written-chain use; the scope does not include tasks whose required operands are unavailable in the input. The 32B students use QLoRA/NF4 rather than full bf16 fine-tuning. The main teacher family is Qwen3-VL, although the FinQA text-teacher arm reduces a format-specific teacher concern. Corrupting one numeric token is a sensitivity lower bound; we therefore report it only with shuffle/paraphrase/filler/truncation, targeted local numeric and semantic-counterfactual controls, image masking, snap/follow/other classification, and targeted gold-program operand tests. The \localnum{} and \semanticcf{} controls are currently ChartQA 8B replications rather than full eight-cell reruns; \semanticcf{} uses a protected-final rewrite cache and is best read as a semantic diagnostic rather than a format-matched local control. Legacy batteries did not persist raw generated CoTs for non-eligible cases, so we cannot retrospectively split no-CoT, wrong-answer, and parse-failure reasons inside the nonprobe mass; instead, Table~\ref{tab:selection} reports the exact answer-eval and probe-kept strata and \texttt{faithfulness\_stats.md} gives lower/upper follow bounds that assign the whole unobserved mass adversarially.
 
 \section{Conclusion}
 \label{sec:conclusion}
