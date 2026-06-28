@@ -1,5 +1,5 @@
 {
-  "definition": "F = flip_corrupt - flip_shuffle (present); SE = binomial sqrt(pc(1-pc)/nc + ps(1-ps)/ns)",
+  "definition": "F = flip_corrupt - flip_shuffle; F_ci95 loaded from faithfulness_stats.json when available",
   "cells": [
     {
       "dataset": "chartqa",
@@ -12,12 +12,30 @@
       "acc_after_corrupt_present": 0.8161993769470405,
       "snap_rate": 0.8161993769470405,
       "follow_rate": 0.03115264797507788,
+      "F_present_ci": [
+        -0.1588785046728972,
+        -0.02180685358255452
+      ],
+      "F_present_p_holm": 1.0,
+      "snap_ci": [
+        0.7701748860331522,
+        0.854745346553452
+      ],
+      "follow_ci": [
+        0.017007883314417944,
+        0.05638625457441024
+      ],
       "n_eval_masked": 321,
       "flip_corrupt_masked": 0.3333333333333333,
       "flip_shuffle_masked": 0.40809968847352024,
       "F_masked": -0.07476635514018692,
       "F_masked_se": 0.03801035090060876,
       "masked_minus_present_gap": 0.12149532710280372,
+      "F_masked_ci": [
+        -0.14953271028037385,
+        0.0
+      ],
+      "F_masked_p_holm": 1.0,
       "sft": {
         "base_acc": 0.7125,
         "sft_acc": 0.7775,
@@ -43,12 +61,30 @@
       "acc_after_corrupt_present": 0.9810126582278481,
       "snap_rate": 0.9810126582278481,
       "follow_rate": 0.015822784810126583,
+      "F_present_ci": [
+        -0.031167900644853114,
+        0.03811400366212882
+      ],
+      "F_present_p_holm": 1.0,
+      "snap_ci": [
+        0.9592013080351728,
+        0.9912695943953501
+      ],
+      "follow_ci": [
+        0.006776994684222731,
+        0.03649900484294853
+      ],
       "n_eval_masked": 318,
       "flip_corrupt_masked": 0.12025316455696203,
       "flip_shuffle_masked": 0.1289308176100629,
       "F_masked": -0.008677653053100864,
       "F_masked_se": 0.026228889362695112,
       "masked_minus_present_gap": 0.06962025316455697,
+      "F_masked_ci": [
+        -0.059230952949605925,
+        0.04185574396942918
+      ],
+      "F_masked_p_holm": 1.0,
       "sft": {
         "base_acc": 0.725,
         "sft_acc": 0.795,

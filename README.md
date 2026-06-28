@@ -9,7 +9,7 @@ Target: AAAI 2027 Main Technical Track
 
 ## Core finding
 
-CoT SFT reliably improves accuracy on chart, table, natural-image counting, and rendered financial QA. Yet a causal probe battery shows the emitted written chain is **not load-bearing**: corrupting an on-path numeric intermediate flips the final answer no more often than a format-matched control, and the model almost never follows the injected value — it snaps back to the answer readable from the original visual evidence.
+CoT SFT reliably improves accuracy on chart, table, natural-image counting, and rendered financial QA. Yet a causal probe battery shows the emitted written chain is **not load-bearing**: corrupting an on-path numeric intermediate does not produce a reliable excess flip over no-target controls, including a gentler same-shape local numeric control, and the model almost never follows the injected value — it snaps back to the answer readable from the original visual evidence. A semantic counterfactual diagnostic shows broad whole-prefix rewriting can be a much stronger perturbation than single-token corruption, so it is reported separately rather than treated as a gentle local control.
 
 The information source behind each accuracy gain is task-dependent:
 
@@ -28,7 +28,9 @@ Even a shortcut-removing curriculum with gold-program-verified operands raises a
 | Intervention | What it tests |
 |---|---|
 | `CORRUPT` | Replace one on-path numeric intermediate with a wrong value |
-| `SHUFFLE` | Same tokens, shuffled order — format control with no injected target |
+| `local_num` | Same rationale order, same-shape perturbation of a different local number — no injected answer target |
+| `semantic_cf` | LLM-rewritten non-final numeric counterfactual with a protected final conclusion segment |
+| `SHUFFLE` | Same tokens, shuffled order — harsh no-target order/format control |
 | `paraphrase` / `filler` / `delete` / `truncate` | Robustness battery |
 | `image-mask` | Remove visual input — identifies snap-to-memory vs re-read |
 
@@ -41,7 +43,7 @@ A chain is load-bearing only when CORRUPT flips substantially more than controls
 
 | | |
 |---|---|
-| **Models** | Qwen3-VL 8B and 32B (dense), served locally via vLLM |
+| **Models** | Qwen3-VL 8B and 32B (dense) plus InternVL3.5-8B cross-family probe, served locally via vLLM |
 | **Tasks** | ChartQA (400), TabMWP (400), TallyQA-complex natural counting (400), FinQA (curriculum probe) |
 | **SFT variants** | LoRA and dense/full-SFT (8B: embedding + first 3 layers frozen, ~79.7% trainable params) |
 | **Statistics** | McNemar exact tests; Holm correction across 4 headline cells; all below *p* = .01 |
@@ -58,6 +60,7 @@ A chain is load-bearing only when CORRUPT flips substantially more than controls
 | N1 | FinQA curriculum probe (H_fail_bypass) | ✅ | operand-follow 0/172 (8B), 0/175 (32B) |
 | N3 | TallyQA natural-image pole probe | ✅ | F=0, follow 0/345; unified re-readability axis |
 | P0-2 | Dense/full-SFT control — blocks LoRA-capacity alternative | ✅ | same F≈0/high-snap/low-follow signature |
+| P0-5 | InternVL3.5-8B cross-family ChartQA probe | ✅ | base .755; corrupt/shuffle .070/.096; follow 0/302 |
 | WU-5 | faithfulness ⊥ accuracy figure | ✅ | |
 | WU-6 / N4 | Full paper reframe to reading-not-reasoning + regime narrative | ✅ | canonical `paper.tex` |
 
@@ -166,9 +169,13 @@ Draft date: 2026-06-26. Current revision work is tracked in [`todo/0627.md`](tod
 Completed foundation:
 
 - P0-1 method transparency is complete in the current draft.
+- P0-2 faithfulness-probe statistics are complete: F CIs, snap/follow CIs, corrected tests, and gain-subset summaries regenerate via `scripts/faithfulness_stats.py`.
+- P0-3 selection-bias audit is complete: raw-to-probe flow, answer-eval strata, SFT-gain probe results, and sensitivity bounds are in `data/distill/results/faithfulness_stats.md` and the paper's selection-flow table.
+- P0-4 cleaner/control diagnostics are complete on ChartQA 8B: `local_num` replaces a different same-shape number with no injected target; paired corrupt/local is `.235/.224`, `F_local=+.010` [95% CI `-.034,+.054`], paired exact `p=.385`, with corrupt follow `13/321=.040`. `semantic_cf` rewrote 288/321 eligible CoTs via the configured ORCH endpoint; paired corrupt/semantic is `.236/.434`, `F_semantic=-.198` [95% CI `-.257,-.139`], paired exact one-sided `p=1.000`.
+- P0-5 cross-family external validity is complete on InternVL3.5-8B: ChartQA present-image base acc `302/400=.755`, probe eligible `302`, paired corrupt/shuffle `.070/.096`, `F=-.026` [95% CI `-.053,-.003`], paired exact one-sided `p=.994`, snap `299/302=.990`, follow `0/302` [95% CI `.000,.013`].
 - Dense/full-SFT control blocks the LoRA-capacity alternative.
 - F is measured on the same student checkpoint as accuracy.
 - Figure 1 / Figure 2 text-figure consistency has been verified.
 - TabMWP full 6-intervention battery (present + masked) is complete with `details[].answers`.
 
-Remaining before submission: P0-2 statistics, P0-3 selection-flow analysis, P0-4 cleaner control or claim downgrade, P0-6 claim-boundary pass, P1 positioning/method-title edits, AAAI template, double-blind audit, and reproducibility checklist.
+Remaining before submission: P0-6 claim-boundary pass, P1 positioning/method-title edits, AAAI template, double-blind audit, and reproducibility checklist.

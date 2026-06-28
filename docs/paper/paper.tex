@@ -21,6 +21,8 @@
 
 \newcommand{\corrupt}{\textsc{corrupt}}
 \newcommand{\shuffle}{\textsc{shuffle}}
+\newcommand{\localnum}{\textsc{local-num}}
+\newcommand{\semanticcf}{\textsc{semantic-cf}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{\bf Reading, Not Reasoning: A Causal Faithfulness Audit of\\ Chain-of-Thought in Distilled Chart-and-Table VLMs}
@@ -43,9 +45,10 @@ We ask what such distillation actually transfers.
 Across chart, table, natural-image counting, and rendered financial QA,
 CoT SFT reliably improves accuracy---often strongly---yet a causal
 faithfulness audit shows that the emitted written chain is not
-load-bearing: corrupting an on-path numeric intermediate flips the
-final answer no more often than a format-matched control, and the model
-almost never follows the injected value, instead snapping back to
+load-bearing: corrupting an on-path numeric intermediate does not
+produce a reliable excess flip over no-target controls, including a
+targeted same-shape local numeric control, and the model almost never
+follows the injected value, instead snapping back to
 the answer readable from the original evidence.
 %
 The information source behind each gain is task-dependent: models
@@ -64,7 +67,7 @@ causal probes over emitted rationales can separate the two.
 
 Agentic VLM systems---iterative frame retrieval, self-reflection, critic-orchestrated re-reading, visual tool use---often improve accuracy, but their inference-time tools are expensive. A natural compression step is to convert an expert trajectory into a written rationale or latent trace and fine-tune a VLM to execute one forward pass at test time \citep{vpd,chartpali,pearl,zoomingwithoutzooming,locus}. Accuracy improvements from such distillation are routinely reported, but a prior question is left unasked: when distillation lifts accuracy, does the student's emitted CoT carry the causal work, or does it merely record, paraphrase, or reveal an answer found elsewhere?
 
-We address this question directly. We assess causal faithfulness by corrupting emitted numeric intermediates and comparing against format-matched controls \citep{lanham2023}. The causal claim is about the emitted written chain; the probes do not rule out hidden-state or latent computation that never surfaces in the rationale.
+We address this question directly. We assess causal faithfulness by corrupting emitted numeric intermediates and comparing against no-target controls that range from harsh order disruption to gentler same-shape local numeric perturbation, plus a targeted semantic counterfactual diagnostic \citep{lanham2023}. The causal claim is about the emitted written chain; the probes do not rule out hidden-state or latent computation that never surfaces in the rationale.
 
 \paragraph{Contributions.}
 \begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
@@ -93,7 +96,7 @@ Chart and table QA are useful because the same task mixes visual extraction and 
 \emph{ChartQA} \citep{chartqa} (400 held-out open numeric questions, image-disjoint from SFT train images), \emph{TabMWP} \citep{tabmwp} (400 rendered-table, free-response numeric cases), TallyQA-complex natural-image counting (400 open integer questions), and FinQA rendered tables for the pre-specified curriculum probe. All four tasks fix the visual evidence in the input, making the causal question well-posed: does the written chain carry the computation that produces any SFT accuracy gain?
 
 \paragraph{Models.}
-Qwen3-VL 8B and 32B (dense) \citep{qwen3vl}. All models are served locally.
+The main SFT and Qwen-family faithfulness cells use Qwen3-VL 8B and 32B (dense) \citep{qwen3vl}. For cross-family external validity, we also run the same ChartQA present-image probe on InternVL3.5-8B \citep{internvl35}, a non-Qwen VLM served through an OpenAI-compatible local endpoint. All models are served locally.
 
 \paragraph{SFT pipeline.}
 For ChartQA and TabMWP, a Qwen3-VL-32B teacher generates step-by-step rationales on training images; we keep only traces whose final answer matches the gold answer under the numeric grader below. This yields 150 ChartQA traces and 160 TabMWP traces. The 8B students are LoRA-SFT models with the vision tower frozen, rank 16, $\alpha{=}32$, dropout .05, bf16, learning rate $10^{-4}$, per-device batch size 1, gradient accumulation 8, cosine schedule, and prompt tokens masked to $-100$ so supervision applies only to the assistant rationale and \texttt{ANSWER} line. The ChartQA/TabMWP 8B runs use two epochs, corresponding to 38 and 40 optimizer updates. The 32B students use the same LoRA target modules under NF4 QLoRA and run five epochs with greedy held-out evaluation after each epoch; the selected checkpoints are epoch 1 for ChartQA and epoch 4 for TabMWP. Dense 8B controls use full-SFT checkpoints with the vision tower, embeddings, and first three language layers frozen, leaving about 79.7\% of parameters trainable. The FinQA curriculum arms use the same LoRA recipe for three epochs: 180/180 gold-program strict/vanilla traces, and 173/173 answer-conditioned text-teacher strict/vanilla traces. All answer generation and probe continuations use greedy decoding (\texttt{do\_sample=False}; answer max-new 320--384 tokens, continuation max-new 64 tokens).
@@ -102,10 +105,10 @@ For ChartQA and TabMWP, a Qwen3-VL-32B teacher generates step-by-step rationales
 McNemar exact tests for paired SFT deltas, using only discordant pairs; Holm correction across the four headline ChartQA/TabMWP cells leaves all tests below $.01$. At $n{=}400$, minimum detectable net is about 8--9 points, and the observed paired SFT gains have 66 and 46 discordant pairs at 8B/32B.
 
 \paragraph{Robustness to known confounds.}
-We do not claim the \corrupt{} intervention itself is new; it is useful only as part of a controlled battery. To address the ``contextual faithfulness'' concern \citep{tutek2025}, we compare \corrupt{} against \shuffle{}, paraphrase, filler-token, deletion, truncation, image-mask, and a snap/follow/other readout that asks whether the final answer follows the injected value. To address disguised-accuracy and option-bias concerns \citep{bentham2024}, the main faithfulness substrates are free-response numeric QA rather than multiple choice. To avoid reporting a probe artifact as mechanism, we treat a positive corruption flip as insufficient by itself; the headline evidence is convergence across controls and regimes.
+We do not claim the \corrupt{} intervention itself is new; it is useful only as part of a controlled battery. To address the ``contextual faithfulness'' concern \citep{tutek2025}, we compare \corrupt{} against \shuffle{}, paraphrase, filler-token, deletion, truncation, image-mask, a targeted \localnum{} replication, and a snap/follow/other readout that asks whether the final answer follows the injected value. To address disguised-accuracy and option-bias concerns \citep{bentham2024}, the main faithfulness substrates are free-response numeric QA rather than multiple choice. To avoid reporting a probe artifact as mechanism, we treat a positive corruption flip as insufficient by itself; the headline evidence is convergence across controls and regimes.
 
 \paragraph{Probe construction.}
-For each task/model cell, we first ask the evaluated model to solve the original visual question with the image/table visible and the prompt \texttt{Solve step by step, end with 'ANSWER: <final>'}. The text before the first \texttt{ANSWER:} is the emitted CoT. A case is probe-eligible only if this CoT is nonempty and the extracted final answer is correct. The generic chart/table battery then edits that model-owned CoT with a fixed edit seed \texttt{Random(0)}: \corrupt{} samples one numeric token from the CoT and replaces value $v$ by $2v+7$ (integers remain integers; decimals are rendered to one decimal), while \shuffle{} shuffles sentence order without injecting a target value. Additional controls paraphrase the CoT with an exact number-multiset guard, replace tokens with length-matched filler, truncate early sentences, or delete the last number-bearing steps. The FinQA targeted probe is stricter: it uses the gold program to choose a table operand that is non-constant, appears in the student's CoT, and whose replacement by $2v+7$ changes the gold-program final answer; it then tests both operand-only corruption and a consistently propagated corrupted chain. Each edited CoT is force-continued with the prompt ``Reasoning so far: ... Given ONLY the reasoning above, state the final answer now as \texttt{ANSWER: <final>}''. The masked condition drops the image/table from this force-continue call while keeping the same edited text.
+For each task/model cell, we first ask the evaluated model to solve the original visual question with the image/table visible and the prompt \texttt{Solve step by step, end with 'ANSWER: <final>'}. The text before the first \texttt{ANSWER:} is the emitted CoT. A case is probe-eligible only if this CoT is nonempty and the extracted final answer is correct. Empty rationales, abnormal outputs, failed final-answer parses, and wrong final answers are not edited; they re-enter the analysis only through the selection-flow and sensitivity bounds below. Eligible CoTs with no corruptible numeric token remain in the flow but are excluded from the \corrupt{} denominator and treated as corrupt-unusable in sensitivity bounds. The generic chart/table battery then edits that model-owned CoT with a fixed edit seed \texttt{Random(0)}: \corrupt{} samples one numeric token from the CoT and replaces value $v$ by $2v+7$ (integers remain integers; decimals are rendered to one decimal), while \shuffle{} shuffles sentence order without injecting a target value. Additional controls paraphrase the CoT with an exact number-multiset guard, replace tokens with length-matched filler, truncate early sentences, or delete the last number-bearing steps. P0-4 adds two ChartQA 8B replications. The gentler \localnum{} control excludes the \corrupt{} span, replaces a different numeric token with a same-shape value, preserves sentence order and local syntax, and avoids the gold/base/injected values when possible. The \semanticcf{} diagnostic sends the probe-eligible CoT prefix to a configured LLM rewrite endpoint, changes non-final numeric reasoning with dependent non-final arithmetic made locally coherent, and validates that the protected final conclusion segment is preserved rather than directly overwritten. The FinQA targeted probe is stricter: it uses the gold program to choose a table operand that is non-constant, appears in the student's CoT, and whose replacement by $2v+7$ changes the gold-program final answer; it then tests both operand-only corruption and a consistently propagated corrupted chain. Each edited CoT is force-continued with the prompt ``Reasoning so far: ... Given ONLY the reasoning above, state the final answer now as \texttt{ANSWER: <final>}''. The masked condition drops the image/table from this force-continue call while keeping the same edited text.
 
 \paragraph{Grading and readout.}
 Open numeric answers are graded in the task's original answer units. We strip commas and percent signs from the gold answer, extract all numeric strings from the prediction, and mark a match if any predicted number is within $0.05|g|+10^{-6}$ of gold value $g$; nonnumeric gold answers fall back to normalized substring matching. Rounding and redundant units are therefore tolerated only through the numeric value; symbolic equivalents that do not surface a matching number, empty outputs, and parse failures are incorrect. ``Flip'' means the forced final answer no longer matches the unedited model answer. For \corrupt{} and FinQA targeted probes, the three-way readout is applied in priority order: snap if the answer matches the gold answer, follow if it does not snap but matches the injected wrong value (or injected gold-program final), and other otherwise. Boundary examples under 5\% tolerance are: gold 100, injected 207, answer ``about 96'' $\rightarrow$ snap; answer ``207'' $\rightarrow$ follow; answer ``200'' $\rightarrow$ follow; answer containing both 100 and 207 $\rightarrow$ snap by precedence; and a \shuffle{} answer has no injected target, so off-gold responses are counted as other rather than follow.
@@ -117,9 +120,10 @@ Open numeric answers are graded in the task's original answer units. We strip co
 \textbf{Original CoT:} read value $a$, read value $b$, compute $a-b=c$, answer $c$.\\
 \textbf{\corrupt:} read value $a$, read value $b$, compute $a-b=\tilde{c}$, answer ?\\
 \textbf{\shuffle:} same rationale tokens, shuffled order, answer ?\\
+\textbf{\localnum:} same rationale order, different local number perturbed, answer ?\\
 \textbf{Readout:} snap to true $c$ / follow injected $\tilde{c}$ / other.
 \end{minipage}}
-\caption{\textbf{Probe schematic.} \corrupt{} tests whether a falsified written intermediate is load-bearing; \shuffle{} is a format control with no injected target value.}
+\caption{\textbf{Probe schematic.} \corrupt{} tests whether a falsified written intermediate is load-bearing; \shuffle{} is a harsh no-target order control, while \localnum{} is a gentler same-shape local numeric control.}
 \label{fig:probe_schematic}
 \end{figure}
 
@@ -144,39 +148,82 @@ To rule out a low-rank-capacity explanation, we repeat the 8B arms with dense/fu
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_decoupling.pdf}
-\caption{\textbf{Accuracy $\perp$ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le\!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx\!0$ band ($F=\text{flip}_{\corrupt}-\text{flip}_{\shuffle}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative criterion: \shuffle{} already disrupts format without injecting any target value, so $F\!\leq\!0$ means the falsified intermediate contributes no extra flip beyond pure format noise. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; error bars are $95\%$ binomial CIs. Regenerated from the result store by \texttt{scripts/build\_faithfulness\_axis.py}.}
+\caption{\textbf{Accuracy $\perp$ written-chain faithfulness.} CoT distillation lifts ChartQA accuracy by $+6.5$--$7.0\%$ (McNemar $p\!\le\!.002$; horizontal arrows), yet the causal CoT metric stays on the $F\!\approx\!0$ band ($F=\text{flip}_{\corrupt}-\text{flip}_{\shuffle}$): corrupting a numeric intermediate flips the answer no more than shuffling the CoT. This is a conservative harsh-control criterion: \shuffle{} disrupts order without injecting any target value, so $F\!\leq\!0$ means the falsified intermediate contributes no extra flip beyond order/format noise. A targeted ChartQA 8B \localnum{} replication below checks the same claim under a gentler no-target perturbation. Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the corresponding probe; the tabular intervals and corrected tests in Table~\ref{tab:probe} are regenerated by \texttt{scripts/faithfulness\_stats.py}.}
 \label{fig:decoupling}
 \end{figure}
 
-For every correctly answered case with an emitted CoT, we intervene on the rationale and force-continue to a final answer. If a numeric intermediate carries the computation, \corrupt{} should flip more often than \shuffle{}, and the final answer should follow the injected value rather than snap back to the original truth. Table~\ref{tab:probe} reports the high-power ChartQA and TabMWP cells.
+For every correctly answered case with an emitted CoT, we intervene on the rationale and force-continue to a final answer. If a numeric intermediate carries the computation, \corrupt{} should flip more often than no-target controls, and the final answer should follow the injected value rather than snap back to the original truth. Table~\ref{tab:probe} reports the high-power Qwen-family ChartQA and TabMWP \corrupt{}-vs.-\shuffle{} cells with uncertainty; this family treats \shuffle{} as a deliberately harsh order/format control, not as the only clean control. The confirmatory family is the eight Qwen chart/table \corrupt{}-vs.-\shuffle{} cells; the load-bearing alternative is one-sided, $\text{flip}_{\corrupt}>\text{flip}_{\shuffle}$, with Holm correction across that family. Table~\ref{tab:crossfamily} separately reports the P0-5 non-Qwen replication and is not included in that Holm family. Snap/follow intervals are Wilson 95\% intervals. The legacy headline battery stores per-case \corrupt{} answers and aggregate \shuffle{} margins, so $F$ intervals use an aggregate binomial bootstrap and the test is an exact randomization conditional on the recorded margins; newer battery files with \texttt{details[].answers} use paired case bootstrap and paired exact sign-randomization under the same script. The P0-4 \localnum{} and \semanticcf{} ChartQA 8B replications are reported separately in the text and in \texttt{faithfulness\_stats.md}.
 
 \begin{table}[t]
 \centering
-\footnotesize
-\setlength{\tabcolsep}{5pt}
-\caption{Causal CoT-intermediate probe on chart/table SFT cells. ``Flip'' = final answer changes after the intervention. ``Snap'' = answer returns to the true chart/table value after \corrupt{}; ``follow'' = answer follows the injected value. A load-bearing chain requires \corrupt{} $>$ controls and nontrivial follow.}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Causal CoT-intermediate probe on chart/table SFT cells. Flow is raw $n{=}400$ to probe-eligible correct+CoT cases, with \corrupt{}/\shuffle{} denominators in parentheses. $F=\text{flip}_{\corrupt}-\text{flip}_{\shuffle}$; $p_H$ is Holm-adjusted for the one-sided load-bearing test. Snap/follow are rates after \corrupt{} with Wilson 95\% CIs.}
 \label{tab:probe}
-\begin{tabular}{@{}llccccc@{}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llcccccc@{}}
 \toprule
-Dataset/model & Condition & $n$ & \corrupt & \shuffle & snap & follow \\
+Dataset/model & Cond. & raw$\to$probe & \corrupt{}/\shuffle{} & $F$ [95\% CI] & $p_H$ & snap [95\% CI] & follow [95\% CI] \\
 \midrule
-ChartQA 8B  & present & 321 & .212 & .302 & .816 & .031 \\
-ChartQA 32B & present & 318 & .051 & .047 & .981 & .016 \\
-TabMWP 8B   & present & 385 & .034 & .145 & .971 & .008 \\
-TabMWP 32B  & present & 389 & .033 & .072 & .969 & .015 \\
-TabMWP 8B   & masked  & 385 & .278 & .299 & .722 & .088 \\
-TabMWP 32B  & masked  & 389 & .075 & .103 & .928 & .039 \\
+ChartQA 8B  & present & 400$\to$321 (321/321) & .212/.302 & $-.090$ [$-.159$,$-.022$] & 1.000 & .816 [.770,.855] & .031 [.017,.056] \\
+ChartQA 8B  & masked  & 400$\to$321 (321/321) & .333/.408 & $-.075$ [$-.150$,+.000] & 1.000 & .710 [.658,.757] & .100 [.072,.137] \\
+ChartQA 32B & present & 400$\to$318 (316/318) & .051/.047 & $+.003$ [$-.031$,+.038] & 1.000 & .981 [.959,.991] & .016 [.007,.036] \\
+ChartQA 32B & masked  & 400$\to$318 (316/318) & .120/.129 & $-.009$ [$-.059$,+.042] & 1.000 & .908 [.871,.935] & .057 [.036,.088] \\
+TabMWP 8B   & present & 400$\to$385 (385/385) & .034/.145 & $-.112$ [$-.151$,$-.073$] & 1.000 & .971 [.950,.984] & .008 [.003,.023] \\
+TabMWP 8B   & masked  & 400$\to$385 (385/385) & .278/.299 & $-.021$ [$-.086$,+.044] & 1.000 & .722 [.675,.764] & .088 [.064,.121] \\
+TabMWP 32B  & present & 400$\to$389 (389/389) & .033/.072 & $-.039$ [$-.069$,$-.008$] & 1.000 & .969 [.947,.982] & .015 [.007,.033] \\
+TabMWP 32B  & masked  & 400$\to$389 (389/389) & .075/.103 & $-.028$ [$-.069$,+.010] & 1.000 & .928 [.898,.950] & .039 [.024,.063] \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
-Four findings follow.
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{\textbf{P0-5 cross-family replication.} InternVL3.5-8B is a non-Qwen VLM evaluated on the same ChartQA present-image probe protocol. This row is external-validity evidence and is reported separately from the Qwen-family SFT cells in Table~\ref{tab:probe}.}
+\label{tab:crossfamily}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+Model family & raw$\to$probe & base acc & \corrupt{}/\shuffle{} & $F$ [95\% CI] & $p$ & snap [95\% CI] & follow [95\% CI] \\
+\midrule
+InternVL3.5-8B & 400$\to$302 (302/302) & 302/400 (.755) & .070/.096 & $-.026$ [$-.053$,$-.003$] & .994 & .990 [.971,.997] & .000 [.000,.013] \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Selection flow and answer-eval strata.} Answer-eval strata are stable-correct / SFT-gain / SFT-loss / both-wrong on the paired $n{=}400$ accuracy run. Probe-kept strata are the same case IDs after the separate CoT-generation eligibility filter. ``No usable corrupt'' is raw cases without a usable \corrupt{} readout, including non-eligible cases and any eligible CoT with no corruptible numeric token. The final columns report present-condition \corrupt{} follow rates in the two strata most relevant to the main claim. Full masked rows, loss/wrong strata, and sensitivity bounds are in \texttt{faithfulness\_stats.md}.}
+\label{tab:selection}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+Dataset/model & answer-eval strata & probe-kept strata & SFT correct & probe eligible & no usable corrupt & stable follow & gain follow \\
+\midrule
+ChartQA 8B  & 265/46/20/69 & 262/39/10/10 & 311 & 321 & 79 & 9/262 (.034) & 0/39 (.000) \\
+ChartQA 32B & 281/37/9/73  & 281/37/0/0   & 318 & 318 & 84 & 5/281 (.018) & 0/37 (.000) \\
+TabMWP 8B   & 345/40/1/14  & 345/40/0/0   & 385 & 385 & 15 & 3/345 (.009) & 0/40 (.000) \\
+TabMWP 32B  & 332/57/2/9   & 332/57/0/0   & 389 & 389 & 11 & 6/332 (.018) & 0/57 (.000) \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Six findings follow.
 
 \begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
-  \item \textbf{ChartQA and TabMWP agree.} In every present-image/table cell, $\corrupt{}\leq\shuffle{}$ up to sampling noise. The model usually snaps back to the true value and almost never follows the injected value. TabMWP is the cleanest case: despite large SFT gains, follow is .008/.015 at 8B/32B.
-  \item \textbf{The gain subset itself is reading.} On TabMWP cases newly solved by SFT, corrupting the CoT flips 0/40 8B gains and 1/57 32B gains; follow is 1/40 at 8B (95\% upper bound 12.9\%) and 0/57 at 32B (95\% upper bound 6.3\%). The new correct answers are not being computed from the falsified written arithmetic.
+  \item \textbf{ChartQA and TabMWP agree.} In every present-image/table cell, $\corrupt{}\leq\shuffle{}$ within the 95\% interval, and none of the Holm-corrected load-bearing tests is close to significant. The model usually snaps back to the true value and rarely follows the injected value. TabMWP is the cleanest case: despite large SFT gains, follow is .008 [95\% CI .003,.023] and .015 [.007,.033] at 8B/32B.
+  \item \textbf{The causal readout reproduces off Qwen.} InternVL3.5-8B answers 302/400 ChartQA cases correctly with an emitted CoT and shows the same non-load-bearing signature: $\corrupt{}/\shuffle{}=.070/.096$, $F=-.026$ [95\% CI $-.053$,$-.003$], and follow is 0/302 [95\% CI .000,.013] while snap is .990. This row does not prove Qwen-style SFT transfers to InternVL; it addresses the narrower reviewer concern that low follow/high snap might be a Qwen3-VL-specific causal-probe behavior.
+  \item \textbf{The gain subset itself is reading.} We join the probe-kept cases to the paired SFT evaluation labels (Table~\ref{tab:selection}). On probe-kept cases newly solved by SFT, present-condition follow is zero in every headline cell: ChartQA 8B 0/39 [95\% CI .000,.090], ChartQA 32B 0/37 [.000,.094], TabMWP 8B 0/40 [.000,.088], and TabMWP 32B 0/57 [.000,.063]. FinQA is not reported as a matched gain subset because the targeted battery is keyed by gold-program operand eligibility, not by base-wrong $\to$ SFT-right eval partitions; its operand-follow intervals are nevertheless tight: 0/172 at 8B [0,.022] and 0/175 at 32B [0,.021]. The new correct answers are not being computed from the falsified written arithmetic.
+  \item \textbf{Selection does not carry the result.} The estimand is intentionally conditional on an emitted, correct written rationale: an incorrect or missing rationale cannot be asked whether its intermediate value was load-bearing for a correct answer. Still, the selection flow is visible. TabMWP keeps almost every SFT-correct case (385/385 at 8B, 389/389 at 32B), and the gain strata have zero present-condition follows. ChartQA is noisier: 8B has 10 SFT-correct answer-eval cases missing from probe eligibility and 20 probe-eligible cases that were not SFT-correct in the separate answer-eval pass, so we report them rather than silently dropping them. A conservative sensitivity bound that assigns every unobserved raw case to follow gives a loose all-raw upper bound on follow (.223 for ChartQA present cells), but this adversarial bound contradicts the directly observed SFT-correct subset: even if every SFT-correct ChartQA 8B case missing from the probe followed the injected value, SFT-correct present-condition follow would be at most 19/311=.061; ChartQA 32B is at most 7/318=.022, and TabMWP remains below .016. The conclusion therefore does not rely on choosing only stable-correct cases.
   \item \textbf{Masking diagnoses the information source.} On tables, masking the image raises flip and ``other'' errors sharply, especially for 8B, but follow remains small. When the table is visible, the final answer step re-reads and recomputes from the table; when the table is removed, the model often fabricates rather than faithfully using the bad chain.
-  \item \textbf{Other interventions point the same way.} Paraphrase behaves like \corrupt{} (e.g., 32B ChartQA present .053 vs.\ .051), while filler/truncation/deletion and \shuffle{} mainly test format and token-budget sensitivity. Because \shuffle{} injects no target value, its paper-facing readout is flip/snap/other rather than follow. Existing summaries show this is a harsh control rather than an injected-value test: present-image/table \shuffle{} accuracy-after is .735/.987 on ChartQA 8B/32B and .857/.936 on TabMWP 8B/32B. The conclusion is carried by the whole battery, not by a single corruption statistic.
+  \item \textbf{Other interventions point the same way, with one diagnostic caveat.} Paraphrase behaves like \corrupt{} (e.g., 32B ChartQA present .053 vs.\ .051), while filler/truncation/deletion and \shuffle{} mainly test format and token-budget sensitivity. Because \shuffle{} injects no target value, its paper-facing readout is flip/snap/other rather than follow. Existing summaries show this is a harsh control rather than an injected-value test: present-image/table \shuffle{} accuracy-after is .735/.987 on ChartQA 8B/32B and .857/.936 on TabMWP 8B/32B. A gentler P0-4 \localnum{} replication on ChartQA 8B gives the same qualitative null under paired analysis: $\corrupt{}/\localnum{}=.235/.224$ on the 294 cases with both continuations, $F_{\mathrm{local}}=+.010$ [95\% CI $-.034$,$+.054$], paired exact $p=.385$, with low \corrupt{} follow 13/321=.040 [95\% CI .024,.068]. A separate \semanticcf{} diagnostic successfully rewrites 288/321 eligible CoTs; it is a stronger whole-prefix intervention, and indeed flips more often than single-token corruption ($\corrupt{}/\semanticcf{}=.236/.434$, $F_{\mathrm{semantic}}=-.198$ [95\% CI $-.257$,$-.139$], paired exact one-sided $p=1.000$ for $\corrupt{}>\semanticcf{}$). We therefore do not use \semanticcf{} as a gentle control; it shows that broad semantic rewriting can perturb answers, while the targeted numeric \corrupt{} intervention still fails the load-bearing and follow tests. The conclusion is carried by the whole battery, not by a single corruption statistic.
 \end{enumerate}
 
 \section{Result III: Task-Dependent Information Sources and a Constructive Test}
@@ -195,7 +242,7 @@ As a constructive counter-test, we train on rendered FinQA tables filtered to re
 (i) Claims of ``internalizing agentic reasoning'' need causal audits. Significant accuracy gains are compatible with re-reading visual evidence, reconstructing from redundant rationale text, or copying the rationale's conclusion. (ii) The load-bearing locus is task-dependent: answer-time evidence can live in pixels, in redundant text, or in a conclusion line. A single CoT faithfulness score without information-source controls is under-specified.
 
 \paragraph{Limitations.}
-All causal claims are about emitted rationales, not a proof that the model lacks latent internal computation. The chart/table and FinQA operands are input-readable by design, which is exactly why these substrates can distinguish re-reading from written-chain use; the scope does not include tasks whose required operands are unavailable in the input. The 32B students use QLoRA/NF4 rather than full bf16 fine-tuning. The main teacher family is Qwen3-VL, although the FinQA text-teacher arm reduces a format-specific teacher concern. Corrupting one numeric token is a sensitivity lower bound; we therefore report it only with shuffle/paraphrase/filler/truncation, image masking, snap/follow/other classification, and targeted gold-program operand tests.
+All causal claims are about emitted rationales, not a proof that the model lacks latent internal computation. The chart/table and FinQA operands are input-readable by design, which is exactly why these substrates can distinguish re-reading from written-chain use; the scope does not include tasks whose required operands are unavailable in the input. The 32B students use QLoRA/NF4 rather than full bf16 fine-tuning. The main teacher family is Qwen3-VL, although the FinQA text-teacher arm reduces a format-specific teacher concern. Corrupting one numeric token is a sensitivity lower bound; we therefore report it only with shuffle/paraphrase/filler/truncation, targeted local numeric and semantic-counterfactual controls, image masking, snap/follow/other classification, and targeted gold-program operand tests. The \localnum{} and \semanticcf{} controls are currently ChartQA 8B replications rather than full eight-cell reruns; \semanticcf{} uses a protected-final rewrite cache and is best read as a semantic diagnostic rather than a format-matched local control. Legacy batteries did not persist raw generated CoTs for non-eligible cases, so we cannot retrospectively split no-CoT, wrong-answer, and parse-failure reasons inside the nonprobe mass; instead, Table~\ref{tab:selection} reports the exact answer-eval and probe-kept strata and \texttt{faithfulness\_stats.md} gives lower/upper follow bounds that assign the whole unobserved mass adversarially.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -215,8 +262,9 @@ Table~\ref{tab:artifacts} gives the minimum artifact map needed to reconstruct e
 
 \begin{table}[t]
 \centering
-\scriptsize
-\setlength{\tabcolsep}{3pt}
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.82}
 \caption{\textbf{Primary artifacts for the SFT and probe results.} Probe edits use greedy decoding and fixed edit seed \texttt{Random(0)} unless otherwise noted; result-store rows also carry per-run fingerprints over split, method, decoding, seed, prompt, and code version.}
 \label{tab:artifacts}
 \begin{tabular}{@{}L{0.18\textwidth}L{0.31\textwidth}L{0.25\textwidth}L{0.19\textwidth}@{}}
@@ -227,7 +275,11 @@ Global result store & \nolinkurl{data/distill/results/results.jsonl}, SHA \textt
 ChartQA LoRA SFT accuracy & \nolinkurl{data/distill/poc/lora_8b_chartqa/eval_n400.json}, SHA \texttt{2ce4d9175235}; \nolinkurl{data/distill/poc/lora_32b_chartqa/eval_n400.json}, SHA \texttt{92e59e633a71} & \nolinkurl{scripts/poc_sft.py}; \nolinkurl{scripts/poc_sft_32b_qlora.py}; \nolinkurl{scripts/eval_sft_n400.py} & train \nolinkurl{data/distill/poc/chartqa_cot_train.jsonl}; adapters \nolinkurl{data/distill/poc/lora_8b_chartqa}, \nolinkurl{data/distill/poc/lora_32b_chartqa/epoch_1} \\
 TabMWP LoRA SFT accuracy & \nolinkurl{data/distill/poc/eval_sft_8b_tabmwp_n400.json}, SHA \texttt{95aaba7b47df}; \nolinkurl{data/distill/poc/eval_sft_32b_tabmwp_n400.json}, SHA \texttt{b08953be8f1f} & \nolinkurl{scripts/run_wu3_stage2.sh}; \nolinkurl{scripts/eval_sft_n400.py} & train \nolinkurl{data/distill/poc/tabmwp_cot_train.jsonl}; adapters \nolinkurl{data/distill/poc/lora_8b_tabmwp}, \nolinkurl{data/distill/poc/lora_32b_tabmwp/epoch_4} \\
 ChartQA faithfulness battery & \nolinkurl{data/distill/poc/battery_8b_present.json}, SHA \texttt{0ff0da834fc9}; \nolinkurl{data/distill/poc/battery_32b_present.json}, SHA \texttt{34a57e280224}; masked companions in same directory & \nolinkurl{scripts/battery_n400.py}, edit seed 0 & same ChartQA adapters; test split \nolinkurl{data/distill/chartqa/test_cases_400.jsonl} \\
+P0-4 local numeric control & \nolinkurl{data/distill/poc/battery_p0_local_chartqa8b_present.json}, SHA \texttt{e8f8867af47f} & \nolinkurl{scripts/battery_n400.py}, SHA \texttt{63b51bf0af0a}; interventions \texttt{corrupt local\_num}, edit seed 0 & ChartQA 8B adapter; test split \nolinkurl{data/distill/chartqa/test_cases_400.jsonl} \\
+P0-4 semantic counterfactual diagnostic & \nolinkurl{data/distill/poc/battery_p0_semantic_chartqa8b_present.json}, SHA \texttt{9784029ee5a2}; rewrite cache \nolinkurl{data/distill/poc/semantic_cf_p0_chartqa8b_present.jsonl}, SHA \texttt{1d54f6ee7890} & \nolinkurl{scripts/battery_n400.py}, SHA \texttt{63b51bf0af0a}; interventions \texttt{corrupt semantic\_cf}, edit seed 0; ORCH rewrite endpoint with explicit ChartQA 8B consent & ChartQA 8B adapter; test split \nolinkurl{data/distill/chartqa/test_cases_400.jsonl} \\
+P0-5 cross-family replication & \nolinkurl{data/distill/poc/battery_p0_cross_family_internvl35_chartqa_present.json}, SHA \texttt{3403bd84b51d}; base/probe caches \nolinkurl{data/distill/poc/internvl35_chartqa_base_cot.jsonl}, SHA \texttt{017cdeddd221}; \nolinkurl{data/distill/poc/internvl35_chartqa_probe.jsonl}, SHA \texttt{1ddba3f08b58} & \nolinkurl{scripts/battery_cross_family_endpoint.py}, SHA \texttt{cbeb6e748946}; interventions \texttt{corrupt shuffle}, edit seed 0; endpoint greedy decode & InternVL3.5-8B served locally; ChartQA test split \nolinkurl{data/distill/chartqa/test_cases_400.jsonl} \\
 TabMWP faithfulness battery & \nolinkurl{data/distill/poc/battery_tabmwp8b_present.json}, SHA \texttt{c27d11005883}; \nolinkurl{data/distill/poc/battery_tabmwp32b_present.json}, SHA \texttt{078a37c4e4c6}; masked companions in same directory & \nolinkurl{scripts/battery_n400.py}, edit seed 0 & same TabMWP adapters; test split \nolinkurl{data/distill/tabmwp/test_cases_400.jsonl} \\
+Faithfulness statistical and selection audit & \nolinkurl{data/distill/results/faithfulness_stats.json}, SHA \texttt{28743bfa46e7}; Markdown summary \nolinkurl{data/distill/results/faithfulness_stats.md}, SHA \texttt{fd789992538a} & \nolinkurl{scripts/faithfulness_stats.py}, SHA \texttt{5f4318e19dc8}; CPU-only fixed bootstrap seeds & consumes ChartQA/TabMWP battery files, local/semantic-control and cross-family battery files when present, SFT prediction JSONL files, and FinQA targeted battery files; emits raw-to-probe flow, answer-eval strata, gain-subset, local/semantic/P0-5 tests, and sensitivity bounds \\
 FinQA targeted curriculum probe & \nolinkurl{data/distill/poc/battery_n1_8b.json}, SHA \texttt{03dfef86ad4e}; \nolinkurl{data/distill/poc/battery_n1_32b.json}, SHA \texttt{c808008b06b9}; text-teacher and dense-control companions in same directory & \nolinkurl{scripts/build_n1_curriculum.py}; \nolinkurl{scripts/run_n1_sft.sh}; \nolinkurl{scripts/battery_n1_targeted.py}, edit seed 0 & train \nolinkurl{data/distill/finqa/curriculum_dev_*}; probe split \nolinkurl{data/distill/finqa/curriculum_test_strict.jsonl}; LoRA and QLoRA adapters under \nolinkurl{data/distill/poc/lora_*_finqa_*} \\
 Dense 8B control & \nolinkurl{data/distill/poc/full_8b_chartqa/full_sft_summary.json}; \nolinkurl{data/distill/poc/full_8b_tabmwp/full_sft_summary.json}; dense battery files under \nolinkurl{data/distill/poc/battery_full8b_*} & \nolinkurl{scripts/audit_full_sft_8b_nonvideo.py}; \nolinkurl{scripts/eval_full_sft_n400.py}; \nolinkurl{scripts/export_full_sft_8b_nonvideo_evidence.py} & full-SFT checkpoints under \nolinkurl{data/distill/poc/full_8b_*}; summaries record trainable fraction and freeze policy \\
 \bottomrule

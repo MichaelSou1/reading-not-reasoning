@@ -1,0 +1,41 @@
+Loading weights:   0%|          | 0/750 [00:00<?, ?it/s]Loading weights:   0%|          | 1/750 [00:00<05:41,  2.19it/s]Loading weights:   0%|          | 2/750 [00:00<05:49,  2.14it/s]Loading weights:   1%|          | 4/750 [00:01<03:27,  3.59it/s]Loading weights:   1%|          | 6/750 [00:01<02:14,  5.55it/s]Loading weights:   2%|▏         | 15/750 [00:01<00:41, 17.83it/s]Loading weights:   2%|▏         | 18/750 [00:01<00:39, 18.70it/s]Loading weights:   3%|▎         | 26/750 [00:01<00:25, 28.77it/s]Loading weights:   4%|▍         | 30/750 [00:01<00:25, 28.42it/s]Loading weights:   5%|▍         | 37/750 [00:02<00:20, 34.27it/s]Loading weights:   5%|▌         | 41/750 [00:02<00:22, 32.09it/s]Loading weights:   6%|▋         | 48/750 [00:02<00:18, 37.04it/s]Loading weights:   7%|▋         | 52/750 [00:02<00:20, 34.60it/s]Loading weights:   8%|▊         | 59/750 [00:02<00:17, 39.47it/s]Loading weights:   9%|▉         | 67/750 [00:02<00:14, 47.69it/s]Loading weights:  10%|▉         | 73/750 [00:02<00:14, 47.16it/s]Loading weights:  11%|█         | 81/750 [00:03<00:12, 54.26it/s]Loading weights:  12%|█▏        | 87/750 [00:03<00:13, 48.15it/s]Loading weights:  12%|█▏        | 93/750 [00:03<00:14, 44.89it/s]Loading weights:  13%|█▎        | 100/750 [00:03<00:13, 48.73it/s]Loading weights:  14%|█▍        | 106/750 [00:03<00:15, 41.45it/s]Loading weights:  15%|█▌        | 114/750 [00:03<00:13, 47.74it/s]Loading weights:  16%|█▌        | 120/750 [00:03<00:14, 44.59it/s]Loading weights:  17%|█▋        | 126/750 [00:04<00:14, 42.05it/s]Loading weights:  17%|█▋        | 131/750 [00:04<00:14, 43.44it/s]Loading weights:  18%|█▊        | 137/750 [00:04<00:14, 41.79it/s]Loading weights:  19%|█▉        | 144/750 [00:04<00:12, 46.79it/s]Loading weights:  20%|█▉        | 149/750 [00:04<00:15, 38.26it/s]Loading weights:  21%|██        | 158/750 [00:04<00:12, 47.05it/s]Loading weights:  22%|██▏       | 164/750 [00:04<00:13, 44.60it/s]Loading weights:  23%|██▎       | 170/750 [00:05<00:13, 42.80it/s]Loading weights:  24%|██▎       | 177/750 [00:05<00:12, 46.89it/s]Loading weights:  24%|██▍       | 182/750 [00:05<00:15, 37.87it/s]Loading weights:  25%|██▌       | 191/750 [00:05<00:12, 46.27it/s]Loading weights:  26%|██▋       | 197/750 [00:05<00:12, 43.50it/s]Loading weights:  27%|██▋       | 202/750 [00:05<00:12, 44.80it/s]Loading weights:  28%|██▊       | 207/750 [00:05<00:13, 41.50it/s]Loading weights:  28%|██▊       | 213/750 [00:06<00:12, 43.17it/s]Loading weights:  29%|██▉       | 218/750 [00:06<00:13, 39.36it/s]Loading weights:  30%|██▉       | 224/750 [00:06<00:12, 42.02it/s]Loading weights:  31%|███       | 229/750 [00:06<00:13, 38.66it/s]Loading weights:  31%|███▏      | 235/750 [00:06<00:12, 39.62it/s]Loading weights:  32%|███▏      | 240/750 [00:06<00:13, 36.53it/s]Loading weights:  33%|███▎      | 246/750 [00:06<00:12, 39.68it/s]Loading weights:  33%|███▎      | 251/750 [00:07<00:13, 37.24it/s]Loading weights:  34%|███▍      | 257/750 [00:07<00:12, 40.78it/s]Loading weights:  35%|███▍      | 262/750 [00:07<00:12, 39.35it/s]Loading weights:  36%|███▌      | 268/750 [00:07<00:11, 42.87it/s]Loading weights:  36%|███▋      | 273/750 [00:07<00:11, 40.70it/s]Loading weights:  37%|███▋      | 279/750 [00:07<00:10, 43.65it/s]Loading weights:  38%|███▊      | 284/750 [00:07<00:11, 42.27it/s]Loading weights:  39%|███▊      | 290/750 [00:07<00:10, 45.68it/s]Loading weights:  39%|███▉      | 295/750 [00:08<00:10, 43.04it/s]Loading weights:  40%|████      | 301/750 [00:08<00:09, 46.23it/s]Loading weights:  41%|████      | 306/750 [00:08<00:10, 42.71it/s]Loading weights:  42%|████▏     | 312/750 [00:08<00:09, 45.52it/s]Loading weights:  42%|████▏     | 317/750 [00:08<00:09, 43.32it/s]Loading weights:  43%|████▎     | 323/750 [00:08<00:09, 46.54it/s]Loading weights:  44%|████▎     | 328/750 [00:08<00:09, 43.70it/s]Loading weights:  45%|████▍     | 334/750 [00:08<00:08, 46.46it/s]Loading weights:  45%|████▌     | 340/750 [00:09<00:08, 49.44it/s]Loading weights:  46%|████▌     | 346/750 [00:09<00:08, 45.87it/s]Loading weights:  47%|████▋     | 353/750 [00:09<00:07, 50.28it/s]Loading weights:  48%|████▊     | 359/750 [00:09<00:09, 42.79it/s]Loading weights:  49%|████▉     | 367/750 [00:09<00:08, 47.59it/s]Loading weights:  50%|████▉     | 372/750 [00:09<00:08, 44.54it/s]Loading weights:  50%|█████     | 378/750 [00:09<00:08, 46.12it/s]Loading weights:  51%|█████     | 383/750 [00:10<00:08, 43.30it/s]Loading weights:  52%|█████▏    | 389/750 [00:10<00:07, 45.18it/s]Loading weights:  53%|█████▎    | 394/750 [00:10<00:08, 43.24it/s]Loading weights:  56%|█████▌    | 419/750 [00:10<00:03, 94.60it/s]Loading weights:  62%|██████▏   | 467/750 [00:10<00:01, 195.09it/s]Loading weights:  69%|██████▊   | 515/750 [00:10<00:00, 269.40it/s]Loading weights:  75%|███████▌  | 563/750 [00:10<00:00, 324.07it/s]Loading weights:  81%|████████  | 609/750 [00:10<00:00, 361.05it/s]Loading weights:  88%|████████▊ | 657/750 [00:10<00:00, 388.79it/s]Loading weights:  94%|█████████▍| 705/750 [00:11<00:00, 409.35it/s]Loading weights: 100%|█████████▉| 747/750 [00:11<00:00, 284.68it/s]Loading weights: 100%|██████████| 750/750 [00:11<00:00, 66.55it/s] 
+loaded base+adapter (nf4) in 18s
+battery cases: 400 (mask_image=False, scale=p0_local_chartqa8b)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+base cache wrote 400 new (hit 0/400)
+base free-form acc (image present): 321/400 = 0.802
+n_eval (correct + CoT): 321
+
+=== WU-2 BATTERY [p0_local_chartqa8b mask=False] n_eval=321 ===
+{
+  "scale": "p0_local_chartqa8b",
+  "mask_image": false,
+  "n_eval": 321,
+  "n_cases": 400,
+  "base_correct": 321,
+  "base_acc": 0.8025,
+  "adapter": "/home/gpus/Mr-Big-Eye-internalization/data/distill/poc/lora_8b_chartqa",
+  "n_para_nums_ok": 0,
+  "interventions": {
+    "corrupt": {
+      "n": 321,
+      "flips": 75,
+      "flip_rate": 0.2336448598130841,
+      "acc_after": 0.8068535825545171
+    },
+    "local_num": {
+      "n": 294,
+      "flips": 66,
+      "flip_rate": 0.22448979591836735,
+      "acc_after": 0.8129251700680272
+    }
+  },
+  "re_perception": {
+    "n_corrupt": 321,
+    "snap_to_true": 259,
+    "follows_injected": 13,
+    "other": 49,
+    "snap_rate": 0.8068535825545171,
+    "follow_rate": 0.040498442367601244
+  }
+}

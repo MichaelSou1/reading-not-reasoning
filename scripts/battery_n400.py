@@ -7,6 +7,10 @@ WITH a CoT) we build several edited CoTs and force the model to finish from each
 answer FLIP (vs the model's own base answer) and ACCURACY (vs gold) per intervention:
 
   corrupt      regex-swap one intermediate number              (load-bearing test)
+  local_num    same-shape replacement of a different local number, with no final-answer target
+               (format-preserving, target-excluding local control)
+  semantic_cf  LLM-rewritten semantic counterfactual: preserve final conclusion, alter a
+               non-final numeric step and keep the rewritten prefix locally coherent (cached)
   shuffle      shuffle CoT sentences                           (order test)
   re_perception (N2, derived from corrupt @ present) classify the post-corrupt answer 3-way:
                snap_to_true (==gold, re-read) / follows_injected (==injected value, load-bearing) / other.
@@ -51,7 +55,9 @@ if str(ROOT) not in sys.path:
 
 TRUNC_FRACS = [0.25, 0.5, 0.75]
 DELETE_KS = [1, 2, 3]
-ALL_INTERVENTIONS = ["corrupt", "shuffle", "truncate", "delete", "paraphrase", "filler"]
+DEFAULT_INTERVENTIONS = ["corrupt", "local_num", "shuffle", "truncate", "delete", "paraphrase", "filler"]
+SUPPORTED_INTERVENTIONS = DEFAULT_INTERVENTIONS + ["semantic_cf"]
+NUM_RE = _re.compile(r"-?\d+\.?\d*")
 
 
 def normalize_text(value) -> str:
@@ -83,18 +89,90 @@ def _sentences(cot: str) -> list[str]:
     return [s for s in _re.split(r"(?<=[.\n])", cot) if s.strip()]
 
 
-def corrupt_number(cot, rng):
-    """Swap one intermediate number. Returns (new_cot, injected_str) or (None, None)."""
-    nums = list(_re.finditer(r"-?\d+\.?\d*", cot))
-    if not nums:
-        return None, None
-    m = rng.choice(nums)
-    v = m.group(0)
+def _float_or_none(value):
     try:
-        f = float(v); nv = str(int(f * 2 + 7)) if f == int(f) else f"{f*2+7:.1f}"
+        return float(str(value).replace(",", "").replace("%", ""))
     except ValueError:
-        return None, None
-    return cot[:m.start()] + nv + cot[m.end():], nv
+        return None
+
+
+def _numeric_equal(a, b, *, rel_tol=0.05) -> bool:
+    av = _float_or_none(a)
+    bv = _float_or_none(b)
+    if av is None or bv is None:
+        return False
+    return abs(av - bv) <= abs(bv) * rel_tol + 1e-6
+
+
+def _rotate_digits(token: str, shift: int) -> str:
+    out = []
+    first_digit_idx = None
+    for idx, ch in enumerate(token):
+        if ch.isdigit():
+            if first_digit_idx is None:
+                first_digit_idx = len(out)
+            out.append(str((int(ch) + shift) % 10))
+        else:
+            out.append(ch)
+    if first_digit_idx is not None and len(token) > 1 and out[first_digit_idx] == "0":
+        out[first_digit_idx] = "1"
+    return "".join(out)
+
+
+def same_shape_number(token: str, avoid_values=()) -> str:
+    """Return a changed numeric token with the same character shape and length."""
+    for shift in (7, 3, 5, 1, 9, 4):
+        candidate = _rotate_digits(token, shift)
+        if candidate == token:
+            continue
+        if any(_numeric_equal(candidate, value) for value in avoid_values if value is not None):
+            continue
+        return candidate
+    return _rotate_digits(token, 7)
+
+
+def _corrupt_replacement(value: str) -> str | None:
+    try:
+        f = float(value)
+        return str(int(f * 2 + 7)) if f == int(f) else f"{f*2+7:.1f}"
+    except ValueError:
+        return None
+
+
+def corrupt_number(cot, rng):
+    """Swap one intermediate number. Returns (new_cot, injected_str, span) or Nones."""
+    nums = list(NUM_RE.finditer(cot))
+    if not nums:
+        return None, None, None
+    m = rng.choice(nums)
+    nv = _corrupt_replacement(m.group(0))
+    if nv is None:
+        return None, None, None
+    return cot[:m.start()] + nv + cot[m.end():], nv, (m.start(), m.end())
+
+
+def local_number_control(cot, rng, *, exclude_span=None, avoid_values=()):
+    """Replace a nearby numeric token without creating an injected final-answer target.
+
+    The edit preserves the local text, punctuation and token shape. We exclude the
+    corrupt arm's selected span and, when possible, avoid numbers equal to the
+    gold/base final answer so the control is a local format/semantic perturbation
+    rather than another answer-target intervention.
+    """
+    nums = [
+        m for m in NUM_RE.finditer(cot)
+        if exclude_span is None or (m.start(), m.end()) != exclude_span
+    ]
+    if not nums:
+        return None, None, None
+    off_answer = [
+        m for m in nums
+        if not any(_numeric_equal(m.group(0), value) for value in avoid_values if value is not None)
+    ]
+    pool = off_answer or nums
+    m = rng.choice(pool)
+    nv = same_shape_number(m.group(0), avoid_values=avoid_values)
+    return cot[:m.start()] + nv + cot[m.end():], nv, (m.start(), m.end())
 
 
 def shuffle_cot(cot, rng):
@@ -146,6 +224,184 @@ _PARA_SYS = (
 
 def _nums_multiset(text: str):
     return sorted(_re.findall(r"-?\d+\.?\d*", str(text)))
+
+
+def _collapse_ws(text: str) -> str:
+    return _re.sub(r"\s+", " ", str(text or "")).strip()
+
+
+def _split_protected_tail(cot: str) -> tuple[str, str]:
+    """Use the final sentence-like segment as the protected conclusion."""
+    sents = _sentences(cot)
+    if not sents:
+        return cot, ""
+    tail = sents[-1].strip()
+    idx = cot.rfind(tail)
+    if idx < 0:
+        return cot, ""
+    return cot[:idx].rstrip(), tail
+
+
+def _extract_json_object(text: str) -> dict | None:
+    raw = str(text or "").strip()
+    raw = _re.sub(r"^```(?:json)?\s*", "", raw)
+    raw = _re.sub(r"\s*```$", "", raw)
+    try:
+        obj = json.loads(raw)
+        return obj if isinstance(obj, dict) else None
+    except json.JSONDecodeError:
+        pass
+    m = _re.search(r"\{.*\}", raw, _re.DOTALL)
+    if not m:
+        return None
+    try:
+        obj = json.loads(m.group(0))
+        return obj if isinstance(obj, dict) else None
+    except json.JSONDecodeError:
+        return None
+
+
+_SEMANTIC_CF_SYS = (
+    "You create semantic counterfactual controls for chart/table reasoning audits. "
+    "Rewrite ONLY the reasoning before the protected final conclusion. Change one "
+    "non-final numeric intermediate and update the dependent non-final arithmetic or "
+    "comparisons so that the rewritten prefix is locally coherent. Do NOT edit, "
+    "paraphrase, move, delete, or add to the protected final conclusion. Do NOT add "
+    "an ANSWER line. Output JSON only with keys rewritten_cot and edit_note."
+)
+
+
+def validate_semantic_cf(original: str, rewritten: str) -> tuple[bool, str, dict]:
+    rewritten = str(rewritten or "").strip()
+    meta = {
+        "orig_nums": len(_nums_multiset(original)),
+        "rewrite_nums": len(_nums_multiset(rewritten)),
+    }
+    if not rewritten:
+        return False, "empty", meta
+    if _re.search(r"\bANSWER\s*:", rewritten, _re.IGNORECASE):
+        return False, "contains_answer_label", meta
+
+    orig_body, orig_tail = _split_protected_tail(original)
+    new_body, new_tail = _split_protected_tail(rewritten)
+    meta["protected_tail_md5"] = hashlib.md5(orig_tail.encode("utf-8")).hexdigest() if orig_tail else None
+    if not orig_tail or _collapse_ws(new_tail) != _collapse_ws(orig_tail):
+        return False, "protected_tail_changed", meta
+
+    orig_body_nums = _nums_multiset(orig_body)
+    new_body_nums = _nums_multiset(new_body)
+    meta["orig_body_nums"] = len(orig_body_nums)
+    meta["rewrite_body_nums"] = len(new_body_nums)
+    if len(orig_body_nums) < 2:
+        return False, "too_few_nonfinal_numbers", meta
+    if orig_body_nums == new_body_nums:
+        return False, "no_nonfinal_numeric_change", meta
+
+    ow = max(1, len(str(original).split()))
+    nw = len(rewritten.split())
+    ratio = nw / ow
+    meta["word_ratio"] = ratio
+    if ratio < 0.45 or ratio > 2.2:
+        return False, "length_ratio_out_of_range", meta
+    return True, "ok", meta
+
+
+def build_semantic_cf_cache(kept, scale_tag, cache_path, workers=4, max_retries=2):
+    """Fill/extend JSONL cache of semantic counterfactual rewrites.
+
+    Unlike paraphrase, API failure or validator failure is not turned into a no-op:
+    invalid rows are skipped by the downstream intervention denominator.
+    """
+    from app.distill.methods import orch
+
+    cache_path = Path(cache_path)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache: dict[str, dict] = {}
+    if cache_path.exists():
+        for line in cache_path.open():
+            if line.strip():
+                e = json.loads(line)
+                cache[e["key"]] = e
+
+    def md5(s):
+        return hashlib.md5(s.encode("utf-8")).hexdigest()
+
+    todo = []
+    for k in kept:
+        key = f"{scale_tag}:{k['cid']}"
+        h = md5(k["base_cot"])
+        hit = cache.get(key)
+        if hit and hit.get("base_md5") == h:
+            k["semantic_cf"] = hit.get("semantic_cf") if hit.get("ok") else None
+            k["_semantic_cf_ok"] = bool(hit.get("ok"))
+            k["_semantic_cf_reason"] = hit.get("reason", "")
+            k["_semantic_cf_meta"] = hit.get("meta") or {}
+        else:
+            todo.append((k, key, h))
+
+    def one(item):
+        k, key, h = item
+        body, tail = _split_protected_tail(k["base_cot"])
+        if len(_nums_multiset(body)) < 2 or not tail:
+            return key, h, "", False, "too_few_nonfinal_numbers", {}
+        user = (
+            "FULL_RATIONALE:\n"
+            f"{k['base_cot']}\n\n"
+            "PROTECTED_FINAL_CONCLUSION_COPY_EXACTLY:\n"
+            f"{tail}\n\n"
+            "Return JSON only. The rewritten_cot must include the protected final "
+            "conclusion exactly once as its final segment."
+        )
+        best_text, best_reason, best_meta = "", "not_attempted", {}
+        for _ in range(max(1, max_retries)):
+            try:
+                raw = orch([
+                    {"role": "system", "content": _SEMANTIC_CF_SYS},
+                    {"role": "user", "content": user},
+                ], temp=0.2, max_tokens=1200)
+            except Exception as e:
+                return key, h, "", False, f"api_fail:{type(e).__name__}", {}
+            obj = _extract_json_object(raw)
+            candidate = str((obj or {}).get("rewritten_cot") or "").strip()
+            ok, reason, meta = validate_semantic_cf(k["base_cot"], candidate)
+            best_text, best_reason, best_meta = candidate, reason, meta
+            if ok:
+                return key, h, candidate, True, "ok", meta
+        return key, h, best_text if best_reason == "ok" else "", False, best_reason, best_meta
+
+    if todo:
+        print(f"semantic_cf: {len(todo)} new (cache hit {len(kept)-len(todo)}/{len(kept)})", flush=True)
+        results = []
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            futs = [ex.submit(one, item) for item in todo]
+            done = 0
+            for fut in as_completed(futs):
+                r = fut.result()
+                results.append(r)
+                done += 1
+                key, h, text, ok, reason, meta = r
+                with cache_path.open("a") as f:
+                    f.write(json.dumps({
+                        "key": key,
+                        "base_md5": h,
+                        "semantic_cf": text,
+                        "ok": ok,
+                        "reason": reason,
+                        "meta": meta,
+                    }, ensure_ascii=False) + "\n")
+                if done == 1 or done % 16 == 0 or done == len(todo):
+                    print(f"semantic_cf progress: {done}/{len(todo)} ok={sum(1 for x in results if x[3])}", flush=True)
+        by_key = {key: (text, ok, reason, meta) for key, h, text, ok, reason, meta in results}
+        for k in kept:
+            key = f"{scale_tag}:{k['cid']}"
+            if key in by_key:
+                text, ok, reason, meta = by_key[key]
+                k["semantic_cf"] = text if ok else None
+                k["_semantic_cf_ok"] = ok
+                k["_semantic_cf_reason"] = reason
+                k["_semantic_cf_meta"] = meta
+    n_ok = sum(1 for k in kept if k.get("_semantic_cf_ok"))
+    print(f"semantic_cf validator-ok: {n_ok}/{len(kept)}", flush=True)
 
 
 def build_paraphrase_cache(kept, scale_tag, cache_path, workers=8):
@@ -231,15 +487,25 @@ def main() -> int:
     ap.add_argument("--cont-new", type=int, default=64)
     ap.add_argument("--batch-size", type=int, default=8)
     ap.add_argument("--mask-image", action="store_true")
-    ap.add_argument("--interventions", nargs="+", default=ALL_INTERVENTIONS)
+    ap.add_argument("--interventions", nargs="+", default=DEFAULT_INTERVENTIONS)
     ap.add_argument("--paraphrase-cache", default="data/distill/poc/paraphrase_cache.jsonl")
     ap.add_argument("--paraphrase-workers", type=int,
                     default=int(os.environ.get("PARAPHRASE_WORKERS", "8")))
+    ap.add_argument("--semantic-cf-cache", default="data/distill/poc/semantic_cf_cache.jsonl")
+    ap.add_argument("--semantic-cf-workers", type=int,
+                    default=int(os.environ.get("SEMANTIC_CF_WORKERS", "4")))
+    ap.add_argument("--semantic-cf-retries", type=int,
+                    default=int(os.environ.get("SEMANTIC_CF_RETRIES", "2")))
     ap.add_argument("--base-cache", default=None,
                     help="Optional JSONL cache for Phase-1 base-CoT generations.")
     ap.add_argument("--release-model-during-paraphrase", action="store_true",
                     help="Unload the VLM while remote paraphrases are generated, then reload for probes.")
+    ap.add_argument("--release-model-during-rewrite", action="store_true",
+                    help="Unload the VLM while remote text rewrites are generated, then reload for probes.")
     args = ap.parse_args()
+    unknown = sorted(set(args.interventions) - set(SUPPORTED_INTERVENTIONS))
+    if unknown:
+        raise SystemExit(f"unsupported interventions: {unknown}; supported={SUPPORTED_INTERVENTIONS}")
     rng = random.Random(0)
 
     from transformers import AutoProcessor, BitsAndBytesConfig, Qwen3VLForConditionalGeneration
@@ -432,24 +698,47 @@ def main() -> int:
 
     # ---- build edits (rng order = kept order; deterministic) ----
     for k in kept:
-        cc, inj = corrupt_number(k["base_cot"], rng)
-        k["corrupt"], k["injected"] = cc, inj
+        cc, inj, corrupt_span = corrupt_number(k["base_cot"], rng)
+        k["corrupt"], k["injected"], k["_corrupt_span"] = cc, inj, corrupt_span
         k["shuffle"] = shuffle_cot(k["base_cot"], rng)
+        lc, local_replacement, local_span = local_number_control(
+            k["base_cot"],
+            rng,
+            exclude_span=corrupt_span,
+            avoid_values=(k["gold"], k["base_ans"], inj),
+        )
+        k["local_num"], k["local_num_replacement"], k["_local_num_span"] = (
+            lc,
+            local_replacement,
+            local_span,
+        )
         k["filler"] = filler_cot(k["base_cot"])
         k["trunc"] = {f: truncate_cot(k["base_cot"], f) for f in TRUNC_FRACS}
         k["del"] = {kk: delete_steps(k["base_cot"], kk) for kk in DELETE_KS}
 
+    needs_remote_rewrite = any(x in args.interventions for x in ("paraphrase", "semantic_cf"))
+    release_for_rewrite = args.release_model_during_paraphrase or args.release_model_during_rewrite
+    if needs_remote_rewrite and release_for_rewrite:
+        print("releasing VLM before text rewrites", flush=True)
+        del model
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
     if "paraphrase" in args.interventions:
-        if args.release_model_during_paraphrase:
-            print("releasing VLM before paraphrase", flush=True)
-            del model
-            gc.collect()
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
         build_paraphrase_cache(kept, args.scale_tag, args.paraphrase_cache,
                                workers=max(1, args.paraphrase_workers))
-        if args.release_model_during_paraphrase:
-            model = load_runtime_model()
+    if "semantic_cf" in args.interventions:
+        build_semantic_cf_cache(
+            kept,
+            args.scale_tag,
+            args.semantic_cf_cache,
+            workers=max(1, args.semantic_cf_workers),
+            max_retries=max(1, args.semantic_cf_retries),
+        )
+
+    if needs_remote_rewrite and release_for_rewrite:
+        model = load_runtime_model()
 
     # ---- generic force-continue + score for a variant ----
     def score_variant(edited_by_case):
@@ -472,6 +761,12 @@ def main() -> int:
         m, ans = score_variant([k["corrupt"] for k in kept]); interventions["corrupt"] = m
         per_case_corrupt_ans = ans
         variant_answers["corrupt"] = ans
+    if "local_num" in args.interventions:
+        m, ans = score_variant([k["local_num"] for k in kept]); interventions["local_num"] = m
+        variant_answers["local_num"] = ans
+    if "semantic_cf" in args.interventions:
+        m, ans = score_variant([k.get("semantic_cf") for k in kept]); interventions["semantic_cf"] = m
+        variant_answers["semantic_cf"] = ans
     if "shuffle" in args.interventions:
         m, ans = score_variant([k["shuffle"] for k in kept]); interventions["shuffle"] = m
         variant_answers["shuffle"] = ans
@@ -518,6 +813,7 @@ def main() -> int:
                "n_cases": len(cases), "base_correct": base_correct, "base_acc": base_acc,
                "adapter": args.adapter if use_adapter else None,
                "n_para_nums_ok": sum(1 for k in kept if k.get("_para_nums_ok")),
+               "n_semantic_cf_ok": sum(1 for k in kept if k.get("_semantic_cf_ok")),
                "interventions": interventions, "re_perception": re_perception}
     def answers_for_case(i: int) -> dict:
         out = {}
@@ -532,6 +828,10 @@ def main() -> int:
 
     details = [{"case_id": k["cid"], "base_ans": k["base_ans"], "gold": k["gold"],
                 "injected": k.get("injected"),
+                "local_num_replacement": k.get("local_num_replacement"),
+                "semantic_cf_ok": bool(k.get("_semantic_cf_ok")),
+                "semantic_cf_reason": k.get("_semantic_cf_reason"),
+                "semantic_cf_meta": k.get("_semantic_cf_meta") or {},
                 "corrupt_ans": per_case_corrupt_ans.get(i),
                 "answers": answers_for_case(i)} for i, k in enumerate(kept)]
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)

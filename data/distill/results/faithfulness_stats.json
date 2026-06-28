@@ -1,0 +1,2707 @@
+{
+  "definition": "F = flip_corrupt - flip_shuffle. Snap/follow are classified on the corrupt continuation with snap precedence over follow.",
+  "multiple_comparisons": {
+    "method": "Holm-Bonferroni",
+    "family": "8 confirmatory ChartQA/TabMWP corrupt-vs-shuffle cells",
+    "alternative": "flip_corrupt > flip_shuffle"
+  },
+  "local_control_definition": "F_local = flip_corrupt - flip_local_num, where local_num is a same-shape non-target numeric replacement in the same CoT.",
+  "local_control_multiple_comparisons": {
+    "method": "Holm-Bonferroni",
+    "family": "1 available P0-4 local numeric control cells",
+    "alternative": "flip_corrupt > flip_local_num"
+  },
+  "semantic_control_definition": "F_semantic = flip_corrupt - flip_semantic_cf, where semantic_cf is an LLM-rewritten non-final numeric counterfactual with the final conclusion segment preserved.",
+  "semantic_control_multiple_comparisons": {
+    "method": "Holm-Bonferroni",
+    "family": "1 available P0-4 semantic counterfactual control cells",
+    "alternative": "flip_corrupt > flip_semantic_cf"
+  },
+  "cross_family_definition": "P0-5 external-validity replication: non-Qwen VLM, ChartQA present-image accuracy plus corrupt/shuffle forced-continuation probe. It is reported separately from the Qwen-family confirmatory Holm family.",
+  "cells": [
+    {
+      "dataset": "chartqa",
+      "model_id": "8b",
+      "condition": "present",
+      "display": "ChartQA 8B",
+      "path": "data/distill/poc/battery_8b_present.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 321,
+        "n_corrupt": 321,
+        "n_shuffle": 321,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 68,
+        "n": 321,
+        "rate": 0.2118380062305296,
+        "ci95": [
+          0.17068055067964896,
+          0.2598108629729531
+        ]
+      },
+      "shuffle": {
+        "k": 97,
+        "n": 321,
+        "rate": 0.30218068535825543,
+        "ci95": [
+          0.254528863408272,
+          0.3545111881262169
+        ]
+      },
+      "F": -0.09034267912772584,
+      "F_ci95": [
+        -0.1588785046728972,
+        -0.02180685358255452
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.9966815070167335,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 262,
+        "n": 321,
+        "rate": 0.8161993769470405,
+        "ci95": [
+          0.7701748860331522,
+          0.854745346553452
+        ]
+      },
+      "follow": {
+        "k": 10,
+        "n": 321,
+        "rate": 0.03115264797507788,
+        "ci95": [
+          0.017007883314417944,
+          0.05638625457441024
+        ]
+      },
+      "other": {
+        "k": 49,
+        "n": 321,
+        "rate": 0.1526479750778816,
+        "ci95": [
+          0.11743033700115169,
+          0.1960809345909037
+        ]
+      },
+      "classification_n": 321,
+      "selection": {
+        "preds": "data/distill/poc/lora_8b_chartqa/eval_n400.lora_8b_chartqa.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 265,
+          "sft_gain": 46,
+          "sft_loss": 20,
+          "both_wrong": 69
+        },
+        "probe_kept_counts": {
+          "stable_correct": 262,
+          "sft_gain": 39,
+          "sft_loss": 10,
+          "both_wrong": 10,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 285,
+          "n_answer_eval_sft_correct": 311,
+          "n_probe_eligible": 321,
+          "n_corrupt_usable": 321,
+          "n_nonprobe_or_corrupt_unusable": 79,
+          "n_eval_correct_missing_probe": 10,
+          "n_probe_not_sft_eval_correct": 20,
+          "n_nonprobe": 79,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 262,
+            "corrupt_flip": {
+              "k": 46,
+              "n": 262,
+              "rate": 0.17557251908396945,
+              "ci95": [
+                0.1342866927819135,
+                0.2262344209896509
+              ]
+            },
+            "snap": {
+              "k": 222,
+              "n": 262,
+              "rate": 0.8473282442748091,
+              "ci95": [
+                0.7987833076352528,
+                0.8858352646798957
+              ]
+            },
+            "follow": {
+              "k": 9,
+              "n": 262,
+              "rate": 0.03435114503816794,
+              "ci95": [
+                0.01817560490590809,
+                0.06398411133092556
+              ]
+            },
+            "other": {
+              "k": 31,
+              "n": 262,
+              "rate": 0.1183206106870229,
+              "ci95": [
+                0.08462020407942897,
+                0.1630516944753527
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 39,
+            "corrupt_flip": {
+              "k": 11,
+              "n": 39,
+              "rate": 0.28205128205128205,
+              "ci95": [
+                0.16543492088847678,
+                0.43775319483020825
+              ]
+            },
+            "snap": {
+              "k": 30,
+              "n": 39,
+              "rate": 0.7692307692307693,
+              "ci95": [
+                0.6166374277165824,
+                0.8735419587485715
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 39,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.08966685370757144
+              ]
+            },
+            "other": {
+              "k": 9,
+              "n": 39,
+              "rate": 0.23076923076923078,
+              "ci95": [
+                0.1264580412514285,
+                0.3833625722834177
+              ]
+            }
+          },
+          "sft_loss": {
+            "n": 10,
+            "corrupt_flip": {
+              "k": 7,
+              "n": 10,
+              "rate": 0.7,
+              "ci95": [
+                0.3967781474611453,
+                0.8922087325936988
+              ]
+            },
+            "snap": {
+              "k": 4,
+              "n": 10,
+              "rate": 0.4,
+              "ci95": [
+                0.16818032970623617,
+                0.6873262302663417
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 10,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.2775327998628892
+              ]
+            },
+            "other": {
+              "k": 6,
+              "n": 10,
+              "rate": 0.6,
+              "ci95": [
+                0.3126737697336583,
+                0.8318196702937638
+              ]
+            }
+          },
+          "both_wrong": {
+            "n": 10,
+            "corrupt_flip": {
+              "k": 4,
+              "n": 10,
+              "rate": 0.4,
+              "ci95": [
+                0.16818032970623617,
+                0.6873262302663417
+              ]
+            },
+            "snap": {
+              "k": 6,
+              "n": 10,
+              "rate": 0.6,
+              "ci95": [
+                0.3126737697336583,
+                0.8318196702937638
+              ]
+            },
+            "follow": {
+              "k": 1,
+              "n": 10,
+              "rate": 0.1,
+              "ci95": [
+                0.01787621309507289,
+                0.4041500267952385
+              ]
+            },
+            "other": {
+              "k": 3,
+              "n": 10,
+              "rate": 0.3,
+              "ci95": [
+                0.10779126740630099,
+                0.6032218525388546
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 10,
+            "n": 321,
+            "rate": 0.03115264797507788,
+            "ci95": [
+              0.017007883314417944,
+              0.05638625457441024
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 10,
+            "n": 400,
+            "rate": 0.025,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 89,
+            "n": 400,
+            "rate": 0.2225,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 9,
+            "n": 311,
+            "rate": 0.028938906752411574,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 19,
+            "n": 311,
+            "rate": 0.06109324758842444,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "chartqa",
+      "model_id": "8b",
+      "condition": "masked",
+      "display": "ChartQA 8B",
+      "path": "data/distill/poc/battery_8b_masked.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 321,
+        "n_corrupt": 321,
+        "n_shuffle": 321,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 107,
+        "n": 321,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.2840031521961805,
+          0.38660539515964876
+        ]
+      },
+      "shuffle": {
+        "k": 131,
+        "n": 321,
+        "rate": 0.40809968847352024,
+        "ci95": [
+          0.3557288576990281,
+          0.4626440796280179
+        ]
+      },
+      "F": -0.07476635514018692,
+      "F_ci95": [
+        -0.14953271028037385,
+        0.0
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.9795180160221799,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 228,
+        "n": 321,
+        "rate": 0.7102803738317757,
+        "ci95": [
+          0.6584004562625136,
+          0.7571868905315334
+        ]
+      },
+      "follow": {
+        "k": 32,
+        "n": 321,
+        "rate": 0.09968847352024922,
+        "ci95": [
+          0.07150175770719425,
+          0.13734307098858262
+        ]
+      },
+      "other": {
+        "k": 61,
+        "n": 321,
+        "rate": 0.19003115264797507,
+        "ci95": [
+          0.150875813259198,
+          0.2365176533184658
+        ]
+      },
+      "classification_n": 321,
+      "selection": {
+        "preds": "data/distill/poc/lora_8b_chartqa/eval_n400.lora_8b_chartqa.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 265,
+          "sft_gain": 46,
+          "sft_loss": 20,
+          "both_wrong": 69
+        },
+        "probe_kept_counts": {
+          "stable_correct": 262,
+          "sft_gain": 39,
+          "sft_loss": 10,
+          "both_wrong": 10,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 285,
+          "n_answer_eval_sft_correct": 311,
+          "n_probe_eligible": 321,
+          "n_corrupt_usable": 321,
+          "n_nonprobe_or_corrupt_unusable": 79,
+          "n_eval_correct_missing_probe": 10,
+          "n_probe_not_sft_eval_correct": 20,
+          "n_nonprobe": 79,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 262,
+            "corrupt_flip": {
+              "k": 85,
+              "n": 262,
+              "rate": 0.3244274809160305,
+              "ci95": [
+                0.2706303005476515,
+                0.38329877278754804
+              ]
+            },
+            "snap": {
+              "k": 185,
+              "n": 262,
+              "rate": 0.7061068702290076,
+              "ci95": [
+                0.6482872490513489,
+                0.7579699257290691
+              ]
+            },
+            "follow": {
+              "k": 30,
+              "n": 262,
+              "rate": 0.11450381679389313,
+              "ci95": [
+                0.08139390336748374,
+                0.15875471417284573
+              ]
+            },
+            "other": {
+              "k": 47,
+              "n": 262,
+              "rate": 0.17938931297709923,
+              "ci95": [
+                0.1376685768308572,
+                0.23037581795515938
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 39,
+            "corrupt_flip": {
+              "k": 12,
+              "n": 39,
+              "rate": 0.3076923076923077,
+              "ci95": [
+                0.18565932306911137,
+                0.46421254374149307
+              ]
+            },
+            "snap": {
+              "k": 30,
+              "n": 39,
+              "rate": 0.7692307692307693,
+              "ci95": [
+                0.6166374277165824,
+                0.8735419587485715
+              ]
+            },
+            "follow": {
+              "k": 2,
+              "n": 39,
+              "rate": 0.05128205128205128,
+              "ci95": [
+                0.014177955415274114,
+                0.16885640047613612
+              ]
+            },
+            "other": {
+              "k": 7,
+              "n": 39,
+              "rate": 0.1794871794871795,
+              "ci95": [
+                0.08977265473219115,
+                0.32668045661881623
+              ]
+            }
+          },
+          "sft_loss": {
+            "n": 10,
+            "corrupt_flip": {
+              "k": 6,
+              "n": 10,
+              "rate": 0.6,
+              "ci95": [
+                0.3126737697336583,
+                0.8318196702937638
+              ]
+            },
+            "snap": {
+              "k": 7,
+              "n": 10,
+              "rate": 0.7,
+              "ci95": [
+                0.3967781474611453,
+                0.8922087325936988
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 10,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.2775327998628892
+              ]
+            },
+            "other": {
+              "k": 3,
+              "n": 10,
+              "rate": 0.3,
+              "ci95": [
+                0.10779126740630099,
+                0.6032218525388546
+              ]
+            }
+          },
+          "both_wrong": {
+            "n": 10,
+            "corrupt_flip": {
+              "k": 4,
+              "n": 10,
+              "rate": 0.4,
+              "ci95": [
+                0.16818032970623617,
+                0.6873262302663417
+              ]
+            },
+            "snap": {
+              "k": 6,
+              "n": 10,
+              "rate": 0.6,
+              "ci95": [
+                0.3126737697336583,
+                0.8318196702937638
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 10,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.2775327998628892
+              ]
+            },
+            "other": {
+              "k": 4,
+              "n": 10,
+              "rate": 0.4,
+              "ci95": [
+                0.16818032970623617,
+                0.6873262302663417
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 32,
+            "n": 321,
+            "rate": 0.09968847352024922,
+            "ci95": [
+              0.07150175770719425,
+              0.13734307098858262
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 32,
+            "n": 400,
+            "rate": 0.08,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 111,
+            "n": 400,
+            "rate": 0.2775,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 32,
+            "n": 311,
+            "rate": 0.10289389067524116,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 42,
+            "n": 311,
+            "rate": 0.13504823151125403,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "chartqa",
+      "model_id": "32b",
+      "condition": "present",
+      "display": "ChartQA 32B",
+      "path": "data/distill/poc/battery_32b_present.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 318,
+        "n_corrupt": 316,
+        "n_shuffle": 318,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 16,
+        "n": 316,
+        "rate": 0.05063291139240506,
+        "ci95": [
+          0.03140353301002346,
+          0.08065654498251458
+        ]
+      },
+      "shuffle": {
+        "k": 15,
+        "n": 318,
+        "rate": 0.04716981132075472,
+        "ci95": [
+          0.02879094068704034,
+          0.07635852931815264
+        ]
+      },
+      "F": 0.003463100071650342,
+      "F_ci95": [
+        -0.031167900644853114,
+        0.03811400366212882
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.4927631249799552,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 310,
+        "n": 316,
+        "rate": 0.9810126582278481,
+        "ci95": [
+          0.9592013080351728,
+          0.9912695943953501
+        ]
+      },
+      "follow": {
+        "k": 5,
+        "n": 316,
+        "rate": 0.015822784810126583,
+        "ci95": [
+          0.006776994684222731,
+          0.03649900484294853
+        ]
+      },
+      "other": {
+        "k": 1,
+        "n": 316,
+        "rate": 0.0031645569620253164,
+        "ci95": [
+          0.0005588405996577671,
+          0.017704766758289213
+        ]
+      },
+      "classification_n": 316,
+      "selection": {
+        "preds": "data/distill/poc/lora_32b_chartqa/eval_n400.epoch_1.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 281,
+          "sft_gain": 37,
+          "sft_loss": 9,
+          "both_wrong": 73
+        },
+        "probe_kept_counts": {
+          "stable_correct": 281,
+          "sft_gain": 37,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 290,
+          "n_answer_eval_sft_correct": 318,
+          "n_probe_eligible": 318,
+          "n_corrupt_usable": 316,
+          "n_nonprobe_or_corrupt_unusable": 84,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 82,
+          "n_sft_correct_corrupt_unusable": 2
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 281,
+            "corrupt_flip": {
+              "k": 11,
+              "n": 281,
+              "rate": 0.03914590747330961,
+              "ci95": [
+                0.021996705646490956,
+                0.06872554710310318
+              ]
+            },
+            "snap": {
+              "k": 273,
+              "n": 281,
+              "rate": 0.9715302491103203,
+              "ci95": [
+                0.9448373282525289,
+                0.9855047683550292
+              ]
+            },
+            "follow": {
+              "k": 5,
+              "n": 281,
+              "rate": 0.017793594306049824,
+              "ci95": [
+                0.0076237058810256645,
+                0.04096984815426396
+              ]
+            },
+            "other": {
+              "k": 1,
+              "n": 281,
+              "rate": 0.0035587188612099642,
+              "ci95": [
+                0.0006284777252031675,
+                0.019879277167216783
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 37,
+            "corrupt_flip": {
+              "k": 5,
+              "n": 37,
+              "rate": 0.13513513513513514,
+              "ci95": [
+                0.05913294425732018,
+                0.2797741178400979
+              ]
+            },
+            "snap": {
+              "k": 37,
+              "n": 37,
+              "rate": 1.0,
+              "ci95": [
+                0.9059421741627975,
+                1.0
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 37,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.0940578258372025
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 37,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.0940578258372025
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 5,
+            "n": 316,
+            "rate": 0.015822784810126583,
+            "ci95": [
+              0.006776994684222731,
+              0.03649900484294853
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 5,
+            "n": 400,
+            "rate": 0.0125,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 89,
+            "n": 400,
+            "rate": 0.2225,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 5,
+            "n": 318,
+            "rate": 0.015723270440251572,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 7,
+            "n": 318,
+            "rate": 0.0220125786163522,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "chartqa",
+      "model_id": "32b",
+      "condition": "masked",
+      "display": "ChartQA 32B",
+      "path": "data/distill/poc/battery_32b_masked.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 318,
+        "n_corrupt": 316,
+        "n_shuffle": 318,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 38,
+        "n": 316,
+        "rate": 0.12025316455696203,
+        "ci95": [
+          0.08887775442703968,
+          0.16075048049623192
+        ]
+      },
+      "shuffle": {
+        "k": 41,
+        "n": 318,
+        "rate": 0.1289308176100629,
+        "ci95": [
+          0.09648023255545823,
+          0.17023947203213047
+        ]
+      },
+      "F": -0.008677653053100864,
+      "F_ci95": [
+        -0.059230952949605925,
+        0.04185574396942918
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.673882141341363,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 287,
+        "n": 316,
+        "rate": 0.9082278481012658,
+        "ci95": [
+          0.8713073927243005,
+          0.9353422547331826
+        ]
+      },
+      "follow": {
+        "k": 18,
+        "n": 316,
+        "rate": 0.056962025316455694,
+        "ci95": [
+          0.036331508988742406,
+          0.08823476508840777
+        ]
+      },
+      "other": {
+        "k": 11,
+        "n": 316,
+        "rate": 0.03481012658227848,
+        "ci95": [
+          0.01954663168127551,
+          0.06124795609973217
+        ]
+      },
+      "classification_n": 316,
+      "selection": {
+        "preds": "data/distill/poc/lora_32b_chartqa/eval_n400.epoch_1.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 281,
+          "sft_gain": 37,
+          "sft_loss": 9,
+          "both_wrong": 73
+        },
+        "probe_kept_counts": {
+          "stable_correct": 281,
+          "sft_gain": 37,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 290,
+          "n_answer_eval_sft_correct": 318,
+          "n_probe_eligible": 318,
+          "n_corrupt_usable": 316,
+          "n_nonprobe_or_corrupt_unusable": 84,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 82,
+          "n_sft_correct_corrupt_unusable": 2
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 281,
+            "corrupt_flip": {
+              "k": 32,
+              "n": 281,
+              "rate": 0.11387900355871886,
+              "ci95": [
+                0.08183011118110278,
+                0.15634258706855714
+              ]
+            },
+            "snap": {
+              "k": 252,
+              "n": 281,
+              "rate": 0.896797153024911,
+              "ci95": [
+                0.8557131867354745,
+                0.9271784643720177
+              ]
+            },
+            "follow": {
+              "k": 18,
+              "n": 281,
+              "rate": 0.06405693950177936,
+              "ci95": [
+                0.04089969083821249,
+                0.09897271041140358
+              ]
+            },
+            "other": {
+              "k": 9,
+              "n": 281,
+              "rate": 0.03202846975088968,
+              "ci95": [
+                0.016940085783561033,
+                0.05973926739459827
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 37,
+            "corrupt_flip": {
+              "k": 6,
+              "n": 37,
+              "rate": 0.16216216216216217,
+              "ci95": [
+                0.07651207234011151,
+                0.3113648370093497
+              ]
+            },
+            "snap": {
+              "k": 35,
+              "n": 37,
+              "rate": 0.9459459459459459,
+              "ci95": [
+                0.822953456491869,
+                0.9850490231668425
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 37,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.0940578258372025
+              ]
+            },
+            "other": {
+              "k": 2,
+              "n": 37,
+              "rate": 0.05405405405405406,
+              "ci95": [
+                0.014950976833157678,
+                0.17704654350813107
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 18,
+            "n": 316,
+            "rate": 0.056962025316455694,
+            "ci95": [
+              0.036331508988742406,
+              0.08823476508840777
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 18,
+            "n": 400,
+            "rate": 0.045,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 102,
+            "n": 400,
+            "rate": 0.255,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 18,
+            "n": 318,
+            "rate": 0.05660377358490566,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 20,
+            "n": 318,
+            "rate": 0.06289308176100629,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "tabmwp",
+      "model_id": "8b",
+      "condition": "present",
+      "display": "TabMWP 8B",
+      "path": "data/distill/poc/battery_tabmwp8b_present.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 385,
+        "n_corrupt": 385,
+        "n_shuffle": 385,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 13,
+        "n": 385,
+        "rate": 0.033766233766233764,
+        "ci95": [
+          0.019837533404388638,
+          0.0569070064170579
+        ]
+      },
+      "shuffle": {
+        "k": 56,
+        "n": 385,
+        "rate": 0.14545454545454545,
+        "ci95": [
+          0.1137402330251608,
+          0.18417413848251304
+        ]
+      },
+      "F": -0.11168831168831168,
+      "F_ci95": [
+        -0.15064935064935064,
+        -0.07272727272727272
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.9999999955058312,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 374,
+        "n": 385,
+        "rate": 0.9714285714285714,
+        "ci95": [
+          0.9495697512574939,
+          0.9839726778366982
+        ]
+      },
+      "follow": {
+        "k": 3,
+        "n": 385,
+        "rate": 0.007792207792207792,
+        "ci95": [
+          0.0026535217685402807,
+          0.022656173474713864
+        ]
+      },
+      "other": {
+        "k": 8,
+        "n": 385,
+        "rate": 0.02077922077922078,
+        "ci95": [
+          0.010565940747875157,
+          0.04046117678447519
+        ]
+      },
+      "classification_n": 385,
+      "selection": {
+        "preds": "data/distill/poc/eval_sft_8b_tabmwp_n400.lora_8b_tabmwp.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 345,
+          "sft_gain": 40,
+          "sft_loss": 1,
+          "both_wrong": 14
+        },
+        "probe_kept_counts": {
+          "stable_correct": 345,
+          "sft_gain": 40,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 346,
+          "n_answer_eval_sft_correct": 385,
+          "n_probe_eligible": 385,
+          "n_corrupt_usable": 385,
+          "n_nonprobe_or_corrupt_unusable": 15,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 15,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 345,
+            "corrupt_flip": {
+              "k": 13,
+              "n": 345,
+              "rate": 0.03768115942028986,
+              "ci95": [
+                0.022151127947257484,
+                0.06339334524000995
+              ]
+            },
+            "snap": {
+              "k": 334,
+              "n": 345,
+              "rate": 0.9681159420289855,
+              "ci95": [
+                0.9438171728393399,
+                0.9821048809553705
+              ]
+            },
+            "follow": {
+              "k": 3,
+              "n": 345,
+              "rate": 0.008695652173913044,
+              "ci95": [
+                0.0029616265618278618,
+                0.02525021171555038
+              ]
+            },
+            "other": {
+              "k": 8,
+              "n": 345,
+              "rate": 0.02318840579710145,
+              "ci95": [
+                0.011795755229303052,
+                0.04508240050301979
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 40,
+            "corrupt_flip": {
+              "k": 0,
+              "n": 40,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.08762160119728664
+              ]
+            },
+            "snap": {
+              "k": 40,
+              "n": 40,
+              "rate": 1.0,
+              "ci95": [
+                0.9123783988027134,
+                1.0
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 40,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.08762160119728664
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 40,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.08762160119728664
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 3,
+            "n": 385,
+            "rate": 0.007792207792207792,
+            "ci95": [
+              0.0026535217685402807,
+              0.022656173474713864
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 3,
+            "n": 400,
+            "rate": 0.0075,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 18,
+            "n": 400,
+            "rate": 0.045,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 3,
+            "n": 385,
+            "rate": 0.007792207792207792,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 3,
+            "n": 385,
+            "rate": 0.007792207792207792,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "tabmwp",
+      "model_id": "8b",
+      "condition": "masked",
+      "display": "TabMWP 8B",
+      "path": "data/distill/poc/battery_tabmwp8b_masked.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 385,
+        "n_corrupt": 385,
+        "n_shuffle": 385,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 107,
+        "n": 385,
+        "rate": 0.2779220779220779,
+        "ci95": [
+          0.23553584739034003,
+          0.3246962314661149
+        ]
+      },
+      "shuffle": {
+        "k": 115,
+        "n": 385,
+        "rate": 0.2987012987012987,
+        "ci95": [
+          0.25515486005542143,
+          0.3462250944635875
+        ]
+      },
+      "F": -0.020779220779220786,
+      "F_ci95": [
+        -0.08571428571428572,
+        0.04415584415584414
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.7629861182751622,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 278,
+        "n": 385,
+        "rate": 0.7220779220779221,
+        "ci95": [
+          0.6753037685338851,
+          0.7644641526096599
+        ]
+      },
+      "follow": {
+        "k": 34,
+        "n": 385,
+        "rate": 0.08831168831168831,
+        "ci95": [
+          0.06388417946367106,
+          0.12087353397197952
+        ]
+      },
+      "other": {
+        "k": 73,
+        "n": 385,
+        "rate": 0.18961038961038962,
+        "ci95": [
+          0.15359445078760525,
+          0.2317591565029957
+        ]
+      },
+      "classification_n": 385,
+      "selection": {
+        "preds": "data/distill/poc/eval_sft_8b_tabmwp_n400.lora_8b_tabmwp.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 345,
+          "sft_gain": 40,
+          "sft_loss": 1,
+          "both_wrong": 14
+        },
+        "probe_kept_counts": {
+          "stable_correct": 345,
+          "sft_gain": 40,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 346,
+          "n_answer_eval_sft_correct": 385,
+          "n_probe_eligible": 385,
+          "n_corrupt_usable": 385,
+          "n_nonprobe_or_corrupt_unusable": 15,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 15,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 345,
+            "corrupt_flip": {
+              "k": 103,
+              "n": 345,
+              "rate": 0.2985507246376812,
+              "ci95": [
+                0.25269577182822245,
+                0.3488424155480476
+              ]
+            },
+            "snap": {
+              "k": 242,
+              "n": 345,
+              "rate": 0.7014492753623188,
+              "ci95": [
+                0.6511575844519523,
+                0.7473042281717774
+              ]
+            },
+            "follow": {
+              "k": 32,
+              "n": 345,
+              "rate": 0.0927536231884058,
+              "ci95": [
+                0.06646845120640948,
+                0.1280080283096474
+              ]
+            },
+            "other": {
+              "k": 71,
+              "n": 345,
+              "rate": 0.20579710144927535,
+              "ci95": [
+                0.16648859350063466,
+                0.25158516216399
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 40,
+            "corrupt_flip": {
+              "k": 4,
+              "n": 40,
+              "rate": 0.1,
+              "ci95": [
+                0.03957952868260636,
+                0.23051775227522298
+              ]
+            },
+            "snap": {
+              "k": 36,
+              "n": 40,
+              "rate": 0.9,
+              "ci95": [
+                0.769482247724777,
+                0.9604204713173937
+              ]
+            },
+            "follow": {
+              "k": 2,
+              "n": 40,
+              "rate": 0.05,
+              "ci95": [
+                0.013820667386148353,
+                0.1650387736914096
+              ]
+            },
+            "other": {
+              "k": 2,
+              "n": 40,
+              "rate": 0.05,
+              "ci95": [
+                0.013820667386148353,
+                0.1650387736914096
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 34,
+            "n": 385,
+            "rate": 0.08831168831168831,
+            "ci95": [
+              0.06388417946367106,
+              0.12087353397197952
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 34,
+            "n": 400,
+            "rate": 0.085,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 49,
+            "n": 400,
+            "rate": 0.1225,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 34,
+            "n": 385,
+            "rate": 0.08831168831168831,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 34,
+            "n": 385,
+            "rate": 0.08831168831168831,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "tabmwp",
+      "model_id": "32b",
+      "condition": "present",
+      "display": "TabMWP 32B",
+      "path": "data/distill/poc/battery_tabmwp32b_present.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 389,
+        "n_corrupt": 389,
+        "n_shuffle": 389,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 13,
+        "n": 389,
+        "rate": 0.033419023136246784,
+        "ci95": [
+          0.019632481288987154,
+          0.05633062838451287
+        ]
+      },
+      "shuffle": {
+        "k": 28,
+        "n": 389,
+        "rate": 0.07197943444730077,
+        "ci95": [
+          0.05026670872614787,
+          0.10206308609830256
+        ]
+      },
+      "F": -0.03856041131105399,
+      "F_ci95": [
+        -0.06940874035989718,
+        -0.007712082262210797
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.995270150405601,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 377,
+        "n": 389,
+        "rate": 0.9691516709511568,
+        "ci95": [
+          0.9468610030401066,
+          0.9822669996297902
+        ]
+      },
+      "follow": {
+        "k": 6,
+        "n": 389,
+        "rate": 0.015424164524421594,
+        "ci95": [
+          0.007087706146932514,
+          0.033237617122790636
+        ]
+      },
+      "other": {
+        "k": 6,
+        "n": 389,
+        "rate": 0.015424164524421594,
+        "ci95": [
+          0.007087706146932514,
+          0.033237617122790636
+        ]
+      },
+      "classification_n": 389,
+      "selection": {
+        "preds": "data/distill/poc/eval_sft_32b_tabmwp_n400.epoch_4.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 332,
+          "sft_gain": 57,
+          "sft_loss": 2,
+          "both_wrong": 9
+        },
+        "probe_kept_counts": {
+          "stable_correct": 332,
+          "sft_gain": 57,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 334,
+          "n_answer_eval_sft_correct": 389,
+          "n_probe_eligible": 389,
+          "n_corrupt_usable": 389,
+          "n_nonprobe_or_corrupt_unusable": 11,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 11,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 332,
+            "corrupt_flip": {
+              "k": 12,
+              "n": 332,
+              "rate": 0.03614457831325301,
+              "ci95": [
+                0.020795029242126083,
+                0.06210557188811939
+              ]
+            },
+            "snap": {
+              "k": 321,
+              "n": 332,
+              "rate": 0.9668674698795181,
+              "ci95": [
+                0.9416541708681883,
+                0.981400418903318
+              ]
+            },
+            "follow": {
+              "k": 6,
+              "n": 332,
+              "rate": 0.018072289156626505,
+              "ci95": [
+                0.008308354195089811,
+                0.038861101524645746
+              ]
+            },
+            "other": {
+              "k": 5,
+              "n": 332,
+              "rate": 0.015060240963855422,
+              "ci95": [
+                0.006449541469627369,
+                0.034764723348356535
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 57,
+            "corrupt_flip": {
+              "k": 1,
+              "n": 57,
+              "rate": 0.017543859649122806,
+              "ci95": [
+                0.0031036646514080893,
+                0.09290749178567685
+              ]
+            },
+            "snap": {
+              "k": 56,
+              "n": 57,
+              "rate": 0.9824561403508771,
+              "ci95": [
+                0.9070925082143229,
+                0.9968963353485917
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 57,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.06313883485297894
+              ]
+            },
+            "other": {
+              "k": 1,
+              "n": 57,
+              "rate": 0.017543859649122806,
+              "ci95": [
+                0.0031036646514080893,
+                0.09290749178567685
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 6,
+            "n": 389,
+            "rate": 0.015424164524421594,
+            "ci95": [
+              0.007087706146932514,
+              0.033237617122790636
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 6,
+            "n": 400,
+            "rate": 0.015,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 17,
+            "n": 400,
+            "rate": 0.0425,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 6,
+            "n": 389,
+            "rate": 0.015424164524421594,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 6,
+            "n": 389,
+            "rate": 0.015424164524421594,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    },
+    {
+      "dataset": "tabmwp",
+      "model_id": "32b",
+      "condition": "masked",
+      "display": "TabMWP 32B",
+      "path": "data/distill/poc/battery_tabmwp32b_masked.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": null,
+        "n_probe": 389,
+        "n_corrupt": 389,
+        "n_shuffle": 389,
+        "note": "n_base_correct missing in legacy battery JSON; n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 29,
+        "n": 389,
+        "rate": 0.07455012853470437,
+        "ci95": [
+          0.05240530485963854,
+          0.10501560230820858
+        ]
+      },
+      "shuffle": {
+        "k": 40,
+        "n": 389,
+        "rate": 0.10282776349614396,
+        "ci95": [
+          0.07642616960023335,
+          0.1369969733449774
+        ]
+      },
+      "F": -0.02827763496143959,
+      "F_ci95": [
+        -0.06940874035989716,
+        0.0102827763496144
+      ],
+      "F_ci_method": "independent binomial bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.9351447630950793,
+        "method": "aggregate exact hypergeometric randomization",
+        "paired_n": 0,
+        "discordant": null,
+        "p_holm": 1.0
+      },
+      "snap": {
+        "k": 361,
+        "n": 389,
+        "rate": 0.9280205655526992,
+        "ci95": [
+          0.8979369139016974,
+          0.9497332912738521
+        ]
+      },
+      "follow": {
+        "k": 15,
+        "n": 389,
+        "rate": 0.038560411311053984,
+        "ci95": [
+          0.023505110790283324,
+          0.06264022357001008
+        ]
+      },
+      "other": {
+        "k": 13,
+        "n": 389,
+        "rate": 0.033419023136246784,
+        "ci95": [
+          0.019632481288987154,
+          0.05633062838451287
+        ]
+      },
+      "classification_n": 389,
+      "selection": {
+        "preds": "data/distill/poc/eval_sft_32b_tabmwp_n400.epoch_4.preds.jsonl",
+        "answer_eval_counts": {
+          "stable_correct": 332,
+          "sft_gain": 57,
+          "sft_loss": 2,
+          "both_wrong": 9
+        },
+        "probe_kept_counts": {
+          "stable_correct": 332,
+          "sft_gain": 57,
+          "sft_loss": 0,
+          "both_wrong": 0,
+          "unmatched_probe": 0
+        },
+        "flow": {
+          "n_raw": 400,
+          "n_answer_eval_base_correct": 334,
+          "n_answer_eval_sft_correct": 389,
+          "n_probe_eligible": 389,
+          "n_corrupt_usable": 389,
+          "n_nonprobe_or_corrupt_unusable": 11,
+          "n_eval_correct_missing_probe": 0,
+          "n_probe_not_sft_eval_correct": 0,
+          "n_nonprobe": 11,
+          "n_sft_correct_corrupt_unusable": 0
+        },
+        "strata": {
+          "stable_correct": {
+            "n": 332,
+            "corrupt_flip": {
+              "k": 29,
+              "n": 332,
+              "rate": 0.08734939759036145,
+              "ci95": [
+                0.06150580440378778,
+                0.1226330420562358
+              ]
+            },
+            "snap": {
+              "k": 304,
+              "n": 332,
+              "rate": 0.9156626506024096,
+              "ci95": [
+                0.8808096082072454,
+                0.9410067362344825
+              ]
+            },
+            "follow": {
+              "k": 15,
+              "n": 332,
+              "rate": 0.045180722891566265,
+              "ci95": [
+                0.027568470481714354,
+                0.07319770335378607
+              ]
+            },
+            "other": {
+              "k": 13,
+              "n": 332,
+              "rate": 0.0391566265060241,
+              "ci95": [
+                0.023023825469006196,
+                0.06583196656299092
+              ]
+            }
+          },
+          "sft_gain": {
+            "n": 57,
+            "corrupt_flip": {
+              "k": 0,
+              "n": 57,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.06313883485297894
+              ]
+            },
+            "snap": {
+              "k": 57,
+              "n": 57,
+              "rate": 1.0,
+              "ci95": [
+                0.9368611651470209,
+                0.9999999999999998
+              ]
+            },
+            "follow": {
+              "k": 0,
+              "n": 57,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.06313883485297894
+              ]
+            },
+            "other": {
+              "k": 0,
+              "n": 57,
+              "rate": 0.0,
+              "ci95": [
+                0.0,
+                0.06313883485297894
+              ]
+            }
+          }
+        },
+        "sensitivity": {
+          "observed_probe_follow": {
+            "k": 15,
+            "n": 389,
+            "rate": 0.038560411311053984,
+            "ci95": [
+              0.023505110790283324,
+              0.06264022357001008
+            ]
+          },
+          "all_raw_lower_follow_failed_nonfollow": {
+            "k": 15,
+            "n": 400,
+            "rate": 0.0375,
+            "assumption": "all non-probe or corrupt-unusable cases are non-follow"
+          },
+          "all_raw_upper_follow_failed_follow": {
+            "k": 26,
+            "n": 400,
+            "rate": 0.065,
+            "assumption": "all non-probe or corrupt-unusable cases would follow the injected value"
+          },
+          "sft_correct_lower_follow_missing_nonfollow": {
+            "k": 15,
+            "n": 389,
+            "rate": 0.038560411311053984,
+            "assumption": "SFT-correct cases that did not enter the probe are non-follow"
+          },
+          "sft_correct_upper_follow_missing_follow": {
+            "k": 15,
+            "n": 389,
+            "rate": 0.038560411311053984,
+            "assumption": "SFT-correct cases that did not enter the probe or lacked a usable corrupt answer would follow the injected value"
+          }
+        },
+        "notes": [
+          "answer_eval_counts come from the standalone n=400 SFT evaluation JSONL.",
+          "probe_eligible is the separate battery generation subset with nonempty emitted CoT and correct extracted final answer.",
+          "n_probe_not_sft_eval_correct reflects deterministic-but-separate generation passes that disagree on a small number of ChartQA 8B cases; these cases are shown as sft_loss/both_wrong strata rather than discarded.",
+          "The stored legacy battery does not retain raw generated CoTs for non-eligible cases, so no-CoT, wrong-answer, and parse-failure cases are grouped in n_nonprobe_or_corrupt_unusable for sensitivity bounds."
+        ]
+      }
+    }
+  ],
+  "local_controls": [
+    {
+      "dataset": "chartqa",
+      "model_id": "8b",
+      "condition": "present",
+      "display": "ChartQA 8B",
+      "path": "data/distill/poc/battery_p0_local_chartqa8b_present.json",
+      "control": "local_num",
+      "control_description": "same-shape replacement of a non-target numeric token in the same emitted CoT; sentence order and most local syntax are preserved, and no answer target is injected",
+      "flow": {
+        "n_raw": 400,
+        "n_probe": 321,
+        "n_corrupt": 321,
+        "n_local_num": 294,
+        "n_paired": 294
+      },
+      "corrupt": {
+        "k": 69,
+        "n": 294,
+        "rate": 0.23469387755102042,
+        "ci95": [
+          0.18986332293581487,
+          0.28636809018684656
+        ]
+      },
+      "local_num": {
+        "k": 66,
+        "n": 294,
+        "rate": 0.22448979591836735,
+        "ci95": [
+          0.18052445492283134,
+          0.2755620125507017
+        ]
+      },
+      "corrupt_all": {
+        "k": 75,
+        "n": 321,
+        "rate": 0.2336448598130841,
+        "ci95": [
+          0.19067135663236623,
+          0.28291800409517404
+        ]
+      },
+      "local_num_all": {
+        "k": 66,
+        "n": 294,
+        "rate": 0.22448979591836735,
+        "ci95": [
+          0.18052445492283134,
+          0.2755620125507017
+        ]
+      },
+      "F_local": 0.01020408163265306,
+      "F_local_ci95": [
+        -0.034013605442176874,
+        0.05442176870748299
+      ],
+      "F_local_ci_method": "paired case bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_local_num",
+        "p_raw": 0.3854334972865132,
+        "method": "paired exact sign-randomization",
+        "paired_n": 294,
+        "discordant": {
+          "corrupt_only": 25,
+          "local_num_only": 22
+        },
+        "p_holm": 0.3854334972865132
+      },
+      "snap": {
+        "k": 259,
+        "n": 321,
+        "rate": 0.8068535825545171,
+        "ci95": [
+          0.7601425229060078,
+          0.8463071609341943
+        ]
+      },
+      "follow": {
+        "k": 13,
+        "n": 321,
+        "rate": 0.040498442367601244,
+        "ci95": [
+          0.023817826685887184,
+          0.06804685994934308
+        ]
+      },
+      "other": {
+        "k": 49,
+        "n": 321,
+        "rate": 0.1526479750778816,
+        "ci95": [
+          0.11743033700115169,
+          0.1960809345909037
+        ]
+      },
+      "classification_n": 321
+    }
+  ],
+  "semantic_controls": [
+    {
+      "dataset": "chartqa",
+      "model_id": "8b",
+      "condition": "present",
+      "display": "ChartQA 8B",
+      "path": "data/distill/poc/battery_p0_semantic_chartqa8b_present.json",
+      "control": "semantic_cf",
+      "control_description": "LLM-rewritten semantic counterfactual: a non-final numeric step and dependent non-final reasoning are changed while the protected final conclusion segment is preserved",
+      "flow": {
+        "n_raw": 400,
+        "n_probe": 321,
+        "n_corrupt": 321,
+        "n_semantic_cf": 288,
+        "n_paired": 288,
+        "semantic_cf_reason_counts": {
+          "too_few_nonfinal_numbers": 29,
+          "ok": 288,
+          "protected_tail_changed": 3,
+          "api_fail:HTTPStatusError": 1
+        }
+      },
+      "corrupt": {
+        "k": 68,
+        "n": 288,
+        "rate": 0.2361111111111111,
+        "ci95": [
+          0.19073642220526466,
+          0.288432847938125
+        ]
+      },
+      "semantic_cf": {
+        "k": 125,
+        "n": 288,
+        "rate": 0.4340277777777778,
+        "ci95": [
+          0.37802637793561095,
+          0.4917659396002364
+        ]
+      },
+      "corrupt_all": {
+        "k": 75,
+        "n": 321,
+        "rate": 0.2336448598130841,
+        "ci95": [
+          0.19067135663236623,
+          0.28291800409517404
+        ]
+      },
+      "semantic_cf_all": {
+        "k": 125,
+        "n": 288,
+        "rate": 0.4340277777777778,
+        "ci95": [
+          0.37802637793561095,
+          0.4917659396002364
+        ]
+      },
+      "F_semantic": -0.19791666666666666,
+      "F_semantic_ci95": [
+        -0.2569444444444444,
+        -0.1388888888888889
+      ],
+      "F_semantic_ci_method": "paired case bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_semantic_cf",
+        "p_raw": 0.9999999999232897,
+        "method": "paired exact sign-randomization",
+        "paired_n": 288,
+        "discordant": {
+          "corrupt_only": 16,
+          "semantic_cf_only": 73
+        },
+        "p_holm": 0.9999999999232897
+      },
+      "snap": {
+        "k": 259,
+        "n": 321,
+        "rate": 0.8068535825545171,
+        "ci95": [
+          0.7601425229060078,
+          0.8463071609341943
+        ]
+      },
+      "follow": {
+        "k": 13,
+        "n": 321,
+        "rate": 0.040498442367601244,
+        "ci95": [
+          0.023817826685887184,
+          0.06804685994934308
+        ]
+      },
+      "other": {
+        "k": 49,
+        "n": 321,
+        "rate": 0.1526479750778816,
+        "ci95": [
+          0.11743033700115169,
+          0.1960809345909037
+        ]
+      },
+      "classification_n": 321
+    }
+  ],
+  "cross_family": [
+    {
+      "dataset": "chartqa",
+      "model_id": "internvl35_8b",
+      "condition": "present",
+      "display": "ChartQA InternVL3.5-8B",
+      "path": "data/distill/poc/battery_p0_cross_family_internvl35_chartqa_present.json",
+      "flow": {
+        "n_raw": 400,
+        "n_base_correct": 302,
+        "n_probe": 302,
+        "n_corrupt": 302,
+        "n_shuffle": 302,
+        "note": "n_probe is correct+CoT kept set"
+      },
+      "corrupt": {
+        "k": 21,
+        "n": 302,
+        "rate": 0.0695364238410596,
+        "ci95": [
+          0.04592769565716303,
+          0.10395865067879798
+        ]
+      },
+      "shuffle": {
+        "k": 29,
+        "n": 302,
+        "rate": 0.09602649006622517,
+        "ci95": [
+          0.0676932240410921,
+          0.1345078086741944
+        ]
+      },
+      "F": -0.026490066225165573,
+      "F_ci95": [
+        -0.052980132450331126,
+        -0.0033112582781456954
+      ],
+      "F_ci_method": "paired case bootstrap",
+      "load_bearing_test": {
+        "alternative": "flip_corrupt > flip_shuffle",
+        "p_raw": 0.9935302734375,
+        "method": "paired exact sign-randomization",
+        "paired_n": 302,
+        "discordant": {
+          "corrupt_only": 3,
+          "shuffle_only": 11
+        }
+      },
+      "snap": {
+        "k": 299,
+        "n": 302,
+        "rate": 0.9900662251655629,
+        "ci95": [
+          0.9712057183305091,
+          0.9966159796870121
+        ]
+      },
+      "follow": {
+        "k": 0,
+        "n": 302,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.012560294590231667
+        ]
+      },
+      "other": {
+        "k": 3,
+        "n": 302,
+        "rate": 0.009933774834437087,
+        "ci95": [
+          0.003384020312987908,
+          0.02879428166949081
+        ]
+      },
+      "classification_n": 302,
+      "selection": null,
+      "summary": {
+        "scale": "internvl35_8b",
+        "family": "InternVL",
+        "model": "InternVL3_5-8B",
+        "endpoint": "http://127.0.0.1:30003/v1",
+        "mask_image": false,
+        "n_cases": 400,
+        "base_correct": 302,
+        "base_acc": 0.755,
+        "n_eval": 302,
+        "interventions": {
+          "corrupt": {
+            "n": 302,
+            "flips": 21,
+            "flip_rate": 0.0695364238410596,
+            "acc_after": 0.9900662251655629
+          },
+          "shuffle": {
+            "n": 302,
+            "flips": 29,
+            "flip_rate": 0.09602649006622517,
+            "acc_after": 0.9635761589403974
+          }
+        },
+        "re_perception": {
+          "n_corrupt": 302,
+          "snap_to_true": 299,
+          "follows_injected": 0,
+          "other": 3,
+          "snap_rate": 0.9900662251655629,
+          "follow_rate": 0.0
+        },
+        "decode": {
+          "temperature": 0.0,
+          "max_new": 320,
+          "cont_new": 64,
+          "image_side": 768,
+          "image_quality": 80
+        }
+      }
+    }
+  ],
+  "gain_subsets": [
+    {
+      "label": "ChartQA 8B",
+      "dataset": "chartqa",
+      "model_id": "8b",
+      "battery": "data/distill/poc/battery_8b_present.json",
+      "preds": "data/distill/poc/lora_8b_chartqa/eval_n400.lora_8b_chartqa.preds.jsonl",
+      "sft_gain_total_in_eval": 46,
+      "partitions": {
+        "GAINED": {
+          "n": 39,
+          "flip": {
+            "k": 11,
+            "n": 39,
+            "rate": 0.28205128205128205,
+            "ci95": [
+              0.16543492088847678,
+              0.43775319483020825
+            ]
+          },
+          "snap": {
+            "k": 30,
+            "n": 39,
+            "rate": 0.7692307692307693,
+            "ci95": [
+              0.6166374277165824,
+              0.8735419587485715
+            ]
+          },
+          "follow": {
+            "k": 0,
+            "n": 39,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.08966685370757144
+            ]
+          }
+        },
+        "RETAINED": {
+          "n": 262,
+          "flip": {
+            "k": 46,
+            "n": 262,
+            "rate": 0.17557251908396945,
+            "ci95": [
+              0.1342866927819135,
+              0.2262344209896509
+            ]
+          },
+          "snap": {
+            "k": 222,
+            "n": 262,
+            "rate": 0.8473282442748091,
+            "ci95": [
+              0.7987833076352528,
+              0.8858352646798957
+            ]
+          },
+          "follow": {
+            "k": 9,
+            "n": 262,
+            "rate": 0.03435114503816794,
+            "ci95": [
+              0.01817560490590809,
+              0.06398411133092556
+            ]
+          }
+        },
+        "SFT_LOSS": {
+          "n": 10,
+          "flip": {
+            "k": 7,
+            "n": 10,
+            "rate": 0.7,
+            "ci95": [
+              0.3967781474611453,
+              0.8922087325936988
+            ]
+          },
+          "snap": {
+            "k": 4,
+            "n": 10,
+            "rate": 0.4,
+            "ci95": [
+              0.16818032970623617,
+              0.6873262302663417
+            ]
+          },
+          "follow": {
+            "k": 0,
+            "n": 10,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.2775327998628892
+            ]
+          }
+        },
+        "BOTH_WRONG": {
+          "n": 10,
+          "flip": {
+            "k": 4,
+            "n": 10,
+            "rate": 0.4,
+            "ci95": [
+              0.16818032970623617,
+              0.6873262302663417
+            ]
+          },
+          "snap": {
+            "k": 6,
+            "n": 10,
+            "rate": 0.6,
+            "ci95": [
+              0.3126737697336583,
+              0.8318196702937638
+            ]
+          },
+          "follow": {
+            "k": 1,
+            "n": 10,
+            "rate": 0.1,
+            "ci95": [
+              0.01787621309507289,
+              0.4041500267952385
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "ChartQA 32B",
+      "dataset": "chartqa",
+      "model_id": "32b",
+      "battery": "data/distill/poc/battery_32b_present.json",
+      "preds": "data/distill/poc/lora_32b_chartqa/eval_n400.epoch_1.preds.jsonl",
+      "sft_gain_total_in_eval": 37,
+      "partitions": {
+        "GAINED": {
+          "n": 37,
+          "flip": {
+            "k": 5,
+            "n": 37,
+            "rate": 0.13513513513513514,
+            "ci95": [
+              0.05913294425732018,
+              0.2797741178400979
+            ]
+          },
+          "snap": {
+            "k": 37,
+            "n": 37,
+            "rate": 1.0,
+            "ci95": [
+              0.9059421741627975,
+              1.0
+            ]
+          },
+          "follow": {
+            "k": 0,
+            "n": 37,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0940578258372025
+            ]
+          }
+        },
+        "RETAINED": {
+          "n": 279,
+          "flip": {
+            "k": 11,
+            "n": 279,
+            "rate": 0.03942652329749104,
+            "ci95": [
+              0.022155396447998507,
+              0.06920836234620353
+            ]
+          },
+          "snap": {
+            "k": 273,
+            "n": 279,
+            "rate": 0.978494623655914,
+            "ci95": [
+              0.9538842303367332,
+              0.9901075066358274
+            ]
+          },
+          "follow": {
+            "k": 5,
+            "n": 279,
+            "rate": 0.017921146953405017,
+            "ci95": [
+              0.007678525820803427,
+              0.04125863805328353
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "TabMWP 8B",
+      "dataset": "tabmwp",
+      "model_id": "8b",
+      "battery": "data/distill/poc/battery_tabmwp8b_present.json",
+      "preds": "data/distill/poc/eval_sft_8b_tabmwp_n400.lora_8b_tabmwp.preds.jsonl",
+      "sft_gain_total_in_eval": 40,
+      "partitions": {
+        "GAINED": {
+          "n": 40,
+          "flip": {
+            "k": 0,
+            "n": 40,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.08762160119728664
+            ]
+          },
+          "snap": {
+            "k": 40,
+            "n": 40,
+            "rate": 1.0,
+            "ci95": [
+              0.9123783988027134,
+              1.0
+            ]
+          },
+          "follow": {
+            "k": 0,
+            "n": 40,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.08762160119728664
+            ]
+          }
+        },
+        "RETAINED": {
+          "n": 345,
+          "flip": {
+            "k": 13,
+            "n": 345,
+            "rate": 0.03768115942028986,
+            "ci95": [
+              0.022151127947257484,
+              0.06339334524000995
+            ]
+          },
+          "snap": {
+            "k": 334,
+            "n": 345,
+            "rate": 0.9681159420289855,
+            "ci95": [
+              0.9438171728393399,
+              0.9821048809553705
+            ]
+          },
+          "follow": {
+            "k": 3,
+            "n": 345,
+            "rate": 0.008695652173913044,
+            "ci95": [
+              0.0029616265618278618,
+              0.02525021171555038
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "TabMWP 32B",
+      "dataset": "tabmwp",
+      "model_id": "32b",
+      "battery": "data/distill/poc/battery_tabmwp32b_present.json",
+      "preds": "data/distill/poc/eval_sft_32b_tabmwp_n400.epoch_4.preds.jsonl",
+      "sft_gain_total_in_eval": 57,
+      "partitions": {
+        "GAINED": {
+          "n": 57,
+          "flip": {
+            "k": 1,
+            "n": 57,
+            "rate": 0.017543859649122806,
+            "ci95": [
+              0.0031036646514080893,
+              0.09290749178567685
+            ]
+          },
+          "snap": {
+            "k": 56,
+            "n": 57,
+            "rate": 0.9824561403508771,
+            "ci95": [
+              0.9070925082143229,
+              0.9968963353485917
+            ]
+          },
+          "follow": {
+            "k": 0,
+            "n": 57,
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.06313883485297894
+            ]
+          }
+        },
+        "RETAINED": {
+          "n": 332,
+          "flip": {
+            "k": 12,
+            "n": 332,
+            "rate": 0.03614457831325301,
+            "ci95": [
+              0.020795029242126083,
+              0.06210557188811939
+            ]
+          },
+          "snap": {
+            "k": 321,
+            "n": 332,
+            "rate": 0.9668674698795181,
+            "ci95": [
+              0.9416541708681883,
+              0.981400418903318
+            ]
+          },
+          "follow": {
+            "k": 6,
+            "n": 332,
+            "rate": 0.018072289156626505,
+            "ci95": [
+              0.008308354195089811,
+              0.038861101524645746
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "finqa_targeted": [
+    {
+      "label": "FinQA 8B curriculum",
+      "path": "data/distill/poc/battery_n1_8b.json",
+      "result_key": "b2",
+      "n_targeted": 172,
+      "operand_follow": {
+        "k": 0,
+        "n": 172,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.021846934968744597
+        ]
+      },
+      "operand_snap": {
+        "k": 172,
+        "n": 172,
+        "rate": 1.0,
+        "ci95": [
+          0.9781530650312552,
+          0.9999999999999998
+        ]
+      },
+      "consistent_follow": {
+        "k": 165,
+        "n": 172,
+        "rate": 0.9593023255813954,
+        "ci95": [
+          0.9183871988420945,
+          0.9801487562447563
+        ]
+      },
+      "note": "Targeted FinQA batteries perturb gold-program operands, but current artifacts do not include matched per-case base-vs-SFT eval predictions; therefore they are reported as targeted operand-follow CIs, not an SFT-gain subset."
+    },
+    {
+      "label": "FinQA 32B curriculum",
+      "path": "data/distill/poc/battery_n1_32b.json",
+      "result_key": "b2",
+      "n_targeted": 175,
+      "operand_follow": {
+        "k": 0,
+        "n": 175,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.021480460921843688
+        ]
+      },
+      "operand_snap": {
+        "k": 175,
+        "n": 175,
+        "rate": 1.0,
+        "ci95": [
+          0.9785195390781564,
+          1.0000000000000002
+        ]
+      },
+      "consistent_follow": {
+        "k": 170,
+        "n": 175,
+        "rate": 0.9714285714285714,
+        "ci95": [
+          0.9348684071570383,
+          0.9877357296880804
+        ]
+      },
+      "note": "Targeted FinQA batteries perturb gold-program operands, but current artifacts do not include matched per-case base-vs-SFT eval predictions; therefore they are reported as targeted operand-follow CIs, not an SFT-gain subset."
+    }
+  ]
+}

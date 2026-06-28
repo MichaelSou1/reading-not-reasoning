@@ -1,0 +1,171 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adhikari and Lapata(2026)]{pearl}
+Ashutosh Adhikari and Mirella Lapata.
+\newblock Multimodal latent reasoning via predictive embeddings.
+\newblock \emph{arXiv preprint arXiv:2604.08065}, 2026.
+
+\bibitem[Bai et~al.(2025)]{qwen3vl}
+Shuai Bai et~al.
+\newblock {Qwen3-VL} technical report.
+\newblock \emph{arXiv preprint arXiv:2511.21631}, 2025.
+
+\bibitem[Bentham et~al.(2024)Bentham, Stringham, and Marasovic]{bentham2024}
+Oliver Bentham, Nathan Stringham, and Ana Marasovic.
+\newblock Chain-of-thought unfaithfulness as disguised accuracy.
+\newblock \emph{Transactions on Machine Learning Research}, 2024.
+
+\bibitem[Carbune et~al.(2024)Carbune, Mansoor, Liu, Aralikatte, Baechler, Chen,
+  and Sharma]{chartpali}
+Victor Carbune, Hassan Mansoor, Fangyu Liu, Rahul Aralikatte, Gilles Baechler,
+  Jindong Chen, and Abhanshu Sharma.
+\newblock Chart-based reasoning: Transferring capabilities from {LLMs} to
+  {VLMs}.
+\newblock \emph{arXiv preprint arXiv:2403.12596}, 2024.
+
+\bibitem[Chen et~al.(2025)Chen, Zhao, Zeng, Huang, Zhong, and Ma]{chartr1}
+Lei Chen, Xuanle Zhao, Zhixiong Zeng, Jing Huang, Yufeng Zhong, and Lin Ma.
+\newblock {Chart-R1}: Chain-of-thought supervision and reinforcement for
+  advanced chart reasoner.
+\newblock \emph{arXiv preprint arXiv:2507.15509}, 2025.
+
+\bibitem[Hou et~al.(2026)Hou, Xu, Biyani, Li, Liu, Hollon, and Wang]{codev}
+Xinhai Hou, Shaoyuan Xu, Manan Biyani, Moyan Li, Jia Liu, Todd~C. Hollon, and
+  Bryan Wang.
+\newblock {CodeV}: Code with images for faithful visual reasoning via
+  tool-aware policy optimization.
+\newblock \emph{arXiv preprint arXiv:2511.19661}, 2026.
+\newblock CVPR 2026 Oral.
+
+\bibitem[Hu et~al.(2024)Hu, Stretcu, Lu, Viswanathan, Hata, Luo, Krishna, and
+  Fuxman]{vpd}
+Yushi Hu, Otilia Stretcu, Chun-Ta Lu, Krishnamurthy Viswanathan, Kenji Hata,
+  Enming Luo, Ranjay Krishna, and Ariel Fuxman.
+\newblock Visual program distillation: Distilling tools and programmatic
+  reasoning into vision-language models.
+\newblock In \emph{CVPR}, 2024.
+
+\bibitem[Lanham et~al.(2023)Lanham, Chen, Radhakrishnan, Steiner, Denison,
+  Hernandez, Li, Durmus, Hubinger, Kernion, et~al.]{lanham2023}
+Tamera Lanham, Anna Chen, Ansh Radhakrishnan, Benoit Steiner, Carson Denison,
+  Danny Hernandez, Dustin Li, Esin Durmus, Evan Hubinger, Jackson Kernion,
+  et~al.
+\newblock Measuring faithfulness in chain-of-thought reasoning.
+\newblock \emph{arXiv preprint arXiv:2307.13702}, 2023.
+
+\bibitem[Li et~al.(2026)Li, Chen, Li, Zeng, Huang, Xu, and Sun]{capimagine2026}
+You Li, Chi Chen, Yanghao Li, Fanhu Zeng, Kaiyu Huang, Jinan Xu, and Maosong
+  Sun.
+\newblock Imagination helps visual reasoning, but not yet in latent space.
+\newblock \emph{arXiv preprint arXiv:2602.22766}, 2026.
+\newblock ICML 2026.
+
+\bibitem[Liu et~al.(2025{\natexlab{a}})Liu, Zeng, Zhang, Wang, Shan, and
+  He]{perceptionbottleneck}
+Junteng Liu, Weihao Zeng, Xiwen Zhang, Yijun Wang, Zifei Shan, and Junxian He.
+\newblock On the perception bottleneck of {VLMs} for chart understanding.
+\newblock \emph{arXiv preprint arXiv:2503.18435}, 2025{\natexlab{a}}.
+
+\bibitem[Liu et~al.(2025{\natexlab{b}})Liu, Pan, She, Gao, and
+  Xia]{visualthinking2025}
+Zujing Liu, Junwen Pan, Qi~She, Yuan Gao, and Guisong Xia.
+\newblock On the faithfulness of visual thinking: Measurement and enhancement.
+\newblock \emph{arXiv preprint arXiv:2510.23482}, 2025{\natexlab{b}}.
+
+\bibitem[Lu et~al.(2023)Lu, Qiu, Chang, Wu, Zhu, Rajpurohit, Clark, and
+  Kalyan]{tabmwp}
+Pan Lu, Liang Qiu, Kai-Wei Chang, Ying~Nian Wu, Song-Chun Zhu, Tanmay
+  Rajpurohit, Peter Clark, and Ashwin Kalyan.
+\newblock Dynamic prompt learning via policy gradient for semi-structured
+  mathematical reasoning.
+\newblock In \emph{ICLR}, 2023.
+
+\bibitem[Lyu et~al.(2023)Lyu, Havaldar, Stein, Zhang, Rao, Wong, Apidianaki,
+  and Callison-Burch]{lyu2023}
+Qing Lyu, Shreya Havaldar, Adam Stein, Li~Zhang, Delip Rao, Eric Wong, Marianna
+  Apidianaki, and Chris Callison-Burch.
+\newblock Faithful chain-of-thought reasoning.
+\newblock In \emph{Proceedings of the 13th International Joint Conference on
+  Natural Language Processing and the 3rd Conference of the Asia-Pacific
+  Chapter of the Association for Computational Linguistics}, pages 305--329,
+  2023.
+
+\bibitem[Masry et~al.(2022)Masry, Long, Tan, Joty, and Hoque]{chartqa}
+Ahmed Masry, Do~Xuan Long, Jia~Qing Tan, Shafiq Joty, and Enamul Hoque.
+\newblock {ChartQA}: A benchmark for question answering about charts with
+  visual and logical reasoning.
+\newblock In \emph{Findings of ACL}, 2022.
+
+\bibitem[Pfau et~al.(2024)Pfau, Merrill, and Bowman]{pfau2024}
+Jacob Pfau, William Merrill, and Samuel~R. Bowman.
+\newblock Let's think dot by dot: Hidden computation in transformer language
+  models.
+\newblock \emph{arXiv preprint arXiv:2404.15758}, 2024.
+
+\bibitem[Shin et~al.(2025)Shin, Sampson, Narayanan, Marquez, and
+  Halappanavar]{chartnoise}
+Philip~Wootaek Shin, Jack Sampson, Vijaykrishnan Narayanan, Andres Marquez, and
+  Mahantesh Halappanavar.
+\newblock Losing the plot: How {VLM} responses degrade on imperfect charts.
+\newblock \emph{arXiv preprint arXiv:2509.18425}, 2025.
+
+\bibitem[Tang et~al.(2025)Tang, Kim, Zhao, Lake, Ding, Yin, Singhal, Wadhwa,
+  Liu, Sprague, Namuduri, Hu, Rodriguez, Peng, and Durrett]{chartmuseum}
+Liyan Tang, Grace Kim, Xinyu Zhao, Thom Lake, Wenxuan Ding, Fangcong Yin,
+  Prasann Singhal, Manya Wadhwa, Zeyu~Leo Liu, Zayne Sprague, Ramya Namuduri,
+  Bodun Hu, Juan~Diego Rodriguez, Puyuan Peng, and Greg Durrett.
+\newblock {ChartMuseum}: Testing visual reasoning capabilities of large
+  vision-language models.
+\newblock \emph{arXiv preprint arXiv:2505.13444}, 2025.
+
+\bibitem[Tao et~al.(2026)Tao, Zhang, Ding, Wang, Sun, Hua, Cao, and Xu]{locus}
+Zhou Tao, Fang Zhang, Zewen Ding, Shida Wang, Xiaokun Sun, YongXiang Hua, Haoyu
+  Cao, and Linli Xu.
+\newblock {LOCUS}: Local visual cue search for enhancing fine-grained
+  perception in multimodal large language models.
+\newblock \emph{arXiv preprint arXiv:2606.16586}, 2026.
+
+\bibitem[Turpin et~al.(2023)Turpin, Michael, Perez, and Bowman]{turpin2023}
+Miles Turpin, Julian Michael, Ethan Perez, and Samuel~R. Bowman.
+\newblock Language models don't always say what they think: Unfaithful
+  explanations in chain-of-thought prompting.
+\newblock \emph{Advances in Neural Information Processing Systems}, 2023.
+
+\bibitem[Tutek et~al.(2025)Tutek, Chaleshtori, Marasovic, and
+  Belinkov]{tutek2025}
+Martin Tutek, Fateme~Hashemi Chaleshtori, Ana Marasovic, and Yonatan Belinkov.
+\newblock Measuring chain of thought faithfulness by unlearning reasoning
+  steps.
+\newblock \emph{arXiv preprint arXiv:2502.14829}, 2025.
+
+\bibitem[Wang et~al.(2025)Wang, Gao, Gu, Pu, Cui, Wei, Liu, Jing, Ye, Shao,
+  et~al.]{internvl35}
+Weiyun Wang, Zhangwei Gao, Lixin Gu, Hengjun Pu, Long Cui, Xingguang Wei,
+  Zhaoyang Liu, Linglin Jing, Shenglong Ye, Jie Shao, et~al.
+\newblock {InternVL3.5}: Advancing open-source multimodal models in
+  versatility, reasoning, and efficiency.
+\newblock \emph{arXiv preprint arXiv:2508.18265}, 2025.
+
+\bibitem[Wang et~al.(2024)Wang, Xia, He, Chen, Liu, Zhu, Liang, Wu, Liu,
+  Malladi, Chevalier, Arora, and Chen]{charxiv}
+Zirui Wang, Mengzhou Xia, Luxi He, Howard Chen, Yitao Liu, Richard Zhu, Kaiqu
+  Liang, Xindi Wu, Haotian Liu, Sadhika Malladi, Alexis Chevalier, Sanjeev
+  Arora, and Danqi Chen.
+\newblock {CharXiv}: Charting gaps in realistic chart understanding in
+  multimodal {LLMs}.
+\newblock \emph{arXiv preprint arXiv:2406.18521}, 2024.
+
+\bibitem[Wei et~al.(2026)Wei, He, Lan, Dong, Cai, Li, Zhu, Wang, Kong, Wang,
+  Zhang, and Huang]{zoomingwithoutzooming}
+Lai Wei, Liangbo He, Jun Lan, Lingzhong Dong, Yutong Cai, Siyuan Li, Huijia
+  Zhu, Weiqiang Wang, Linghe Kong, Yue Wang, Zhuosheng Zhang, and Weiran Huang.
+\newblock Zooming without zooming: Region-to-image distillation for
+  fine-grained multimodal perception.
+\newblock \emph{arXiv preprint arXiv:2602.11858}, 2026.
+
+\end{thebibliography}

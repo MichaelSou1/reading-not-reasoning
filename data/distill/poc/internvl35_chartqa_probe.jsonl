@@ -1,0 +1,604 @@
+{"key": "internvl35_8b:chartqa-0:corrupt", "sig": "956fa4799c1999efdf4e417b8f1489af", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "14", "out": "ANSWER: 14"}
+{"key": "internvl35_8b:chartqa-0:shuffle", "sig": "4371c28114c0b23de695fe030b556391", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "15", "out": "ANSWER: 15"}
+{"key": "internvl35_8b:chartqa-1:corrupt", "sig": "f46a420ceb0dc9fa8e6da89d8e650ddb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.57", "out": "ANSWER: 0.57"}
+{"key": "internvl35_8b:chartqa-1:shuffle", "sig": "20b752ce287d541e37ff9d7286364321", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.57", "out": "ANSWER: 0.57"}
+{"key": "internvl35_8b:chartqa-2:corrupt", "sig": "00d730e2b213802e68469bf1ec8c3cf1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-2:shuffle", "sig": "2bc8405a3c4c759c667b837abb063d07", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-3:corrupt", "sig": "8f8ef480dcab72e723425d6718f5601f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-3:shuffle", "sig": "81c3f64c8964f2f4d6ec970eec02f8c4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-4:corrupt", "sig": "2cc179b01a8b9afe9bbc1cade99ce0f2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "23", "out": "ANSWER: 23"}
+{"key": "internvl35_8b:chartqa-4:shuffle", "sig": "4569d718afe3c7099e5e5b57b79b767e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "23", "out": "ANSWER: 23"}
+{"key": "internvl35_8b:chartqa-5:corrupt", "sig": "d632620c90639ae742922129057542bb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6", "out": "ANSWER: 6"}
+{"key": "internvl35_8b:chartqa-5:shuffle", "sig": "30ab7f82fa845c8b759e8f75e5ab317b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6", "out": "ANSWER: 6"}
+{"key": "internvl35_8b:chartqa-6:corrupt", "sig": "f8774c00b0877b3457b892319dcd80d2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "62%", "out": "ANSWER: 62%"}
+{"key": "internvl35_8b:chartqa-6:shuffle", "sig": "bfd68a897fd6548528a913968dce978f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "62", "out": "ANSWER: 62"}
+{"key": "internvl35_8b:chartqa-7:corrupt", "sig": "63fd56afca1bc4624fbaa7d2f0215bb8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-7:shuffle", "sig": "fdfaa384bb9fc3976ec38a629c4ba2fd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-8:corrupt", "sig": "177946e351260ec5ec693e7d9eb0f78c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Inspired", "out": "ANSWER: Inspired"}
+{"key": "internvl35_8b:chartqa-8:shuffle", "sig": "b7b440cac98e747e8bc82a7224b56a28", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Inspired", "out": "ANSWER: Inspired"}
+{"key": "internvl35_8b:chartqa-10:corrupt", "sig": "47c794900116a45a3b0df06b7093739d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-10:shuffle", "sig": "724c07b87b3e7877b11579b68a835ed5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1 GPI", "out": "ANSWER: 1 GPI"}
+{"key": "internvl35_8b:chartqa-11:corrupt", "sig": "a5047f3bcd9503b77e8b70f2abaf4563", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-11:shuffle", "sig": "f21559a953f9bbe94ebc25ff8d1fdf88", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-12:corrupt", "sig": "53793570169ae3e41adfc381dec41a78", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "17", "out": "ANSWER: 17"}
+{"key": "internvl35_8b:chartqa-12:shuffle", "sig": "3d69250b420068d4aba1ce055abb37c2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "17", "out": "ANSWER: 17"}
+{"key": "internvl35_8b:chartqa-13:corrupt", "sig": "468ab0581504436908277c9ef3ffc8ea", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21.7", "out": "ANSWER: 21.7"}
+{"key": "internvl35_8b:chartqa-13:shuffle", "sig": "caef6cdf0000879c6dbea2ae6270b37d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21.3", "out": "ANSWER: 21.3"}
+{"key": "internvl35_8b:chartqa-14:corrupt", "sig": "14f04a2d1638a4c451a32ee1cb00eee5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2%", "out": "ANSWER: 2%"}
+{"key": "internvl35_8b:chartqa-14:shuffle", "sig": "592dbb56887103becbd9bcf5940c910e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2%", "out": "ANSWER: 2%"}
+{"key": "internvl35_8b:chartqa-15:corrupt", "sig": "769e501bc18038d16892be7a6a81f6ab", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2%", "out": "ANSWER: 2%"}
+{"key": "internvl35_8b:chartqa-15:shuffle", "sig": "fb90b01579f2835666a2d9b83589f920", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2%", "out": "ANSWER: 2%"}
+{"key": "internvl35_8b:chartqa-16:corrupt", "sig": "dfee36f564aca7b7b6953caa2cede09f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-16:shuffle", "sig": "7241c4ed0e0d9f7a0e08173195ac31ba", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-17:corrupt", "sig": "ea057416d6d8589617b49005e7027cb2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2010 to 2011", "out": "ANSWER: 2010 to 2011"}
+{"key": "internvl35_8b:chartqa-17:shuffle", "sig": "5750adb32f9110d69812c575b7e19bfa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2010 to 2011", "out": "ANSWER: 2010 to 2011"}
+{"key": "internvl35_8b:chartqa-18:corrupt", "sig": "6c739e0ff93967b1c152924a60996157", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-18:shuffle", "sig": "d2b8feb781b664084923e3ac46377e78", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-19:corrupt", "sig": "bb0799ccb92c137b432dfb56ddeeb284", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-19:shuffle", "sig": "7788e00ba80db78122f043c497454b79", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-21:corrupt", "sig": "9d3623efb8eda45d40c270c823fa704a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004", "out": "ANSWER: 2004"}
+{"key": "internvl35_8b:chartqa-21:shuffle", "sig": "ca68d561700d0b4c8567f03b30ac85a1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004", "out": "ANSWER: 2004"}
+{"key": "internvl35_8b:chartqa-24:corrupt", "sig": "00abdbdb0b224025ffaf320d9f17b16c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-24:shuffle", "sig": "6266ce8b2faf51ba0055205cf7dd6c9d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-25:corrupt", "sig": "cb5150b412d6e8176bd7bf0d32c100c5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-25:shuffle", "sig": "713df1a0fbc359a8cd2336512718b984", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-26:corrupt", "sig": "608354b6abbd7f63148be982bb288c65", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "80", "out": "ANSWER: 80"}
+{"key": "internvl35_8b:chartqa-26:shuffle", "sig": "7216cf1042b7134b2b12a1854e4df6c3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "80", "out": "ANSWER: 80"}
+{"key": "internvl35_8b:chartqa-27:corrupt", "sig": "f5ac63c8648d826d1d66e99a35261ea1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "77", "out": "ANSWER: 77"}
+{"key": "internvl35_8b:chartqa-27:shuffle", "sig": "cef296f4a031675e0b964c44e128d9c7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "77", "out": "ANSWER: 77"}
+{"key": "internvl35_8b:chartqa-29:corrupt", "sig": "ec27a11811266870e9b6ff4ed3638b2f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "61", "out": "ANSWER: 61"}
+{"key": "internvl35_8b:chartqa-29:shuffle", "sig": "daa14506feaef2022c13c5f40ee665e0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "61", "out": "ANSWER: 61"}
+{"key": "internvl35_8b:chartqa-30:corrupt", "sig": "f80254510367e3d33ce739328712bdea", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-30:shuffle", "sig": "443308faee9f1c704c6a98db387d446b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-31:corrupt", "sig": "cff65a99ae333d4773c37b6a00d05c89", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-31:shuffle", "sig": "78f1cf3a419973edeedc2655ddd6e8d0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-34:corrupt", "sig": "3296c43d5cd8e0aaf1d85f7542bcd6b8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Italy", "out": "ANSWER: Italy"}
+{"key": "internvl35_8b:chartqa-34:shuffle", "sig": "b9bf1f0a7bce83fade93a45ca1c8c379", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Italy", "out": "ANSWER: Italy"}
+{"key": "internvl35_8b:chartqa-35:corrupt", "sig": "1af34aee586d0001a22f3ee0a218a9e9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mexico", "out": "ANSWER: Mexico"}
+{"key": "internvl35_8b:chartqa-35:shuffle", "sig": "1909da14b95f529e10a6714fed478226", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mexico", "out": "ANSWER: Mexico"}
+{"key": "internvl35_8b:chartqa-37:corrupt", "sig": "58b640332b301e27ad949c4c13afb8b8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Over 30 mins", "out": "ANSWER: Over 30 mins"}
+{"key": "internvl35_8b:chartqa-37:shuffle", "sig": "32c9a42a403747a2f54b47bc1afb51d8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Over 30 minutes", "out": "ANSWER: Over 30 minutes"}
+{"key": "internvl35_8b:chartqa-38:corrupt", "sig": "9b3c5cf3aa0d78e1cbee2b842a9959bd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-38:shuffle", "sig": "a883575be97e28ab21c91d1f3646e3c7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-39:corrupt", "sig": "78042e151020feb8a2e9494d583b3c2a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "22%", "out": "ANSWER: 22%"}
+{"key": "internvl35_8b:chartqa-39:shuffle", "sig": "64fe88a56718a4b4a4f26ea75b8cfcb9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "22%", "out": "ANSWER: 22%"}
+{"key": "internvl35_8b:chartqa-40:corrupt", "sig": "7b1fd8291fb0cc49db9465365b8e89f8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "92", "out": "ANSWER: 92"}
+{"key": "internvl35_8b:chartqa-40:shuffle", "sig": "da03ed3386033f63110ba08645db45b7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "92", "out": "ANSWER: 92"}
+{"key": "internvl35_8b:chartqa-41:corrupt", "sig": "b076a1e85a5a1bc073fdf9b242b1e12d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "96", "out": "ANSWER: 96"}
+{"key": "internvl35_8b:chartqa-41:shuffle", "sig": "fca7cbb7830f674501ef59d5c9c3e9d7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "96", "out": "ANSWER: 96"}
+{"key": "internvl35_8b:chartqa-42:corrupt", "sig": "4e23e56c763f9d08dd4260b178bad145", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21", "out": "ANSWER: 21"}
+{"key": "internvl35_8b:chartqa-42:shuffle", "sig": "ff8071ba44448e28e8002395ef51014e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21", "out": "ANSWER: 21"}
+{"key": "internvl35_8b:chartqa-43:corrupt", "sig": "90bf2a4d38f257cefeff1d9af34e0552", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "12", "out": "ANSWER: 12"}
+{"key": "internvl35_8b:chartqa-43:shuffle", "sig": "bafd2d92940b6735c80944cd6f1d36a2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "12", "out": "ANSWER: 12"}
+{"key": "internvl35_8b:chartqa-44:corrupt", "sig": "df909de08dc65c0e5e53d213b3a43e6e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2009", "out": "ANSWER: 2009"}
+{"key": "internvl35_8b:chartqa-44:shuffle", "sig": "da9980b45693b22dfe8b9ff89d33abc2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2009", "out": "ANSWER: 2009"}
+{"key": "internvl35_8b:chartqa-45:corrupt", "sig": "1fd1e82ccd753a9fac5d781b38bcde8f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28.7", "out": "ANSWER: 28.7"}
+{"key": "internvl35_8b:chartqa-45:shuffle", "sig": "c26431fe1818d2113dc6c90803757018", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28.7", "out": "ANSWER: 28.7"}
+{"key": "internvl35_8b:chartqa-46:corrupt", "sig": "148753590f3d19dfc71bc90cfff5114c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "68%", "out": "ANSWER: 68%"}
+{"key": "internvl35_8b:chartqa-46:shuffle", "sig": "e3640bc1c06d37ee808630d2df984c13", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "68", "out": "ANSWER: 68"}
+{"key": "internvl35_8b:chartqa-47:corrupt", "sig": "e75cede88a77491ac6d25db6a227501a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2019", "out": "ANSWER: 2019"}
+{"key": "internvl35_8b:chartqa-47:shuffle", "sig": "11db047426ecb8a526c74eb44ff34891", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2019", "out": "ANSWER: 2019"}
+{"key": "internvl35_8b:chartqa-48:corrupt", "sig": "38851c686ace4e138b76e4daf6907813", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "83", "out": "ANSWER: 83"}
+{"key": "internvl35_8b:chartqa-48:shuffle", "sig": "d1c7cc33c30b92b0b259043a94c382b9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "83", "out": "ANSWER: 83"}
+{"key": "internvl35_8b:chartqa-49:corrupt", "sig": "ef95944fe0249d86ba4d67fa1476726c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.14", "out": "ANSWER: 2.14"}
+{"key": "internvl35_8b:chartqa-49:shuffle", "sig": "b821c6d7073b154ee7203a4301833a01", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.14:1", "out": "ANSWER: 2.14:1"}
+{"key": "internvl35_8b:chartqa-50:corrupt", "sig": "87f4a3cd7c0d6d6088665b0b59a54307", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Simulation", "out": "ANSWER: Simulation"}
+{"key": "internvl35_8b:chartqa-50:shuffle", "sig": "2c0867c7932677b0b8faa5a282fd6883", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Simulation", "out": "ANSWER: Simulation"}
+{"key": "internvl35_8b:chartqa-51:corrupt", "sig": "a97c098fdc3a9e1e59685965eb97c72a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-51:shuffle", "sig": "50d1cacc8eafbf7813e8d0699a36d0a5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-53:corrupt", "sig": "57f7e3d1e51773b445c5e7d187d73883", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-53:shuffle", "sig": "e7a58610e00775c476e8d9780d69f4a7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-54:corrupt", "sig": "5c8a09bbf902ea50c535c6f3e3853885", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-54:shuffle", "sig": "1167361ef958f3fff1612e022d7f9aa4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-58:corrupt", "sig": "8c36a4fe6a5d45ac9fae8259b1598664", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Libya", "out": "ANSWER: Libya"}
+{"key": "internvl35_8b:chartqa-58:shuffle", "sig": "95c14eba42427da8d29da8a494b85334", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Libya", "out": "ANSWER: Libya"}
+{"key": "internvl35_8b:chartqa-59:corrupt", "sig": "06bfe25578c98a9a9d6db00865aa55e0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.23", "out": "ANSWER: 0.23"}
+{"key": "internvl35_8b:chartqa-59:shuffle", "sig": "8a6a10eef51a7886cbeec5dfa9f7bfbc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.23", "out": "ANSWER: 0.23"}
+{"key": "internvl35_8b:chartqa-62:corrupt", "sig": "80d3fd861f09d5c3e575cf1b5a5e68a3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "UK", "out": "ANSWER: UK"}
+{"key": "internvl35_8b:chartqa-62:shuffle", "sig": "179507fafdf68122d001b0692f8fa151", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "UK", "out": "ANSWER: UK"}
+{"key": "internvl35_8b:chartqa-64:corrupt", "sig": "3bdb346386329c26b5aa3ac38373ea3c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "72", "out": "ANSWER: 72"}
+{"key": "internvl35_8b:chartqa-64:shuffle", "sig": "11ad387f4e736ddfe176c7fc85a5e9d9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "72%", "out": "ANSWER: 72%"}
+{"key": "internvl35_8b:chartqa-68:corrupt", "sig": "f048456d439390e9c6e979b5a97a0589", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "175", "out": "ANSWER: 175"}
+{"key": "internvl35_8b:chartqa-68:shuffle", "sig": "5720fa15d1558db6f0b2403f92565fb2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "175", "out": "ANSWER: 175"}
+{"key": "internvl35_8b:chartqa-69:corrupt", "sig": "e2c7a3d8424afa55d14bc281fb2c06b8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-69:shuffle", "sig": "679273dcc18483a49f28fccaaa205c9d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-70:corrupt", "sig": "7b9b30e78777380a2c44cdf73127b355", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "93.45% (2002)", "out": "ANSWER: 93.45% (2002)"}
+{"key": "internvl35_8b:chartqa-70:shuffle", "sig": "b044e8121a7e82eaeaf8b4b178235a98", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "93.45%", "out": "ANSWER: 93.45%"}
+{"key": "internvl35_8b:chartqa-71:corrupt", "sig": "713fbf454373f0172ff8cc15f248face", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "51.05", "out": "ANSWER: 51.05"}
+{"key": "internvl35_8b:chartqa-71:shuffle", "sig": "63c0ebd367702e1907608b8c4124df8d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "51.045%", "out": "ANSWER: 51.045%"}
+{"key": "internvl35_8b:chartqa-77:corrupt", "sig": "085e91dc07eca1de3eb6a34c4d1204e1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-77:shuffle", "sig": "889fe2b15859b81a4d68e5530ee2a982", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-78:corrupt", "sig": "96c3520c9769b2f0e3f93a857ef87aae", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "U.S.", "out": "ANSWER: U.S."}
+{"key": "internvl35_8b:chartqa-78:shuffle", "sig": "456011043c83885bac2874d9c3590014", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "U.S.", "out": "ANSWER: U.S."}
+{"key": "internvl35_8b:chartqa-79:corrupt", "sig": "aaf0fe1e251e7eafb11964e6f56e4044", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "UK", "out": "ANSWER: UK"}
+{"key": "internvl35_8b:chartqa-79:shuffle", "sig": "bbb6d6779c3f678f637004ff8124f57d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "UK", "out": "ANSWER: UK"}
+{"key": "internvl35_8b:chartqa-80:corrupt", "sig": "9d9d8e147266889e1b395876f04188cf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "67%", "out": "ANSWER: 67%"}
+{"key": "internvl35_8b:chartqa-80:shuffle", "sig": "a9d53dd485b6b560eb9015c5fba16717", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "67", "out": "ANSWER: 67"}
+{"key": "internvl35_8b:chartqa-82:corrupt", "sig": "271255f62db9c1f66ef6bcc01de16e70", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "55", "out": "ANSWER: 55"}
+{"key": "internvl35_8b:chartqa-82:shuffle", "sig": "947f326f50a2f4bbdd5fe8891b83eccb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "55", "out": "ANSWER: 55"}
+{"key": "internvl35_8b:chartqa-84:corrupt", "sig": "e4a8e43259782f540466925a590b8d83", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Rep/Lean Rep", "out": "ANSWER: Rep/Lean Rep"}
+{"key": "internvl35_8b:chartqa-84:shuffle", "sig": "bf080b61281d336a97ddd2d338a08556", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Rep/Lean Rep", "out": "ANSWER: Rep/Lean Rep"}
+{"key": "internvl35_8b:chartqa-88:corrupt", "sig": "62ac644212b090a562b1b10661922356", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41%", "out": "ANSWER: 41%"}
+{"key": "internvl35_8b:chartqa-88:shuffle", "sig": "fd8183aa084a98f62d8c7c2a93e206dc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41", "out": "ANSWER: 41"}
+{"key": "internvl35_8b:chartqa-90:corrupt", "sig": "32019625b6b7f55bb05103f8fbae3e6f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Nicaragua", "out": "ANSWER: Nicaragua"}
+{"key": "internvl35_8b:chartqa-90:shuffle", "sig": "9c65402205a6e8dab9083e4b43052046", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Nicaragua", "out": "ANSWER: Nicaragua"}
+{"key": "internvl35_8b:chartqa-91:corrupt", "sig": "42eb50e302179e632524e76374a102d6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-91:shuffle", "sig": "04cd5ad6356e591638273ae0312e239e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-93:corrupt", "sig": "6329cccf00ee414c55cecaadfcc08eef", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "99", "out": "ANSWER: 99"}
+{"key": "internvl35_8b:chartqa-93:shuffle", "sig": "8f152a1df03ce0e66df1cf07dc15f52e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "99", "out": "ANSWER: 99"}
+{"key": "internvl35_8b:chartqa-95:corrupt", "sig": "b5c1e426462285dad6cc6a37f83fc213", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Jamaica", "out": "ANSWER: Jamaica"}
+{"key": "internvl35_8b:chartqa-95:shuffle", "sig": "994a8c815e2d550a32c77e2f11b66f9c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Jamaica", "out": "ANSWER: Jamaica"}
+{"key": "internvl35_8b:chartqa-96:corrupt", "sig": "a074345dbb772f358ee775ffb4f3c5cb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "50", "out": "ANSWER: 50"}
+{"key": "internvl35_8b:chartqa-96:shuffle", "sig": "8f7d74b46902bd25839b8dabb240ca3e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "50", "out": "ANSWER: 50"}
+{"key": "internvl35_8b:chartqa-97:corrupt", "sig": "a7cc827ea2d4a16df93a59273ce587d7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "35", "out": "ANSWER: 35"}
+{"key": "internvl35_8b:chartqa-97:shuffle", "sig": "1599e531b2590a24d0ded31c78899fc6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "35", "out": "ANSWER: 35"}
+{"key": "internvl35_8b:chartqa-98:corrupt", "sig": "c8e944e4843180de0900195a79967553", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "977633", "out": "ANSWER: 977633"}
+{"key": "internvl35_8b:chartqa-98:shuffle", "sig": "257d30f70a46cd21d1f847e8192c51ec", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "977633", "out": "ANSWER: 977633"}
+{"key": "internvl35_8b:chartqa-99:corrupt", "sig": "bf14d8e8d02a02236dac73a494caeef7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.60", "out": "ANSWER: 1.60"}
+{"key": "internvl35_8b:chartqa-99:shuffle", "sig": "dc8dd2bffb7caf050a7fd2ccc9f85955", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.60", "out": "ANSWER: 1.60"}
+{"key": "internvl35_8b:chartqa-100:corrupt", "sig": "1a8c55a1e18fb6fe01f7205045375666", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-100:shuffle", "sig": "f00dd9413144e7f172aa8dc6e694deab", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-101:corrupt", "sig": "ee6074700e6afeab9c85952abdbbf67e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-101:shuffle", "sig": "fc03b1b6bb28159606fe4b3aba752d2f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-104:corrupt", "sig": "2f9c0e6170469486a521e72bfa1ca976", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "25", "out": "ANSWER: 25"}
+{"key": "internvl35_8b:chartqa-104:shuffle", "sig": "8761d19f7fb58c292a499e777ea08d4e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "25", "out": "ANSWER: 25"}
+{"key": "internvl35_8b:chartqa-106:corrupt", "sig": "6942b761563850f9821813e104d6b0aa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28%", "out": "ANSWER: 28%"}
+{"key": "internvl35_8b:chartqa-106:shuffle", "sig": "0fd45f635f635cae45b1ea94858f81c9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28", "out": "ANSWER: 28"}
+{"key": "internvl35_8b:chartqa-108:corrupt", "sig": "11d8a83e77baa734677ba8624931ea37", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-108:shuffle", "sig": "685d77c6198473176e3a73f34ec10ae8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-109:corrupt", "sig": "2dbb46999db8af96543b13530b57cf96", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "37", "out": "ANSWER: 37"}
+{"key": "internvl35_8b:chartqa-109:shuffle", "sig": "91fd6d7adb427c0b3a6462e0c354c036", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "37", "out": "ANSWER: 37"}
+{"key": "internvl35_8b:chartqa-111:corrupt", "sig": "9372da39d18ad38062ad2f0d80b12b41", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8", "out": "ANSWER: 8"}
+{"key": "internvl35_8b:chartqa-111:shuffle", "sig": "8a5f0b2d7bead5cd9a6e093ac34c4daf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8", "out": "ANSWER: 8"}
+{"key": "internvl35_8b:chartqa-112:corrupt", "sig": "19b61684e979c9ef46723610a191a143", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.4 billion", "out": "ANSWER: 1.4 billion"}
+{"key": "internvl35_8b:chartqa-112:shuffle", "sig": "6c3a2a4b3aca0a70e7796cb0ad4c323a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.4 billion", "out": "ANSWER: 1.4 billion"}
+{"key": "internvl35_8b:chartqa-113:corrupt", "sig": "51a0493437d929125b0ed3cbac2ebc7a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-113:shuffle", "sig": "7ffc64af176826c96bfaa222c8b17471", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-114:corrupt", "sig": "b8917a164473753fd80570781a9d4d30", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.42", "out": "ANSWER: 2.42"}
+{"key": "internvl35_8b:chartqa-114:shuffle", "sig": "374b2addbf0e57e788b12b7ec9098d35", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.42", "out": "ANSWER: 2.42"}
+{"key": "internvl35_8b:chartqa-115:corrupt", "sig": "6ced3fabd9c7a7c60bbe89cc5b3d08fa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.77", "out": "ANSWER: 0.77"}
+{"key": "internvl35_8b:chartqa-115:shuffle", "sig": "85f9982acd97088bbf0c2f6d1af90e55", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.77", "out": "ANSWER: 0.77"}
+{"key": "internvl35_8b:chartqa-116:corrupt", "sig": "2cef046bd75197f9e9532d10d500d247", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "12", "out": "ANSWER: 12"}
+{"key": "internvl35_8b:chartqa-116:shuffle", "sig": "b22537ea77d2ef5e73a041bf175df98e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "12", "out": "ANSWER: 12"}
+{"key": "internvl35_8b:chartqa-118:corrupt", "sig": "05f054ef63a86677f917a6e4105b2f1f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-118:shuffle", "sig": "61ed3c52a7e6649983b8c7051d43a9a3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-119:corrupt", "sig": "7e5dea4253e973e827173bbcffa5c7e8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21", "out": "ANSWER: 21"}
+{"key": "internvl35_8b:chartqa-119:shuffle", "sig": "21457775e56e3f803dd7e2855c985077", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "21", "out": "ANSWER: 21"}
+{"key": "internvl35_8b:chartqa-122:corrupt", "sig": "f2e5f4fa655aa76c27f2f4daa6d47e8f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "PP", "out": "ANSWER: PP"}
+{"key": "internvl35_8b:chartqa-122:shuffle", "sig": "636c47732bb132733e14e7be49f06cbc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "PP (Polypropylene)", "out": "ANSWER: PP (Polypropylene)"}
+{"key": "internvl35_8b:chartqa-124:corrupt", "sig": "cf473e9c7d3824cc5ddeea05868b43b2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "71", "out": "ANSWER: 71"}
+{"key": "internvl35_8b:chartqa-124:shuffle", "sig": "026f4cca24960c2a1ddc294bd651fa14", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "71", "out": "ANSWER: 71"}
+{"key": "internvl35_8b:chartqa-126:corrupt", "sig": "9f64b23eb3f8cec47ae67e25500939fa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30%", "out": "ANSWER: 30%"}
+{"key": "internvl35_8b:chartqa-126:shuffle", "sig": "fe9f6ac9936a4a8c583600d2763ee53d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30%", "out": "ANSWER: 30%"}
+{"key": "internvl35_8b:chartqa-127:corrupt", "sig": "6ced326eeeda608d05268a739480cb57", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-127:shuffle", "sig": "3e36470aadee24db77bfcc6d564d8edd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-128:corrupt", "sig": "a297e39217ef167323ba725fc135f905", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Saudi Arabia", "out": "ANSWER: Saudi Arabia"}
+{"key": "internvl35_8b:chartqa-128:shuffle", "sig": "4bae1e1a5663d58f4b3f7353098bdb48", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Saudi Arabia", "out": "ANSWER: Saudi Arabia"}
+{"key": "internvl35_8b:chartqa-130:corrupt", "sig": "7d04b9294be9435e84db359f4b49d3a8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30%", "out": "ANSWER: 30%"}
+{"key": "internvl35_8b:chartqa-130:shuffle", "sig": "d261c57ebb7942eda0f3618f20953e7c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30", "out": "ANSWER: 30"}
+{"key": "internvl35_8b:chartqa-132:corrupt", "sig": "af780d74aac3f53a4a5c4f6f508ab35e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "83", "out": "ANSWER: 83"}
+{"key": "internvl35_8b:chartqa-132:shuffle", "sig": "88df893216f3ef9da8447d387b804f8c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "83", "out": "ANSWER: 83"}
+{"key": "internvl35_8b:chartqa-134:corrupt", "sig": "b48e3cbf6bccef0adb67ab43d7e22c20", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "57", "out": "ANSWER: 57"}
+{"key": "internvl35_8b:chartqa-134:shuffle", "sig": "95848a856355ded6e0125c335a0745fc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "57", "out": "ANSWER: 57"}
+{"key": "internvl35_8b:chartqa-136:corrupt", "sig": "2b9f59bc7f559cb0239e54974aefd802", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "61", "out": "ANSWER: 61"}
+{"key": "internvl35_8b:chartqa-136:shuffle", "sig": "199d319dfa83d8b1f8cf26b75bfd6b05", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "61", "out": "ANSWER: 61"}
+{"key": "internvl35_8b:chartqa-138:corrupt", "sig": "4f3432c8a82d62d330c6d17cc43adfda", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-138:shuffle", "sig": "6ff0a23ac481e977bc9d210088e68556", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-140:corrupt", "sig": "3e840bcf276e69899beeba4eff2357b9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2013", "out": "ANSWER: 2013"}
+{"key": "internvl35_8b:chartqa-140:shuffle", "sig": "5ebcac1126cd07be1070088881d10149", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2013", "out": "ANSWER: 2013"}
+{"key": "internvl35_8b:chartqa-141:corrupt", "sig": "3b84512fc111f3033153b47cbe625d31", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-141:shuffle", "sig": "05a418340b7991165a936ba12f1649e5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-144:corrupt", "sig": "73095d408387216d666d05554c09fece", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "red", "out": "ANSWER: red"}
+{"key": "internvl35_8b:chartqa-144:shuffle", "sig": "6ea2b2a3321b493761eaf772eed90f22", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Red", "out": "ANSWER: Red"}
+{"key": "internvl35_8b:chartqa-147:corrupt", "sig": "30646d5b14c6e5f411f89abc08b24cae", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "64.14", "out": "ANSWER: 64.14"}
+{"key": "internvl35_8b:chartqa-147:shuffle", "sig": "4720d16a3b8c63932073872a6cfe69c1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "64", "out": "ANSWER: 64"}
+{"key": "internvl35_8b:chartqa-148:corrupt", "sig": "8ed143fb5f9f234f0cd2b9319cf4817b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Favorable", "out": "ANSWER: Favorable"}
+{"key": "internvl35_8b:chartqa-148:shuffle", "sig": "aba66e430f545dca07549eb65b1436ce", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Favorable", "out": "ANSWER: Favorable"}
+{"key": "internvl35_8b:chartqa-150:corrupt", "sig": "fbf33d66f92b368c5cc8a05869b3faa7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "54", "out": "ANSWER: 54"}
+{"key": "internvl35_8b:chartqa-150:shuffle", "sig": "a9b885bd4a8f339f9579049d170c139f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "54", "out": "ANSWER: 54"}
+{"key": "internvl35_8b:chartqa-151:corrupt", "sig": "72ec649d22e3c0a219d83be2a54affa3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-151:shuffle", "sig": "9f08da2efe7dd7f6278a7d609b2feae2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-152:corrupt", "sig": "c5a6138c64f1f8715584fbb59c8bdba0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1989", "out": "ANSWER: 1989"}
+{"key": "internvl35_8b:chartqa-152:shuffle", "sig": "9e6cf3750995e6ea7ad4aef585c5dcb3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1989", "out": "ANSWER: 1989"}
+{"key": "internvl35_8b:chartqa-153:corrupt", "sig": "5d0a9f6ec4b6144295912b767ea8e9d4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1969", "out": "ANSWER: 1969"}
+{"key": "internvl35_8b:chartqa-153:shuffle", "sig": "5a2c4386dd7680aca114387df73ef130", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1969", "out": "ANSWER: 1969"}
+{"key": "internvl35_8b:chartqa-154:corrupt", "sig": "47c3a6f57f6c54c9814f14cf19e922d6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "orange", "out": "ANSWER: orange"}
+{"key": "internvl35_8b:chartqa-154:shuffle", "sig": "8cae35772f0e7494c4fd1564a0337380", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Orange", "out": "ANSWER: Orange"}
+{"key": "internvl35_8b:chartqa-158:corrupt", "sig": "76c0f0643b19b7e4ec58144799780027", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-158:shuffle", "sig": "25ee2bc2f4ef2fd12605a338555935a8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-159:corrupt", "sig": "273f4e4d1b9c621ce021a8a6d1e3882c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-159:shuffle", "sig": "022539a0815a4a21ac601a0dd4756982", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-161:corrupt", "sig": "2493b805c03d550df9bda5f76892b15a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Favor", "out": "ANSWER: Favor"}
+{"key": "internvl35_8b:chartqa-161:shuffle", "sig": "809a2ffbef6ffe0f55b0bc597ec0c28f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Favor", "out": "ANSWER: Favor"}
+{"key": "internvl35_8b:chartqa-162:corrupt", "sig": "e9ef90f1feb0c4c166fa49cc396afdea", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-162:shuffle", "sig": "dd86ed04a2590c5122d1cea9187ddc7d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-163:corrupt", "sig": "98124fa7a255050a740734b8188b562f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2210", "out": "ANSWER: 2210"}
+{"key": "internvl35_8b:chartqa-163:shuffle", "sig": "ebd96e77e9c919ef53cda083c3a436c5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2210", "out": "ANSWER: 2210"}
+{"key": "internvl35_8b:chartqa-165:corrupt", "sig": "7f643f35e892b24f21691f16848883be", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "47%", "out": "ANSWER: 47%"}
+{"key": "internvl35_8b:chartqa-165:shuffle", "sig": "f466d49dff0283b7b54fe7d012ff0ce7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "47%", "out": "ANSWER: 47%"}
+{"key": "internvl35_8b:chartqa-166:corrupt", "sig": "af342c6573e1c843a6420e38db172fcf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-166:shuffle", "sig": "c20126acee15bc0b3dac64156e0cdbcc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-167:corrupt", "sig": "d6cc73460bce30626bf57929c4d4c070", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-167:shuffle", "sig": "3edf73a3aa0c1f87cfd3ea9b9f8e12f4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-168:corrupt", "sig": "55143c2c1a11dcd759facc67cca71edf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "dark blue", "out": "ANSWER: dark blue"}
+{"key": "internvl35_8b:chartqa-168:shuffle", "sig": "1b1d5cb901a96795f630b29e4f7d546a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "dark blue", "out": "ANSWER: dark blue"}
+{"key": "internvl35_8b:chartqa-169:corrupt", "sig": "1a27b8079cfcf43ca553f424d634e13e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-169:shuffle", "sig": "4e0ac94153144bccdaa667b274c0c0a3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-170:corrupt", "sig": "be03a1484fb15e9ede0b226365b531d9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Don't know", "out": "ANSWER: Don't know"}
+{"key": "internvl35_8b:chartqa-170:shuffle", "sig": "17ba28b2800fcbfcd1f83dc356c49e59", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Don't know", "out": "ANSWER: Don't know"}
+{"key": "internvl35_8b:chartqa-171:corrupt", "sig": "5c9ab784a787dd8a54843b8130e882d4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-171:shuffle", "sig": "15c5fe15651dac7826a57de40c794af9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-172:corrupt", "sig": "a3a83cfa7c863913a25b5e7d2f9802d5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10%", "out": "ANSWER: 10%"}
+{"key": "internvl35_8b:chartqa-172:shuffle", "sig": "07116908ce766a26dd601547c2f7cc2b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10%", "out": "ANSWER: 10%"}
+{"key": "internvl35_8b:chartqa-173:corrupt", "sig": "69e790df37112e23c6d703de22696475", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "69", "out": "ANSWER: 69"}
+{"key": "internvl35_8b:chartqa-173:shuffle", "sig": "be0ff60c772db32831d2c05ec388a51d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "69", "out": "ANSWER: 69"}
+{"key": "internvl35_8b:chartqa-174:corrupt", "sig": "ccb1826d205525b8f5867ffd30249bb1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41%", "out": "ANSWER: 41%"}
+{"key": "internvl35_8b:chartqa-174:shuffle", "sig": "dccd87634a44f49e39186884dffb20e1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41%", "out": "ANSWER: 41%"}
+{"key": "internvl35_8b:chartqa-175:corrupt", "sig": "26541514a0309fda7d85ad829cdbbb95", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-175:shuffle", "sig": "7bf41a5499bdf42c951164d3fb1ec62d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-176:corrupt", "sig": "55309802d84c84170b6f035ad3d820bf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "67%", "out": "ANSWER: 67%"}
+{"key": "internvl35_8b:chartqa-176:shuffle", "sig": "4b2d835a21b1c7ce872cd0086a447467", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "67%", "out": "ANSWER: 67%"}
+{"key": "internvl35_8b:chartqa-177:corrupt", "sig": "2823d53dbd5436249587dda7a4dce795", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-177:shuffle", "sig": "ee21d613a8cd9eb72c15a7f272e0e434", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-178:corrupt", "sig": "aa34bdff23a76d3354e7341014c816b3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Bad 22%", "out": "ANSWER: Bad 22%"}
+{"key": "internvl35_8b:chartqa-178:shuffle", "sig": "eebeb426a3e98e792caf733891efad46", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Bad", "out": "ANSWER: Bad"}
+{"key": "internvl35_8b:chartqa-179:corrupt", "sig": "7e8f0650c0ca27c6fe65da3438f05749", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "53", "out": "ANSWER: 53"}
+{"key": "internvl35_8b:chartqa-179:shuffle", "sig": "f0f66f6feb5c376d302922dc1c1b24d3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "53", "out": "ANSWER: 53"}
+{"key": "internvl35_8b:chartqa-180:corrupt", "sig": "44cc20aceb46b46ea4d4fc970bd9e0e2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Better off", "out": "ANSWER: Better off"}
+{"key": "internvl35_8b:chartqa-180:shuffle", "sig": "e3b247dc95db3b057888d6ffffe930e5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Better off", "out": "ANSWER: Better off"}
+{"key": "internvl35_8b:chartqa-181:corrupt", "sig": "5036010cde3dbd6ec2899becb42abf25", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Better off", "out": "ANSWER: Better off"}
+{"key": "internvl35_8b:chartqa-181:shuffle", "sig": "3f0315f9b5b92e1f012854c75bce3aa1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Better off", "out": "ANSWER: Better off"}
+{"key": "internvl35_8b:chartqa-182:corrupt", "sig": "9ff2de37b221dd8c91b0cb662f792dce", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Important, but lower priority", "out": "ANSWER: Important, but lower priority"}
+{"key": "internvl35_8b:chartqa-182:shuffle", "sig": "138a963c9bcaa0d5ae05400456deb680", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Important, but lower priority", "out": "ANSWER: Important, but lower priority"}
+{"key": "internvl35_8b:chartqa-183:corrupt", "sig": "36870f8ef92e8c8697606e316e42aafb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "75%", "out": "ANSWER: 75%"}
+{"key": "internvl35_8b:chartqa-183:shuffle", "sig": "5ad448e856bb8784b276e14f55afded6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "75%", "out": "ANSWER: 75%"}
+{"key": "internvl35_8b:chartqa-184:corrupt", "sig": "4f04afe48a2232a8e12521861132facf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Dissatisfied", "out": "ANSWER: Dissatisfied"}
+{"key": "internvl35_8b:chartqa-184:shuffle", "sig": "e840874f06ec1298e3dc1ec1e2891784", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Dissatisfied", "out": "ANSWER: Dissatisfied"}
+{"key": "internvl35_8b:chartqa-185:corrupt", "sig": "c518a7ab3272f6d15b4b003a1dea53d4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.9", "out": "ANSWER: 3.9"}
+{"key": "internvl35_8b:chartqa-185:shuffle", "sig": "99a0c46f165258ee90a9b2de28c03607", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.9", "out": "ANSWER: 3.9"}
+{"key": "internvl35_8b:chartqa-186:corrupt", "sig": "1f53885b4bcd1f623a9802583051710c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "76", "out": "ANSWER: 76"}
+{"key": "internvl35_8b:chartqa-186:shuffle", "sig": "d431320cacc24e39ba0c3ddbd04843d0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "76", "out": "ANSWER: 76"}
+{"key": "internvl35_8b:chartqa-187:corrupt", "sig": "b739d44cf14e348ac3bac78f5a1dd8b0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-187:shuffle", "sig": "e3246abca00a7c40220e7fb09062e72b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-188:corrupt", "sig": "f33fd47505983cf196c23b77194d2e2b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-188:shuffle", "sig": "d3fd6bc304476a8ed7e6adffc5391ab4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-189:corrupt", "sig": "a441d281ee439be2c610217da1756a31", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30", "out": "ANSWER: 30"}
+{"key": "internvl35_8b:chartqa-189:shuffle", "sig": "7820a2b2238699db5b2557d2039469b0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "30", "out": "ANSWER: 30"}
+{"key": "internvl35_8b:chartqa-190:corrupt", "sig": "018916529cd448e0fcbce57b84c0751d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "16", "out": "ANSWER: 16"}
+{"key": "internvl35_8b:chartqa-190:shuffle", "sig": "ed549081c786a0b7490b287d67e457d2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "16", "out": "ANSWER: 16"}
+{"key": "internvl35_8b:chartqa-191:corrupt", "sig": "3e8ed16619c2861678acef4cd48ee83e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "65+", "out": "ANSWER: 65+"}
+{"key": "internvl35_8b:chartqa-191:shuffle", "sig": "ef355a7cc1d6bcf8b053290f30eb2240", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "65+", "out": "ANSWER: 65+"}
+{"key": "internvl35_8b:chartqa-193:corrupt", "sig": "a05956c9b7acd04b07234c02a3677ff4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "60", "out": "ANSWER: 60"}
+{"key": "internvl35_8b:chartqa-193:shuffle", "sig": "bd3218338eaf2ea8390ff3a88168410e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "60", "out": "ANSWER: 60"}
+{"key": "internvl35_8b:chartqa-195:corrupt", "sig": "bc2d3dc045ae3ea009a77bc402d242a6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "15", "out": "ANSWER: 15"}
+{"key": "internvl35_8b:chartqa-195:shuffle", "sig": "37c06268db07d60b60664132c1f6c1e9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "15", "out": "ANSWER: 15"}
+{"key": "internvl35_8b:chartqa-196:corrupt", "sig": "a10f0a08d5a8f61dd131c5b112989e3e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Japan", "out": "ANSWER: Japan"}
+{"key": "internvl35_8b:chartqa-196:shuffle", "sig": "6a901a358c37bb9b85d326e016d56a84", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Japan", "out": "ANSWER: Japan"}
+{"key": "internvl35_8b:chartqa-197:corrupt", "sig": "a952d1364f8a8f845848d792e1eb57f9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "36", "out": "ANSWER: 36"}
+{"key": "internvl35_8b:chartqa-197:shuffle", "sig": "68663175403b293fa31d1ee98fc21a7b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "36", "out": "ANSWER: 36"}
+{"key": "internvl35_8b:chartqa-198:corrupt", "sig": "3cc8cede84ae917ee8c7a5a54d39e533", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.32%", "out": "ANSWER: 5.32%"}
+{"key": "internvl35_8b:chartqa-198:shuffle", "sig": "56f0f4a4701181fb8ee3e2b33ed661af", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.32%", "out": "ANSWER: 5.32%"}
+{"key": "internvl35_8b:chartqa-201:corrupt", "sig": "c79be926e25319b44a69c9f4c2671070", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-201:shuffle", "sig": "f63854b3d432589432e9fd65f9bd384e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-202:corrupt", "sig": "d1309f082602a218f70829083c3f67c2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "pinkish-red", "out": "ANSWER: pinkish-red"}
+{"key": "internvl35_8b:chartqa-202:shuffle", "sig": "8f18a30ca12ba255530de670dc79bd4c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "pinkish-red", "out": "ANSWER: pinkish-red"}
+{"key": "internvl35_8b:chartqa-203:corrupt", "sig": "1c01cce3d4dde2e1b8604e02fefe0fb7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-203:shuffle", "sig": "a2ca91f5b9434a56b22b34b82d9d4e6b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-204:corrupt", "sig": "e0dbe516ae4fc4b10ad923156d976c33", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Heart disease", "out": "ANSWER: Heart disease"}
+{"key": "internvl35_8b:chartqa-204:shuffle", "sig": "fcc8a999db6d408355c97f79f641829b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Heart disease", "out": "ANSWER: Heart disease"}
+{"key": "internvl35_8b:chartqa-205:corrupt", "sig": "da56e48d38734266977aa49d6d43af71", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-205:shuffle", "sig": "d82dca0add26e94fffdedbfbeb06d3c7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-206:corrupt", "sig": "1691442c490cc5a62b566116303b3e13", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "North America", "out": "ANSWER: North America"}
+{"key": "internvl35_8b:chartqa-206:shuffle", "sig": "1cf354e2856d79c4b27f31c2b9a999ab", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "North America", "out": "ANSWER: North America"}
+{"key": "internvl35_8b:chartqa-207:corrupt", "sig": "df2b6c7d9ba5a87927d03156f89bb1c1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-207:shuffle", "sig": "ae7178d3524643fbe7990599efd6c36d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-209:corrupt", "sig": "7d25f3fee2324d6e4db17ce4b8e49c2d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "203", "out": "ANSWER: 203"}
+{"key": "internvl35_8b:chartqa-209:shuffle", "sig": "3e3de4967ab957d15784b29fa36b976d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "203", "out": "ANSWER: 203"}
+{"key": "internvl35_8b:chartqa-210:corrupt", "sig": "b40f1b400317ec956482ef622bafff69", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-210:shuffle", "sig": "b5609f42aa45bc8d63e328eb97b6ff82", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-211:corrupt", "sig": "cbde68755882895ae2e0c2a031515460", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "51.33%", "out": "ANSWER: 51.33%"}
+{"key": "internvl35_8b:chartqa-211:shuffle", "sig": "03440e48518b05e3888477b1072697d9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "51.33%", "out": "ANSWER: 51.33%"}
+{"key": "internvl35_8b:chartqa-212:corrupt", "sig": "23fc3c2128b2d06df81dfd95c768d3a8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-212:shuffle", "sig": "93f9f4118e273ac72e45b3b2cf0aebaa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-213:corrupt", "sig": "1e3e879f6912dab66545af62d92f339f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-213:shuffle", "sig": "31f9cbc534f8d013f25ddafc6167ae5d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-214:corrupt", "sig": "c9c012d57d466580c6f2b7ff9e5c8729", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.1%", "out": "ANSWER: 0.1%"}
+{"key": "internvl35_8b:chartqa-214:shuffle", "sig": "9d8a97a908ad014b2d08caa852b740fe", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.1%", "out": "ANSWER: 0.1%"}
+{"key": "internvl35_8b:chartqa-215:corrupt", "sig": "96f1e640b1614d058ab732e5dbb970a0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-215:shuffle", "sig": "27c3dc940deb686468d094993b53015b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-217:corrupt", "sig": "f8d5fb7b9d3d58de441d2e201b25d955", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.88", "out": "ANSWER: 2.88"}
+{"key": "internvl35_8b:chartqa-217:shuffle", "sig": "9373bf266a1fcdfdc1a8e11a68887106", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.88", "out": "ANSWER: 2.88"}
+{"key": "internvl35_8b:chartqa-219:corrupt", "sig": "abf8b9f1dc34455963e46010b91ed6b0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-219:shuffle", "sig": "f1bd12b3b972077c16ea7b1641cf1158", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-220:corrupt", "sig": "3dd7f8ef28ad91eb9599447ddb65b3f8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "27.5%", "out": "ANSWER: 27.5%"}
+{"key": "internvl35_8b:chartqa-220:shuffle", "sig": "e16c23eb65d361a73f4ee16213a490cf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "27.5", "out": "ANSWER: 27.5"}
+{"key": "internvl35_8b:chartqa-221:corrupt", "sig": "46d0651be86baaa74c3a130d796eef77", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10.2", "out": "ANSWER: 10.2"}
+{"key": "internvl35_8b:chartqa-221:shuffle", "sig": "5d6d2c6a61035f915becd3b6fcf40563", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10.2", "out": "ANSWER: 10.2"}
+{"key": "internvl35_8b:chartqa-222:corrupt", "sig": "d941a934c87f8be525d54bd4400c8604", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "16", "out": "ANSWER: 16"}
+{"key": "internvl35_8b:chartqa-222:shuffle", "sig": "914980a4aa45a08387c3759b16e72ec3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "18", "out": "ANSWER: 18"}
+{"key": "internvl35_8b:chartqa-223:corrupt", "sig": "c3069656b9b71efccea5c54d11f732fd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-223:shuffle", "sig": "054a9874bf38721c74572c83c52266e2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-224:corrupt", "sig": "b278d8eaea737754425c2eae4ad41007", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-224:shuffle", "sig": "ecb255a20f1b775fbd510672fbad60e9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-225:corrupt", "sig": "1a221c5789b0cd6a375b20c5b10932f1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.24", "out": "ANSWER: 3.24"}
+{"key": "internvl35_8b:chartqa-225:shuffle", "sig": "cf33fc28b2167fe06c0aaf02a394eef3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.24%", "out": "ANSWER: 3.24%"}
+{"key": "internvl35_8b:chartqa-226:corrupt", "sig": "cfa270537f0d19767c8c20454ca0b51c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Burkina Faso", "out": "ANSWER: Burkina Faso"}
+{"key": "internvl35_8b:chartqa-226:shuffle", "sig": "2d797499ebe45bbedcf20f11f94bab75", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Burkina Faso", "out": "ANSWER: Burkina Faso"}
+{"key": "internvl35_8b:chartqa-227:corrupt", "sig": "b5b8f927637c4a175785e550e9eb7c81", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5%", "out": "ANSWER: 5%"}
+{"key": "internvl35_8b:chartqa-227:shuffle", "sig": "7c21c20c8dbd2adbcf23787d053c871a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5%", "out": "ANSWER: 5%"}
+{"key": "internvl35_8b:chartqa-228:corrupt", "sig": "9f57a6806ae5eee14748fe0906ecc370", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Lithuania", "out": "ANSWER: Lithuania"}
+{"key": "internvl35_8b:chartqa-228:shuffle", "sig": "2f070d9d5394991d67c78bb2b4e9e6cc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Lithuania", "out": "ANSWER: Lithuania"}
+{"key": "internvl35_8b:chartqa-229:corrupt", "sig": "3e48574e48ca728a32745dc2e435dda8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28.3", "out": "ANSWER: 28.3"}
+{"key": "internvl35_8b:chartqa-229:shuffle", "sig": "98bb2398569bed87e1252b1f6ae83042", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28.3", "out": "ANSWER: 28.3"}
+{"key": "internvl35_8b:chartqa-230:corrupt", "sig": "0ad1d8dc529578e6e570d7f6877f5dcd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.6", "out": "ANSWER: 0.6"}
+{"key": "internvl35_8b:chartqa-230:shuffle", "sig": "91a31d53210ab6ec7bffd6224ef48f5b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.6", "out": "ANSWER: 0.6"}
+{"key": "internvl35_8b:chartqa-232:corrupt", "sig": "0055eaf621a9d7f151882d79eb2f5485", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.01%", "out": "ANSWER: 0.01%"}
+{"key": "internvl35_8b:chartqa-232:shuffle", "sig": "cf374c341f074d2d74c330b726dbb97c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.01%", "out": "ANSWER: 0.01%"}
+{"key": "internvl35_8b:chartqa-233:corrupt", "sig": "6c7037f31d17f17217624af2f16533fd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.02%", "out": "ANSWER: 0.02%"}
+{"key": "internvl35_8b:chartqa-233:shuffle", "sig": "faf2901d2f684ace3b75af7f98601da9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.01", "out": "ANSWER: 0.01"}
+{"key": "internvl35_8b:chartqa-234:corrupt", "sig": "202d93107c9ef13a41f608524de1eb22", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.6", "out": "ANSWER: 1.6"}
+{"key": "internvl35_8b:chartqa-234:shuffle", "sig": "107a7908d3540ff8c923e6b7b0d3603f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.6", "out": "ANSWER: 1.6"}
+{"key": "internvl35_8b:chartqa-235:corrupt", "sig": "3e72e5c9ed719cbd1ecf7998c4dbbcc7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.2", "out": "ANSWER: 3.2"}
+{"key": "internvl35_8b:chartqa-235:shuffle", "sig": "f6a4fb1310b396c63de1c703572aa6e9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.6", "out": "ANSWER: 2.6"}
+{"key": "internvl35_8b:chartqa-236:corrupt", "sig": "0ee77753ac9330ecf20cd50396afef4e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "20.98 m²", "out": "ANSWER: 20.98 m²"}
+{"key": "internvl35_8b:chartqa-236:shuffle", "sig": "bbd7af0e7ed119f59223df58b1269655", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "20.98 m²", "out": "ANSWER: 20.98 m²"}
+{"key": "internvl35_8b:chartqa-238:corrupt", "sig": "436f05da055c8045d29b043c5dc54c07", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41%", "out": "ANSWER: 41%"}
+{"key": "internvl35_8b:chartqa-238:shuffle", "sig": "903f95ca6a7ba4f6023d689eca07e8b6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41%", "out": "ANSWER: 41%"}
+{"key": "internvl35_8b:chartqa-239:corrupt", "sig": "cf57672c7a468ebecfe56e0f417ac9b9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.4%", "out": "ANSWER: 5.4%"}
+{"key": "internvl35_8b:chartqa-239:shuffle", "sig": "159510e0c1563b2e950d943f0dbb2c70", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.4", "out": "ANSWER: 5.4"}
+{"key": "internvl35_8b:chartqa-240:corrupt", "sig": "b1789dfd1b3fb67e2de745f9e989ab30", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Nepal", "out": "ANSWER: Nepal"}
+{"key": "internvl35_8b:chartqa-240:shuffle", "sig": "dd636d9e82978fdce8544eca6c8938e0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Nepal", "out": "ANSWER: Nepal"}
+{"key": "internvl35_8b:chartqa-241:corrupt", "sig": "13d606fd50b79ca9d218467b493a895d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-241:shuffle", "sig": "07b4c7bb6cb059b529c49f86716184c6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-242:corrupt", "sig": "5d113a175fa665863f5ff20786cc730e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.25 trillion", "out": "ANSWER: 5.25 trillion"}
+{"key": "internvl35_8b:chartqa-242:shuffle", "sig": "6e23787842fc5fc87b10d0cd1ed8722a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5.25 trillion", "out": "ANSWER: 5.25 trillion"}
+{"key": "internvl35_8b:chartqa-245:corrupt", "sig": "35d2076ce4de00752e0915a55aacde33", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.6%", "out": "ANSWER: 1.6%"}
+{"key": "internvl35_8b:chartqa-245:shuffle", "sig": "ecc382f49ff59647c71b2f9d49e065eb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.6", "out": "ANSWER: 1.6"}
+{"key": "internvl35_8b:chartqa-246:corrupt", "sig": "81084e2b5c12d7b10d2ac21c1bab2f30", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "96.4%", "out": "ANSWER: 96.4%"}
+{"key": "internvl35_8b:chartqa-246:shuffle", "sig": "ee75df2e1a5b1ab6d059ce2a87a41baa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "96.4%", "out": "ANSWER: 96.4%"}
+{"key": "internvl35_8b:chartqa-247:corrupt", "sig": "44938acc364d2268b667f66fd768c174", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-247:shuffle", "sig": "a3bf420c12e164788e118e89e94bdfa6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-249:corrupt", "sig": "a168cf9cf7f37879ae6274fd83d02d65", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "38", "out": "ANSWER: 38"}
+{"key": "internvl35_8b:chartqa-249:shuffle", "sig": "8ec0e03b5515f58b68c2889fd21d686d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "38", "out": "ANSWER: 38"}
+{"key": "internvl35_8b:chartqa-250:corrupt", "sig": "052fad1604d27e6fd01d8d8a25cee06b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mexico", "out": "ANSWER: Mexico"}
+{"key": "internvl35_8b:chartqa-250:shuffle", "sig": "d37256eb9a97912e3aa2fc22d0d045ed", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mexico", "out": "ANSWER: Mexico"}
+{"key": "internvl35_8b:chartqa-251:corrupt", "sig": "33328c954bff3f4893fe0e4f860c4303", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.3467", "out": "ANSWER: 1.3467"}
+{"key": "internvl35_8b:chartqa-251:shuffle", "sig": "e4f0df61c3495c24b3f946dd6165ea7b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.35", "out": "ANSWER: 1.35"}
+{"key": "internvl35_8b:chartqa-252:corrupt", "sig": "bb2acfd5194e0023c77a0b10be35b987", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "40.7%", "out": "ANSWER: 40.7%"}
+{"key": "internvl35_8b:chartqa-252:shuffle", "sig": "ed09bc7a99723aec7d6c6854e3a6562d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "40.7%", "out": "ANSWER: 40.7%"}
+{"key": "internvl35_8b:chartqa-254:corrupt", "sig": "44cd14116b84d10dae4a589be37601c5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-254:shuffle", "sig": "e79c4fc6ce93266b9796cdd587cd72b2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-255:corrupt", "sig": "e943182d7f62efdb8936c165a8149d6d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41.935%", "out": "ANSWER: 41.935%"}
+{"key": "internvl35_8b:chartqa-255:shuffle", "sig": "78e9a294f8fd1af5f224d26a2032d2df", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "41.93", "out": "ANSWER: 41.93"}
+{"key": "internvl35_8b:chartqa-256:corrupt", "sig": "66ea4b989d7ed1561be00766224c739f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Belarus", "out": "ANSWER: Belarus"}
+{"key": "internvl35_8b:chartqa-256:shuffle", "sig": "e0e9e084c35ed0ba018354c740ca5c6d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Belarus", "out": "ANSWER: Belarus"}
+{"key": "internvl35_8b:chartqa-257:corrupt", "sig": "415997230adf15a50855134e91243cb7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-257:shuffle", "sig": "f288a9a6304c8531700b88a4830f2789", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-258:corrupt", "sig": "b2439b79bbe5670bf97c2692994de0f1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mongolia", "out": "ANSWER: Mongolia"}
+{"key": "internvl35_8b:chartqa-258:shuffle", "sig": "445f6159d722575960d32636a383200a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mongolia", "out": "ANSWER: Mongolia"}
+{"key": "internvl35_8b:chartqa-259:corrupt", "sig": "227713edff217252c3d897815dde79f1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-259:shuffle", "sig": "4a2aa45039ec657505bf6de95f4ac617", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-260:corrupt", "sig": "743dbcc41427c9e3d2ffd2184f3d77c6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "9.29%", "out": "ANSWER: 9.29%"}
+{"key": "internvl35_8b:chartqa-260:shuffle", "sig": "97b0550d2aaa878fb823807d070506a8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "9.29%", "out": "ANSWER: 9.29%"}
+{"key": "internvl35_8b:chartqa-262:corrupt", "sig": "8ae695c7af996e882773cc176970f2a6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-262:shuffle", "sig": "3634e229ac1a1ad5395ed97ea123e617", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "5", "out": "ANSWER: 5"}
+{"key": "internvl35_8b:chartqa-263:corrupt", "sig": "774647378f9411ee5fbc0c85001f8947", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-263:shuffle", "sig": "86e4f2d07dc5ca38ab5455c2bc6462af", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-264:corrupt", "sig": "de7c858e0baba519449e08ed6e992753", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6.85%", "out": "ANSWER: 6.85%"}
+{"key": "internvl35_8b:chartqa-264:shuffle", "sig": "a3d6fb79e70b106c825a2a0bc94b8c49", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6.85%", "out": "ANSWER: 6.85%"}
+{"key": "internvl35_8b:chartqa-265:corrupt", "sig": "cf21d2d5278e5ffb464b76369cc240bd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-265:shuffle", "sig": "bafbbc37366a13591c4ac051e1b087d3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-266:corrupt", "sig": "cb1462cbb0457b88ab1b36c65cdab213", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-266:shuffle", "sig": "a3f2fd246932cc68368e00f023935466", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-267:corrupt", "sig": "490d24dc727c733f067f473679b5c2e8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "47.6", "out": "ANSWER: 47.6"}
+{"key": "internvl35_8b:chartqa-267:shuffle", "sig": "6c563d1dd3ddc889221d6d22f5a50805", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "47.6", "out": "ANSWER: 47.6"}
+{"key": "internvl35_8b:chartqa-268:corrupt", "sig": "a157ce559a4aae7a5205db8b72b59417", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-268:shuffle", "sig": "e1bd39b7618dbdcdaebc7c4f81a2f311", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-269:corrupt", "sig": "74f7a8f7353ca52aa0d2fdbaebb9b23f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-269:shuffle", "sig": "ac6c2242972b5b3546722116846bb943", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-270:corrupt", "sig": "011b8e5b4a669fd699ab238d8377c995", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Greece", "out": "ANSWER: Greece"}
+{"key": "internvl35_8b:chartqa-270:shuffle", "sig": "440345b5c4ec14d7399666b6d1946572", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Greece", "out": "ANSWER: Greece"}
+{"key": "internvl35_8b:chartqa-271:corrupt", "sig": "f25ec5a36b2c2c017bf272460e9fdf32", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-271:shuffle", "sig": "263e407a6470a14e0c7b69fa5b3bba5b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-273:corrupt", "sig": "7e2711593636a3cd51dda01d4deb4648", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-273:shuffle", "sig": "bd9c9eb8adc6d30fee1ef5e988c5cc42", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-274:corrupt", "sig": "85ed92321aacb7a6fdf5a9ad27631f07", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Human capital", "out": "ANSWER: Human capital"}
+{"key": "internvl35_8b:chartqa-274:shuffle", "sig": "8e923ddd048fabf32676deaa540b7daf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Human capital", "out": "ANSWER: Human capital"}
+{"key": "internvl35_8b:chartqa-276:corrupt", "sig": "431860fd9bd837de09fed02b527a0868", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2015", "out": "ANSWER: 2015"}
+{"key": "internvl35_8b:chartqa-276:shuffle", "sig": "40bf926373672a41aa1104b8f1e21eb8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2015", "out": "ANSWER: 2015"}
+{"key": "internvl35_8b:chartqa-277:corrupt", "sig": "28ae22f7dc83f913b11e5860e603852d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "143 million tonnes", "out": "ANSWER: 143 million tonnes"}
+{"key": "internvl35_8b:chartqa-277:shuffle", "sig": "48c053885944fc9277d6ece0a7ba68f9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "143 million tonnes", "out": "ANSWER: 143 million tonnes"}
+{"key": "internvl35_8b:chartqa-278:corrupt", "sig": "5aa9c525b228dd882d95e10c15a0269a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "48.01", "out": "ANSWER: 48.01"}
+{"key": "internvl35_8b:chartqa-278:shuffle", "sig": "ac1f126a2f53be65b348ae7282961ef1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "48.01", "out": "ANSWER: 48.01"}
+{"key": "internvl35_8b:chartqa-279:corrupt", "sig": "d308e009a1e0d75507f71b82d5ff7ae5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "32.115", "out": "ANSWER: 32.115"}
+{"key": "internvl35_8b:chartqa-279:shuffle", "sig": "9dfa98f8a9e6263500a4223d91fe5586", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "32.115", "out": "ANSWER: 32.115"}
+{"key": "internvl35_8b:chartqa-280:corrupt", "sig": "5ef088eba65d4b96d3e42c21c9cf4e05", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.04", "out": "ANSWER: 0.04"}
+{"key": "internvl35_8b:chartqa-280:shuffle", "sig": "22d5f9d3b120160dcf0d87294f5c3479", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.04", "out": "ANSWER: 0.04"}
+{"key": "internvl35_8b:chartqa-281:corrupt", "sig": "553110d451e279ccd0be8a0cbcdbdbcc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.11", "out": "ANSWER: 0.11"}
+{"key": "internvl35_8b:chartqa-281:shuffle", "sig": "c4f34aef53f286c0ee3c92d81fe1f837", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.07", "out": "ANSWER: 0.07"}
+{"key": "internvl35_8b:chartqa-282:corrupt", "sig": "de4dba20c0c1df04b18997c02f93c5ab", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "56.6%", "out": "ANSWER: 56.6%"}
+{"key": "internvl35_8b:chartqa-282:shuffle", "sig": "60e88383037726a5fb18e0e66da88ea8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "56.6", "out": "ANSWER: 56.6"}
+{"key": "internvl35_8b:chartqa-283:corrupt", "sig": "61fbe1229e7c7e9bbac6be4e89faa065", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13.5", "out": "ANSWER: 13.5"}
+{"key": "internvl35_8b:chartqa-283:shuffle", "sig": "a8ffe899e4f951039636f8c50a57fa21", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13.5", "out": "ANSWER: 13.5"}
+{"key": "internvl35_8b:chartqa-284:corrupt", "sig": "4b7f24dd75abdf78cbdf0c841b756172", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.69", "out": "ANSWER: 0.69"}
+{"key": "internvl35_8b:chartqa-284:shuffle", "sig": "bcb94be5256fc3c8412162800a479d64", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.69", "out": "ANSWER: 0.69"}
+{"key": "internvl35_8b:chartqa-285:corrupt", "sig": "3b3172e57f3bc098a721fddb32997835", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.235", "out": "ANSWER: 0.235"}
+{"key": "internvl35_8b:chartqa-285:shuffle", "sig": "3b1750a5aefc738a185d32bca2a1e6ee", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.24", "out": "ANSWER: 0.24"}
+{"key": "internvl35_8b:chartqa-286:corrupt", "sig": "7504bdc263e41f340b09aed93dfa9475", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "24%", "out": "ANSWER: 24%"}
+{"key": "internvl35_8b:chartqa-286:shuffle", "sig": "a379ec69f200a268c996dc5f280062eb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "24%", "out": "ANSWER: 24%"}
+{"key": "internvl35_8b:chartqa-287:corrupt", "sig": "17b941bbf912551133c8ae2ed521001b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6.2", "out": "ANSWER: 6.2"}
+{"key": "internvl35_8b:chartqa-287:shuffle", "sig": "bced1400dc7c5a121e40c6acc720ed25", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "6.2%", "out": "ANSWER: 6.2%"}
+{"key": "internvl35_8b:chartqa-288:corrupt", "sig": "ceba5793dab9cf50e58a90c99ee2149d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Switzerland", "out": "ANSWER: Switzerland"}
+{"key": "internvl35_8b:chartqa-288:shuffle", "sig": "a8f500dff3e968f72ede02569ab8855f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Switzerland", "out": "ANSWER: Switzerland"}
+{"key": "internvl35_8b:chartqa-289:corrupt", "sig": "db019404890071db4cdc829d338a1c6f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1541.08", "out": "ANSWER: 1541.08"}
+{"key": "internvl35_8b:chartqa-289:shuffle", "sig": "8d95420ba2a146c6ce002ccae5cdcad4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1541.08", "out": "ANSWER: 1541.08"}
+{"key": "internvl35_8b:chartqa-290:corrupt", "sig": "de980b623f4b7c7c248fb7f5bc6b4bc6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Alcohol", "out": "ANSWER: Alcohol"}
+{"key": "internvl35_8b:chartqa-290:shuffle", "sig": "ffd2594780ac972035fb24fee4c92843", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Alcohol", "out": "ANSWER: Alcohol"}
+{"key": "internvl35_8b:chartqa-291:corrupt", "sig": "1736de15d061ac81ba861fe5b01cccb9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "60", "out": "ANSWER: 60"}
+{"key": "internvl35_8b:chartqa-291:shuffle", "sig": "f411ff9b9eae47522dbc3be9dd85ae7b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "60", "out": "ANSWER: 60"}
+{"key": "internvl35_8b:chartqa-292:corrupt", "sig": "34177f9726e277f6d90f5c0fca3d1a61", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Philippines", "out": "ANSWER: Philippines"}
+{"key": "internvl35_8b:chartqa-292:shuffle", "sig": "74141a813aa3791eca95ab676680abc4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Philippines", "out": "ANSWER: Philippines"}
+{"key": "internvl35_8b:chartqa-293:corrupt", "sig": "192a779c29cf12dfe0d97a445697ad3f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-293:shuffle", "sig": "cf759997cde35b6fd6621775a9ecbbb9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-294:corrupt", "sig": "976b46342845dbd888e26434d87e070b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Brazil", "out": "ANSWER: Brazil"}
+{"key": "internvl35_8b:chartqa-294:shuffle", "sig": "cda80815297bad9ffad328dce28dea8d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Brazil", "out": "ANSWER: Brazil"}
+{"key": "internvl35_8b:chartqa-295:corrupt", "sig": "7812d8d404439a455a36f7c537407f0c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.4", "out": "ANSWER: 3.4"}
+{"key": "internvl35_8b:chartqa-295:shuffle", "sig": "0193251743c378f4375db8d533982d16", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.4", "out": "ANSWER: 3.4"}
+{"key": "internvl35_8b:chartqa-296:corrupt", "sig": "7bda79976229b79e6a38cfcdbf326efd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "United States", "out": "ANSWER: United States"}
+{"key": "internvl35_8b:chartqa-296:shuffle", "sig": "1532ea1221da9e32267224aa77184278", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "United States", "out": "ANSWER: United States"}
+{"key": "internvl35_8b:chartqa-297:corrupt", "sig": "0734b403381abb13af1ad53311a4d2c4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4.19", "out": "ANSWER: 4.19"}
+{"key": "internvl35_8b:chartqa-297:shuffle", "sig": "f8561a33fd23f6b4c51c75945af4cd1c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4.19", "out": "ANSWER: 4.19"}
+{"key": "internvl35_8b:chartqa-298:corrupt", "sig": "7ee3085c90dcdad4786f88c3558fd8da", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "95%", "out": "ANSWER: 95%"}
+{"key": "internvl35_8b:chartqa-298:shuffle", "sig": "c0479385378a23e09cb0b91e09761a07", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "95%", "out": "ANSWER: 95%"}
+{"key": "internvl35_8b:chartqa-299:corrupt", "sig": "7627213ed518e34aa9e9a9646698d924", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-299:shuffle", "sig": "dfc457e2478ad0a03d35a6178d6d2145", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-300:corrupt", "sig": "48344eeaaa993e2f13f81a76ebd47f6b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Deaths from HIV/AIDS", "out": "ANSWER: Deaths from HIV/AIDS"}
+{"key": "internvl35_8b:chartqa-300:shuffle", "sig": "dae7b72c2949368ac05c29b4cb78d49c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Deaths from HIV/AIDS", "out": "ANSWER: Deaths from HIV/AIDS"}
+{"key": "internvl35_8b:chartqa-302:corrupt", "sig": "2b0987e685f36885c1d6a58342ca962a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Samoa", "out": "ANSWER: Samoa"}
+{"key": "internvl35_8b:chartqa-302:shuffle", "sig": "b3dc5541b2fb0b0866b362af4cc7fd16", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Samoa", "out": "ANSWER: Samoa"}
+{"key": "internvl35_8b:chartqa-303:corrupt", "sig": "694271eae868081acd506761722efe31", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Gambia", "out": "ANSWER: Gambia"}
+{"key": "internvl35_8b:chartqa-303:shuffle", "sig": "3cf6de0f8405fa08784d9eb88f1178db", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Gambia and Niger", "out": "ANSWER: Gambia and Niger"}
+{"key": "internvl35_8b:chartqa-304:corrupt", "sig": "136bd5ab4f1a3162db1ac12ccf9a51a2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "24688.3 (2000)", "out": "ANSWER: 24688.3 (2000)"}
+{"key": "internvl35_8b:chartqa-304:shuffle", "sig": "8bb61f01c58c696ad15367a8bc60df3a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "$24,688.3 (2000)", "out": "ANSWER: $24,688.3 (2000)"}
+{"key": "internvl35_8b:chartqa-305:corrupt", "sig": "dc0229f6b1054317411a177de8009eb8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "$82.2", "out": "ANSWER: $82.2"}
+{"key": "internvl35_8b:chartqa-305:shuffle", "sig": "26db9fcc63b5dfca4c1889ff63c4e4fb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "82.2", "out": "ANSWER: 82.2"}
+{"key": "internvl35_8b:chartqa-306:corrupt", "sig": "738b3f90c66cde52163bddfbdb6ca603", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-306:shuffle", "sig": "a3ddeafe1f1e9e8fcc64ba9c055e5ee4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "13", "out": "ANSWER: 13"}
+{"key": "internvl35_8b:chartqa-307:corrupt", "sig": "f2db30127b9badadcd5f34fac7d7d5ef", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-307:shuffle", "sig": "42f7766ea8a85c972652fcc527466898", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-309:corrupt", "sig": "a8ec63bb7368c33c2a0fb3d59c067ca2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-309:shuffle", "sig": "b8f1ac04b7105208011af697a68fce55", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-310:corrupt", "sig": "c8d8251e387ffc9449e667ac9650799e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Medium car (petrol)", "out": "ANSWER: Medium car (petrol)"}
+{"key": "internvl35_8b:chartqa-310:shuffle", "sig": "4b9cc6f1f68737e003401a41f71af9c7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Medium car (petrol)", "out": "ANSWER: Medium car (petrol)"}
+{"key": "internvl35_8b:chartqa-311:corrupt", "sig": "8bd8a2cca21f2d7b77ae7698896a8e01", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-311:shuffle", "sig": "2b6fdf7fd0179a29da1a61ad38389bed", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Yes", "out": "ANSWER: Yes"}
+{"key": "internvl35_8b:chartqa-312:corrupt", "sig": "0208c606b41ace254523f57ac458bee3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Malawi", "out": "ANSWER: Malawi"}
+{"key": "internvl35_8b:chartqa-312:shuffle", "sig": "a6c494f67b2dc1bb773cedbd3af74214", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Malawi", "out": "ANSWER: Malawi"}
+{"key": "internvl35_8b:chartqa-313:corrupt", "sig": "92a944f2c8a4347284126e3f713545ea", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.906", "out": "ANSWER: 1.906"}
+{"key": "internvl35_8b:chartqa-313:shuffle", "sig": "78c4239a258a64be402c9604b92df188", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.891", "out": "ANSWER: 1.891"}
+{"key": "internvl35_8b:chartqa-314:corrupt", "sig": "44f02d56f7d24528fe46d11383a4ed8c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Italy 22%", "out": "ANSWER: Italy 22%"}
+{"key": "internvl35_8b:chartqa-314:shuffle", "sig": "c5dcf9cfea4c0b1bac55e057e6829359", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Italy: 22%", "out": "ANSWER: Italy: 22%"}
+{"key": "internvl35_8b:chartqa-315:corrupt", "sig": "dea24f795ffa1aef8cdd9566698acf4b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.545", "out": "ANSWER: 2.545"}
+{"key": "internvl35_8b:chartqa-315:shuffle", "sig": "112b9725516e70d75a582c13a35deaab", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2.545", "out": "ANSWER: 2.545"}
+{"key": "internvl35_8b:chartqa-316:corrupt", "sig": "2a54cc2fb2faa0ac97858d5b4965cf43", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "27.22%", "out": "ANSWER: 27.22%"}
+{"key": "internvl35_8b:chartqa-316:shuffle", "sig": "d87d1603a00bcb2afa1c6597b407c1e4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "27.22", "out": "ANSWER: 27.22"}
+{"key": "internvl35_8b:chartqa-319:corrupt", "sig": "23ac01c4571195dcfb4f55d1698a74d0", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-319:shuffle", "sig": "f9c3de95918f86958592a369c8086008", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.08", "out": "ANSWER: 0.08"}
+{"key": "internvl35_8b:chartqa-320:corrupt", "sig": "8f930043917975c3b96a25a1d1ab877b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8.5", "out": "ANSWER: 8.5"}
+{"key": "internvl35_8b:chartqa-320:shuffle", "sig": "0afdc8eac4a1e5a7984f329edd6dda22", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8.5", "out": "ANSWER: 8.5"}
+{"key": "internvl35_8b:chartqa-321:corrupt", "sig": "672665303a26cd81cd9552ffb0fcf50d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10.2", "out": "ANSWER: 10.2"}
+{"key": "internvl35_8b:chartqa-321:shuffle", "sig": "be29a86b93d855f7bda83b8f32a7534d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "10.2", "out": "ANSWER: 10.2"}
+{"key": "internvl35_8b:chartqa-322:corrupt", "sig": "6183b90f67e4b11679b1de5bad14a14b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.88", "out": "ANSWER: 3.88"}
+{"key": "internvl35_8b:chartqa-322:shuffle", "sig": "4dc405930a5f33f43bc6579dcd25777d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3.88", "out": "ANSWER: 3.88"}
+{"key": "internvl35_8b:chartqa-323:corrupt", "sig": "6aeaac2781dd11a7acd964edee3ba5ee", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-323:shuffle", "sig": "23a3d674753ca1f3589f0fd603794e31", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3", "out": "ANSWER: 3"}
+{"key": "internvl35_8b:chartqa-324:corrupt", "sig": "173e8f816c77409c29e8085f8d38e617", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "$9,546.35", "out": "ANSWER: $9,546.35"}
+{"key": "internvl35_8b:chartqa-324:shuffle", "sig": "351df107fba3b19d2d4e5e6dda98799c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "9,546.35", "out": "ANSWER: 9,546.35"}
+{"key": "internvl35_8b:chartqa-325:corrupt", "sig": "f8e1f552104807fb433fafd84576279c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "14153.35", "out": "ANSWER: 14153.35"}
+{"key": "internvl35_8b:chartqa-325:shuffle", "sig": "0673d6f7cb7d553d687b40375218eb31", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "14153.04", "out": "ANSWER: 14153.04"}
+{"key": "internvl35_8b:chartqa-326:corrupt", "sig": "8b67c1d54143656bbbf531dee1837190", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-326:shuffle", "sig": "6ed2cb501f14f0f40423c80314ee040e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-327:corrupt", "sig": "f17e6fa987a2f1e2e687e9f89effa20c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "50", "out": "ANSWER: 50"}
+{"key": "internvl35_8b:chartqa-327:shuffle", "sig": "e52f0247bbc2ab1d9bea972c27c934c9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "47.68", "out": "ANSWER: 47.68"}
+{"key": "internvl35_8b:chartqa-328:corrupt", "sig": "b44243895609940b1116faf05369f186", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28", "out": "ANSWER: 28"}
+{"key": "internvl35_8b:chartqa-328:shuffle", "sig": "dfa509803d067ec02abd216a79d936af", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "28", "out": "ANSWER: 28"}
+{"key": "internvl35_8b:chartqa-329:corrupt", "sig": "024c067b4e3d76f0988de57933b0bb7f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-329:shuffle", "sig": "6c031390380f927129aeec5b5fd738b3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-330:corrupt", "sig": "c28e7bcb7ef6162cdda69a65d62e9e85", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Argentina", "out": "ANSWER: Argentina"}
+{"key": "internvl35_8b:chartqa-330:shuffle", "sig": "90f6a8c23c7253cee8714dd6a44b1fc4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Argentina", "out": "ANSWER: Argentina"}
+{"key": "internvl35_8b:chartqa-331:corrupt", "sig": "d8a144fe9d81629b0b8367f08f8b2673", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-331:shuffle", "sig": "a3c8b385a65349b0d6256b150130c6f9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-332:corrupt", "sig": "0b473244f33d2ffd69ad1701979a3138", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Chemistry", "out": "ANSWER: Chemistry"}
+{"key": "internvl35_8b:chartqa-332:shuffle", "sig": "b8a52b74f9e7e3a6b197d75f85d6ed22", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Chemistry", "out": "ANSWER: Chemistry"}
+{"key": "internvl35_8b:chartqa-333:corrupt", "sig": "f7ff4cf48024f9b3f90c32ef4383ecee", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-333:shuffle", "sig": "2de0d84b8d7801a474f74bc737fbb228", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-334:corrupt", "sig": "2f5c2cbea881fd57c07f74a469b1cba1", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Venezuela's share of the global forest area in 2012.", "out": "ANSWER: Venezuela's share of the global forest area in 2012."}
+{"key": "internvl35_8b:chartqa-334:shuffle", "sig": "010a0c507e04c464732cbc0020386a33", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "The pink bar represents Venezuela's share of the global forest area in 2012, which is 1.15%.", "out": "ANSWER: The pink bar represents Venezuela's share of the global forest area in 2012, which is 1.15%."}
+{"key": "internvl35_8b:chartqa-335:corrupt", "sig": "6a09de440c691fc2874385b67e9ba53e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.02", "out": "ANSWER: 0.02"}
+{"key": "internvl35_8b:chartqa-335:shuffle", "sig": "3e6ad4ab77bf77a69254e3f94365a39b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "0.02", "out": "ANSWER: 0.02"}
+{"key": "internvl35_8b:chartqa-337:corrupt", "sig": "1ec5a2da79de2713e0b2bee80b7dab90", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.0156", "out": "ANSWER: 1.0156"}
+{"key": "internvl35_8b:chartqa-337:shuffle", "sig": "2a71f0ce248b40c3f813892dfa6290cf", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.033", "out": "ANSWER: 1.033"}
+{"key": "internvl35_8b:chartqa-338:corrupt", "sig": "d7b109ce2b7357bb9af42649a39ee38d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Pink", "out": "ANSWER: Pink"}
+{"key": "internvl35_8b:chartqa-338:shuffle", "sig": "f8579cae321fc43f22894ed8a66f9d68", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Pink", "out": "ANSWER: Pink"}
+{"key": "internvl35_8b:chartqa-339:corrupt", "sig": "ef07ffeef5d228bd617e3294ebe96d5f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-339:shuffle", "sig": "b35622b871a08b71ca77ed504e8dadef", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-340:corrupt", "sig": "41e33c38482406dac3d021a0f1b4d90f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "53.9 hours", "out": "ANSWER: 53.9 hours"}
+{"key": "internvl35_8b:chartqa-340:shuffle", "sig": "250ce5ec0e5e82d285ca4e886c82ad72", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "53.9 hours", "out": "ANSWER: 53.9 hours"}
+{"key": "internvl35_8b:chartqa-342:corrupt", "sig": "4d50c4f3a361dfd5cfe686d53cc0b48f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8.87% (1950)", "out": "ANSWER: 8.87% (1950)"}
+{"key": "internvl35_8b:chartqa-342:shuffle", "sig": "1d57082259a9719ced64448f04cfe7bd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "8.87% (1950)", "out": "ANSWER: 8.87% (1950)"}
+{"key": "internvl35_8b:chartqa-343:corrupt", "sig": "45395df0b33686f1ea11e9dcf02a99f4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "32.43", "out": "ANSWER: 32.43"}
+{"key": "internvl35_8b:chartqa-343:shuffle", "sig": "95b2add480e0c89555d286f00c5c0e05", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "32.1", "out": "ANSWER: 32.1"}
+{"key": "internvl35_8b:chartqa-344:corrupt", "sig": "530856f9c345c836a702c07ed69e5985", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "7.54%", "out": "ANSWER: 7.54%"}
+{"key": "internvl35_8b:chartqa-344:shuffle", "sig": "6fe93c280b3dceae7c1fbc247b90074b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "7.54%", "out": "ANSWER: 7.54%"}
+{"key": "internvl35_8b:chartqa-345:corrupt", "sig": "23509a5abf34002339ec82a495a69d42", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.885", "out": "ANSWER: 1.885"}
+{"key": "internvl35_8b:chartqa-345:shuffle", "sig": "231bbaa5e209aa2e97d52aa36feb4a7b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1.885", "out": "ANSWER: 1.885"}
+{"key": "internvl35_8b:chartqa-346:corrupt", "sig": "07ec4d7df5ab7fe7c1d22b475842ff85", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Myanmar", "out": "ANSWER: Myanmar"}
+{"key": "internvl35_8b:chartqa-346:shuffle", "sig": "2f4d99d0153eff499a5bb18d98e72c6b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Myanmar", "out": "ANSWER: Myanmar"}
+{"key": "internvl35_8b:chartqa-347:corrupt", "sig": "ac42c0fbb52d3062dbda72cdfcbde9c4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Zambia", "out": "ANSWER: Zambia"}
+{"key": "internvl35_8b:chartqa-347:shuffle", "sig": "49762e0baf95db53102fa6394eae8a12", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Zambia", "out": "ANSWER: Zambia"}
+{"key": "internvl35_8b:chartqa-349:corrupt", "sig": "1f4c9bfa3e49fd2530f63aba068a806f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2015", "out": "ANSWER: 2015"}
+{"key": "internvl35_8b:chartqa-349:shuffle", "sig": "0b3e53c8753f66b0689ca99f1722a5e5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2015", "out": "ANSWER: 2015"}
+{"key": "internvl35_8b:chartqa-350:corrupt", "sig": "1345a309411e2ff3740a0d7035d50217", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Georgia", "out": "ANSWER: Georgia"}
+{"key": "internvl35_8b:chartqa-350:shuffle", "sig": "cb759ee52e2c13db2a52b48674a7f7fe", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Georgia", "out": "ANSWER: Georgia"}
+{"key": "internvl35_8b:chartqa-351:corrupt", "sig": "9b38fce420766280e474d4a034724e2f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Spain", "out": "ANSWER: Spain"}
+{"key": "internvl35_8b:chartqa-351:shuffle", "sig": "b1df7acec3326303a7ae5f34401634eb", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Spain", "out": "ANSWER: Spain"}
+{"key": "internvl35_8b:chartqa-354:corrupt", "sig": "06daff7f04055efdb80c34e39e569ff5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Benin", "out": "ANSWER: Benin"}
+{"key": "internvl35_8b:chartqa-354:shuffle", "sig": "bd81b81397fd5f152d43565f2ecb37c9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Benin", "out": "ANSWER: Benin"}
+{"key": "internvl35_8b:chartqa-355:corrupt", "sig": "cd45cd0fa63eafd5da9489fab3d6c499", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Sudan", "out": "ANSWER: Sudan"}
+{"key": "internvl35_8b:chartqa-355:shuffle", "sig": "fc55663425dfd34d26bb1acaa9e7138d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Sudan", "out": "ANSWER: Sudan"}
+{"key": "internvl35_8b:chartqa-356:corrupt", "sig": "8f3aaa684bb54137c2201e8a0a37e978", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mongolia", "out": "ANSWER: Mongolia"}
+{"key": "internvl35_8b:chartqa-356:shuffle", "sig": "7755952ee58373ab850a487c5fdf144e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Mongolia", "out": "ANSWER: Mongolia"}
+{"key": "internvl35_8b:chartqa-358:corrupt", "sig": "225d9c127dc0d0bff0639f5946c8b504", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "North America", "out": "ANSWER: North America"}
+{"key": "internvl35_8b:chartqa-358:shuffle", "sig": "18e13f93142c5e31e4c5329ebc4f6a91", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "North America", "out": "ANSWER: North America"}
+{"key": "internvl35_8b:chartqa-359:corrupt", "sig": "c18f8b71e509ba974256787f5e59fae3", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-359:shuffle", "sig": "07d757e165ab9b2f93177de08d737c33", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-360:corrupt", "sig": "5fac73fc5d8a182df12cb296f7328679", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-360:shuffle", "sig": "ec2527bb7d60cee8fe36a4fc27110c41", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1", "out": "ANSWER: 1"}
+{"key": "internvl35_8b:chartqa-361:corrupt", "sig": "c701cdc48f7ad89c6c67573d87f37b16", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Decrease", "out": "ANSWER: Decrease"}
+{"key": "internvl35_8b:chartqa-361:shuffle", "sig": "240f27a4f794b546d08e89ade315bfec", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "The line remains constant from 2000 to 2014.", "out": "ANSWER: The line remains constant from 2000 to 2014."}
+{"key": "internvl35_8b:chartqa-362:corrupt", "sig": "397eaeae4a89f1700a38a992693d4c4b", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Hong Kong", "out": "ANSWER: Hong Kong"}
+{"key": "internvl35_8b:chartqa-362:shuffle", "sig": "08cbc128f03a48f807cf9a432f4cdda2", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Hong Kong", "out": "ANSWER: Hong Kong"}
+{"key": "internvl35_8b:chartqa-364:corrupt", "sig": "f75fa9919f670ea9d83709615f552869", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Cameroon", "out": "ANSWER: Cameroon"}
+{"key": "internvl35_8b:chartqa-364:shuffle", "sig": "4d6c4ce48a3bcf60b405d52b64f729fa", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Cameroon", "out": "ANSWER: Cameroon"}
+{"key": "internvl35_8b:chartqa-365:corrupt", "sig": "8eaf585b6ed4b265a774e61b0644ce7f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Pinkish-red", "out": "ANSWER: Pinkish-red"}
+{"key": "internvl35_8b:chartqa-365:shuffle", "sig": "f9255cd6db0d4baef0b9654b49e4da50", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Pink", "out": "ANSWER: Pink"}
+{"key": "internvl35_8b:chartqa-366:corrupt", "sig": "2c64bfc9bc940393c9c1f1a4f04a2888", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Estonia", "out": "ANSWER: Estonia"}
+{"key": "internvl35_8b:chartqa-366:shuffle", "sig": "0d224d8534232ff930164e88ee2cdd25", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Estonia", "out": "ANSWER: Estonia"}
+{"key": "internvl35_8b:chartqa-367:corrupt", "sig": "fb250a940de6501885fa4673eb1a0ec8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-367:shuffle", "sig": "e3d76a877ff0fa237ac13b249f534a70", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "No", "out": "ANSWER: No"}
+{"key": "internvl35_8b:chartqa-368:corrupt", "sig": "a418df9f013a8ad8ddaf19f906db3c6e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1960", "out": "ANSWER: 1960"}
+{"key": "internvl35_8b:chartqa-368:shuffle", "sig": "fb2a83578df9c389d3c69412cbac7db5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1960", "out": "ANSWER: 1960"}
+{"key": "internvl35_8b:chartqa-370:corrupt", "sig": "36a35c0c5ff0dd180d6eda741904d0a5", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-370:shuffle", "sig": "30e6631e6aedd956f285e97905e1e3fd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-371:corrupt", "sig": "474f742a69a7d5797818a047167eb174", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1990", "out": "ANSWER: 1990"}
+{"key": "internvl35_8b:chartqa-371:shuffle", "sig": "b2f2a4445ff02b561d0bff81a9cd7329", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1990", "out": "ANSWER: 1990"}
+{"key": "internvl35_8b:chartqa-372:corrupt", "sig": "46b8b6d9a4c175e3be43e2f33382a1e9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-372:shuffle", "sig": "913b86587f4f3b78f89ec76e3799c3bc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-374:corrupt", "sig": "b7e3a380309aab44eb19e667fd9a97e8", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Purple", "out": "ANSWER: Purple"}
+{"key": "internvl35_8b:chartqa-374:shuffle", "sig": "0ea4bbfa4d4a02d8443db4529a18c1cc", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Purple", "out": "ANSWER: Purple"}
+{"key": "internvl35_8b:chartqa-377:corrupt", "sig": "565dfabce46fa01cb6390b1238343ba4", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Germany, Bolivia, Dominican Republic", "out": "ANSWER: Germany, Bolivia, Dominican Republic"}
+{"key": "internvl35_8b:chartqa-377:shuffle", "sig": "f04a65ad9b29384f57ed36fcb202e024", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Germany, Bolivia, Dominican Republic", "out": "ANSWER: Germany, Bolivia, Dominican Republic"}
+{"key": "internvl35_8b:chartqa-378:corrupt", "sig": "684ee5f9eb16aaf0253d4abe6d218865", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-378:shuffle", "sig": "a24ee8169123c5805348313da644afa7", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2", "out": "ANSWER: 2"}
+{"key": "internvl35_8b:chartqa-380:corrupt", "sig": "175ebb087b0d735795c6a1992e6ad04a", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1992", "out": "ANSWER: 1992"}
+{"key": "internvl35_8b:chartqa-380:shuffle", "sig": "d3d18c136e4d70aa17862d9b49761d80", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "1992", "out": "ANSWER: 1992"}
+{"key": "internvl35_8b:chartqa-381:corrupt", "sig": "1501b9c95989ea47067f7f069aa71014", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3%", "out": "ANSWER: 3%"}
+{"key": "internvl35_8b:chartqa-381:shuffle", "sig": "1f8e90a409e6ec6ae4996bbdc8b1a443", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "3%", "out": "ANSWER: 3%"}
+{"key": "internvl35_8b:chartqa-384:corrupt", "sig": "a8a5a5d4297abe716433c7a3fcc4b557", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-384:shuffle", "sig": "a0cc34912a8709383049f4e2feadc72d", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2014", "out": "ANSWER: 2014"}
+{"key": "internvl35_8b:chartqa-386:corrupt", "sig": "6e3b48f6ed6b486a8643589620ecd014", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-386:shuffle", "sig": "cfeeb7b99aaab110cc2f09ae05a8e978", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "4", "out": "ANSWER: 4"}
+{"key": "internvl35_8b:chartqa-388:corrupt", "sig": "2f653267d283c0bc855eab03d03d738c", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Burundi", "out": "ANSWER: Burundi"}
+{"key": "internvl35_8b:chartqa-388:shuffle", "sig": "233cf16c39ee202fbba1995c45162ae9", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Burundi", "out": "ANSWER: Burundi"}
+{"key": "internvl35_8b:chartqa-390:corrupt", "sig": "e355524fe36d512fdd5e0a1513cc200e", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004", "out": "ANSWER: 2004"}
+{"key": "internvl35_8b:chartqa-390:shuffle", "sig": "814520fd80e98126e3106d8133ba81bd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004", "out": "ANSWER: 2004"}
+{"key": "internvl35_8b:chartqa-393:corrupt", "sig": "0929fee4ae4a3af1330063f9d156a8cd", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "18", "out": "ANSWER: 18"}
+{"key": "internvl35_8b:chartqa-393:shuffle", "sig": "e52ea4052f041628b8b2db4d67eb325f", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "18", "out": "ANSWER: 18"}
+{"key": "internvl35_8b:chartqa-395:corrupt", "sig": "9f9a1d03f9ed1a0455a86fb57699f302", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004 to 2005", "out": "ANSWER: 2004 to 2005"}
+{"key": "internvl35_8b:chartqa-395:shuffle", "sig": "d90d10945c205b5774e6dc2a0552db75", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2004 to 2005", "out": "ANSWER: 2004 to 2005"}
+{"key": "internvl35_8b:chartqa-397:corrupt", "sig": "0eca5a8ea27e97bd62a054569d5fd666", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2010", "out": "ANSWER: 2010"}
+{"key": "internvl35_8b:chartqa-397:shuffle", "sig": "6b84ad5dcadae0ae1e354105532ea1af", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "2010", "out": "ANSWER: 2010"}
+{"key": "internvl35_8b:chartqa-398:corrupt", "sig": "a4d437231252b289a3291c147cc9e044", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Belize", "out": "ANSWER: Belize"}
+{"key": "internvl35_8b:chartqa-398:shuffle", "sig": "7a85a6e86673a59793cd1411f1021a29", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Belize", "out": "ANSWER: Belize"}
+{"key": "internvl35_8b:chartqa-400:corrupt", "sig": "d4cb6e179d9a5d694f11d5a284fa2639", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Asia", "out": "ANSWER: Asia"}
+{"key": "internvl35_8b:chartqa-400:shuffle", "sig": "cc2a5dcbdacd8b97970936326c5f03d6", "model_fp": "3c22d98a325c4bb80edc82fc5da625e4", "answer": "Asia", "out": "ANSWER: Asia"}

@@ -6,12 +6,14 @@ Everything here is *derived from the append-only result store* (no hand-copied n
   - SFT eval       data/distill/poc/lora_{32b,8b}_chartqa/eval_n400.json    (base→SFT Δacc, CI, McNemar)
   - the MAP        data/distill/results/map.json                            (regime per cell, spec §8)
   - master table   data/distill/results/tables.json                        (best-agentic net±CI per cell)
+  - P0-2 stats     data/distill/results/faithfulness_stats.json             (F CIs + corrected tests)
 
 Definitions
   F        = flip_corrupt - flip_shuffle          (present)   ; ≤0 ⇒ CoT not load-bearing
   F_masked = flip_corrupt - flip_shuffle          (image masked)
   gap      = flip_corrupt(masked) - flip_corrupt(present)      ; latent chain surfaces only w/o image
-  SE(F)    = sqrt(p_c(1-p_c)/n_c + p_s(1-p_s)/n_s)             (binomial, from the stored flip counts)
+  F CIs    = loaded from scripts/faithfulness_stats.py when available; otherwise fallback
+             to the legacy independent-binomial SE.
 
 Emits (all under the result store / paper tree):
   data/distill/results/faithfulness.json        the F × Δacc join, per cell
@@ -60,10 +62,19 @@ def se_diff(c, sh):
     return math.sqrt(pc * (1 - pc) / nc + ps * (1 - ps) / ns)
 
 
+def stats_by_cell():
+    stats = jget(RES / "faithfulness_stats.json") or {}
+    out = {}
+    for c in stats.get("cells", []):
+        out[(c.get("dataset"), c.get("model_id"), c.get("condition"))] = c
+    return out
+
+
 # --------------------------------------------------------------------------- join
 def build_join():
     """Per-(chartqa, scale) row: F present/masked + gap + SE, snap-rate, and the SFT Δacc block."""
     cells = []
+    stats = stats_by_cell()
     for s in SCALES:
         pres = jget(BATTERY[(s, "present")])
         mask = jget(BATTERY[(s, "masked")])
@@ -83,6 +94,12 @@ def build_join():
             "snap_rate": (ps.get("re_perception") or {}).get("snap_rate"),
             "follow_rate": (ps.get("re_perception") or {}).get("follow_rate"),
         }
+        stP = stats.get(("chartqa", s, "present"))
+        if stP:
+            row["F_present_ci"] = stP.get("F_ci95")
+            row["F_present_p_holm"] = (stP.get("load_bearing_test") or {}).get("p_holm")
+            row["snap_ci"] = (stP.get("snap") or {}).get("ci95")
+            row["follow_ci"] = (stP.get("follow") or {}).get("ci95")
         if mask:
             ms = mask["summary"]
             cM, shM = iv(ms, "corrupt"), iv(ms, "shuffle")
@@ -93,6 +110,10 @@ def build_join():
                 "F_masked_se": se_diff(cM, shM),
                 "masked_minus_present_gap": cM["flip_rate"] - cP["flip_rate"],
             })
+            stM = stats.get(("chartqa", s, "masked"))
+            if stM:
+                row["F_masked_ci"] = stM.get("F_ci95")
+                row["F_masked_p_holm"] = (stM.get("load_bearing_test") or {}).get("p_holm")
         # SFT Δacc block (the peak adapter eval already records base/best)
         ad = sft["per_adapter"][0] if sft.get("per_adapter") else {}
         row["sft"] = {
@@ -169,7 +190,7 @@ def fig_map(out_pdf, out_png):
 # --------------------------------------------------------------------------- Figure B (decoupling)
 def fig_decoupling(cells, out_pdf, out_png):
     """accuracy ⊥ faithfulness. x = ChartQA accuracy; y = faithfulness F = flip_corrupt − flip_shuffle.
-    For each scale: F (present, filled; masked, hollow) with 95% binomial CI, plus a horizontal
+    For each scale: F (present, filled; masked, hollow) with the P0-2 95% CI, plus a horizontal
     SFT accuracy-gain arrow (base→SFT, the measured Δacc) drawn at the present-F level — the
     accuracy axis moves +6.5–7.0%, statistically significant, while the model stays pinned on the
     F≈0 (written-CoT-not-load-bearing) band. F is measured on the same SFT student used for the
@@ -183,7 +204,18 @@ def fig_decoupling(cells, out_pdf, out_png):
     ax.set_xlim(min(xs) - 0.015, max(xs) + 0.030)
 
     # faithfulness null band (|F| within sampling noise ⇒ not load-bearing)
-    band = max(c["F_present_se"] for c in cells) * 1.96
+    def yerr_from_ci(point, ci, fallback_se):
+        if ci:
+            return [[max(0.0, point - ci[0])], [max(0.0, ci[1] - point)]]
+        return [[1.96 * fallback_se], [1.96 * fallback_se]]
+
+    band = max(
+        max(abs(c["F_present"] - (c.get("F_present_ci") or [c["F_present"] - 1.96 * c["F_present_se"],
+                                                            c["F_present"] + 1.96 * c["F_present_se"]])[0]),
+            abs((c.get("F_present_ci") or [c["F_present"] - 1.96 * c["F_present_se"],
+                                           c["F_present"] + 1.96 * c["F_present_se"]])[1] - c["F_present"]))
+        for c in cells
+    )
     ax.axhspan(-band, band, color="#dddddd", alpha=0.55, zorder=0)
     ax.axhline(0, color="#888888", lw=1, ls="--", zorder=1)
     ax.text(0.992, band, "CoT not load-bearing  (|F| < 95% noise)  ", transform=ax.get_yaxis_transform(),
@@ -193,11 +225,14 @@ def fig_decoupling(cells, out_pdf, out_png):
         s = c["model_id"]; base, sft = c["sft"]["base_acc"], c["sft"]["sft_acc"]
         Fp, Fp_se = c["F_present"], c["F_present_se"]
         # present F at base accuracy
-        ax.errorbar(base, Fp, yerr=1.96 * Fp_se, fmt="o", ms=9, color=col[s], capsize=4,
+        ax.errorbar(base, Fp, yerr=yerr_from_ci(Fp, c.get("F_present_ci"), Fp_se),
+                    fmt="o", ms=9, color=col[s], capsize=4,
                     zorder=4, label=f"{s.upper()} (image present)")
         # masked F (latent chain) at same accuracy, hollow
         if "F_masked" in c:
-            ax.errorbar(base, c["F_masked"], yerr=1.96 * c["F_masked_se"], fmt="o", ms=9, mfc="white",
+            ax.errorbar(base, c["F_masked"],
+                        yerr=yerr_from_ci(c["F_masked"], c.get("F_masked_ci"), c["F_masked_se"]),
+                        fmt="o", ms=9, mfc="white",
                         mec=col[s], color=col[s], capsize=4, zorder=3,
                         label=f"{s.upper()} (image masked)")
             ax.annotate("", xy=(base, c["F_masked"]), xytext=(base, Fp),
@@ -244,7 +279,11 @@ def write_master_with_F(cells):
         if c:
             p = c["sft"]["mcnemar_p"]
             dacc = f"{c['sft']['net']:+.1%} ({'p<1e-3' if p < 1e-3 else f'p={p:.3f}'})"
-            Fp = f"{c['F_present']:+.3f} ± {1.96 * c['F_present_se']:.3f}"
+            if c.get("F_present_ci"):
+                lo, hi = c["F_present_ci"]
+                Fp = f"{c['F_present']:+.3f} [{lo:+.3f},{hi:+.3f}]"
+            else:
+                Fp = f"{c['F_present']:+.3f} ± {1.96 * c['F_present_se']:.3f}"
             Fm = f"{c.get('F_masked', float('nan')):+.3f}" if "F_masked" in c else "—"
             snap = f"{c['snap_rate']:.3f}" if c.get("snap_rate") is not None else "—"
         else:
@@ -274,7 +313,8 @@ def write_tex_snippet():
   $+6.5$--$7.0\%$ (McNemar $p\!\le\!.002$; horizontal arrows), yet the causal CoT metric stays on the
   $F\!\approx\!0$ band: corrupting a numeric intermediate flips the answer no more than shuffling the CoT.
   Hollow markers show image-masked controls. $F$ is measured on the same SFT student used for the
-  corresponding probe; error bars are $95\%$ binomial CIs.}
+  corresponding probe; error bars use the P0-2 $95\%$ CIs regenerated by
+  \texttt{scripts/faithfulness\_stats.py}.}
   \label{fig:decoupling}
 \end{figure}
 """
@@ -287,7 +327,7 @@ def main():
     if not cells:
         print("no joinable cells found (need battery + SFT eval); aborting"); return 1
 
-    out = {"definition": "F = flip_corrupt - flip_shuffle (present); SE = binomial sqrt(pc(1-pc)/nc + ps(1-ps)/ns)",
+    out = {"definition": "F = flip_corrupt - flip_shuffle; F_ci95 loaded from faithfulness_stats.json when available",
            "cells": cells}
     (RES / "faithfulness.json").write_text(json.dumps(out, ensure_ascii=False, indent=2))
 
@@ -301,7 +341,9 @@ def main():
     print(f"\n## join → {RES/'faithfulness.json'}")
     for c in cells:
         gap = c.get("masked_minus_present_gap")
-        print(f"  {c['model_id']:3s}  F_present={c['F_present']:+.3f}±{1.96*c['F_present_se']:.3f}"
+        ci = c.get("F_present_ci")
+        ci_s = f"[{ci[0]:+.3f},{ci[1]:+.3f}]" if ci else f"±{1.96*c['F_present_se']:.3f}"
+        print(f"  {c['model_id']:3s}  F_present={c['F_present']:+.3f}{ci_s}"
               f"  F_masked={c.get('F_masked', float('nan')):+.3f}"
               f"  gap(masked−present corrupt)={gap:+.3f}" if gap is not None else "",
               f"  snap={c.get('snap_rate')}"

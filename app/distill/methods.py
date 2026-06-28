@@ -82,7 +82,7 @@ def orch(messages: list[dict], *, temp=CRITIC_TEMP, seed=None, max_tokens=2048) 
         headers["Authorization"] = f"Bearer {key}"
     is_local = ("127.0.0.1" in base) or ("localhost" in base)
     ckw: dict[str, Any] = {"timeout": timeout, "trust_env": False}
-    direct_hosts = ("xiaomimimo.com",)
+    direct_hosts = ("xiaomimimo.com", "aliyuncs.com")
     if not is_local and not any(host in base for host in direct_hosts):
         ckw["proxy"] = _CLASH_PROXY     # external API (DeepSeek) via clash
     import time
